@@ -1,4 +1,4 @@
-package Practice.Practice01;
+package Practice.Practice_01;
 
 public class StringTrimExample {
     public static void main(String[] args) {
