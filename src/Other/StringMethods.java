@@ -23,28 +23,24 @@ public class StringMethods {
         // 5. contains(CharSequence s) - Проверяет, содержит ли строка указанную последовательность символов.
         System.out.println("5. contains(CharSequence s) - Проверяет, содержит ли строка указанную последовательность символов.");
         System.out.println("    text.contains('World') = " + text.contains("World")); // true
-
         // Повторная проверка
         System.out.println("    textCheck.contains('World') = " + textCheck.contains("World")); // false
 
         // 6. endsWith(String suffix) - Проверяет, заканчивается ли строка указанным суффиксом.
         System.out.println("6. endsWith(String suffix) - Проверяет, заканчивается ли строка указанным суффиксом.");
         System.out.println("    text.endsWith('World') = " + text.endsWith("World")); // true
-
         // Повторная проверка
         System.out.println("    textCheck.endsWith('World') = " + textCheck.endsWith("World")); // false
 
         // 7. equals(Object anObject) - Проверяет равенство строк.
         System.out.println("7. equals(Object anObject) - Проверяет равенство строк.");
         System.out.println("    text.equals('Hello World') = " + text.equals("Hello World")); // true
-
         // Повторная проверка
         System.out.println("    textCheck.equals('World') = " + textCheck.equals("World")); // false
 
         // 8. equalsIgnoreCase(String anotherString) - Проверяет равенство строк без учета регистра.
         System.out.println("8. equalsIgnoreCase(String anotherString) - Проверяет равенство строк без учета регистра.");
         System.out.println("    text.equalsIgnoreCase('hello world') = " + text.equalsIgnoreCase("hello world")); // true
-
         // Повторная проверка
         System.out.println("    textCheck.equalsIgnoreCase('World') = " + textCheck.equalsIgnoreCase("World")); // false
 
