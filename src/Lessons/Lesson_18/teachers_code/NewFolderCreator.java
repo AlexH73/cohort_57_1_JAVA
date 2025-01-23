@@ -13,7 +13,18 @@ public class NewFolderCreator {
         String name = myLocalReader.nextLine();
         System.out.printf("Hello, %s\n How old are you?", name);
 
+
+
+        // так как nextInt() оставит бегунок считывания сразу после числа, то нам
+        // надо перенести его на начало новой строки, для этого можно разово вызвать:
         int age = myLocalReader.nextInt();
+        myLocalReader.nextLine();
+
+        // либо, воспользоваться альтернативой:
+        // считать число,как текст и попытаться распарсить его в число
+
+        // String strAge = myLocalReader.nextLine();
+        // int age = Integer.parseInt(strAge);
 
         System.out.println("Have u already celebrate birthday this year? y/n");
 
@@ -22,7 +33,7 @@ public class NewFolderCreator {
         // логическое "и" - "and" Python, "&&" Java
         // логическое "или" - "or" Python, "||" Java
         // логическое "отрицание" - "not" Python, "!" Java
-        //
+
 
         // здесь ! используется так как нам надо отследить некорректный ввод,
         //  то есть не y/n
