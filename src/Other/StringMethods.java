@@ -44,6 +44,35 @@ public class StringMethods {
         // Повторная проверка
         System.out.println("    textCheck.equalsIgnoreCase('World') = " + textCheck.equalsIgnoreCase("World")); // false
 
+        // 9. indexOf(String str) - Возвращает индекс первого вхождения подстроки.
+        System.out.println("9. indexOf(String str) - Возвращает индекс первого вхождения подстроки.");
+        System.out.println("    indexOf('World') = " + text.indexOf("World")); // 6
+
+        // 10. isEmpty() - Проверяет, пуста ли строка.
+        System.out.println("10. isEmpty() - Проверяет, пуста ли строка.");
+        System.out.println("    text.isEmpty() = " + text.isEmpty()); // false
+
+        // 11. length() - Возвращает длину строки.
+        System.out.println("11. length() - Возвращает длину строки.");
+        System.out.println("    text.length() = " + text.length());
+
+        // 12. replace(char oldChar, char newChar) - Заменяет символы.
+        System.out.println("12. replace(char oldChar, char newChar) - Заменяет символы.");
+        System.out.println("    text.replace('o', '0') = " + text.replace("o", "0")); // "Hell0 W0rld"
+
+        // 13. replace(CharSequence target, CharSequence replacement) - Заменяет подстроки.
+        System.out.println("13. replace(CharSequence target, CharSequence replacement) - Заменяет подстроки.");
+        System.out.println("    text.replace('World', 'Java') = " + text.replace("World", "Java") ); // "Hello Java"
+
+        // 14. split(String regex) - Разделяет строку по регулярному выражению.
+        System.out.println("14. split(String regex) - Разделяет строку по регулярному выражению.");
+        String[] splitText = text.split(" ");
+        System.out.println("    text.split(' ') = [" + String.join(", ", splitText) + "]"); // [Hello, World]
+
+        // 15. startsWith(String prefix) - Проверяет, начинается ли строка с указанного префикса.
+        System.out.println("15. startsWith(String prefix) - Проверяет, начинается ли строка с указанного префикса.");
+        System.out.println("    text.StartsWith('Hello') = " + text.startsWith("Hello")); // true
+
         // ... Продолжение следует
     }
 }
