@@ -11,9 +11,7 @@ public class NewFolderCreator {
 
         //позволяет считать все введенные данные от начала до конца строки:
         String name = myLocalReader.nextLine();
-        System.out.printf("Hello, %s\n How old are you?", name);
-
-
+        System.out.printf("Hello, %s\nHow old are you?\n", name);
 
         // так как nextInt() оставит бегунок считывания сразу после числа, то нам
         // надо перенести его на начало новой строки, для этого можно разово вызвать:
@@ -44,8 +42,10 @@ public class NewFolderCreator {
         }
 
 
-
-        System.out.printf("You've born in %d\n", (2025-age));
-
+        if (answer.equals("y") ) {
+            System.out.printf("You've born in %d\n", (2025-age));
+        } else {
+            System.out.printf("You've born in %d\n", (2024-age));
+        }
     }
 }
