@@ -37,8 +37,8 @@ public class NewFolderCreator {
 
         // здесь ! используется так как нам надо отследить некорректный ввод,
         //  то есть не y/n
-        if (!(answer == "y" || answer == "n")) {
-            while (!(answer == "y" || answer == "n")) {
+        if (answer != "y" || answer != "n") {
+            while (answer != "y" || answer != "n") {
                 System.out.println("Enter please correct answer y or n");
                 answer = myLocalReader.nextLine();
             }
