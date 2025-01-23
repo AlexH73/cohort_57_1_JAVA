@@ -21,6 +21,11 @@ public class NewFolderCreator {
 
         // логическое "и" - "and" Python, "&&" Java
         // логическое "или" - "or" Python, "||" Java
+        // логическое "отрицание" - "not" Python, "!" Java
+
+        if (answer == "y" || answer == "n") {
+
+        }
 
 
         System.out.printf("You've born in %d\n", (2025-age));
