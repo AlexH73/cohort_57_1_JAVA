@@ -21,5 +21,13 @@ public class StringComparation {
         System.out.println("str1 == str2 = " + (str1 == str2));
         System.out.println("str1 == str3 = " + (str1 == str3));
         System.out.println("str1 == str4 = " + (str1 == str4));
+
+        // как сравнить строки так, чтобы сравнивалось именно их содержимое символ с символом?
+        // для это этого есть метод "equals":
+
+        System.out.println("str1.equals(str2) = " + str1.equals(str2));
+        System.out.println("str1.equals(str3) = " + str1.equals(str3));
+        System.out.println("str1.equals(str4) = " + str1.equals(str4));
+
     }
 }
