@@ -30,6 +30,7 @@ bin/
 
 # Другие папки и файлы
 
-Homework/
+#Homework/
 .idea/
 cohort_57_1_J.iml
+cohort_57_1_JAVA.iml
