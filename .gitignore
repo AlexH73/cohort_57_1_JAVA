@@ -29,7 +29,6 @@ bin/
 .DS_Store
 
 # Другие папки и файлы
-
 #Homework/
 Homework/temp/
 .idea/
