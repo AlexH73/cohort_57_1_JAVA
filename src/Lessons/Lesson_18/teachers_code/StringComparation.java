@@ -29,5 +29,15 @@ public class StringComparation {
         System.out.println("str1.equals(str3) = " + str1.equals(str3));
         System.out.println("str1.equals(str4) = " + str1.equals(str4));
 
+        //если в тексте мы хотим проверить, лишь равенство символов, игнорируя регистр,
+        // хотя при всех прочих сравнениях регистр влиял на стравнение, то можно использовать
+        // equalsIgnoreCase():
+
+
+        System.out.println("str1.equalsIgnoreCase(str2) = " + str1.equalsIgnoreCase(str2));
+        System.out.println("str1.equalsIgnoreCase(str3) = " + str1.equalsIgnoreCase(str3));
+        System.out.println("str1.equalsIgnoreCase(str4) = " + str1.equalsIgnoreCase(str4));
+
+
     }
 }
