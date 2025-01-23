@@ -1,4 +1,4 @@
-package Lessons.lesson_18.teachers_code;
+package Lessons.Lesson_18.teachers_code;
 
 public class Lesson18 {
     // some changes in main branch
