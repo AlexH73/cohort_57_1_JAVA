@@ -1,4 +1,4 @@
-package lesson_18.teachers_code;
+package Lessons.Lesson_18.teachers_code;
 
 public class Lesson18 {
     public static void main(String[] args) {
