@@ -30,7 +30,6 @@ bin/
 
 # Другие папки и файлы
 
-#Homework/
-Homework/temp/
+Homework/
 .idea/
 *.iml
