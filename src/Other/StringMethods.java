@@ -73,6 +73,27 @@ public class StringMethods {
         System.out.println("15. startsWith(String prefix) - Проверяет, начинается ли строка с указанного префикса.");
         System.out.println("    text.StartsWith('Hello') = " + text.startsWith("Hello")); // true
 
+        // 16. substring(int beginIndex) - Возвращает подстроку с указанного индекса.
+        System.out.println("16. substring(int beginIndex) - Возвращает подстроку с указанного индекса.");
+        System.out.println("    text.substring(6) = " + text.substring(6)); // "World"
+
+        // 17. substring(int beginIndex, int endIndex) - Возвращает подстроку между индексами.
+        System.out.println("17. substring(int beginIndex, int endIndex) - Возвращает подстроку между индексами.");
+        System.out.println("    text.substring(0 ,5) = " + text.substring(0, 5)); // "Hello"
+
+        // 18. toLowerCase() - Преобразует строку в нижний регистр.
+        System.out.println("18. toLowerCase() - Преобразует строку в нижний регистр.");
+        System.out.println("    text.toLowerCase() = " + text.toLowerCase()); // "hello world"
+
+        // 19. toUpperCase() - Преобразует строку в верхний регистр.
+        System.out.println("19. toUpperCase() - Преобразует строку в верхний регистр.");
+        System.out.println("    text.toUpperCase() = " + text.toUpperCase()); // "HELLO WORLD"
+
+        // 20. trim() - Удаляет начальные и конечные пробелы.
+        String paddedText = "   Hello World   ";
+        System.out.println("20. trim() - Удаляет начальные и конечные пробелы.");
+        System.out.println("    paddedText.trim() = " + paddedText.trim()); // "Hello World"
+
         // ... Продолжение следует
     }
 }
