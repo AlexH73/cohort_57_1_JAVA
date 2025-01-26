@@ -94,6 +94,55 @@ public class StringMethods {
         System.out.println("20. trim() - Удаляет начальные и конечные пробелы.");
         System.out.println("    paddedText.trim() = " + paddedText.trim()); // "Hello World"
 
+        // 21. lastIndexOf(String str) - Возвращает индекс последнего вхождения подстроки.
+        System.out.println("21. lastIndexOf(String str) - Возвращает индекс последнего вхождения подстроки.");
+        System.out.println("    text.lastIndexOf('0') = " + text.lastIndexOf("o")); // 7
+
+        // 22. matches(String regex) - Проверяет, соответствует ли строка регулярному выражению.
+        System.out.println("22. matches(String regex) - Проверяет, соответствует ли строка регулярному выражению.");
+        System.out.println("    text.matches('.*World.*') = " + text.matches(".*World.*")); // true
+
+        // 23. join(CharSequence delimiter, CharSequence... elements) - Объединяет строки с разделителем.
+        String joined = String.join("-", "Hello", "World", "Java");
+        System.out.println("23. join(CharSequence delimiter, CharSequence... elements) - Объединяет строки с разделителем.");
+        System.out.println("    String.join('-', ...) = " + joined); // "Hello-World-Java"
+
+        //  24. valueOf(Object obj) - Преобразует объект в строку.
+        int number = 42;
+        System.out.println(" 24. valueOf(Object obj) - Преобразует объект в строку.");
+        System.out.println("    String.valueOf(number) = " + String.valueOf(number)); // "42"
+
+        // 25. getBytes() - Преобразует строку в массив байтов.
+        byte[] bytes = text.getBytes();
+        System.out.println("25. getBytes() - Преобразует строку в массив байтов.");
+        System.out.println("    text.getBytes() = " + new String(bytes)); // "Hello World"
+
+        // 26. format(String format, Object... args) - Форматирует строку по шаблону.
+        String formated = String.format("Hello %s! You have %d new messages.", "John", 5);
+        System.out.println("26. format(String format, Object... args) - Форматирует строку по шаблону.");
+        System.out.println("    String.format(...) = " + formated); // "Hello, John! You have 5 new messages."
+
+        // 27. regionMatches - Сравнивает часть строки с другой строкой.
+        boolean match = text.regionMatches(6, "World!", 0, 5);
+        System.out.println("27. regionMatches - Сравнивает часть строки с другой строкой.");
+        System.out.println("    text.regionMatches(...) = " + match); // true
+
+        // 28. repeat(int count) - Возвращает строку, повторенную указанное количество раз.
+        String repeated = "Java".repeat(3);
+        System.out.println("28. repeat(int count) - Возвращает строку, повторенную указанное количество раз.");
+        System.out.println("    \"Java\".repeat(3) = " + repeated); // "JavaJavaJava"
+
+        // 29. indent(int n) - Добавляет отступы к строке.
+        String indented = "Hello\nWorld".indent(4);
+        System.out.println("29. indent(int n) - Добавляет отступы к строке.");
+        System.out.println("    text.indent(4) = " + indented);
+
+        // 30. strip() - Удаляет начальные и конечные пробелы (современная альтернатива trim()).
+        String stripped = paddedText.strip();
+        System.out.println("30. strip() - Удаляет начальные и конечные пробелы (современная альтернатива trim()).");
+        System.out.println("    paddedText.strip() = " + stripped); // "Hello World"
+
+
         // ... Продолжение следует
     }
 }
