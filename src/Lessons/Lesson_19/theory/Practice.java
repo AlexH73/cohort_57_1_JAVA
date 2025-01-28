@@ -10,9 +10,9 @@ public class Practice {
      * и возвращает их сумму.
      * Пример: add(5, 7) -> 12
      */
-    public static int add(int a, int b) {
-        // Реализация здесь
-    }
+//    public static int add(int a, int b) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 2: Напишите метод, который выводит на консоль название операционной системы,
@@ -21,9 +21,9 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static void printOS() {
-        // Реализация здесь
-    }
+//    public static void printOS() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 3: Напишите метод, который принимает число с плавающей точкой в качестве аргумента,
