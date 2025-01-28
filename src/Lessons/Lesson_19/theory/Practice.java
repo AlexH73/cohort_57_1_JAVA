@@ -32,9 +32,9 @@ public class Practice {
      *
      * @see Math#round(double)
      */
-    public static int roundValue(double value) {
-        // Реализация здесь
-    }
+//    public static int roundValue(double value) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 4: Напишите метод, который принимает два числа и возвращает результат их возведения
@@ -43,9 +43,9 @@ public class Practice {
      *
      * @see Math#pow(double, double)
      */
-    public static double power(double base, double exponent) {
-        // Реализация здесь
-    }
+//    public static double power(double base, double exponent) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 5: Напишите метод, который не принимает аргументов и возвращает
@@ -54,9 +54,9 @@ public class Practice {
      *
      * @see System#currentTimeMillis()
      */
-    public static long getCurrentTime() {
-        // Реализация здесь
-    }
+//    public static long getCurrentTime() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 6: Напишите метод, который возвращает текущий день недели в виде целого числа
@@ -66,9 +66,9 @@ public class Practice {
      * @see java.time.LocalDate#now()
      * @see java.time.DayOfWeek#getValue()
      */
-    public static int getCurrentDayOfWeek() {
-        // Реализация здесь
-    }
+//    public static int getCurrentDayOfWeek() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 7: Напишите метод, который принимает три целых числа (день, месяц, год)
@@ -77,9 +77,9 @@ public class Practice {
      *
      * @see java.time.LocalDate#of(int, int, int)
      */
-    public static boolean isValidDate(int day, int month, int year) {
-        // Реализация здесь
-    }
+//    public static boolean isValidDate(int day, int month, int year) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 8: Напишите метод, который принимает строку и возвращает её в верхнем регистре.
@@ -87,9 +87,9 @@ public class Practice {
      *
      * @see String#toUpperCase()
      */
-    public static String toUpperCase(String input) {
-        // Реализация здесь
-    }
+//    public static String toUpperCase(String input) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 9: Напишите метод, который возвращает имя пользователя системы,
@@ -98,9 +98,9 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static String getUserName() {
-        // Реализация здесь
-    }
+//    public static String getUserName() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 10: Напишите метод, который принимает два целых числа и возвращает наибольшее.
@@ -108,9 +108,9 @@ public class Practice {
      *
      * @see Math#max(int, int)
      */
-    public static int findMax(int a, int b) {
-        // Реализация здесь
-    }
+//    public static int findMax(int a, int b) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 11: Напишите метод, который возвращает информацию о версии Java,
@@ -119,7 +119,7 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static String getJavaVersion() {
-        // Реализация здесь
-    }
+//    public static String getJavaVersion() {
+//        // Реализация здесь
+//    }
 }
