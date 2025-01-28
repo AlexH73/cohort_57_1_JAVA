@@ -14,7 +14,22 @@ public class Lesson19 {
      */
 
     public static void main(String[] args) {
-        sayHello();
+        byte x = 12;
+
+        sayHelloTo(x);
+    }
+
+    public static void sayHelloTo() {
+        System.out.println("Hello, user");
+    }
+
+    public static void sayHelloTo(String name) {
+        System.out.printf("Hello, %s \n", name);
+    }
+
+    public static void sayHelloTo(long num) {
+
+        System.out.printf("Hello, %n \n", num);
     }
 
 
@@ -36,6 +51,20 @@ public class Lesson19 {
         double random = Math.random();
 
         return random;
-        //hello
     }
+
+
+
+
+
+
+
+    public static void isOdd(int num) {
+        if (num % 2 == 0) {
+            System.out.println("четное");
+        } else {
+            System.out.println("не четное");
+        }
+    }
+
 }
