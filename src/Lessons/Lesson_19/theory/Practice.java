@@ -3,7 +3,7 @@ package Lessons.Lesson_19.theory;
 public class Practice {
     public static void main(String[] args) {
         System.out.println(add(-5, 2));
-
+        printOS();
     }
 
     /**
@@ -23,9 +23,12 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-//    public static void printOS() {
-//        // Реализация здесь
-//    }
+    public static void printOS() {
+        String key = "java.version";
+        String value = System.getProperty(key);
+        System.out.println(value);
+        // Реализация здесь
+    }
 
     /**
      * Задача 3: Напишите метод, который принимает число с плавающей точкой в качестве аргумента,
