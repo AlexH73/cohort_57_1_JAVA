@@ -30,6 +30,7 @@ bin/
 
 # Другие папки и файлы
 
-Homework/
+#Homework/
+Homework/temp/
 .idea/
-cohort_57_1_J.iml
+*.iml
