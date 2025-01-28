@@ -25,7 +25,7 @@ public class Practice {
      * @see System#getProperty(String)
      */
    public static void printOS() {
-      String key = "java.version";
+      String key = "os.name";
       String value = System.getProperty(key);
       System.out.println(value);
    }
