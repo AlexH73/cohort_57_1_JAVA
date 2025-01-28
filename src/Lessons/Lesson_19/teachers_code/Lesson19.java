@@ -36,7 +36,6 @@ public class Lesson19 {
         double random = Math.random();
 
         return random;
+        //hello
     }
-
-
 }
