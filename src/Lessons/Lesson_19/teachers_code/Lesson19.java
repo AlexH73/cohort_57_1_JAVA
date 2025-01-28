@@ -7,7 +7,7 @@ public class Lesson19 {
 
     /*
     - многострочный комментарий
-    все что находится между этими символами относится к комментарию
+    все что находится между этими символвами относится к комментарию
      */
 
     /**
@@ -15,11 +15,13 @@ public class Lesson19 {
      */
 
     public static void main(String[] args) {
+
         sayHello();
     }
 
 
     public static void sayGoodbye() {
+
         System.out.println("Goodbye!");
     }
 
