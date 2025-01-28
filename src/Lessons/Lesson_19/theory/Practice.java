@@ -1,6 +1,9 @@
 package Lessons.Lesson_19.theory;
 
 public class Practice {
+    public static void main(String[] args) {
+
+    }
 
     /**
      * Задача 1: Напишите метод, который принимает два целых числа в качестве аргументов
