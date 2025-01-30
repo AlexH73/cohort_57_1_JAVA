@@ -29,9 +29,12 @@ public class FileArray {
 
         Scanner[] scanners = new Scanner[3]; // {null, null, null}
 
-        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
-        scanners[2] = new Scanner(new File(basePath+ "3.txt"));
         scanners[0] = new Scanner(new File(basePath+ "1.txt"));
+        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
+
+        File file = new File(basePath+ "3.txt");
+
+        scanners[2] = new Scanner(file);
 
         String contentScanner2 = scanners[2].nextLine();
         System.out.println("scanners[2].nextLine() = " + contentScanner2);
@@ -39,8 +42,10 @@ public class FileArray {
         scanners[2] = new Scanner(System.in);
 
         System.out.println("Enter new data:");
-        String terminalData = scanners[2].nextLine();
+//        String terminalData = scanners[2].nextLine();
+//
+//        System.out.println("terminalData = " + terminalData);
 
-        System.out.println("terminalData = " + terminalData);
+        System.out.println("scanners.length = " + scanners.length);
     }
 }
