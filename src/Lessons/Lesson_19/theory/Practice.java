@@ -6,6 +6,7 @@ public class Practice {
         System.out.printf("Ваша операционная система: ");
         printOS();
         System.out.println("Округленное число: " + roundValue(2.555));
+        System.out.println("Возведение чисел (2, 3) в степень: " + power(2, 3));
 
     }
 
@@ -39,11 +40,9 @@ public class Practice {
      * @see Math#round(double)
      */
     public static int roundValue(double value) {
-
         long number = Math.round(value);
-        int rounded = (int) number;
 
-        return rounded;
+        return (int) number;
     }
 
     /**
@@ -53,9 +52,10 @@ public class Practice {
      *
      * @see Math#pow(double, double)
      */
-//    public static double power(double base, double exponent) {
-//        // Реализация здесь
-//    }
+    public static double power(double base, double exponent) {
+
+        return Math.pow(base, exponent);
+    }
 
     /**
      * Задача 5: Напишите метод, который не принимает аргументов и возвращает
