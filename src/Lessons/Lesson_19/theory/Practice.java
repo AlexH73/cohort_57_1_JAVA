@@ -2,7 +2,6 @@ package Lessons.Lesson_19.theory;
 
 public class Practice {
     public static void main(String[] args) {
-        System.out.println(add(-5, 2));
 
     }
 
@@ -11,10 +10,9 @@ public class Practice {
      * и возвращает их сумму.
      * Пример: add(5, 7) -> 12
      */
-    public static int add(int a, int b) {
-        int num = a + b;
-        return num;
-    }
+//    public static int add(int a, int b) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 2: Напишите метод, который выводит на консоль название операционной системы,

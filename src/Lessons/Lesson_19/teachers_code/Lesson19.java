@@ -15,18 +15,15 @@ public class Lesson19 {
      */
 
     public static void main(String[] args) {
-
         sayHello();
     }
 
 
     public static void sayGoodbye() {
-
         System.out.println("Goodbye!");
     }
 
     public static void sayHello() {
-
         System.out.println("Hello!");
     }
 }
