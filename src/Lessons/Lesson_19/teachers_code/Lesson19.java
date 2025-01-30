@@ -27,6 +27,7 @@ public class Lesson19 {
         System.out.printf("Hello, %s \n", name);
     }
 
+
     public static void sayHelloTo(long num) {
 
         System.out.printf("Hello, %n \n", num);
