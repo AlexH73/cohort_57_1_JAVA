@@ -26,6 +26,7 @@ public class Classwork3 {
 
         printArr(nums);
         nums[3] = 11;
+
         System.out.print("nums = ");
         printArr(nums);
 
@@ -39,7 +40,8 @@ public class Classwork3 {
         printArr(nums);
 
 
-        nums = Arrays.copyOf(nums, 2);
+        nums = Arrays.copyOf(nums, 4);
+
         System.out.print("nums = ");
         printArr(nums);
     }
