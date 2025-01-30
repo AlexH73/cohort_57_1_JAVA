@@ -2,8 +2,10 @@ package Lessons.Lesson_19.theory;
 
 public class Practice {
     public static void main(String[] args) {
-        System.out.println(add(-5, 2));
+        System.out.println("Сумма чисел равна: " + add(-5, 2));
+        System.out.printf("Ваша операционная система: ");
         printOS();
+        System.out.println("Округленное число: " + roundValue(2.555));
 
     }
 
@@ -36,9 +38,13 @@ public class Practice {
      *
      * @see Math#round(double)
      */
-//    public static int roundValue(double value) {
-//        // Реализация здесь
-//    }
+    public static int roundValue(double value) {
+
+        long number = Math.round(value);
+        int rounded = (int) number;
+
+        return rounded;
+    }
 
     /**
      * Задача 4: Напишите метод, который принимает два числа и возвращает результат их возведения
