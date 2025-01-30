@@ -14,8 +14,6 @@ public class ClassWork1 {
         boolean[] booleans = new boolean[3]; // {false, false, false}
         boolean[] booleans2 = {true, false, true};
 
-
-
         File file = new File("/path/to/file.txt");
         file = null;
         String x = null;
@@ -24,6 +22,8 @@ public class ClassWork1 {
         // 3. session createSession(host, token)
         // Session session = createSession(host, token);
         // session == null ?
+
+
 
 
     }
