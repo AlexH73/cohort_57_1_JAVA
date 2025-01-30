@@ -21,4 +21,13 @@ public class FileArray {
 
         System.out.println("fileContent = " + fileContent);
     }
+
+    public static void scannerArray() {
+        Scanner[] scanners = new Scanner[3]; // {null, null, null}
+
+
+
+
+
+    }
 }
