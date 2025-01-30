@@ -82,4 +82,13 @@ public class FileArray {
 
 
     }
+
+    public static void scannerArray() {
+        Scanner[] scanners = new Scanner[3]; // {null, null, null}
+
+
+
+
+
+    }
 }
