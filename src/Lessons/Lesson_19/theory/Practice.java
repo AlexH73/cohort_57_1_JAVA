@@ -3,6 +3,7 @@ package Lessons.Lesson_19.theory;
 public class Practice {
     public static void main(String[] args) {
         System.out.println(add(-5, 2));
+        printOS();
 
     }
 
@@ -23,7 +24,9 @@ public class Practice {
      * @see System#getProperty(String)
      */
     public static void printOS() {
-//        return; "Ваша OS " + System. getProperty(String);
+        String key = "os.name";
+        String value = System.getProperty(key);
+        System.out.println(value);
     }
 
     /**
