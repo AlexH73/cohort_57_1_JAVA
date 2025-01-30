@@ -48,4 +48,13 @@ public class FileArray {
 
         System.out.println("scanners.length = " + scanners.length);
     }
+
+    public static void scannerArray() {
+        Scanner[] scanners = new Scanner[3]; // {null, null, null}
+
+
+
+
+
+    }
 }
