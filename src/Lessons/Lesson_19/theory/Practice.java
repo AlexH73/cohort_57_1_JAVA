@@ -37,9 +37,9 @@ public class Practice {
      *
      * @see Math#round(double)
      */
-//    public static int roundValue(double value) {
-//        // Реализация здесь
-//    }
+    public static int roundValue(double value) {
+        // Реализация здесь
+    }
 
     /**
      * Задача 4: Напишите метод, который принимает два числа и возвращает результат их возведения
