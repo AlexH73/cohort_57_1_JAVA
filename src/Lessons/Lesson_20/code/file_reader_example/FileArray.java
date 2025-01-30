@@ -20,6 +20,8 @@ public class FileArray {
         String fileContent = scanner.nextLine();
 
         System.out.println("fileContent = " + fileContent);
+
+        scannerArray();
     }
 
     public static void scannerArray() throws FileNotFoundException {
@@ -27,15 +29,18 @@ public class FileArray {
 
         Scanner[] scanners = new Scanner[3]; // {null, null, null}
 
-
-        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
         scanners[1] = new Scanner(new File(basePath+ "2.txt"));
         scanners[2] = new Scanner(new File(basePath+ "3.txt"));
-
+        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
 
         String contentScanner2 = scanners[2].nextLine();
         System.out.println("scanners[2].nextLine() = " + contentScanner2);
 
+        scanners[2] = new Scanner(System.in);
 
+        System.out.println("Enter new data:");
+        String terminalData = scanners[2].nextLine();
+
+        System.out.println("terminalData = " + terminalData);
     }
 }
