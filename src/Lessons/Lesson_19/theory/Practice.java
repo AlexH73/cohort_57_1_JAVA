@@ -1,5 +1,8 @@
 package Lessons.Lesson_19.theory;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 public class Practice {
     public static void main(String[] args) {
         System.out.println("Сумма чисел равна: " + add(-5, 2));
@@ -10,6 +13,9 @@ public class Practice {
 
         long currentTime = getCurrentTime();
         System.out.println("Текущее системное время в миллисекундах: " + currentTime);
+
+        int currentDayOfWeek = getCurrentDayOfWeek();
+        System.out.println("Текущий день недели (1 для понедельника, 7 для воскресенья): " + currentDayOfWeek);
 
     }
 
@@ -79,9 +85,14 @@ public class Practice {
      * @see java.time.LocalDate#now()
      * @see java.time.DayOfWeek#getValue()
      */
-//    public static int getCurrentDayOfWeek() {
-//        // Реализация здесь
-//    }
+    public static int getCurrentDayOfWeek() {
+        // Получаем текущую дату
+        LocalDate currentDate = LocalDate.now();
+        // Получаем текущий день недели
+        DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
+        // Возвращаем значение текущего дня недели (1 для понедельника, 7 для воскресенья)
+        return dayOfWeek.getValue();
+    }
 
     /**
      * Задача 7: Напишите метод, который принимает три целых числа (день, месяц, год)
