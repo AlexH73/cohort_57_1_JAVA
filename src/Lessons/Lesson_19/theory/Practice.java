@@ -8,6 +8,9 @@ public class Practice {
         System.out.println("Округленное число: " + roundValue(2.555));
         System.out.println("Возведение чисел (2, 3) в степень: " + power(2, 3));
 
+        long currentTime = getCurrentTime();
+        System.out.println("Текущее системное время в миллисекундах: " + currentTime);
+
     }
 
     /**
@@ -64,9 +67,9 @@ public class Practice {
      *
      * @see System#currentTimeMillis()
      */
-//    public static long getCurrentTime() {
-//        // Реализация здесь
-//    }
+    public static long getCurrentTime() {
+        return System.currentTimeMillis();
+    }
 
     /**
      * Задача 6: Напишите метод, который возвращает текущий день недели в виде целого числа
