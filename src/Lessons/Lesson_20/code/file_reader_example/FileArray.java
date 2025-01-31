@@ -29,10 +29,10 @@ public class FileArray {
 
         Scanner[] scanners = new Scanner[3]; // {null, null, null}
 
-        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
-        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
+        scanners[0] = new Scanner(new File(basePath + "1.txt"));
+        scanners[1] = new Scanner(new File(basePath + "2.txt"));
 
-        File file = new File(basePath+ "3.txt");
+        File file = new File(basePath + "3.txt");
 
         scanners[2] = new Scanner(file);
 

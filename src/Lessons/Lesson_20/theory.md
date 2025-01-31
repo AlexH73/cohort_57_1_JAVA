@@ -47,7 +47,7 @@ Arrays are a powerful tool in Java, providing efficient data handling for large 
 > 4. **Easy Access:** Selecting a specific book by its position on the shelf is analogous to accessing an array element by its index.
 >
 > This analogy illustrates how arrays organize data in an ordered, fixed structure, ensuring easy access to each element.
-</details>
+
 
 ## Basics of Arrays in Java
 
@@ -211,7 +211,7 @@ These concepts form the basis for working with one-dimensional and multidimensio
 
 <details style="padding-top: 18px">
   <summary><b>Урок 20. Массивы</b></summary>
-
+</details>
 # Lesson 20
 
 ## Введение в Массивы
