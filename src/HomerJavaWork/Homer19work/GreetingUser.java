@@ -1,4 +1,4 @@
-package Homerwork.Homer18work;
+package HomerJavaWork.Homer19work;
 //Задача 1: Приветствие пользователя
 //Код на Python:
 //name = input("Enter your name: ")
