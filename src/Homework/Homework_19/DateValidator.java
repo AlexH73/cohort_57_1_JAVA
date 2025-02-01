@@ -42,16 +42,43 @@ public class DateValidator {
      * @return true, если дата корректна, иначе false.
      */
     public static boolean isValidDate(int day, int month, int year) {
-        // Создаем форматтер со строгим стилем резолвинга (проверка на корректность даты)
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd")
-                .withResolverStyle(ResolverStyle.STRICT);
-        try {
-            // Пытаемся создать строку даты и проверить ее корректность
-            String dateString = String.format("%04d-%02d-%02d", year, month, day);
-            LocalDate.parse(dateString, dateFormatter);
-            return true;
-        } catch (Exception e) {
+
+        // Проверка допустимости года, месяца и дня
+        if (year < 1 || month < 1 || month > 12 || day < 1) {
             return false;
         }
+
+        // Определение количества дней в месяце
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        // Проверка високосного года
+        if (isLeapYear(year)) {
+            daysInMonth[1] = 29; // В феврале 29 дней в високосном году
+        }
+
+        // Проверка допустимости дня для данного месяца
+        if (day > daysInMonth[month - 1]) {
+            return false;
+        }
+
+        return true;
+
+        /**
+         * Можно и наверное лучше организовать так:
+         try {
+         // Пытаемся создать объект LocalDate с указанными днем, месяцем и годом.
+         // Если дата некорректна, будет выброшено исключение DateTimeException.
+         LocalDate date = LocalDate.of(year, month, day);
+         return true; // Если дата корректна, возвращаем true.
+         } catch (DateTimeException e) {
+         return false; // Если дата некорректна, возвращаем false.
+         }
+         */
+    }
+
+    // Метод для проверки високосного года
+    private static boolean isLeapYear(int year) {
+
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 }
