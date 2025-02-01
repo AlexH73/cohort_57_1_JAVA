@@ -73,7 +73,7 @@ Aufgabe 3
  *     i += 1
  *
  * print(f"The sum of numbers from 1 to {n} is {total}")
- **/
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number: ");
@@ -87,7 +87,7 @@ Aufgabe 3
         System.out.println("The sum of numbers from 1 to " + n + " is " + total);
     }
 }
-
+**/
 /**
  * Aufgabe: 5
  * number = int(input("Enter a number: "))
