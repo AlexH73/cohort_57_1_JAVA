@@ -1,4 +1,4 @@
-package Homerwork.Homer18work;
+package HomerJavaWork.Homer19work;
 //Задача 2: Определение чётности числа
 //Код на Python:
 //        number = int(input("Enter a number: "))
