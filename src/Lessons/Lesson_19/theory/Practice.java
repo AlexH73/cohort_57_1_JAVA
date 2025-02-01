@@ -33,7 +33,7 @@ public class Practice {
         int year = 2024;
         boolean isValid = isValidDate(day, month, year);
         String prefix;
-        if (!isValid){
+        if (!isValid) {
             prefix = "не";
         } else {
             prefix = "";
@@ -137,14 +137,44 @@ public class Practice {
      * @see java.time.LocalDate#of(int, int, int)
      */
     public static boolean isValidDate(int day, int month, int year) {
-        try {
-            // Пытаемся создать объект LocalDate с указанными днем, месяцем и годом.
-            // Если дата некорректна, будет выброшено исключение DateTimeException.
-            LocalDate date = LocalDate.of(year, month, day);
-            return true; // Если дата корректна, возвращаем true.
-        } catch (DateTimeException e) {
-            return false; // Если дата некорректна, возвращаем false.
+
+        // Проверка допустимости года, месяца и дня
+        if (year < 1 || month < 1 || month > 12 || day < 1) {
+            return false;
         }
+
+        // Определение количества дней в месяце
+        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        // Проверка високосного года
+        if (isLeapYear(year)) {
+            daysInMonth[1] = 29; // В феврале 29 дней в високосном году
+        }
+
+        // Проверка допустимости дня для данного месяца
+        if (day > daysInMonth[month - 1]) {
+            return false;
+        }
+
+        return true;
+
+        /**
+         * Можно и наверное лучше организовать так:<p>
+         try {
+         // Пытаемся создать объект LocalDate с указанными днем, месяцем и годом.
+         // Если дата некорректна, будет выброшено исключение DateTimeException.
+         LocalDate date = LocalDate.of(year, month, day);
+         return true; // Если дата корректна, возвращаем true.
+         } catch (DateTimeException e) {
+         return false; // Если дата некорректна, возвращаем false.
+         }
+         */
+    }
+
+    // Метод для проверки високосного года
+    private static boolean isLeapYear(int year) {
+
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
     /**
