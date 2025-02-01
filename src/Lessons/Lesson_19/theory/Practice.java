@@ -40,6 +40,9 @@ public class Practice {
         }
         System.out.println("Дата " + day + "/" + month + "/" + year + " " + prefix + "корректна: " + isValid);
 
+        // Пример использования метода toUpperCase(Задача 8)
+        System.out.println("Возврат строки в верхнем регистре: " + toUpperCase("hello"));
+
     }
 
     /**
@@ -141,9 +144,9 @@ public class Practice {
      *
      * @see String#toUpperCase()
      */
-//    public static String toUpperCase(String input) {
-//        // Реализация здесь
-//    }
+    public static String toUpperCase(String input) {
+        return input.toUpperCase();
+    }
 
     /**
      * Задача 9: Напишите метод, который возвращает имя пользователя системы,
