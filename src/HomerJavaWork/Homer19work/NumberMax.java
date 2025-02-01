@@ -1,4 +1,4 @@
-package Homerwork.Homer18work;
+package HomerJavaWork.Homer19work;
 //Задача 3: Найти максимальное из двух чисел
 //Код на Python:
 //a = int(input("Enter the first number: "))
