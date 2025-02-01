@@ -1,21 +1,44 @@
 package Lessons.Lesson_19.theory;
 
+import java.time.DateTimeException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Practice {
     public static void main(String[] args) {
+        // Пример использования метода add(Задача 1)
         System.out.println("Сумма чисел равна: " + add(-5, 2));
+
+        // Пример использования метода printOs(Задача 2)
         System.out.printf("Ваша операционная система: ");
         printOS();
+
+        // Пример использования метода roundValue(Задача 3)
         System.out.println("Округленное число: " + roundValue(2.555));
+
+        // Пример использования метода power(Задача 4)
         System.out.println("Возведение чисел (2, 3) в степень: " + power(2, 3));
 
+        // Пример использования метода getCurrentTime(Задача 5)
         long currentTime = getCurrentTime();
         System.out.println("Текущее системное время в миллисекундах: " + currentTime);
 
+        // Пример использования метода getCurrentDayOfWeek(Задача 6)
         int currentDayOfWeek = getCurrentDayOfWeek();
         System.out.println("Текущий день недели (1 для понедельника, 7 для воскресенья): " + currentDayOfWeek);
+
+        // Пример использования метода isValidDate(Задача 7)
+        int day = 31;
+        int month = 2;
+        int year = 2024;
+        boolean isValid = isValidDate(day, month, year);
+        String prefix;
+        if (!isValid){
+            prefix = "не";
+        } else {
+            prefix = "";
+        }
+        System.out.println("Дата " + day + "/" + month + "/" + year + " " + prefix + "корректна: " + isValid);
 
     }
 
@@ -101,9 +124,16 @@ public class Practice {
      *
      * @see java.time.LocalDate#of(int, int, int)
      */
-//    public static boolean isValidDate(int day, int month, int year) {
-//        // Реализация здесь
-//    }
+    public static boolean isValidDate(int day, int month, int year) {
+        try {
+            // Пытаемся создать объект LocalDate с указанными днем, месяцем и годом.
+            // Если дата некорректна, будет выброшено исключение DateTimeException.
+            LocalDate date = LocalDate.of(year, month, day);
+            return true; // Если дата корректна, возвращаем true.
+        } catch (DateTimeException e) {
+            return false; // Если дата некорректна, возвращаем false.
+        }
+    }
 
     /**
      * Задача 8: Напишите метод, который принимает строку и возвращает её в верхнем регистре.
