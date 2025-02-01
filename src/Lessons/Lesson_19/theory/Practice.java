@@ -43,6 +43,15 @@ public class Practice {
         // Пример использования метода toUpperCase(Задача 8)
         System.out.println("Возврат строки в верхнем регистре: " + toUpperCase("hello"));
 
+        // Пример использования метода getUserName(Задача 9)
+        System.out.println("Имя пользователя вашей системы: " + getUserName());
+
+        // Пример использования метода findMax(Задача 10)
+        System.out.println("Возврат максимального числа: " + findMax(10, 20));
+
+        // Пример использования метода getJavaVersion(Задача 11)
+        System.out.println("Ваша версия Java: " + getJavaVersion());
+
     }
 
     /**
@@ -144,6 +153,7 @@ public class Practice {
      *
      * @see String#toUpperCase()
      */
+
     public static String toUpperCase(String input) {
         return input.toUpperCase();
     }
@@ -155,9 +165,10 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-//    public static String getUserName() {
-//        // Реализация здесь
-//    }
+    public static String getUserName() {
+        String userKey = "user.name";
+        return System.getProperty(userKey);
+    }
 
     /**
      * Задача 10: Напишите метод, который принимает два целых числа и возвращает наибольшее.
@@ -165,9 +176,11 @@ public class Practice {
      *
      * @see Math#max(int, int)
      */
-//    public static int findMax(int a, int b) {
-//        // Реализация здесь
-//    }
+    public static int findMax(int a, int b) {
+
+        // Используем встроенный метод Math.max для возврата большего из двух чисел.
+        return Math.max(a, b);
+    }
 
     /**
      * Задача 11: Напишите метод, который возвращает информацию о версии Java,
@@ -176,7 +189,8 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-//    public static String getJavaVersion() {
-//        // Реализация здесь
-//    }
+    public static String getJavaVersion() {
+        String Jvesion = "java.version";
+        return System.getProperty(Jvesion);
+    }
 }
