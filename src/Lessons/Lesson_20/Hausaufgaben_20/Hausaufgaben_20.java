@@ -1,7 +1,28 @@
 package Lessons.Lesson_20.Hausaufgaben_20;
 
+import java.util.Arrays;
+
 public class Hausaufgaben_20 {
-    /**
+    public static void main(String[] args) {
+        int[] num = new int[10];
+        for (int i = 0; i < num.length; i++) {
+            num[i] = i;
+            num[i] = (int) (Math.random() * 100);
+            System.out.println("num[i] = " + num[i]);
+            Arrays.sort(num);
+            System.out.println("Отсортированный массив: " + Arrays.toString(num));
+            for (int number : num){
+                int max = num[0];
+                int min = num[0];
+                for (int numern : num) {
+                    if (num > max) max = num;
+                    if (num < min) min = num;
+                }
+            }
+        }
+    }
+}
+/**
     Домашнее Задание: Практика с Массивами в Java
     Цель Задания: Улучшение понимания работы с одномерными массивами в Java, включая инициализацию, обработку и использование встроенных методов класса Arrays.
 
@@ -24,6 +45,7 @@ public class Hausaufgaben_20 {
     Сравните исходный массив и его копию с помощью Arrays.equals() и выведите результат сравнения.
     Дополнительно: Попробуйте реализовать собственный алгоритм сортировки (например, сортировку пузырьком).
 **/
+
 
 
 /**
@@ -55,4 +77,5 @@ public class Hausaufgaben_20 {
     Это задание позволит вам практиковаться в анализе данных и выполнении статистических расчетов, а также укрепить понимание работы с массивами в Java.
 
     Пример решения (разверните данный блок, только если вы НЕ РЕШИЛИ самостоятельно): (нажмите на треугольник, чтобы развернуть текст)
-}
+ **/
+
