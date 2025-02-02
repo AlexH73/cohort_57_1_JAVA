@@ -9,19 +9,27 @@ public class Hausaufgaben_20 {
             num[i] = i;
             num[i] = (int) (Math.random() * 100);
             System.out.println("num[i] = " + num[i]);
-            Arrays.sort(num);
-            System.out.println("Отсортированный массив: " + Arrays.toString(num));
-            for (int number : num){
-                int max = num[0];
-                int min = num[0];
-                for (int numern : num) {
-                    if (num > max) max = num;
-                    if (num < min) min = num;
-                }
-            }
         }
+        Arrays.sort(num);
+        System.out.println("Отсортированный массив: " + Arrays.toString(num));
+    }
+       // for (int number : num){
+       // int max = num[0];
+       // int min = num[0];
     }
 }
+
+
+
+           //     for (int numern : num) {
+           //         if (num > max) max = num;
+           //         if (num < min) min = num;
+           //     }
+          //  }
+
+
+
+
 /**
     Домашнее Задание: Практика с Массивами в Java
     Цель Задания: Улучшение понимания работы с одномерными массивами в Java, включая инициализацию, обработку и использование встроенных методов класса Arrays.
