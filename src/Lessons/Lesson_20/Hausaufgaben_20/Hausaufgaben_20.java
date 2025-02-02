@@ -16,7 +16,7 @@ public class Hausaufgaben_20 {
        // for (int number : num){
        // int max = num[0];
        // int min = num[0];
-    }
+
 }
 
 
