@@ -20,8 +20,6 @@ public class Homework_20_21_Yulia {
         }
 
         System.out.println("Массив случайных чисел:");
-        for (int j : numberArray) {
-            System.out.println(j);
         }
 
 
@@ -38,8 +36,6 @@ public class Homework_20_21_Yulia {
 
         System.out.println("Отсортированный массив:");
 
-        for (int j : numberArray) {
-            System.out.println(j);
         }
 
         System.out.println("Максимальное значение:" + numberArray[9]);
@@ -62,8 +58,6 @@ public class Homework_20_21_Yulia {
 
         System.out.println("Исходный массив:");
 
-        for (int j : numberArray2) {
-            System.out.println(j);
         }
 
         System.out.println("Умноженный массив:");
