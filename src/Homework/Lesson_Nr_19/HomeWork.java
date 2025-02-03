@@ -1,10 +1,8 @@
-package Homework;
+package Homework.Lesson_Nr_19;
 // Домашнее задание: Задача 2 к Лекции 19
 
 // Автор: Alexander Berlin
 // Дата: ${DATE}
-
-import java.sql.SQLOutput;
 
 /**
  * Описание: * Задача 2: Напишите метод, который выводит на консоль название операционной системы,
