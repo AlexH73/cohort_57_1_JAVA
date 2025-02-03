@@ -1,4 +1,4 @@
-package Practice.CodewarsCom;
+package Practice.ThirdParty;
 
 import java.util.*;
 
