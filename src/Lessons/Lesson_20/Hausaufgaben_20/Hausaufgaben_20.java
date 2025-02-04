@@ -13,6 +13,7 @@ public class Hausaufgaben_20 {
         Arrays.sort(num);
         System.out.println("Отсортированный массив: " + Arrays.toString(num));
     }
+
        // for (int number : num){
        // int max = num[0];
        // int min = num[0];
