@@ -1,56 +1,7 @@
 package Lessons.Lesson_19.theory;
 
-import java.time.DateTimeException;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-
 public class Practice {
     public static void main(String[] args) {
-        // Пример использования метода add(Задача 1)
-        System.out.println("Сумма чисел равна: " + add(-5, 2));
-
-        // Пример использования метода printOs(Задача 2)
-        System.out.printf("Ваша операционная система: ");
-        printOS();
-
-        // Пример использования метода roundValue(Задача 3)
-        System.out.println("Округленное число: " + roundValue(2.555));
-
-        // Пример использования метода power(Задача 4)
-        System.out.println("Возведение чисел (2, 3) в степень: " + power(2, 3));
-
-        // Пример использования метода getCurrentTime(Задача 5)
-        long currentTime = getCurrentTime();
-        System.out.println("Текущее системное время в миллисекундах: " + currentTime);
-
-        // Пример использования метода getCurrentDayOfWeek(Задача 6)
-        int currentDayOfWeek = getCurrentDayOfWeek();
-        System.out.println("Текущий день недели (1 для понедельника, 7 для воскресенья): " + currentDayOfWeek);
-
-        // Пример использования метода isValidDate(Задача 7)
-        int day = 31;
-        int month = 2;
-        int year = 2024;
-        boolean isValid = isValidDate(day, month, year);
-        String prefix;
-        if (!isValid) {
-            prefix = "не";
-        } else {
-            prefix = "";
-        }
-        System.out.println("Дата " + day + "/" + month + "/" + year + " " + prefix + "корректна: " + isValid);
-
-        // Пример использования метода toUpperCase(Задача 8)
-        System.out.println("Возврат строки в верхнем регистре: " + toUpperCase("hello"));
-
-        // Пример использования метода getUserName(Задача 9)
-        System.out.println("Имя пользователя вашей системы: " + getUserName());
-
-        // Пример использования метода findMax(Задача 10)
-        System.out.println("Возврат максимального числа: " + findMax(10, 20));
-
-        // Пример использования метода getJavaVersion(Задача 11)
-        System.out.println("Ваша версия Java: " + getJavaVersion());
 
     }
 
@@ -59,9 +10,9 @@ public class Practice {
      * и возвращает их сумму.
      * Пример: add(5, 7) -> 12
      */
-    public static int add(int a, int b) {
-        return a + b;
-    }
+//    public static int add(int a, int b) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 2: Напишите метод, который выводит на консоль название операционной системы,
@@ -70,11 +21,9 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static void printOS() {
-        String key = "os.name";
-        String value = System.getProperty(key);
-        System.out.println(value);
-    }
+//    public static void printOS() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 3: Напишите метод, который принимает число с плавающей точкой в качестве аргумента,
@@ -83,11 +32,9 @@ public class Practice {
      *
      * @see Math#round(double)
      */
-    public static int roundValue(double value) {
-        long number = Math.round(value);
-
-        return (int) number;
-    }
+//    public static int roundValue(double value) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 4: Напишите метод, который принимает два числа и возвращает результат их возведения
@@ -96,10 +43,9 @@ public class Practice {
      *
      * @see Math#pow(double, double)
      */
-    public static double power(double base, double exponent) {
-
-        return Math.pow(base, exponent);
-    }
+//    public static double power(double base, double exponent) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 5: Напишите метод, который не принимает аргументов и возвращает
@@ -108,9 +54,9 @@ public class Practice {
      *
      * @see System#currentTimeMillis()
      */
-    public static long getCurrentTime() {
-        return System.currentTimeMillis();
-    }
+//    public static long getCurrentTime() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 6: Напишите метод, который возвращает текущий день недели в виде целого числа
@@ -120,14 +66,9 @@ public class Practice {
      * @see java.time.LocalDate#now()
      * @see java.time.DayOfWeek#getValue()
      */
-    public static int getCurrentDayOfWeek() {
-        // Получаем текущую дату
-        LocalDate currentDate = LocalDate.now();
-        // Получаем текущий день недели
-        DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
-        // Возвращаем значение текущего дня недели (1 для понедельника, 7 для воскресенья)
-        return dayOfWeek.getValue();
-    }
+//    public static int getCurrentDayOfWeek() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 7: Напишите метод, который принимает три целых числа (день, месяц, год)
@@ -136,46 +77,9 @@ public class Practice {
      *
      * @see java.time.LocalDate#of(int, int, int)
      */
-    public static boolean isValidDate(int day, int month, int year) {
-
-        // Проверка допустимости года, месяца и дня
-        if (year < 1 || month < 1 || month > 12 || day < 1) {
-            return false;
-        }
-
-        // Определение количества дней в месяце
-        int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-        // Проверка високосного года
-        if (isLeapYear(year)) {
-            daysInMonth[1] = 29; // В феврале 29 дней в високосном году
-        }
-
-        // Проверка допустимости дня для данного месяца
-        if (day > daysInMonth[month - 1]) {
-            return false;
-        }
-
-        return true;
-
-        /**
-         * Можно и наверное лучше организовать так:<p>
-         try {
-         // Пытаемся создать объект LocalDate с указанными днем, месяцем и годом.
-         // Если дата некорректна, будет выброшено исключение DateTimeException.
-         LocalDate date = LocalDate.of(year, month, day);
-         return true; // Если дата корректна, возвращаем true.
-         } catch (DateTimeException e) {
-         return false; // Если дата некорректна, возвращаем false.
-         }
-         */
-    }
-
-    // Метод для проверки високосного года
-    private static boolean isLeapYear(int year) {
-
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-    }
+//    public static boolean isValidDate(int day, int month, int year) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 8: Напишите метод, который принимает строку и возвращает её в верхнем регистре.
@@ -183,10 +87,9 @@ public class Practice {
      *
      * @see String#toUpperCase()
      */
-
-    public static String toUpperCase(String input) {
-        return input.toUpperCase();
-    }
+//    public static String toUpperCase(String input) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 9: Напишите метод, который возвращает имя пользователя системы,
@@ -195,10 +98,9 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static String getUserName() {
-        String userKey = "user.name";
-        return System.getProperty(userKey);
-    }
+//    public static String getUserName() {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 10: Напишите метод, который принимает два целых числа и возвращает наибольшее.
@@ -206,11 +108,9 @@ public class Practice {
      *
      * @see Math#max(int, int)
      */
-    public static int findMax(int a, int b) {
-
-        // Используем встроенный метод Math.max для возврата большего из двух чисел.
-        return Math.max(a, b);
-    }
+//    public static int findMax(int a, int b) {
+//        // Реализация здесь
+//    }
 
     /**
      * Задача 11: Напишите метод, который возвращает информацию о версии Java,
@@ -219,8 +119,7 @@ public class Practice {
      *
      * @see System#getProperty(String)
      */
-    public static String getJavaVersion() {
-        String Jvesion = "java.version";
-        return System.getProperty(Jvesion);
-    }
+//    public static String getJavaVersion() {
+//        // Реализация здесь
+//    }
 }
