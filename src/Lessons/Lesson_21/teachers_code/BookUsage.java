@@ -30,8 +30,9 @@ public class BookUsage {
 
         System.out.println("book1 = " + book1Info);
 
-
         System.out.println("book2.showInfo() = " + book2.showInfo());
+
+
     }
 
     public static String showBookInfo(Book randomBook) {
