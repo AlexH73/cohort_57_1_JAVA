@@ -12,4 +12,11 @@ public class Book {
 
         return info;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" + "Title: " + title  +
+                " Author: " + author  +
+                 "}";
+    }
 }
