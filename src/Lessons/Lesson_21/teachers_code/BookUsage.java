@@ -2,8 +2,9 @@ package Lessons.Lesson_21.teachers_code;
 
 public class BookUsage {
     public static void main(String[] args) {
-        Book book1 = new Book("1983");
+        Book book1 = new Book();
 
+        book1.title = "1983";
         book1.author = "George Orwell";
         book1.pages = 328;
 
@@ -29,9 +30,8 @@ public class BookUsage {
 
         System.out.println("book1 = " + book1Info);
 
+
         System.out.println("book2.showInfo() = " + book2.showInfo());
-
-
     }
 
     public static String showBookInfo(Book randomBook) {
