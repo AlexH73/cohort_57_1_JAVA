@@ -7,6 +7,7 @@ package Practice.Practice_21;
 class AudioTrack {
     String title;
     String artist;
+    String genre;
     int durationInSeconds;
 
     // TODO: Добавить поле `genre`

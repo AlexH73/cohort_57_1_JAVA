@@ -9,6 +9,9 @@ package Practice.Practice_21;
 // 3. Реализовать метод `displayTask()`, который выводит всю информацию о задаче.
 
 class Task {
+    String title;
+    String description;
+    String status;
 // TODO: Определить поля
 
     // TODO: Реализовать метод `updateStatus(String newStatus)`

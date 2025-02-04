@@ -10,6 +10,10 @@ package Practice.Practice_21;
 //    "[12:30] John → Alice: Привет, как дела?"
 
 class Message {
+    String sender;
+    String receiver;
+    String text;
+    String timestamp;
 // TODO: Определить поля
 
     // TODO: Реализовать метод `displayMessage()`
