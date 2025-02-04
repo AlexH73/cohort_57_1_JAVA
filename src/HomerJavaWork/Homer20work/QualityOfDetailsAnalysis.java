@@ -1,8 +1,6 @@
 package HomerJavaWork.Homer20work;
 
-import java.util.Scanner;
 import java.util.Random;
-
 
 //Домашнее Задание *: Анализ Качества Деталей на Заводе
 //Цель Задания: Развитие навыков обработки данных в массивах и выполнение статистических расчетов в Java.
@@ -30,50 +28,52 @@ import java.util.Random;
 //
 //Выведите в консоль процентное соотношение бракованных, требующих доработки и идеальных деталей.
 public class QualityOfDetailsAnalysis {
-    private static int i;
+    public static int i;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your lot size of parts: "); //Пользователя вводит размер массива
-        int n = scanner.nextInt();
 
-        int[] details = new int[n];   //Массив с деталями
-
+        // Создание и инициализация массива
+        int[] details = new int[100];   //Массив с деталями
         Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            details[i] = random.nextInt(3) - 1;
+
+
+        for (int i = 0; i < details.length; i++) {
+            details[i] = random.nextInt(3) - 1;     // Генерация чисел -1, 0, 1
         }
-        int defectiv = 0;
+        // Расчет процентного соотношения
+        int defected = 0;
         int reworked = 0;
         int perfect = 0;
-         {
-        for (int i = 0; i < n; i++);
+
         {
-           
-            if (details [i] == -1)
-            {defectiv++;
-            } else if (details[i] == 0)
-            {reworked++;
-            } else if (details[i] == 1)
-            {perfect++;
+
+            for (int detail : details) {
+
+                if (details[i] == -1) {
+                    defected++;
+                } else if (details[i] == 0) {
+                    reworked++;
+                } else if (details[i] == 1) {
+                    perfect++;
+                }
             }
+
+            double defectedPercent =  defected / (double) details.length * 100;
+            double reworkedPercent =  reworked / (double) details.length * 100;
+            double perfectPercent =  perfect / (double) details.length * 100;
+
+
+            System.out.println("Процент бракованных деталей: %.2f%%%n " + defectedPercent);
+            System.out.println("Процент деталей, требующих доработки: %.2f%%%n" + reworkedPercent);
+            System.out.println("Процент идеальных деталей: %.2f%%%n" + perfectPercent);
+
+
         }
-        
-        double defectivPercent = (double) defectiv / n * 100;
-        double reworkedPercent = (double) defectiv / n * 100;
-        double perfectPercent = (double) defectiv / n * 100;
-
-
-        System.out.println("defectivPercent = " + defectivPercent);
-        System.out.println("reworkedPercent = " + reworkedPercent);
-        System.out.println("perfectPercent = " + perfectPercent);
-
-    }
-
-
 
     }
 }
+
+
 
 
 
