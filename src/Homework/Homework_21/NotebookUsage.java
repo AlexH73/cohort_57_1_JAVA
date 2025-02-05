@@ -45,6 +45,6 @@ public class NotebookUsage {
         workJournal.showCompletedTasks();
 
         // Сохраняем задачи в файл
-        workJournal.saveToFile("tasks.txt");
+        workJournal.saveToFile("src/Homework/Homework_21/NoteBookFile/tasks.txt");
     }
 }
