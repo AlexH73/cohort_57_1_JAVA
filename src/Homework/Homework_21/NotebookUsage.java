@@ -2,28 +2,49 @@ package Homework.Homework_21;
 
 public class NotebookUsage {
     public static void main(String[] args) {
+        // Создание объекта блокнота
         Notebook workJournal = new Notebook();
 
-        // Создаем задачи
-        NotebookTask t1 = new NotebookTask("Подготовить презентацию", NotebookTask.Priority.HIGH);
-        NotebookTask t2 = new NotebookTask("Заказать канцтовары", NotebookTask.Priority.MEDIUM);
-        NotebookTask t3 = new NotebookTask("Обновить ПО на компьютерах", NotebookTask.Priority.HIGH);
-        NotebookTask t4 = new NotebookTask("Проверить почту", NotebookTask.Priority.LOW);
+        // Создание объектов задач
+        NotebookTask[] tasks = {
+                new NotebookTask("Сделать домашнее задание", NotebookTask.Priority.HIGH),
+                new NotebookTask("Подготовить отчет", NotebookTask.Priority.HIGH),
+                new NotebookTask("Купить продукты", NotebookTask.Priority.MEDIUM),
+                new NotebookTask("Позвонить другу", NotebookTask.Priority.LOW),
+                new NotebookTask("Исправить критический баг", NotebookTask.Priority.HIGH),
+                new NotebookTask("Сходить в спортзал", NotebookTask.Priority.MEDIUM),
+                new NotebookTask("Прочитать книгу", NotebookTask.Priority.LOW),
+                new NotebookTask("Написать тесты для нового функционала", NotebookTask.Priority.HIGH),
+                new NotebookTask("Создать резервную копию базы данных", NotebookTask.Priority.MEDIUM),
+                new NotebookTask("Обновить документацию проекта", NotebookTask.Priority.LOW),
+                new NotebookTask("Провести ревизию кода", NotebookTask.Priority.HIGH),
+                new NotebookTask("Настроить CI/CD pipeline", NotebookTask.Priority.MEDIUM)
+        };
 
-        // Добавляем задачи
-        workJournal.addTask(t1);
-        workJournal.addTask(t2);
-        workJournal.addTask(t3);
-        workJournal.addTask(t4);
+        // Добавляем задачи в блокнот через цикл for
+        for (NotebookTask task : tasks) {
+            workJournal.addTask(task);
+        }
 
-        // Демонстрация новых функций
-        t1.completeTask(); // Помечаем задачу как выполненную
-        workJournal.removeTask("Проверить почту"); // Удаляем задачу
+        // Помечаем первую задачу как выполненную
+        workJournal.completeTask("Сделать домашнее задание");
 
-        workJournal.sortTasksByPriority(); // Сортируем по приоритету
-        workJournal.showAllTasks(); // Показываем все задачи
-        workJournal.showCompletedTasks(); // Показываем выполненные
+        // Удаляем выполненную задачу
+        workJournal.removeTask("Сделать домашнее задание");
 
-        workJournal.saveToFile("tasks.txt"); // Сохраняем в файл
+        // Сортируем задачи по приоритету
+        workJournal.sortTasksByPriority();
+
+        // Отображаем все задачи
+        workJournal.showAllTasks();
+
+        // Отображаем задачи с высоким приоритетом
+        workJournal.showHighPriorityTasks();
+
+        // Отображаем выполненные задачи
+        workJournal.showCompletedTasks();
+
+        // Сохраняем задачи в файл
+        workJournal.saveToFile("tasks.txt");
     }
 }
