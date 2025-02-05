@@ -1,20 +1,41 @@
 package Practice.Practice_21;
 
-// TODO: Создать класс Task
-// 1. Добавить поля:
-//    - `title` (String) - Название задачи
-//    - `description` (String) - Краткое описание задачи
-//    - `status` (String) - Статус задачи (например, "Новая", "В процессе", "Выполнена")
-// 2. Реализовать метод `updateStatus(String newStatus)`, который обновляет статус задачи.
-// 3. Реализовать метод `displayTask()`, который выводит всю информацию о задаче.
+// TODO: [х]Создать класс Task
+// 1.[х]Добавить поля:
+//    [х]- `title` (String) - Название задачи
+//    [х]- `description` (String) - Краткое описание задачи
+//    [х]- `status` (String) - Статус задачи (например, "Новая", "В процессе", "Выполнена")
+// 2.[х]Реализовать метод `updateStatus(String newStatus)`, который обновляет статус задачи.
+// 3.[х]Реализовать метод `displayTask()`, который выводит всю информацию о задаче.
 
 class Task {
     String title;
     String description;
     String status;
-// TODO: Определить поля
 
-    // TODO: Реализовать метод `updateStatus(String newStatus)`
+    // Конструктор класса Task
+    public Task(String taskTitle, String taskDescription, String taskStatus) {
+        title = taskTitle;
+        description = taskDescription;
+        status = taskStatus;
+    }
 
-    // TODO: Реализовать метод `displayTask()`
+    // Метод для обновления статуса задачи
+    public void updateStatus(String newStatus) {
+        status = newStatus;
+    }
+
+    // Метод для отображения информации о задаче
+    public void displayTask() {
+        System.out.println("Title: " + title);
+        System.out.println("Description: " + description);
+        System.out.println("Status: " + status);
+    }
+
+    @Override
+    public String toString() {
+        return "Task {" + "Title: " + title  +
+                " Status: " + status  +
+                "}";
+    }
 }
