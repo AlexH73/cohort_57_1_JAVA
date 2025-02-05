@@ -5,17 +5,18 @@ class Message {
     String receiver;
     String text;
     String timestamp;
-
+/**
+ * Сначала создал, все работало, потом ниже изменил - добавил вхождение аргумента maxLength
+ * теперь на мой взгляд стало лучше, но можно вернуть.
     // Метод для отображения полного сообщения
     public String displayMessage() {
-        String messageOutput = "["
+        return "["
                 + timestamp + "] " +
                 sender + " → " +
                 receiver + ": " +
                 text;
-        return messageOutput;
     }
-
+*/
     // Метод для проверки отправителя
     public boolean isFrom(String username) {
         return sender.equals(username);
@@ -33,12 +34,11 @@ class Message {
     // Метод для отображения короткой версии сообщения
     public String displayMessage(int maxLength) {
         String messageText = shortPreview(maxLength);
-        String messageOutput = "["
+        return "["
                 + timestamp + "] " +
                 sender + " → " +
                 receiver + ": " +
                 messageText;
-        return messageOutput;
     }
 
     // Переопределение метода toString()

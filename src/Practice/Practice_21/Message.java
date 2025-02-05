@@ -16,11 +16,10 @@ class Message {
     String timestamp;
 
     public String displayMessage() {
-        String messageOutput = "["
+        return "["
             + timestamp + "] " +
                 sender + " → " +
                 receiver + ":" +
                 text;
-        return messageOutput;
     }
 }
