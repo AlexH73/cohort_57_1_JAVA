@@ -2,7 +2,7 @@ package Homework.lesson_21;
 
 public class AudioTrackUsage {
     /**
-     * <h1></х1>Задание 1: Доработка класса AudioTrack</h1>
+     * <h1>Задание 1: Доработка класса AudioTrack</h1>
      * <p>
      * 1. Добавить новый метод isLongTrack(), который возвращает true,
      * если длительность трека больше 300 секунд (5 минут), и false в противном случае.<br>
