@@ -2,6 +2,12 @@ package Homework.Homework_21;
 
 
 public class AudioTrackUsage {
+    /**
+     Добавить новый метод isLongTrack(), который возвращает true,
+     если длительность трека больше 300 секунд (5 минут), и false в противном случае.
+     Изменить метод displayTrackInfo(), чтобы он также выводил результат метода isLongTrack().
+     Протестировать класс, создав несколько объектов AudioTrack и вызвав все методы.
+     */
     public static void main(String[] args) {
         // Создаем объект audioTrack1 и устанавливаем значения для его полей
         AudioTrack audioTrack1 = new AudioTrack();
