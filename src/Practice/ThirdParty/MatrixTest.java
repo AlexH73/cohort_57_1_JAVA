@@ -17,22 +17,22 @@ public class MatrixTest {
         Matrix matrix1 = new Matrix(data1);
         Matrix matrix2 = new Matrix(data2);
 
-        System.out.println("Матрица 1:");
+        System.out.println("\nМатрица 1:");
         matrix1.print();
 
-        System.out.println("Матрица 2:");
+        System.out.println("\nМатрица 2:");
         matrix2.print();
 
         Matrix sum = matrix1.add(matrix2);
-        System.out.println("Сумма матриц:");
+        System.out.println("\nСумма матриц:");
         sum.print();
 
         Matrix productWithScalar = matrix1.multiply(2);
-        System.out.println("Матрица 1 умноженная на 2:");
+        System.out.println("\nМатрица 1 умноженная на 2:");
         productWithScalar.print();
 
         Matrix product = matrix1.multiply(matrix2);
-        System.out.println("Произведение матриц:");
+        System.out.println("\nПроизведение матриц:");
         product.print();
     }
 }
