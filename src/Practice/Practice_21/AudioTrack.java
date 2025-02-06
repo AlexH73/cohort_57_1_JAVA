@@ -11,6 +11,15 @@ class AudioTrack {
     String genre;
     int durationInSeconds;
 
+    public String displayTrackInfo() {
+        String info = "Title: " + title + "\n" +
+                "Artist: " + artist + "\n" +
+                "Genre: " + genre + "\n" +
+               "TrackLenght" + durationInSeconds;
+
+        return info;
+    }
+
         // TODO: Добавить поле `genre`
 
         // TODO: Реализовать метод `displayTrackInfo()`
