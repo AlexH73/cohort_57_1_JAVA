@@ -9,12 +9,33 @@ package Practice.Practice_22;
 //    - `withdraw(double amount)`, который уменьшает баланс, если средств достаточно.
 
 class BankAccount {
-// TODO: Определить поля
+    String accountNumber;
+    double balance;
 
-    // TODO: Реализовать конструктор
+    public BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
 
-    // TODO: Реализовать метод deposit(double amount)
+    public void deposit(double amount) {
+        this.balance += amount;
+    }
 
-    // TODO: Реализовать метод withdraw(double amount)
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            this.balance -= amount;
+        } else {
+            System.out.println("Не достаточно средств. На балансе: " + balance + "€");
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount {" +
+                "accountNumber='" + accountNumber + '\'' +
+                ", balance=" + balance + "€" +
+                '}';
+    }
 }
 
