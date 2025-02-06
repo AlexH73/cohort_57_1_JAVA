@@ -1,21 +1,46 @@
 package Practice.Practice_22;
-// TODO: Создать класс Product
-// 1. Добавить поля:
+//[x] TODO: Создать класс Product
+//[x] 1. Добавить поля:
 //    - `name` (String) - Название продукта
 //    - `price` (double) - Цена продукта
 //    - `stock` (int) - Количество на складе
-// 2. Создать конструктор, принимающий все три параметра.
-// 3. Реализовать методы:
+//[x] 2. Создать конструктор, принимающий все три параметра.
+//[x] 3. Реализовать методы:
 //    - `sell(int quantity)`, который уменьшает `stock`, если товара достаточно на складе.
 //    - `restock(int quantity)`, который увеличивает `stock`.
 
 class Product {
-// TODO: Определить поля
+    String name;
+    double price;
+    int stock;
 
-    // TODO: Реализовать конструктор
+    public Product(String name, double price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+    // Метод для отображения информации о товаре
+    public void displayProductInfo() {
+        System.out.println("Product: " + name + ", \nPrice: " + price + ", \nStock: " + stock);
+        //System.out.println("Is adult: " + (isAdult() ? "Yes" : "No"));
+    }
+    public void sell(int quantity) {
+        if (stock >= quantity) {
+            stock -= quantity;
+        }
+    }
 
-    // TODO: Реализовать метод sell(int quantity)
+    public void restock(int quantity) {
+        stock += quantity;
+    }
 
-    // TODO: Реализовать метод restock(int quantity)
+    @Override
+    public String toString() {
+        return "\nProduct {" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                '}';
+    }
 }
 
