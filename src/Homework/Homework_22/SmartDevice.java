@@ -1,22 +1,47 @@
 package Homework.Homework_22;
-// TODO: Создать класс SmartDevice
-// 1. Добавить поля:
+//[х] TODO: Создать класс SmartDevice
+//[x] 1. Добавить поля:
 //    - `deviceName` (String) - Название устройства
 //    - `isOn` (boolean) - Включено ли устройство
-// 2. Создать конструктор, принимающий `deviceName`, который устанавливает `isOn` в `false`.
-// 3. Реализовать методы:
+//[х] 2. Создать конструктор, принимающий `deviceName`, который устанавливает `isOn` в `false`.
+//[х] 3. Реализовать методы:
 //    - `turnOn()`, который включает устройство (`isOn = true`).
 //    - `turnOff()`, который выключает устройство (`isOn = false`).
 //    - `displayStatus()`, который выводит текущее состояние устройства.
 
+/**
+ * <h1>Задание 4: Улучшение класса SmartDevice</h1>
+ * 1. Добавить метод togglePower(), который переключает устройство между включенным и выключенным состоянием.<br>
+ * 2. Изменить displayStatus(), чтобы он показывал, включено ли устройство или нет.<br>
+ * 3. Протестировать класс, создав объект SmartDevice и несколько раз переключив его состояние.
+ */
 class SmartDevice {
-// TODO: Определить поля
+    String deviceName;
+    boolean isOn;
 
-    // TODO: Реализовать конструктор
+    // Конструктор, принимающий deviceName и устанавливающий isOn в false
+    public SmartDevice(String deviceName) {
+        this.deviceName = deviceName;
+        this.isOn = false;
+    }
 
-    // TODO: Реализовать метод turnOn()
+    // Метод для включения устройства
+    public void turnOn() {
+        isOn = true;
+    }
 
-    // TODO: Реализовать метод turnOff()
+    // Метод для выключения устройства
+    public void turnOff() {
+        isOn = false;
+    }
 
-    // TODO: Реализовать метод displayStatus()
+    // Метод для переключения состояния устройства
+    public void togglePower() {
+        isOn = !isOn;
+    }
+
+    // Метод для отображения состояния устройства
+    public void displayStatus() {
+        System.out.println("Device: " + deviceName + " is " + (isOn ? "On" : "Off"));
+    }
 }
