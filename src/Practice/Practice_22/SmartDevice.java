@@ -1,6 +1,6 @@
 package Practice.Practice_22;
 // TODO: Создать класс SmartDevice
-// 1. Добавить поля:
+//[x] 1. Добавить поля:
 //    - `deviceName` (String) - Название устройства
 //    - `isOn` (boolean) - Включено ли устройство
 // 2. Создать конструктор, принимающий `deviceName`, который устанавливает `isOn` в `false`.
@@ -10,13 +10,27 @@ package Practice.Practice_22;
 //    - `displayStatus()`, который выводит текущее состояние устройства.
 
 class SmartDevice {
-// TODO: Определить поля
+    String deviceName;
+    boolean isOn;
 
-    // TODO: Реализовать конструктор
+    // Конструктор, принимающий deviceName и устанавливающий isOn в false
+    public SmartDevice(String deviceName) {
+        this.deviceName = deviceName;
+        this.isOn = false;
+    }
 
-    // TODO: Реализовать метод turnOn()
+    // Метод для включения устройства
+    public void turnOn() {
+        isOn = true;
+    }
 
-    // TODO: Реализовать метод turnOff()
+    // Метод для выключения устройства
+    public void turnOff() {
+        isOn = false;
+    }
 
-    // TODO: Реализовать метод displayStatus()
+    // Метод для отображения состояния устройства
+    public void displayStatus() {
+        System.out.println("Device: " + deviceName + " is " + (isOn ? "On" : "Off"));
+    }
 }
