@@ -1,4 +1,4 @@
-package Lessons.Lesson_22.teachers_code;
+package Hausaufgaben.Hausaufgaben_22.User;
 
 public class Account {
     String userName;
@@ -18,6 +18,9 @@ public class Account {
         this.email = email;
         this.address = address;
         this.yearOfBirth = yearOfBirth;
+    }
+
+    public Account(String ilias, String number, String mail) {
     }
 
     @Override

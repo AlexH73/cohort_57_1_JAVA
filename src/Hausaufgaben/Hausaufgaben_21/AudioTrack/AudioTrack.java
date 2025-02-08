@@ -1,4 +1,4 @@
-package Practice.Practice_21;
+package Hausaufgaben.Hausaufgaben_21.AudioTrack;
 
 
     // TODO: Доработать класс AudioTrack
