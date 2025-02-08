@@ -1,6 +1,7 @@
 package Lessons.Lesson_19.teachers_code;
 
 
+
 public class Lesson19 {
     //  == #
 
@@ -26,6 +27,7 @@ public class Lesson19 {
     public static void sayHelloTo(String name) {
         System.out.printf("Hello, %s \n", name);
     }
+
 
     public static void sayHelloTo(long num) {
 
