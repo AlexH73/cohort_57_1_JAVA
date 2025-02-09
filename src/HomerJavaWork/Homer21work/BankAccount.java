@@ -16,10 +16,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return "BankAccount{" +
-                "accountNumber='" + accountNumber + '\'' +
-                ", balance=" + balance +
-                '}';
+        return null;
     }
 
     public void deposit(double amount) {
@@ -29,8 +26,10 @@ public class BankAccount {
         if (amount <= balance) {
             this.balance = this.balance - amount;
         }  else {
-            System.out.println("Недостаточно средств на счету:" + balance);
+            System.out.println("Недостаточно средств на счете:" + balance);
         }
     }
+
+
 
 }
