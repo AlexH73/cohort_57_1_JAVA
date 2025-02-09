@@ -27,17 +27,28 @@ class SmartDevice {
 
     // Метод для включения устройства
     public void turnOn() {
-        isOn = true;
+        if (!isOn) {
+            isOn = true;
+            System.out.println("Устройство \"" + deviceName + "\" включено.");
+        } else {
+            System.out.println("Устройство \"" + deviceName + "\" уже включено.");
+        }
     }
 
     // Метод для выключения устройства
     public void turnOff() {
-        isOn = false;
+        if (isOn) {
+            isOn = false;
+            System.out.println("Устройство \"" + deviceName + "\" выключено.");
+        } else {
+            System.out.println("Устройство \"" + deviceName + "\" уже выключено.");
+        }
     }
 
     // Метод для переключения состояния устройства
     public void togglePower() {
         isOn = !isOn;
+        System.out.println("Устройство \"" + deviceName + "\" теперь " + (isOn ? "включено" : "выключено") + ".");
     }
 
     // Метод для отображения состояния устройства

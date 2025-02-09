@@ -25,6 +25,9 @@ public class Product {
     int stock;
 
     public Product(String name, double price, int stock) {
+        if (price < 0 || stock < 0) {
+            System.err.println("Цена и количество товара не могут быть отрицательными.");
+        }
         this.name = name;
         this.price = price;
         this.stock = stock;
