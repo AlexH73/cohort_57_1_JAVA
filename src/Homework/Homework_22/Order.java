@@ -25,22 +25,33 @@ class Order {
 
     // Конструктор, принимающий orderId, customerName, totalAmount
     public Order(int orderId, String customerName, double totalAmount) {
+        if (totalAmount < 0) {
+            System.err.println("Сумма заказа не может быть отрицательной.");
+        }
         this.orderId = orderId;
         this.customerName = customerName;
         this.totalAmount = totalAmount;
-        this.status = "Ожидает"; // Устанавливаем статус по умолчанию
+        this.status = "Ожидает"; // Статус по умолчанию
     }
 
     // Метод для обновления статуса заказа
     public void updateStatus(String newStatus) {
+        if (newStatus == null || newStatus.isBlank()) {
+            System.out.println("Ошибка: Статус не может быть пустым!");
+            return;
+        }
         this.status = newStatus;
     }
 
     // Метод для вычисления итоговой суммы заказа с учетом налога и скидки
     public double calculateFinalAmount(double taxRate, double discountPercentage) {
+        if (taxRate < 0 || discountPercentage < 0) {
+            throw new IllegalArgumentException("Налоговая ставка и скидка не могут быть отрицательными.");
+        }
+
         double taxAmount = totalAmount * taxRate / 100;
         double discountAmount = totalAmount * discountPercentage / 100;
-        return totalAmount + taxAmount - discountAmount;
+        return Math.round((totalAmount + taxAmount - discountAmount) * 100.0) / 100.0;
     }
 
     // Метод для отображения информации о заказе
