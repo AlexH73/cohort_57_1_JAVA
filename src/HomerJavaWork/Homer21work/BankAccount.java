@@ -29,7 +29,7 @@ public class BankAccount {
         if (amount <= balance) {
             this.balance = this.balance - amount;
         }  else {
-            System.out.println("Недостаточно средств на счету:" + );
+            System.out.println("Недостаточно средств на счету:" + balance);
         }
     }
 
