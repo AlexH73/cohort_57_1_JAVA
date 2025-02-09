@@ -29,30 +29,42 @@ public class BankAccount {
 
     // Метод для пополнения баланса
     public void deposit(double amount) {
-        this.balance += amount;
-        System.out.println("Пополнение на " + amount + "€. Остаток средств на балансе: " + balance + "€");
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Пополнение на " + amount + "€. Остаток средств на балансе: " + balance + "€");
+        } else {
+            System.out.println("Ошибка: сумма пополнения должна быть положительной!");
+        }
     }
 
     // Метод для снятия средств с баланса
     public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Ошибка: сумма снятия должна быть положительной!");
+            return;
+        }
         if (balance >= amount) {
             this.balance -= amount;
             System.out.println("Снято " + amount + "€ со счета: " + accountNumber);
             System.out.println("Остаток средств на балансе: " + balance + "€");
         } else {
-            System.out.println("Не достаточно средств для снятия " + amount + "€. На балансе: " + balance + "€");
+            System.out.println("Недостаточно средств для снятия " + amount + "€. На балансе: " + balance + "€");
         }
     }
 
     // Метод для перевода средств на другой счет
     public void transfer(BankAccount targetAccount, double amount) {
+        if (amount <= 0) {
+            System.out.println("Ошибка: сумма перевода должна быть положительной!");
+            return;
+        }
         if (balance >= amount) {
             this.balance -= amount;
             targetAccount.deposit(amount);
             System.out.println("Сумма " + amount + "€ переведена на счет: " + targetAccount.accountNumber);
             System.out.println("Остаток средств на балансе: " + balance + "€");
         } else {
-            System.out.println("Не достаточно средств для перевода " + amount + "€. На балансе: " + balance + "€");
+            System.out.println("Недостаточно средств для перевода " + amount + "€. На балансе: " + balance + "€");
         }
     }
 
