@@ -21,4 +21,16 @@ public class BankAccount {
                 ", balance=" + balance +
                 '}';
     }
+
+    public void deposit(double amount) {
+        this.balance = this.balance + amount;
+    }
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            this.balance = this.balance - amount;
+        }  else {
+            System.out.println("Недостаточно средств на счету:" + );
+        }
+    }
+
 }
