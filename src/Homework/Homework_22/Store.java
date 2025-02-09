@@ -17,6 +17,7 @@ import java.util.List;
 public class Store {
     List<Product> products;
 
+    // пока не прозодили листы
     public Store() {
         products = new ArrayList<>();
     }
