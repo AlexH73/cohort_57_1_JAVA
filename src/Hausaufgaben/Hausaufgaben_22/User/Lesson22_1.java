@@ -23,10 +23,12 @@ public class Lesson22_1 {
         System.out.println("ilias_2 = " + ilias_2);
 
     }
+    /*
     isAdult(){
        //Добавить метод isAdult(), который возвращает true, если пользователю 18 лет или больше, и false в противном случае.
     }
     displayUserInfo(){
         //Изменить метод displayUserInfo(), чтобы он также отображал информацию о совершеннолетии пользователя.
     }
+     */
 }

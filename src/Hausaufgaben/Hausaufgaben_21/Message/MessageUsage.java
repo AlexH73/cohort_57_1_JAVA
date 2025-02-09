@@ -31,14 +31,25 @@ public class MessageUsage {
         to_Alex3.timestampt = "Heute Abend";
 
 
-     //Создать несколько объектов Message и протестировать новый функционал.
-    }
-    isFrom(String username) {
-      //Добавить новый метод isFrom(String username), который проверяет, отправлено ли сообщение указанным пользователем.
-
-    }
-
-    shortPreview(int maxLength) {
-     //Добавить метод shortPreview(int maxLength), который возвращает первые maxLength символов сообщения + "...", если оно длиннее указанного лимита.
+        //Создать несколько объектов Message и протестировать новый функционал.
     }
 }
+    /*
+    public String isFrom(String username) {
+        //Добавить новый метод isFrom(String username), который проверяет, отправлено ли сообщение указанным пользователем.
+        if (username(sender) = username(text)) {
+            System.out.println("%s");
+        } else{
+            System.out.println("Falsch zugesendet!");
+        }
+        return username;
+    }
+
+    static int shortPreview(int maxLength) {
+       int i = 10; i < this.text.length;
+        //Добавить метод shortPreview(int maxLength), который возвращает первые maxLength символов сообщения + "...", если оно длиннее указанного лимита.
+}
+
+     */
+
+

@@ -32,15 +32,12 @@ public class AutioTrackUsage {
         String info = "Title: " + randomAudioTrack.title + "\n" +
                 "Artist: " + randomAudioTrack.artist + "\n" +
                 "Genre: " + randomAudioTrack.genre + "\n" +
-                "TrackLenght" + randomAudioTrack.durationInSeconds;
+                "TrackLenght" + randomAudioTrack.durationInSeconds +
+                randomAudioTrack.isLongTrack();
 
         return info;
+    }
 
-    }
-    public class AudioTrack {
-        boolean isLongTrack(AudioTrack durationInSeconds ) {
-            int durationInSeconds >= 300;
-            return true;
-        }
-    }
+
 }
+
