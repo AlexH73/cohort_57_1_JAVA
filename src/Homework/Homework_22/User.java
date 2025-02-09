@@ -24,12 +24,29 @@ class User {
     // Конструктор для инициализации всех полей
     public User(String username, String email, int age) {
         // можно добавить проверку на положительный возраст
-        this.age = age;
+        // добавил проверку на положительный возраст
+        if (age <= 0) {
+            System.out.println("Age must be a positive number.");
+        } else {
+            this.age = age;
+        }
+
         // можно добавить проверку на валидность почты или как минимум, что данные не пусты
-        this.email = email;
-        this.username = username;
+        // добавил проверку на валидность почты и что данные имени не пусты
+        if (email == null || email.isEmpty() || !email.contains("@")) {
+            System.out.println("Invalid email address.");
+        } else {
+            this.email = email;
+        }
+
+        if (username == null || username.isEmpty()) {
+            System.out.println("The user name cannot be empty.");
+        } else {
+            this.username = username;
+        }
         // бесполезный вызов, тк не используется далее, метод лишь возвращает булеан, который нигде не применяется
-        this.isAdult();
+        // Закомментирован вызов метода, так как он не используется.
+        // this.isAdult();
     }
 
     // Метод для проверки, является ли пользователь совершеннолетним
