@@ -33,4 +33,5 @@ bin/
 #Homework/
 .idea/
 *.iml
-.gitignore
+#.gitignore
+.obsidian
