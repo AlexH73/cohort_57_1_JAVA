@@ -1,4 +1,4 @@
-/*package Homework.lesson_21;
+package Homework.lesson_21;
 
 import consultations.c10.l21_task_4.Notebook;
 
@@ -27,4 +27,3 @@ public class NotebookTaskTest {
 
     }
 }
-*/
