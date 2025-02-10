@@ -22,7 +22,7 @@ public class Notebook {
         return false;
     }
 
-    void showAllTasks() {
+    public void showAllTasks() {
         for (Task task: this.tasks) {
             if (task != null) {
                 task.displayTask();
@@ -30,12 +30,15 @@ public class Notebook {
         }
     }
 
-    void showHighPriorityTasks() {
+    public void showHighPriorityTasks() {
         // Метод showHighPriorityTasks(), который выводит только задачи с высоким приоритетом.
         for (Task task: this.tasks) {
             if (task != null && task.isHighPriority()) {
                 task.displayTask();
             }
         }
+    }
+
+    public void addTask(Homework.lesson_21.Task task1) {
     }
 }

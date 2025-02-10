@@ -13,6 +13,7 @@ public class Task {
     public Task(String description, int priority) {
         this.description = description;
         this.priority = priority;
+
     }
     //метод isHighPriority(), который возвращает true, если приоритет задачи меньше 3
     // Метод для проверки, является ли задача высокоприоритетной
