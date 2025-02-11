@@ -1,6 +1,7 @@
 package Lessons.Lesson_19.teachers_code;
 
 
+
 public class Lesson19 {
     //  == #
 
@@ -19,23 +20,10 @@ public class Lesson19 {
 
 
     public static void sayGoodbye() {
-
         System.out.println("Goodbye!");
-
-        "asdasd".length();
-
-        return;
     }
 
     public static void sayHello() {
         System.out.println("Hello!");
-    }
-
-    public static double returnRandomNumber() {
-
-        double random = Math.random();
-
-        return random;
-        //hello
     }
 }
