@@ -6,11 +6,21 @@ import java.util.Arrays;
 /*
 Создать новый класс Store, который управляет списком товаров (Product). Реализовать:
 
+
 Поле products (список товаров).
 Метод addProduct(Product product), который добавляет товар в магазин.
 Метод displayAllProducts(), который выводит список всех товаров.
 Метод findMostExpensiveProduct(), который возвращает самый дорогой товар.
 Протестировать, создав Store и добавив несколько товаров.
+
+1. создать класс Store
+    products (список) -> массив, который содержит Product
+2. управляет списком товаров Product.
+3. создать класс Product (какой?)
+    int/long/double price
+    опциональное поле String с поисанием или именем
+
+возвращаемся к формулировке:
  */
 public class StoreTemp {
     ProductTemp[] products; // null
