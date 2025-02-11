@@ -7,6 +7,7 @@ public class Usage {
         ProductTemp apple = new ProductTemp(1.5, "apple");
         ProductTemp orange = new ProductTemp(2.0, "orange");
         ProductTemp tomato = new ProductTemp(2.5, "tomato");
+        // ProductTemp product = new ProductTemp();
 
         // массив ProductTemp:
         ProductTemp[] products = new ProductTemp[0]; // {}
@@ -21,6 +22,14 @@ public class Usage {
         products[products.length - 1] = apple;
 
         System.out.println("Arrays.toString(products) = " + Arrays.toString(products));
+
+        StoreTemp groceryStore = new StoreTemp(products);
+
+
+        StoreTemp mechanicStore = new StoreTemp();
+
+        ProductTemp engine = new ProductTemp(1500.0, "Engine");
+        mechanicStore.addProduct(engine);
 
     }
 }

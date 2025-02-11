@@ -62,6 +62,7 @@ public class StoreTemp {
             // если цена i-го товара выше цены самого дорогого из найденных, то значит,
             // мы нашли более дорогой товар в списке товаров и теперь i-й товар считаем
             // самым дорогим и будем сравнивать с ним.
+            products[i].price = 1;
             if (mostExpProduct.price < products[i].price) {
                 mostExpProduct = products[i];
             }
