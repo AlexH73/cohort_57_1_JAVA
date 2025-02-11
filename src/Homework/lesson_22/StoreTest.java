@@ -17,6 +17,7 @@ public class StoreTest {
 
         //Выводим список всех товаров
         store.displayAllProducts();
+
         //Находим и выводим самый дорогой товар
         Product mostExprnsive = store.findMostExpensiveProduct();
         if (mostExprnsive != null) {
