@@ -1,10 +1,7 @@
-package Homework.lesson_22;
-/*Задание 3: Расширение класса Product
-Добавить метод applyDiscount(double percentage), который уменьшает цену товара на заданный процент.
-Изменить метод sell(int quantity), чтобы он проверял наличие нужного количества товара;
-если товара недостаточно, продавать только доступное количество и выводить сообщение.
-Протестировать класс, создав несколько объектов Product и применив скидки и продажи.*/
-public class Product {
+/*package Homework.lesson_22;
+//Обновленный класс Product (добавлены геттеры)
+public class StoreProduct {
+
     String name;    //Название товара
     double price;   // Цена товара
     int stock;      // Количество товара на складе
@@ -13,22 +10,29 @@ public class Product {
 
 
     // Конструктор для инициализации товара
-    public Product(String name, double price, int stock) {
+    public StoreProduct(String name, double price, int stock) {
         this.name = name;
         this.price = price;
         this.stock = stock;
     }
+    //(добавлены геттеры)
+
+    public double getPrice() {
+        return price;
+    }
+
     //метод applyDiscount(double percentage), который уменьшает цену товара на заданный процент
     //Процент скидки (например, 10 для 10%)
     public void applyDiscount(double percentage) {
         if (percentage > 0 && percentage <= 100) {
             price -= price * (percentage / 100);
-            System.out.println( "Скидка: " + percentage + "% применена. Новая цена: " + price);
+            System.out.println("Скидка: " + percentage + "% применена. Новая цена: " + price);
         } else {
             System.out.println("Ошибка: скидка должна быть  от 0 до 100%");
         }
     }
-//метод sell(int quantity), чтобы он проверял наличие нужного количества товара;
+
+    //метод sell(int quantity), чтобы он проверял наличие нужного количества товара;
 //если товара недостаточно, продавать только доступное количество и выводить сообщение
 //Метод уменьшает количество товара на складе при продаже.
     public void sell(int quantity) {
@@ -44,6 +48,7 @@ public class Product {
             stock = 0; //Все товары проданы
         }
     }
+
     // Метод  displayInfo() выводит информацию о товаре
     public void displayInfo() {
         System.out.println("Товар: " + name);
@@ -52,5 +57,5 @@ public class Product {
         System.out.println("------------------------------");
     }
 
-
 }
+*/
