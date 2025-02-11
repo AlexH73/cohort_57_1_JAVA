@@ -12,10 +12,10 @@ public class Lesson23Usage {
         System.out.println("account1 = " + account1);
 
 
-
-
 //        System.out.println("account1.login = " + account1.login);
 //        System.out.println("account1.password = " + account1.password);
+
+        Math.PI;
 
     }
 }
