@@ -11,7 +11,7 @@ import java.util.List;
 Метод showAllTasks(), который выводит все задачи.
 Метод showHighPriorityTasks(), который выводит только задачи с высоким приоритетом.
 Протестировать, создав Notebook и несколько задач.*/
-public class NotebookTask {
+/*public class NotebookTask {
     //Поле Task хранит список задач
     List<Task> tasks;
     //Конструктор для инициализации списка задач
@@ -42,3 +42,4 @@ public class NotebookTask {
 
 
 }
+*/
