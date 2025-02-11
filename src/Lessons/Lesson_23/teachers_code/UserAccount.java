@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class UserAccount {
     private String login;
     private String password;
-    private String key = "huidkjewf904u8tj804jhfndjwpjedpqmwdq,wdljnrwvrue7f8943r234";
+
+    private final String key = "huidkjewf904u8tj804jhfndjwpjedpqmwdqwdljnrwvrue7f8943r234";
 
     public UserAccount(String login, String password) {
         this.login = login;
