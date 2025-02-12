@@ -22,7 +22,7 @@ The main goals of encapsulation:
 **Example without encapsulation (bad practice):**
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
     String owner;
     double balance;
 }
@@ -31,7 +31,7 @@ class BankAccount {
 Here, **balance** is public and can be changed from outside without restrictions:
 
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.balance =-1000; // Error: Can set a negative balance!
 ```
 
@@ -72,14 +72,14 @@ object's fields and methods.
 ✔️ Provide access to data via **getters and setters**.  
 ✔️ Allow modifications only through methods with validation.
 
-Example of **data encapsulation** in the `BankAccount` class:
+Example of **data encapsulation** in the `Homework.lesson_23.Bank` class:
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
     private String owner;
     private double balance;
 
-    public BankAccount(String owner, double initialBalance) {
+    public Homework.lesson_23.Bank(String owner, double initialBalance) {
         this.owner = owner;
         if (initialBalance >= 0) {
             this.balance = initialBalance;
@@ -116,7 +116,7 @@ class BankAccount {
 Now, `balance` cannot be modified directly:
 
 ```java
-BankAccount account = new BankAccount("Alice", 500);
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank("Alice", 500);
 account.
 
 deposit(200);
@@ -127,7 +127,7 @@ withdraw(1000); // Error: Insufficient funds
 
 ---
 
-### **Real-World Analogy: Bank Account**
+### **Real-World Analogy: Homework.lesson_23.Bank Account**
 
 Imagine you have a **bank account**.
 
@@ -136,7 +136,7 @@ Imagine you have a **bank account**.
 - The balance can **decrease** only through withdrawals.
 - You cannot go into negative balance unless the bank allows overdrafts.
 
-🔹 **The `BankAccount` class works the same way!** It hides `balance` and allows access to it **only through methods**
+🔹 **The `Homework.lesson_23.Bank` class works the same way!** It hides `balance` and allows access to it **only through methods**
 that validate operations.
 
 ## **Summary**
@@ -311,7 +311,7 @@ class UserAccount {
 ```java
 // TODO: Assign access modifiers to the fields.
 
-class BankAccount {
+class Homework.lesson_23.Bank {
     String accountNumber;
     double balance;
     String ownerName;
@@ -422,14 +422,14 @@ class ChatMessage {
 
 **Example of Bad Practice (No Encapsulation):**  
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
     public double balance;
 }
 ```
 
 Here, any class can modify `balance` without control:  
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.balance = -1000; // ❌ Incorrect! The balance should not be negative.
 ```
 
@@ -444,7 +444,7 @@ To avoid such problems, **we use getters and setters**.
 
 **Example: Correct Implementation Using Getters and Setters**  
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
 private double balance;
 
     public double getBalance() { // Getter
@@ -465,7 +465,7 @@ Now, an external class **cannot** modify `balance` directly but can use `setBala
 
 **Usage:**  
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.setBalance(500);  // ✅ Correct
 account.setBalance(-100); // ❌ Will print "Balance cannot be negative!"
 System.out.println(account.getBalance()); // Prints 500
@@ -473,15 +473,15 @@ System.out.println(account.getBalance()); // Prints 500
 
 
 
-### **Example: `BankAccount` with Controlled Balance Modification**
+### **Example: `Homework.lesson_23.Bank` with Controlled Balance Modification**
 
 A more advanced example where we also add `deposit()` and `withdraw()` methods.
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
 private double balance;
 
-    public BankAccount(double initialBalance) {
+    public Homework.lesson_23.Bank(double initialBalance) {
         if (initialBalance >= 0) {
             this.balance = initialBalance;
         } else {
@@ -516,7 +516,7 @@ private double balance;
 
 **Usage:**  
 ```java
-BankAccount account = new BankAccount(100);
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank(100);
 account.deposit(50);
 account.withdraw(200); // ❌ Insufficient funds
 System.out.println("Balance: " + account.getBalance()); // ✅ 150
@@ -581,7 +581,7 @@ class User {
 // TODO: Implement getters and setters with validation.
 // 1. The `balance` field cannot be negative.
 // 2. The `accountNumber` field should not be changed after the object is created.
-class BankAccount {
+class Homework.lesson_23.Bank {
     private String accountNumber;
     private double balance;
 }
@@ -617,7 +617,7 @@ class ProductReview {
 ## **Instructions**
 1. **Add getters and setters** in each class.
 2. **In the first two classes (`Book`, `User`), getters and setters should simply return and set values.**
-3. **In the other classes (`BankAccount`, `WeatherReport`, `ProductReview`), add validation in setters.**
+3. **In the other classes (`Homework.lesson_23.Bank`, `WeatherReport`, `ProductReview`), add validation in setters.**
 4. Use **`this`** in setters to differentiate local variables from class fields.
 
 </details>
@@ -652,7 +652,7 @@ class ProductReview {
 **Пример без инкапсуляции (плохая практика):**
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
     String owner;
     double balance;
 }
@@ -661,7 +661,7 @@ class BankAccount {
 Здесь **balance** открыт, и его можно изменить извне без ограничений:
 
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.balance =-1000; // Ошибка: можно установить отрицательный баланс!
 ```
 
@@ -702,14 +702,14 @@ account.balance =-1000; // Ошибка: можно установить отр�
 ✔️ Доступ к данным делать через **геттеры и сеттеры**.  
 ✔️ Разрешать изменение данных только через методы с проверками.
 
-Пример **инкапсуляции данных** в классе `BankAccount`:
+Пример **инкапсуляции данных** в классе `Homework.lesson_23.Bank`:
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
     private String owner;
     private double balance;
 
-    public BankAccount(String owner, double initialBalance) {
+    public Homework.lesson_23.Bank(String owner, double initialBalance) {
         this.owner = owner;
         if (initialBalance >= 0) {
             this.balance = initialBalance;
@@ -747,7 +747,7 @@ class BankAccount {
 Теперь нельзя просто так изменить `balance`:
 
 ```java
-BankAccount account = new BankAccount("Alice", 500);
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank("Alice", 500);
 account.
 
 deposit(200);
@@ -767,7 +767,7 @@ withdraw(1000); // Ошибка: недостаточно средств
 - Баланс можно **уменьшить** только через снятие.
 - Нельзя уйти в минус, если банк не разрешает овердрафт.
 
-🔹 **Класс `BankAccount` работает так же!** Он скрывает `balance` и даёт доступ к нему **только через методы**, которые
+🔹 **Класс `Homework.lesson_23.Bank` работает так же!** Он скрывает `balance` и даёт доступ к нему **только через методы**, которые
 проверяют, можно ли выполнить операцию.
 
 ---
@@ -951,7 +951,7 @@ class UserAccount {
 ```java
 // TODO: Назначить модификаторы доступа для полей.
 
-class BankAccount {
+class Homework.lesson_23.Bank {
     String accountNumber;
     double balance;
     String ownerName;
@@ -1062,14 +1062,14 @@ class ChatMessage {
 
 **Пример плохой практики (без инкапсуляции):**  
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
 public double balance;
 }
 ```
 
 В этом случае любой класс может изменить `balance` без проверки:  
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.balance = -1000; // ❌ Ошибка! Баланс не может быть отрицательным.
 ```
 
@@ -1087,7 +1087,7 @@ account.balance = -1000; // ❌ Ошибка! Баланс не может бы�
 
 **Пример: правильная реализация с использованием геттеров, сеттеров и `this`**  
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
 private double balance;
 
     public double getBalance() { // Геттер
@@ -1108,7 +1108,7 @@ private double balance;
 
 **Использование:**  
 ```java
-BankAccount account = new BankAccount();
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank();
 account.setBalance(500);  // ✅ Корректно
 account.setBalance(-100); // ❌ Выведет "Баланс не может быть отрицательным!"
 System.out.println(account.getBalance()); // Выведет 500
@@ -1116,15 +1116,15 @@ System.out.println(account.getBalance()); // Выведет 500
 
 ---
 
-### **Пример: `BankAccount` с контролируемым изменением баланса**
+### **Пример: `Homework.lesson_23.Bank` с контролируемым изменением баланса**
 
 Более сложный пример, где также добавлены методы `deposit()` и `withdraw()`, использующие `this`.
 
 ```java
-class BankAccount {
+class Homework.lesson_23.Bank {
 private double balance;
 
-    public BankAccount(double balance) {
+    public Homework.lesson_23.Bank(double balance) {
         if (balance >= 0) {
             this.balance = balance; // Используем `this` для явного указания на поле класса
         } else {
@@ -1159,7 +1159,7 @@ private double balance;
 
 **Использование:**  
 ```java
-BankAccount account = new BankAccount(100);
+Homework.lesson_23.Bank account = new Homework.lesson_23.Bank(100);
 account.deposit(50);
 account.withdraw(200); // ❌ Недостаточно средств
 System.out.println("Баланс: " + account.getBalance()); // ✅ 150
@@ -1265,7 +1265,7 @@ class User {
 // TODO: Реализовать геттеры и сеттеры с валидацией.
 // 1. Поле `balance` не может быть отрицательным.
 // 2. Поле `accountNumber` нельзя менять после создания объекта.
-class BankAccount {
+class Homework.lesson_23.Bank {
     private String accountNumber;
     private double balance;
 }
@@ -1301,7 +1301,7 @@ class ProductReview {
 ## **Инструкции**
 1. **Добавьте геттеры и сеттеры** в каждый класс.
 2. **В первых двух классах (`Book`, `User`) геттеры и сеттеры должны просто возвращать и устанавливать значения.**
-3. **В остальных классах (`BankAccount`, `WeatherReport`, `ProductReview`) добавьте валидацию в сеттерах.**
+3. **В остальных классах (`Homework.lesson_23.Bank`, `WeatherReport`, `ProductReview`) добавьте валидацию в сеттерах.**
 4. Используйте **`this`** в сеттерах, чтобы отличать локальные переменные от полей класса.
 
 </details>
