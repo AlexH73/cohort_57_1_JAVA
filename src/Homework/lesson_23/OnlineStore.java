@@ -1,4 +1,4 @@
-package Homework.Homework_23;
+package Homework.lesson_23;
 
 /**
  * <h1>Часть 3: Инкапсуляция с приватными методами</h1>
