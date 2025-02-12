@@ -1,4 +1,4 @@
-package Homework.Homework_23;
+package Homework.lesson_23;
 
 //[x] TODO: Сделать поля приватными и добавить только геттеры (без сеттеров).
 class ImmutableConfig {
