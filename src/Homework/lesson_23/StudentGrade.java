@@ -1,4 +1,4 @@
-package Homework.Homework_23;
+package Homework.lesson_23;
 
 //[x] TODO: Реализовать геттеры и сеттеры с валидацией.
 // 1. `grade` должно быть в диапазоне от 0 до 100.
