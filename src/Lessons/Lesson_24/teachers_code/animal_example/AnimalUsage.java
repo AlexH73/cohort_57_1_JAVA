@@ -21,6 +21,6 @@ public class AnimalUsage {
         //catAnimal.hunt();
         catAnimal.feed();
 
-        //
+
     }
 }
