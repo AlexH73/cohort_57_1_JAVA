@@ -10,9 +10,10 @@ public class Practice {
      * и возвращает их сумму.
      * Пример: add(5, 7) -> 12
      */
-//    public static int add(int a, int b) {
-//        // Реализация здесь
-//    }
+    public static int add(int a, int b) {
+        int num = a + b;
+        return num;
+    }
 
     /**
      * Задача 2: Напишите метод, который выводит на консоль название операционной системы,
