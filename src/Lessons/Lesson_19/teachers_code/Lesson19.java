@@ -34,7 +34,6 @@ public class Lesson19 {
 
 
     public static void sayGoodbye() {
-
         System.out.println("Goodbye!");
 
         "asdasd".length();
