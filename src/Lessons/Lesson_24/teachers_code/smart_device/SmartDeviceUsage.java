@@ -17,6 +17,7 @@ public class SmartDeviceUsage {
 //        phone.call("1233-345");
 
         SmartDevice device = new SmartDevice();
+        // ошибка именно тут:
         device.takePhoto();
         device.internetConnection();
         device.call("123-345");
