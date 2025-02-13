@@ -15,11 +15,11 @@ public class TrainTicket {
     // 1. `seatsAvailable` не может быть отрицательным.
     public String setSeatsAvailable(int seatsAvailable) {
         if (seatsAvailable >= 0) {
-        this.seatsAvailable = seatsAvailable;
+            this.seatsAvailable = seatsAvailable;
     }
 
     public String getDestination() {
-        return destination;
+            return destination;
     }
     // 2. `destination` не может быть пустым.
     public void setDestination(String destination) {
