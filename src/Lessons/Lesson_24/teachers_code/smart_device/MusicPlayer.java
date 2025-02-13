@@ -5,6 +5,12 @@ public class MusicPlayer extends Computer {
         System.out.println("Play a song: " + songName);
     }
 
+    // метод переопределен не случайно, а чтобы показать, как эта ошибка сохранитсья в цепочке наследования
+    @Override
+    public void takePhoto() {
+        System.out.println("Music player cant take a photo!");
+    }
+
     @Override
     public void getDeviceName() {
         System.out.println("MusicPlayer");
