@@ -3,19 +3,3 @@ b
 csadfadsa
 d
 e
-
-Привет. Я тебе дал две ссылки выше, languages.json - там все сообщения которые выводятся в консоли, menu.json - там все опции меню, оба на трех языках.
-В принципе ты можешь открыть себе там ветку и работать параллельно. В файл TODO.md, можно записывать какие-то новые идеи, или брать оттуда задачи и пытаться их реализовывать.
-В целом, это наш общий проект, и уже вполне достоин для портфолио, который рано или поздно нам придется организовывать.
-Если возникнут вопросы, обращайся. В WhatsApp у нас есть группа: https://chat.whatsapp.com/Jmzavux2LSx4iQXCiCU3jj
-Можешь на прямую ко мне: +4917670444101. Ну или тут в Slack, без разницы.
-Спасибо за проявленный интерес, и удачи.
-
-Hallo. Ich habe dir oben zwei Links gegeben: languages.json – dort sind alle Nachrichten, die in der Konsole ausgegeben werden, und menu.json – dort sind alle Menüoptionen, beide in drei Sprachen.
-Im Prinzip kannst du dir dort einen eigenen Branch erstellen und parallel arbeiten. In die Datei TODO.md kann man neue Ideen eintragen oder Aufgaben daraus nehmen und versuchen, sie umzusetzen.
-Im Allgemeinen ist das unser gemeinsames Projekt, und es ist bereits durchaus würdig für ein Portfolio, das wir früher oder später organisieren müssen.
-Falls du Fragen hast, melde dich gerne. Wir haben eine WhatsApp-Gruppe: https://chat.whatsapp.com/Jmzavux2LSx4iQXCiCU3jj
-Du kannst mich auch direkt kontaktieren: +4917670444101
-Oder einfach hier in Slack – macht keinen Unterschied.
-
-Danke für dein Interesse und viel Erfolg!
