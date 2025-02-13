@@ -1,5 +1,7 @@
 package Lessons.Lesson_24.teachers_code.smart_device;
 
+import java.util.ArrayList;
+
 public class SmartDeviceUsage {
     public static void main(String[] args) {
 //        Camera camera = new Camera();
@@ -16,5 +18,12 @@ public class SmartDeviceUsage {
 
         SmartDevice device = new SmartDevice();
         device.takePhoto();
+        device.internetConnection();
+        device.call("123-345");
+        device.playMusic("fsfsad");
+
+        Camera camera = new Phone();
+
+
     }
 }
