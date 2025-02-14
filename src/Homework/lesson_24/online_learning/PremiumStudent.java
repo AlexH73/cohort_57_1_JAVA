@@ -1,4 +1,4 @@
-package Homework.Homework_24.online_learning;
+package Homework.lesson_24.online_learning;
 
 public class PremiumStudent extends Student {
     private String membershipLevel;

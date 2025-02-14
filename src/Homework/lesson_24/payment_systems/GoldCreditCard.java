@@ -1,4 +1,4 @@
-package Homework.Homework_24.payment_systems;
+package Homework.lesson_24.payment_systems;
 
 public class GoldCreditCard extends CreditCard {
     private double cashbackPercentage;

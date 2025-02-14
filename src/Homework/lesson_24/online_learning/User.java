@@ -1,4 +1,4 @@
-package Homework.Homework_24.online_learning;
+package Homework.lesson_24.online_learning;
 
 // TODO: Реализовать иерархию пользователей в онлайн-обучении.
 // 1. `User` (базовый класс) содержит `username` и `email`.

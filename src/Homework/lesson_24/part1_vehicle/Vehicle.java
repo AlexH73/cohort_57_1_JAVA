@@ -1,4 +1,4 @@
-package Homework.Homework_24.part1_vehicle;
+package Homework.lesson_24.part1_vehicle;
 
 // TODO: Создать базовый класс `Vehicle` с полями `speed` и `capacity`.
 // 1. Реализовать метод `move()`, который выводит "Транспорт движется."

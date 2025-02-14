@@ -1,4 +1,4 @@
-package Homework.Homework_24.payment_systems;
+package Homework.lesson_24.payment_systems;
 
 public class CreditCard extends PaymentMethod {
     private double creditLimit;

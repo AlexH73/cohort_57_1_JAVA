@@ -1,4 +1,4 @@
-package Homework.Homework_24.payment_systems;
+package Homework.lesson_24.payment_systems;
 
 // TODO: Реализовать иерархию платежных систем.
 // 1. `PaymentMethod` (базовый класс) содержит `accountNumber` и `balance`.

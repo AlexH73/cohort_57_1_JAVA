@@ -1,4 +1,4 @@
-package Homework.Homework_24.online_learning;
+package Homework.lesson_24.online_learning;
 
 public class Student extends User {
     private String studentId;
