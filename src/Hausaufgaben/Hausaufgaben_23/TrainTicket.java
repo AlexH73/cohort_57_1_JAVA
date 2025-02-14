@@ -23,7 +23,7 @@ public class TrainTicket {
     }
     // 2. `destination` не может быть пустым.
     public void setDestination(String destination) {
-            if (destination == null || destination.equals("   ")) {
+            if (destination == null || destination.equals("  ")) {
                 System.out.println(" *destination* не может быть *null* или *пустым*.");
             }
                 this.destination = destination;
