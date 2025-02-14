@@ -1,4 +1,4 @@
-package Homework.Homework_24.part1_vehicle;
+package Homework.lesson_24.part1_vehicle;
 
 public class Car extends Vehicle {
 

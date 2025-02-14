@@ -1,4 +1,4 @@
-package Homework.Homework_24.part1_animal;
+package Homework.lesson_24.part1_animal;
 
 /** TODO: Создать базовый класс `Animal` с полями `name` и `age`.
  1. Реализовать метод `makeSound()`, который выводит общий звук.
