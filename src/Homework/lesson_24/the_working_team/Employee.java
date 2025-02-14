@@ -1,4 +1,4 @@
-package Homework.Homework_24.the_working_team;
+package Homework.lesson_24.the_working_team;
 
 // TODO: Переопределить метод `work()` в подклассах и использовать `super`.
 // 1. `Employee` (базовый класс) содержит `work()`, который выводит "Работник выполняет свою работу."

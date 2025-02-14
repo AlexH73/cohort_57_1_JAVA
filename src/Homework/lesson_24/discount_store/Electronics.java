@@ -1,4 +1,4 @@
-package Homework.Homework_24.discount_store;
+package Homework.lesson_24.discount_store;
 
 public class Electronics extends Product{
 

@@ -1,4 +1,4 @@
-package Homework.Homework_24.discount_store;
+package Homework.lesson_24.discount_store;
 
 // TODO: Переопределить метод `applyDiscount()` и использовать `super.applyDiscount()`.
 // 1. `Product` (базовый класс) содержит `name` и `price`.

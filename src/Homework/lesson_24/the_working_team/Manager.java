@@ -1,4 +1,4 @@
-package Homework.Homework_24.the_working_team;
+package Homework.lesson_24.the_working_team;
 
 public class Manager extends Employee {
 
