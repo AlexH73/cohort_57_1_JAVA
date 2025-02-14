@@ -17,7 +17,7 @@ public class TrainTicket {
         if (seatsAvailable >= 0) {
             this.seatsAvailable = seatsAvailable;
     }
-
+/*
     public String getDestination() {
             return destination;
     }
@@ -29,4 +29,8 @@ public class TrainTicket {
                 this.destination = destination;
             }
         }
-}
+
+ */
+        return "";
+    }
+    }

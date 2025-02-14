@@ -1,5 +1,5 @@
 package Hausaufgaben.Hausaufgaben_22.Product;
-
+/*
 public class Product {//  1. Добавить поля:
 //    - `name` (String) - Название продукта
     String name;
@@ -16,11 +16,12 @@ public class Product {//  1. Добавить поля:
     }
 //  3. Реализовать методы:
 //    - `sell(int quantity)`, который уменьшает `stock`, если товара достаточно на складе.
-    static int sell() {
+   // static int sell() {
 
     }
 //    - `restock(int quantity)`, который увеличивает `stock`.
-    static int restock() {
+  //  static int restock() {
 
     }
 }
+*/
