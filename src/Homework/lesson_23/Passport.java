@@ -8,17 +8,11 @@ class Passport {
     private String passportNumber;
     private String holderName;
 }
-// TODO: Сделать поля приватными и добавить только геттеры (без сеттеров).
-class ImmutableConfig {
-    private String databaseUrl;
-    private int maxConnections;
-    private boolean isLoggingEnabled;
-}
 */
-public class PrivateEntrance {
+
+public class Passport {
     //Класс Passport с приватными полями и геттерами
 
-class Passport {
     private String passportNumber;
     private String holderName;
 
@@ -35,27 +29,9 @@ class Passport {
         return holderName;
     }
 }
-//Класс ImmutableConfig с приватными полями и геттерами
-class ImmutableConfig {
-    private String databaseUrl;
-    private int maxConnections;
-    private boolean isLoggingEnabled;
-}/*
-//Конструктор для инициализации объекта
-    public void ImmutableConfig(String databaseUrl, int maxConnections, boolean isLoggingEnabled) {
-         this.databaseUrl = databaseUrl;
-         this.maxConnections = maxConnections;
-         this.isLoggingEnabled = isLoggingEnabled;
-}
-//геттеры (без сеттеров)
-public String getDatabaseUrl() {
-    return databaseUrl;
-}
-public int getMaxConnections() {
-    return maxConnections;
-}
-public boolean isLoggingEnabled() {
-    return isLoggingEnabled;
-}
-*/
-}
+
+
+
+
+
+
