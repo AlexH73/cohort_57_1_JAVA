@@ -6,5 +6,6 @@ public class StudentGradeTest {
         StudentGrade student = new StudentGrade("Математика", 95);
         System.out.println("Предмет: " + student.getSubject());
         System.out.println("Оценка: " + student.getGrade());
+
     }
 }
