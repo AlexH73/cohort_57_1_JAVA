@@ -15,7 +15,7 @@ public class ImmutableConfig{
     private boolean isLoggingEnabled;
 
     //Конструктор для инициализации объекта
-    public void ImmutableConfig(String databaseUrl, int maxConnections, boolean isLoggingEnabled) {
+    public  ImmutableConfig(String databaseUrl, int maxConnections, boolean isLoggingEnabled) {
         this.databaseUrl = databaseUrl;
         this.maxConnections = maxConnections;
         this.isLoggingEnabled = isLoggingEnabled;

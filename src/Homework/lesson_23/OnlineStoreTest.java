@@ -14,5 +14,6 @@ public class OnlineStoreTest {
         product.setDiscountPercentage(60);
         System.out.println("\n После изменения скидки:");
         product.displayProductInfo();
+
     }
 }
