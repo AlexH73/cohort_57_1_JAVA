@@ -32,6 +32,7 @@ public class OnlineStore {
     }
     //Сеттер для скидки, использующий приватный метод валидации
     public void setDiscountPercentage(int discountPercentage) {
+        this.validateDiscount(discountPercentage);
         this.discountPercentage = discountPercentage;
     }
     //Приватный метод для валидации скидки

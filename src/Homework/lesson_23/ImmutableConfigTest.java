@@ -4,7 +4,7 @@ public class ImmutableConfigTest {
     public static void main(String[] args) {
         //Создаем объект ImmutableConfig
         ImmutableConfig config;
-        config = new ImmutableConfig();
+        config = new ImmutableConfig("dffyukk", 15, true);
 
         //Выводим конфигурацию
         System.out.println("\n Конфигурация:");
