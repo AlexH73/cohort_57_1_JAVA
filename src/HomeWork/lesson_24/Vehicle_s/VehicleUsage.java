@@ -6,6 +6,6 @@ public class VehicleUsage {
         tractor.move();
 
         Car auto = new Car();
-        auto.move();
+        auto.move(230,16);
     }
 }

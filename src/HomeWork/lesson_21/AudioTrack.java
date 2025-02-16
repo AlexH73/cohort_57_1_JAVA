@@ -23,10 +23,12 @@ public class AudioTrack {
     }
 
     public Boolean isLongTrack() {
+
         return durationInSeconds < 300;
     }
 
     public Boolean displayTrackInfo() {
+
         return durationInSeconds < 300;
     }
 

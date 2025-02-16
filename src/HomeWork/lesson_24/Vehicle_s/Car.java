@@ -6,7 +6,8 @@ public class Car extends Vehicle {
         super();
     }
 
-    public void move() {
-        System.out.println("Машина едет.");
+    public void move(int speed, int capacity) {
+        System.out.println("Машина едет со скоростью " + speed + " (kmh)" +
+                " и расходует " + capacity + " литров бензина.");
     }
 }
