@@ -1,7 +1,5 @@
-package Homework.lesson_24;
-
-import Lessons.Lesson_24.teachers_code.animal_example.Dog;
-
+package Homework.lesson_24.AnimalInheritanceClass;
+//Класс для тестирования
 public class AnimalTest {
     public static void main(String[] args) {
         Animal genericAnimal = new Animal("Неизвестное животное", 5);
