@@ -1,6 +1,7 @@
 package Homework.lesson_23;
 
 //[x] TODO: Сделать поля приватными и добавить только геттеры (без сеттеров).
+// все корректно
 class ImmutableConfig {
     private String databaseUrl;
     private int maxConnections;

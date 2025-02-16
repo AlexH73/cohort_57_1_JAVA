@@ -1,6 +1,8 @@
 package Homework.lesson_24.discount_store;
 
-public class Clothing extends Electronics{
+// Clothing - не является частью электроники,
+// так что не корректно расширять класс Electronics и наследоваться от него
+public class Clothing extends Product {
     private boolean seasonalSale;
 
     // Конструктор

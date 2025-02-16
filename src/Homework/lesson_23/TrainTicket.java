@@ -14,8 +14,12 @@ public class TrainTicket {
 
     // Сеттер для destination с валидацией
     public void setDestination(String destination) {
-        if (destination == null || destination.equals(" ")) {
+        // в предыдущем варианте destination сравнивалось исключительно с конкретным значением пробелов,
+        // я мог бы закинуть "       " и уже не попал бы в блок if
+        if (destination == null || destination.isBlank()) {
             System.out.println("Ошибка! destination не может быть пустым.");
+            // следует не просто выводить сообщение, но валидировать действие
+            return;
         }
         this.destination = destination;
     }
@@ -29,6 +33,7 @@ public class TrainTicket {
     public void setSeatsAvailable(int seatsAvailable) {
         if (seatsAvailable < 0) {
             System.out.println("Значение свободные места не может быть отрицательным.");
+            return;
         }
         this.seatsAvailable = seatsAvailable;
     }

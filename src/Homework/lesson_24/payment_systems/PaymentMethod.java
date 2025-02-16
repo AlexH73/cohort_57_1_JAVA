@@ -5,6 +5,7 @@ package Homework.lesson_24.payment_systems;
 // 2. `CreditCard` наследует `PaymentMethod` и добавляет `creditLimit`.
 // 3. `GoldCreditCard` наследует `CreditCard` и добавляет `cashbackPercentage`.
 
+// исправлены методы setBalance, addFunds и withdrawFunds с поправкой на валидацию
 public class PaymentMethod {
     private String accountNumber;
     private double balance;
@@ -27,6 +28,7 @@ public class PaymentMethod {
     public void setBalance(double balance) {
         if (balance < 0) {
             System.out.println("Баланс не может быть отрицательным.");
+            return;
         }
         this.balance = balance;
     }
@@ -35,6 +37,7 @@ public class PaymentMethod {
     public void addFunds(double amount) {
         if (amount < 0) {
             System.out.println("Сумма не может быть отрицательной.");
+            return;
         }
         this.balance += amount;
     }
@@ -43,9 +46,11 @@ public class PaymentMethod {
     public void withdrawFunds(double amount) {
         if (amount < 0) {
             System.out.println("Сумма не может быть отрицательной.");
+            return;
         }
         if (amount > this.balance) {
             System.out.println("Недостаточно средств.");
+            return;
         }
         this.balance -= amount;
     }

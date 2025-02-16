@@ -16,6 +16,7 @@ class WeatherForecast {
     public void setTemperature(double temperature) {
         if (temperature < -50 || temperature > 50) {
             System.out.println("Температура должна быть в диапазоне от -50 до 50 градусов.");
+            return;
         }
         this.temperature = temperature;
     }
@@ -29,6 +30,7 @@ class WeatherForecast {
     public void setFeelsLike(double feelsLike) {
         if (feelsLike > temperature) {
             System.out.println("Ощутимость не может быть выше, чем температура.");
+            return;
         }
         this.feelsLike = feelsLike;
     }

@@ -17,6 +17,7 @@ public class GoldCreditCard extends CreditCard {
     public void setCashbackPercentage(double cashbackPercentage) {
         if (cashbackPercentage < 0 || cashbackPercentage > 100) {
             System.out.println("Процент кэшбэка должен быть в диапазоне от 0 до 100.");
+            return;
         }
         this.cashbackPercentage = cashbackPercentage;
     }

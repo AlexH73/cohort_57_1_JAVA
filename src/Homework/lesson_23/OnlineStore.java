@@ -48,14 +48,20 @@ public class OnlineStore {
     }
 
     public void setDiscountPercentage(int discountPercentage) {
-        validateDiscount(discountPercentage);
-        this.discountPercentage = discountPercentage;
+        // в предыдущей реализации метод лишь выводил сообщение, что скидка в некорректном диапозоне,
+        // но при этом все равно присваивал значение
+        if (validateDiscount(discountPercentage)) {
+            this.discountPercentage = discountPercentage;
+        }
     }
 
     // Приватный метод для валидации discountPercentage
-    private void validateDiscount(int discountPercentage) {
+    private boolean validateDiscount(int discountPercentage) {
         if (discountPercentage < 0 || discountPercentage > 50) {
             System.out.println("Процент скидки должен быть в диапазоне от 0 до 50.");
+            return false;
+        } else {
+            return true;
         }
     }
 }
