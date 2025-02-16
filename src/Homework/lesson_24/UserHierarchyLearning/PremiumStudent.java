@@ -1,4 +1,5 @@
-package Homework.lesson_24;
+package Homework.lesson_24.UserHierarchyLearning;
+// 3. `PremiumStudent` наследует `Student` и добавляет `membershipLevel`.
 //Класс PremiumStudent наследуется от Student
 public class PremiumStudent extends Student {
     private String memberschiplevel;
