@@ -7,19 +7,15 @@ package Hausaufgaben.Hausaufgaben_22.Product;
  */
 public class ProductMain {
     public static void main(String[] args) {
-       //Протестировать класс, создав несколько объектов Product и применив скидки и продажи.
+        Product product = new Product("carrot", 2.75, 1000);
 
+        product.sell(2000);
+        System.out.println("product = " + product);
+
+        product.restock(2000);
+        System.out.println("product = " + product);
+
+        product.sell(1523);
+        System.out.println("product = " + product);
     }
-    /*
-    applyDiscount(double percentage) {
-        //Добавить метод applyDiscount(double percentage), который уменьшает цену товара на заданный процент.
-
-    }
-
-    sell(int quantity) {
-        //Изменить метод sell(int quantity), чтобы он проверял наличие нужного количества товара; если товара недостаточно, продавать только доступное количество и выводить сообщение.
-
-    }
-
-     */
 }

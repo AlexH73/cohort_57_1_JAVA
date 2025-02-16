@@ -1,5 +1,8 @@
 package Hausaufgaben.Hausaufgaben_23;
 
+// TODO: Реализовать геттеры и сеттеры с валидацией.
+// 1. `temperature` должно быть в диапазоне от -50 до 50 градусов.
+// 2. `feelsLike` не может быть выше, чем `temperature`.
 public class WeatherForecast {
     private double temperature;
     private double feelsLike;
@@ -12,15 +15,20 @@ public class WeatherForecast {
     public double getTemperature() {
         return temperature;
     }
+
     // 1. `temperature` должно быть в диапазоне от -50 до 50 градусов.
     public void setTemperature(double temperature) {
-        if (-50 <=temperature || temperature <= 50)
+        // if (-50 <= temperature || temperature <= 50) {
+        // в предыдущей проверкой прошло бы 100
+        if (-50 <= temperature && temperature <= 50) {
             this.temperature = temperature;
+        }
     }
 
     public double getFeelsLike() {
         return feelsLike;
     }
+
     // 2. `feelsLike` не может быть выше, чем `temperature`.
     public void setFeelsLike(double feelsLike) {
         if (feelsLike <= temperature) {

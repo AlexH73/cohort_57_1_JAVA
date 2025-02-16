@@ -1,7 +1,9 @@
 package Hausaufgaben.Hausaufgaben_21.AudioTrack;
 
+// TODO: Доработать класс AudioTrack
+// TODO: Добавить поле `genre`
+// TODO: Реализовать метод `displayTrackInfo()`
 
-    // TODO: Доработать класс AudioTrack
 // 1. Добавить новое поле `genre` (String) для хранения музыкального жанра.
 // 2. Создать метод `displayTrackInfo()`, который выводит всю информацию о треке.
 
@@ -11,13 +13,11 @@ class AudioTrack {
     String genre;
     double durationInSeconds;
 
-
     public String displayTrackInfo() {
         String info = "Title: " + title + "\n" +
                 "Artist: " + artist + "\n" +
                 "Genre: " + genre + "\n" +
-                "TrackLenght" + durationInSeconds;
-
+                "Track Length" + durationInSeconds;
         return info;
     }
 
@@ -25,15 +25,10 @@ class AudioTrack {
         if (durationInSeconds >= 300) {
             return true;
         } else {
-            System.out.println("DieserTrack ist nur %d lang!");
+            System.out.println("Dieser Track ist nur %d lang!");
         }
         return false;
     }
 }
-
-
-        // TODO: Добавить поле `genre`
-
-        // TODO: Реализовать метод `displayTrackInfo()`
 
 

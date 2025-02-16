@@ -1,5 +1,8 @@
 package Hausaufgaben.Hausaufgaben_23;
 
+// TODO: Реализовать геттеры и сеттеры с валидацией.
+// 1. `seatsAvailable` не может быть отрицательным.
+// 2. `destination` не может быть пустым.
 public class TrainTicket {
     private String destination;
     private int seatsAvailable;
@@ -12,25 +15,26 @@ public class TrainTicket {
     public int getSeatsAvailable() {
         return seatsAvailable;
     }
-    // 1. `seatsAvailable` не может быть отрицательным.
-    public String setSeatsAvailable(int seatsAvailable) {
+
+    public void setSeatsAvailable(int seatsAvailable) {
         if (seatsAvailable >= 0) {
             this.seatsAvailable = seatsAvailable;
+        }
     }
-/*
+
     public String getDestination() {
-            return destination;
+        return destination;
     }
+
     // 2. `destination` не может быть пустым.
     public void setDestination(String destination) {
-            if (destination == null || destination.equals("  ")) {
-                System.out.println(" *destination* не может быть *null* или *пустым*.");
-            }
-                this.destination = destination;
-            }
+        // испрвлена узкая проверка
+        if (destination == null && destination.isBlank()) {
+            System.out.println(" *destination* не может быть *null* или *пустым*.");
+            return;
         }
+        this.destination = destination;
 
- */
-        return "";
     }
-    }
+}
+

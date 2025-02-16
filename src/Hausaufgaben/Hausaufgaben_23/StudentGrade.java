@@ -1,7 +1,10 @@
 package Hausaufgaben.Hausaufgaben_23;
 
+// TODO: Реализовать геттеры и сеттеры с валидацией.
+// 1. `grade` должно быть в диапазоне от 0 до 100.
+// 2. `subject` не может быть пустым или null.
 public class StudentGrade {
-    private String subject;// 2. `subject` не может быть пустым или null.
+    private String subject;//
     private int grade;
 
     public StudentGrade(String subject, int grade) {
@@ -16,7 +19,7 @@ public class StudentGrade {
     public void setSubject(String subject) {
         if (subject == null || subject.isEmpty()) {
             System.out.println(" *Subject* не может быть *null* или *пустым*.");
-        this.subject = subject;
+            this.subject = subject;
         }
     }
 
@@ -25,7 +28,9 @@ public class StudentGrade {
     }
     // 1. `grade` должно быть в диапазоне от 0 до 100.
     public void setGrade(int grade) {
-        if (0 <= grade || grade <= 100) {
+        //if (0 <= grade || grade <= 100) {
+        // исправлена логическая ошибка
+        if (0 >= grade && grade <= 100) {
             this.grade = grade;
         }
     }

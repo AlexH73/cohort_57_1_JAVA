@@ -7,7 +7,8 @@ package Hausaufgaben.Hausaufgaben_21.Message;
  */
 public class MessageUsage {
     public static void main(String[] args) {
-
+        // если оставляете комментарии, то пусть они логически находятся в нужном месте
+        //Создать несколько объектов Message и протестировать новый функционал.
 
         Message to_Alex = new Message();
 
@@ -31,9 +32,13 @@ public class MessageUsage {
         to_Alex3.timestampt = "Heute Abend";
 
 
-        //Создать несколько объектов Message и протестировать новый функционал.
     }
 }
+
+//  не оставляйте после себя мусор в коде.
+//  В конечном итоге ваш код будет
+//  читать ревьювер на тестовом задании и просто проигнорит вас только из-за того, что он неопрятный
+
     /*
     public String isFrom(String username) {
         //Добавить новый метод isFrom(String username), который проверяет, отправлено ли сообщение указанным пользователем.

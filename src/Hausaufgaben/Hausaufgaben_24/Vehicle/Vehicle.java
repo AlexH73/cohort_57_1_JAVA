@@ -1,6 +1,9 @@
 package Hausaufgaben.Hausaufgaben_24.Vehicle;
 
-public class Vehicle extends Car{
+// TODO: Создать базовый класс `Vehicle` с полями `speed` и `capacity`.
+// 1. Реализовать метод `move()`, который выводит "Транспорт движется."
+// 2. Создать подкласс `Car`, который переопределяет `move()` и выводит "Машина едет."
+public class Vehicle {
     private int speed;
     private int capacity;
 
@@ -36,7 +39,7 @@ public class Vehicle extends Car{
         System.out.println("vehicle.setSpeed() = " + vehicle.setSpeed());
         System.out.println("vehicle.setCapacity() = " + vehicle.setCapacity());
     }
-    @Override
+
     public void move(){
         System.out.println("Транспорт движется.");
     }

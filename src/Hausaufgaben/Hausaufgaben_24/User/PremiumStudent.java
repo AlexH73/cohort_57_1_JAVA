@@ -1,17 +1,19 @@
 package Hausaufgaben.Hausaufgaben_24.User;
 
 public class PremiumStudent extends Student{
-    private String membershipLevel() {
-        System.out.println("Der Studend ist = " + membershipLevel());
+    private String membershipLevel;
+
+    public PremiumStudent(String username, String email, int studentId, String membershipLevel) {
+        super(username, email, studentId);
+        this.membershipLevel = membershipLevel;
+    }
+
+    public String getMembershipLevel() {
+        return membershipLevel;
     }
 
     @Override
-    public void userData() {
-        System.out.println("Student");
-    }
-
-    @Override
-    private String studentId() {
-        System.out.println("Studend = " + studentId());
+    public String userData() {
+        return String.format("%s, membershipLevel = %s", super.userData(), this.getMembershipLevel());
     }
 }

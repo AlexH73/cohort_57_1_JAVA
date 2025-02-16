@@ -1,17 +1,27 @@
 package Hausaufgaben.Hausaufgaben_22.Order;
+
 // TODO: Создать класс Order
-class Order {
+/*
+Задание 5: Улучшение класса Order.
+Добавить метод calculateFinalAmount(double taxRate, double discountPercentage), который возвращает итоговую сумму заказа с учетом налога и скидки.
+Изменить displayOrder(), чтобы он отображал финальную сумму с учетом налога и скидки.
+Протестировать класс, создав несколько объектов Order с разными налогами и скидками.
 
 // 1. Добавить поля:
 //    - `orderId` (int) - Уникальный идентификатор заказа
-    int orderId;
 //    - `customerName` (String) - Имя покупателя
-    String customerName;
 //    - `totalAmount` (double) - Сумма заказа
-    double totalAmount;
 //    - `status` (String) - Статус заказа ("Ожидает", "Отправлен", "Доставлен")
-    String status;
 // 2. Создать конструктор, принимающий `orderId`, `customerName`, `totalAmount`.
+// 3. Реализовать методы:
+//    - `updateStatus(String newStatus)`, который меняет статус заказа.
+//    - `displayOrder()`, который выводит информацию о заказе.
+ */
+class Order {
+    int orderId;
+    String customerName;
+    double totalAmount;
+    String status;
 
     public Order(int orderId, String customerName, double totalAmount, String status) {
         this.orderId = orderId;
@@ -20,21 +30,19 @@ class Order {
         this.status = status;
     }
 
-// 3. Реализовать методы:
-//    - `updateStatus(String newStatus)`, который меняет статус заказа.
-    void updateStatus(String newStatus) {
+    public void updateStatus(String newStatus) {
         this.status = newStatus;
     }
 
-
-//    - `displayOrder()`, который выводит информацию о заказе.
-void displayOrder(){
-    System.out.printf(
-            "\n%s, %n ,%s, %f \n",
-            this.status,
-            this.orderId,
-            this.customerName,
-            this.totalAmount);
+    // исправлена ошибка
+    public void displayOrder() {
+        System.out.printf(
+                // "\n%s, %n ,%s, %f \n",
+                "\n%s, %d ,%s, %f \n",
+                this.status,
+                this.orderId,
+                this.customerName,
+                this.totalAmount);
     }
 }
 

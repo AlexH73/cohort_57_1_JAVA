@@ -1,5 +1,6 @@
 package Hausaufgaben.Hausaufgaben_23;
 
+// TODO: Сделать поля приватными и добавить только геттеры (без сеттеров).
 public class ImmutableConfig {
     private String databaseUrl;
     private int maxConnections;

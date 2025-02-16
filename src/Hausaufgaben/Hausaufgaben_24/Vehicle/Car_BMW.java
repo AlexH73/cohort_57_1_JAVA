@@ -11,7 +11,7 @@ public class Car_BMW extends Vehicle{
         System.out.println("bmw.setSpeed() = " + bmw.setSpeed());
         System.out.println("bmw.setCapacity() = " + bmw.setCapacity());
 
-        Car car = new Car();
+        Car car = new Car(0, 100);
         car.move();
     }
 

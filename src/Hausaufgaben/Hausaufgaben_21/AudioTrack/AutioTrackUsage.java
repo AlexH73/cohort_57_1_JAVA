@@ -23,21 +23,20 @@ public class AutioTrackUsage {
         track2.durationInSeconds = 312;
         System.out.println("track2 = " + track2);
 
-        String track1Info = displayTrackInfo(track1) ;
-        String track2Info = displayTrackInfo(track2) ;
+        String track1Info = track1.displayTrackInfo();
+        String track2Info = track2.displayTrackInfo();
         System.out.println("track1 =" + track1Info);
         System.out.println("track2 =" + track2Info);
     }
-    public static String displayTrackInfo(AudioTrack randomAudioTrack) {
-        String info = "Title: " + randomAudioTrack.title + "\n" +
-                "Artist: " + randomAudioTrack.artist + "\n" +
-                "Genre: " + randomAudioTrack.genre + "\n" +
-                "TrackLenght" + randomAudioTrack.durationInSeconds +
-                randomAudioTrack.isLongTrack();
 
-        return info;
-    }
-
-
+//    public static String displayTrackInfo(AudioTrack randomAudioTrack) {
+//        String info = "Title: " + randomAudioTrack.title + "\n" +
+//                "Artist: " + randomAudioTrack.artist + "\n" +
+//                "Genre: " + randomAudioTrack.genre + "\n" +
+//                "TrackLenght" + randomAudioTrack.durationInSeconds +
+//                randomAudioTrack.isLongTrack();
+//
+//        return info;
+//    }
 }
 

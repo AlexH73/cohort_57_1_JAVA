@@ -9,8 +9,11 @@ public class Dog extends Animal{
         System.out.println(("Собака лает"));
     }
 
+    // задание:
+    // 2. Создать подкласс `Dog`, который переопределяет `makeSound()` и выводит "Гав!".
+
     @Override
     public void voice() {
-        System.out.println(("Собака лает"));
+        System.out.println(("Гав"));
     }
 }
