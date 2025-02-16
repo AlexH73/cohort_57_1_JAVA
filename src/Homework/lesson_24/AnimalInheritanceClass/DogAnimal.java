@@ -1,6 +1,8 @@
-package Homework.lesson_24;
+package Homework.lesson_24.AnimalInheritanceClass;
+// 2. Создать подкласс `Dog`, который переопределяет `makeSound()` и выводит "Гав!".
+
 //Подкласс Dog, который наследует Animal
- public class DogAnimal extends Animal{
+ public class DogAnimal extends Animal {
 
     //Конструктор
     public DogAnimal(String name, int age) {
