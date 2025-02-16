@@ -9,6 +9,7 @@ package Practice.Practice_24.discount_store;
 public class Product {
     private String name;
     private double price;
+    public final char currency = '€';
 
     // Конструктор
     public Product(String name, double price) {

@@ -62,9 +62,9 @@ public class Clothing extends Product {
         if (seasonalSale) {
             double discountedPrice = getPrice() * 0.8;
             setPrice(discountedPrice);
-            System.out.println("Цена снижена на 20% из-за сезонной распродажи. Новая цена: " + getPrice());
+            System.out.println("Цена снижена на 20% из-за сезонной распродажи. Новая цена: " + getPrice() + currency);
         } else {
-            System.out.println("Сезонной распродажи нет. Цена остается прежней: " + getPrice());
+            System.out.println("Сезонной распродажи нет. Цена остается прежней: " + getPrice() + currency);
         }
     }
 }

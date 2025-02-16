@@ -44,9 +44,9 @@ public class Grocery extends Product {
         if (expirationDate.isBefore(LocalDate.now().plusDays(7))) {
             double discountedPrice = getPrice() * 0.5;
             setPrice(discountedPrice);
-            System.out.println("Цена снижена на 50% из-за близкого срока годности. Новая цена: " + getPrice());
+            System.out.println("Цена снижена на 50% из-за близкого срока годности. Новая цена: " + getPrice() + currency);
         } else {
-            System.out.println("Срок годности в порядке. Цена остается прежней: " + getPrice());
+            System.out.println("Срок годности в порядке. Цена остается прежней: " + getPrice() + currency);
         }
     }
 }

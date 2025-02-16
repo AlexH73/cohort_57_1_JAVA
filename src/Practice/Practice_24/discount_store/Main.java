@@ -21,7 +21,7 @@ public class Main {
         // Применение скидок
         for (Product product : products) {
             System.out.println("Товар: " + product.getName());
-            System.out.println("Начальная цена: " + product.getPrice());
+            System.out.println("Начальная цена: " + product.getPrice() + product.currency);
             product.applyDiscount();
             System.out.println();
         }
