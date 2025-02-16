@@ -1,5 +1,5 @@
-package Homework.lesson_24;
-
+package Homework.lesson_24.UserHierarchyLearning;
+// 2. `Student` наследует `User` и добавляет `studentId`
 public class Student extends User {
     private String studentId;
 

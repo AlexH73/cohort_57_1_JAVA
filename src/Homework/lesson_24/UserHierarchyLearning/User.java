@@ -1,4 +1,4 @@
-package Homework.lesson_24;
+package Homework.lesson_24.UserHierarchyLearning;
 /*Часть 2: Реализация многоуровневого наследования
 🔹 В следующих заданиях нужно построить цепочку наследования, где каждый класс расширяет предыдущий.
 🔹 Финальный класс должен объединять функциональность всех предыдущих уровней.
@@ -10,15 +10,9 @@ package Homework.lesson_24;
 class User {
     private String username;
     private String email;
-}
-// TODO: Реализовать иерархию платежных систем.
-// 1. `PaymentMethod` (базовый класс) содержит `accountNumber` и `balance`.
-// 2. `CreditCard` наследует `PaymentMethod` и добавляет `creditLimit`.
-// 3. `GoldCreditCard` наследует `CreditCard` и добавляет `cashbackPercentage`.
-class PaymentMethod {
-    private String accountNumber;
-    private double balance;
 }*/
+
+// 1. `User` (базовый класс) содержит `username` и `email`.
 //Базовый класс User
 public class User {
     private String username;
