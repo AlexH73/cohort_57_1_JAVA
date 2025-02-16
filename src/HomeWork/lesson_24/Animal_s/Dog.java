@@ -1,4 +1,4 @@
-package HomeWork.lesson_24.Animal;
+package HomeWork.lesson_24.Animal_s;
 
 public class Dog extends Animal {
 
