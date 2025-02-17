@@ -14,8 +14,9 @@ public class TrainTicket {
 
     // Сеттер для destination с валидацией
     public void setDestination(String destination) {
-        if (destination == null || destination.equals(" ")) {
+        if (destination == null || destination.isBlank()) {
             System.out.println("Ошибка! destination не может быть пустым.");
+            return;
         }
         this.destination = destination;
     }
@@ -29,6 +30,7 @@ public class TrainTicket {
     public void setSeatsAvailable(int seatsAvailable) {
         if (seatsAvailable < 0) {
             System.out.println("Значение свободные места не может быть отрицательным.");
+            return;
         }
         this.seatsAvailable = seatsAvailable;
     }

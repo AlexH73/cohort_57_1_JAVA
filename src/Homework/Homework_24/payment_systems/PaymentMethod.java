@@ -8,6 +8,7 @@ package Homework.Homework_24.payment_systems;
 public class PaymentMethod {
     private String accountNumber;
     private double balance;
+    public final char currency = '€';
 
     // Конструктор
     public PaymentMethod(String accountNumber, double balance) {
@@ -27,6 +28,7 @@ public class PaymentMethod {
     public void setBalance(double balance) {
         if (balance < 0) {
             System.out.println("Баланс не может быть отрицательным.");
+            return;
         }
         this.balance = balance;
     }
@@ -35,6 +37,7 @@ public class PaymentMethod {
     public void addFunds(double amount) {
         if (amount < 0) {
             System.out.println("Сумма не может быть отрицательной.");
+            return;
         }
         this.balance += amount;
     }
@@ -43,9 +46,11 @@ public class PaymentMethod {
     public void withdrawFunds(double amount) {
         if (amount < 0) {
             System.out.println("Сумма не может быть отрицательной.");
+            return;
         }
         if (amount > this.balance) {
             System.out.println("Недостаточно средств.");
+            return;
         }
         this.balance -= amount;
     }

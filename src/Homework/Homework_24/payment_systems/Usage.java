@@ -19,15 +19,15 @@ public class Usage {
         System.out.println();
         // Тестирование методов
         paymentMethod.addFunds(500.0);
-        System.out.println("PaymentMethod Balance после добавления средств: " + paymentMethod.getBalance());
+        System.out.println("PaymentMethod Balance после добавления средств: " + paymentMethod.getBalance() + paymentMethod.currency);
 
         System.out.println();
         creditCard.withdrawFunds(100.0);
-        System.out.println("CreditCard Balance после снятия средств: " + creditCard.getBalance());
+        System.out.println("CreditCard Balance после снятия средств: " + creditCard.getBalance() + creditCard.currency);
 
         System.out.println();
         double cashback = goldCreditCard.getCashback(200.0);
-        System.out.println("GoldCreditCard Cashback за покупку на 200.0: " + cashback);
+        System.out.println("GoldCreditCard Cashback за покупку на 200.0" + goldCreditCard.currency + ": " + cashback + goldCreditCard.currency);
 
     }
 }

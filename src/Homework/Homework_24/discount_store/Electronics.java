@@ -13,6 +13,6 @@ public class Electronics extends Product{
         super.applyDiscount();
         double discountedPrice = getPrice() * 0.9;
         setPrice(discountedPrice);
-        System.out.println("Цена снижена на 10%. Новая цена: " + getPrice());
+        System.out.println("Цена снижена на 10%. Новая цена: " + getPrice() + currency);
     }
 }
