@@ -5,7 +5,6 @@ public class Message {
     // sender - отправитель
     // recepient - получатель
     // text - текст сообщения
-
     private String sender;
     private String recepient;
     private String text;
