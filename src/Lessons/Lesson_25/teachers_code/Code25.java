@@ -6,29 +6,27 @@ public class Code25 {
         System.out.println("hello lesson 25.2");
 
         Image image = new Image(100, 200);
-
         JpgImage jpg = new JpgImage(200, 300);
-
         PngImage png = new PngImage(400, 500);
 
-
-
-
+        showImage(image);
+        showImage(jpg);
+        showImage(png);
     }
 
-    public void showImage(Image image) {
+    public static void showImage(Image image) {
         System.out.println("Method only for base Image class");
         System.out.println(image.gethPixel());
         System.out.println(image.getwPixel());
     }
 
-    public void showImage(PngImage image) {
+    public static void showImage(PngImage image) {
         System.out.println("Method only for PngImage class");
         System.out.println(image.gethPixel());
         System.out.println(image.getwPixel());
     }
 
-    public void showImage(JpgImage image) {
+    public static void showImage(JpgImage image) {
         System.out.println("Method only for JpgImage class");
         System.out.println(image.gethPixel());
         System.out.println(image.getwPixel());
