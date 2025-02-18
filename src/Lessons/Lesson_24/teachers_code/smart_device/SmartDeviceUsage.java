@@ -26,5 +26,9 @@ public class SmartDeviceUsage {
         Camera camera = new Phone();
 
 
+        camera.takePhoto();
+
+
+
     }
 }
