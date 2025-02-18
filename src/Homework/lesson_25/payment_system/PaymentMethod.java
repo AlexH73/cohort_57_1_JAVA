@@ -1,4 +1,4 @@
-package Homework.Homework_25.payment_system;
+package Homework.lesson_25.payment_system;
 
 // Базовый класс PaymentMethod
 public class PaymentMethod {

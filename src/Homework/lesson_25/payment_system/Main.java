@@ -1,4 +1,4 @@
-package Homework.Homework_25.payment_system;
+package Homework.lesson_25.payment_system;
 
 public class Main {
     public static void main(String[] args) {
