@@ -6,7 +6,6 @@ public class SMSmessage extends Message{
     private String senderNumber;
     private String recepientNumber;
 
-
     public SMSmessage(String senderNumber, String recepientNumber, String text) {
         super(senderNumber, recepientNumber, text);
         if (!validateNumber(senderNumber)) {
@@ -20,7 +19,19 @@ public class SMSmessage extends Message{
             System.err.println("Номер получателя для СМС сообщений должен быть исключительно из цифр! " +
                     "Значнение не корректно: " + recepientNumber);
         }
+
+        this.senderNumber = senderNumber;
+        this.recepientNumber = recepientNumber;
     }
+
+    public String getSenderNumber() {
+        return super.getSender();
+    }
+
+    public String getRecepientNumber() {
+        return super.getRecepient();
+    }
+
 
     private boolean validateNumber(String number) {
         String patternRegex = "^\\d+$";
