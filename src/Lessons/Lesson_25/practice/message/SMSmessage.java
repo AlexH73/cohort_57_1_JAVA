@@ -24,6 +24,14 @@ public class SMSmessage extends Message{
         this.recepientNumber = recepientNumber;
     }
 
+    public String checkNumber(String number) {
+        if(validateNumber(number)) {
+            return "it is a number";
+        } else {
+            return "it's not a number";
+        }
+    }
+
     public String getSenderNumber() {
         return super.getSender();
     }
