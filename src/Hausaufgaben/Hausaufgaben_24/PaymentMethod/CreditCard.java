@@ -1,9 +1,18 @@
 package Hausaufgaben.Hausaufgaben_24.PaymentMethod;
 // 2. `CreditCard` наследует `PaymentMethod` и добавляет `creditLimit`.
 public class CreditCard extends PaymentMethod{
-    private int creditLimit;
+    private double creditLimit;
 
-    protected CreditCard(String accountNumber,double balance,int creditLimit);
+    protected CreditCard(String accountNumber, double balance, double creditLimit) {
+    }
+
+    public double getCreditLimit() {
+        return creditLimit;
+    }
+
+    public void setCreditLimit(double creditLimit) {
+        this.creditLimit = creditLimit;
+    }
 
     @Override
     public String getAccountNumber() {
@@ -19,6 +28,6 @@ public class CreditCard extends PaymentMethod{
     public double getBalance() {
         setBalance();
     }
-        super()
+        super();
 
 }
