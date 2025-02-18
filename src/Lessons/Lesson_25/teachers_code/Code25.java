@@ -8,10 +8,15 @@ public class Code25 {
         Image image = new Image(100, 200);
         JpgImage jpg = new JpgImage(200, 300);
         PngImage png = new PngImage(400, 500);
+        PdfImage pdf = new PdfImage(800, 1200);
 
         showImage(image);
         showImage(jpg);
         showImage(png);
+        showImage(pdf);
+
+        System.out.println("pdf instanceof Image = " + (pdf instanceof Image));
+        System.out.println("pdf instanceof Image = " + (pdf instanceof PdfImage));
     }
 
     public static void showImage(Image image) {
@@ -20,15 +25,15 @@ public class Code25 {
         System.out.println(image.getwPixel());
     }
 
-    public static void showImage(PngImage image) {
-        System.out.println("Method only for PngImage class");
-        System.out.println(image.gethPixel());
-        System.out.println(image.getwPixel());
-    }
-
-    public static void showImage(JpgImage image) {
-        System.out.println("Method only for JpgImage class");
-        System.out.println(image.gethPixel());
-        System.out.println(image.getwPixel());
-    }
+//    public static void showImage(PngImage image) {
+//        System.out.println("Method only for PngImage class");
+//        System.out.println(image.gethPixel());
+//        System.out.println(image.getwPixel());
+//    }
+//
+//    public static void showImage(JpgImage image) {
+//        System.out.println("Method only for JpgImage class");
+//        System.out.println(image.gethPixel());
+//        System.out.println(image.getwPixel());
+//    }
 }
