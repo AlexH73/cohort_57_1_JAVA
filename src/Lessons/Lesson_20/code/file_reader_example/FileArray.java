@@ -1,5 +1,5 @@
 package Lessons.Lesson_20.code.file_reader_example;
-
+/*
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -46,3 +46,4 @@ public class FileArray {
         System.out.println("scanners.length = " + scanners.length);
     }
 }
+*/
