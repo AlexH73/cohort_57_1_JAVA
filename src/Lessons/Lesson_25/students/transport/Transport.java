@@ -16,6 +16,15 @@ public class Transport {
         System.out.println("Забронирован билет на транспорт");
     }
 
+    public void book(int passengers) {
+        System.out.println("Забронировано " + passengers + " мест(а) на транспорт " + transportNumber);
+    }
+
+    public void cancelBooking() {
+        System.out.println("Бронирование отменено для транспорта " + transportNumber);
+    }
+
+
     public int getTransportNumber() {
         return transportNumber;
     }
