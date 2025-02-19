@@ -1,4 +1,4 @@
-package Practice.ThirdParty.polymorphism;
+package Practice.ThirdParty.polymorphism.zoo;
 
 abstract class Animal {
     protected String name;    // Имя животного

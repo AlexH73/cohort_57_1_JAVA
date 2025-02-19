@@ -1,4 +1,4 @@
-package Practice.ThirdParty.polymorphism;
+package Practice.ThirdParty.polymorphism.zoo;
 
 public class Zoo {
     public static void main(String[] args) {

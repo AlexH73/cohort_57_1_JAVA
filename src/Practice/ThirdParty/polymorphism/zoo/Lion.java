@@ -1,4 +1,4 @@
-package Practice.ThirdParty.polymorphism;
+package Practice.ThirdParty.polymorphism.zoo;
 
 class Lion extends Animal {
     public Lion(String name, String species, int age) {
