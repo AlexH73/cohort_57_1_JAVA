@@ -7,4 +7,10 @@ public class CreditCardPayment extends PaymentMethod{
         super(amount, currency);
         this.creditCardNumber = creditCardNumber;
     }
+
+    @Override
+    private void pay() {
+        System.out.println("Kreditkarte akzeptiert !");
+    }
+
 }
