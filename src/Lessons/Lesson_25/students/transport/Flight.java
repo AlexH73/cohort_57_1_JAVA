@@ -1,6 +1,6 @@
 package Lessons.Lesson_25.students.transport;
 
-public class Flight extends Transport {
+public class Flight extends Transport{
     private String classType;
 
     public Flight(int transportNumber, String departureTime, String arrivalTime, double price, String classType) {
@@ -10,16 +10,16 @@ public class Flight extends Transport {
 
     @Override
     public void book() {
-        if (chooseServiceClass()) {
-            System.out.println("Второй класс." + classType);
-        } else {
-            System.out.println("Первый класс." + classType);
-
-        }
+        System.out.println("Забронирован билет на рейс " + getTransportNumber() + " в классе " + classType);
     }
 
-    public boolean chooseServiceClass() {
-        return true;
+    public void chooseServiceClass(String classType) {
+        this.classType = classType;
+        System.out.println("Выбран класс обслуживания: " + classType);
     }
 
+    @Override
+    public void cancelBooking() {
+        System.out.println("Отмена бронирования на рейс " + getTransportNumber());
+    }
 }
