@@ -11,6 +11,10 @@ public class Animal {
         this.owner = owner;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return name + ", " + age + " лет, Владелец: " + owner.getName();
