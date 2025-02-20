@@ -1,4 +1,4 @@
-package HomerJavaWork.Homer20work;
+package Homework.lesson_20;
 
 import java.util.Random;
 

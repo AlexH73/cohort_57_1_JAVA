@@ -1,4 +1,4 @@
-package HomerJavaWork.Homer19work;
+package Homework.lesson_19;
 //Задача 4: Подсчитать сумму чисел от 1 до N
 //Код на Python:
 //n = int(input("Enter a number: "))
