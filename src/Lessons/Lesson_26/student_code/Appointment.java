@@ -10,7 +10,7 @@ public class Appointment {
         this.date = date;
         this.animal = animal;
         this.veterinarian = veterinarian;
-        this.diagnosis = "Keine Diagnose";
+        this.diagnosis = "Не установлен";
     }
 
     public void conductCheckup(String diagnosis) {
@@ -19,11 +19,6 @@ public class Appointment {
 
     @Override
     public String toString() {
-        return "Appointment{" +
-                "date='" + date + '\'' +
-                ", animal=" + animal +
-                ", veterinarian=" + veterinarian +
-                ", diagnosis='" + diagnosis + '\'' +
-                '}';
+        return "Дата: " + date + ", Животное: " + animal.getName() + ", Врач: " + veterinarian.getName() + ", Диагноз: " + diagnosis;
     }
 }
