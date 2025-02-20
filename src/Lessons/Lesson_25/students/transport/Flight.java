@@ -9,7 +9,17 @@ public class Flight extends Transport {
     }
 
     @Override
-    public void book(){
-        System.out.println(classType);
+    public void book() {
+        if (chooseServiceClass()) {
+            System.out.println("Второй класс." + classType);
+        } else {
+            System.out.println("Первый класс." + classType);
+
+        }
     }
+
+    public boolean chooseServiceClass() {
+        return true;
+    }
+
 }

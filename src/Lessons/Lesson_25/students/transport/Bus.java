@@ -6,7 +6,6 @@ public class Bus extends Transport {
     }
     @Override
     public void book(){
-
         if(checkAvailableSeats()){
             System.out.println("В автобусе есть свободные места");
         } else {
