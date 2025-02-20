@@ -1,15 +1,16 @@
 package Lessons.Lesson_26.student_code;
 
 public class Person {
-    private String name;
     private int age;
+    private String name;
     private String phoneNumber;
 
-    public Person(String name, int age, String phoneNumber) {
-        this.name = name;
+    public Person(int age, String name, String phoneNumber) {
         this.age = age;
+        this.name = name;
         this.phoneNumber = phoneNumber;
     }
+
 
     public String getName() {
         return name;
@@ -17,6 +18,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return name + ", " + age + " лет, Тел: " + phoneNumber;
+        return name + ", " + age + " лет, телефонный номер: " + phoneNumber;
     }
 }
