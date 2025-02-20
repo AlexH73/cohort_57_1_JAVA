@@ -33,7 +33,7 @@ class VetClinic {
                 veterinarian.getSpecialization().contains("Экзотические") && animal instanceof ExoticAnimal) {
             System.out.println("Запись: " + animal.getName() + " к " + veterinarian.getName() + " на " + date);
         } else {
-            System.out.println("Ошибка: Врач " + veterinarian.getName() + " не специализируется на данном животном.");
+            System.out.println("Ошибка: Врач " + veterinarian.getName() + " не специализируется на данном виде животных.");
         }
     }
 }
