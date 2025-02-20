@@ -1,5 +1,5 @@
 package Homework.lesson_22;
-
+/*
 import java.util.Arrays;
 
 public class Store22Test {
@@ -25,3 +25,4 @@ public class Store22Test {
     }
 
 }
+*/
