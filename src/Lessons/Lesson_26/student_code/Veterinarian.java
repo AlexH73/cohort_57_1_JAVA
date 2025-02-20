@@ -1,5 +1,4 @@
 package Lessons.Lesson_26.student_code;
-/*✔ Veterinarian – наследует Person, добавляет поле specialization.*/
 public class Veterinarian extends Person{
     private String specialization;
 
@@ -12,7 +11,7 @@ public class Veterinarian extends Person{
     public String toString() {
         String baseInformanion = super.toString();
         return baseInformanion  +
-                " , specialization='" + specialization;
+                ", Специальность: " + specialization;
 
     }
 }

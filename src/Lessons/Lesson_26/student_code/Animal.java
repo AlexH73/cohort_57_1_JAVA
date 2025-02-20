@@ -11,12 +11,12 @@ public class Animal {
         this.owner = owner;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", owner=" + owner +
-                '}';
+        return name + ", " + age + " лет, Владелец: " + owner.getName();
     }
 }
