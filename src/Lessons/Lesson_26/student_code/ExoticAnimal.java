@@ -1,6 +1,6 @@
 package Lessons.Lesson_26.student_code;
 
-public class ExoticAnimal extends Animal{
+public class ExoticAnimal extends Animal {
     private String species;
 
     public ExoticAnimal(String name, int age, Client owner, String species) {
@@ -10,9 +10,8 @@ public class ExoticAnimal extends Animal{
 
     @Override
     public String toString() {
-        String baseInformanion = super.toString();
-        return baseInformanion  +
-                " , species='" + species;
+        String baseInformation = super.toString();
+        return baseInformation + ", Вид:" + species;
 
     }
 }
