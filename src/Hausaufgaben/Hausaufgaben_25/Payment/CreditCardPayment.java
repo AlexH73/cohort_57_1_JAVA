@@ -9,7 +9,7 @@ public class CreditCardPayment extends PaymentMethod{
     }
 
     @Override
-    private void pay() {
+    public void pay() {
         System.out.println("Kreditkarte akzeptiert !");
     }
 

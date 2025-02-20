@@ -9,7 +9,7 @@ public class PaymentMethod {
         this.currency = currency;
     }
 
-    private void pay() {
+    public void pay() {
         System.out.println("Das ist überwiesen !");
     }
 
