@@ -1,6 +1,6 @@
 package Lessons.Lesson_26.student_code;
 
-public class Client extends Person{
+public class Client extends Person {
     private Animal[] pets;
     private static final int MAX_PETS = 5;
     private int petCount;
