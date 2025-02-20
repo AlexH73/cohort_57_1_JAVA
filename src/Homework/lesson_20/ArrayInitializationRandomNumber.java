@@ -1,4 +1,4 @@
-package HomerJavaWork.Homer20work;
+package Homework.lesson_20;
 /*Создание и Инициализация Массива:
 
         Создайте массив целых чисел размером 10 элементов.

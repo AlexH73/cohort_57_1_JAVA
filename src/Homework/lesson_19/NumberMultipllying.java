@@ -1,4 +1,4 @@
-package HomerJavaWork.Homer19work;
+package Homework.lesson_19;
 //Задача 5: Таблица умножения для числа
 //Код на Python:
 //
