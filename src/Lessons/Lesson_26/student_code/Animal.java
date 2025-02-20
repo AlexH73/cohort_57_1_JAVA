@@ -13,10 +13,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", owner=" + owner +
-                '}';
+        return name + ", " + age + " лет, Владелец: " + owner.getName();
     }
 }
