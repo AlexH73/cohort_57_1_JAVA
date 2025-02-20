@@ -11,4 +11,18 @@ public class Client extends Person{
         this.petCount = 0;
         System.out.println("Клиент создан: " + name + ", питомцы: " + pets.length);
     }
+
+    public boolean addPet(Animal pet) {
+        if (pets == null) { // Проверка на null
+            System.out.println("Ошибка: pets не инициализирован!");
+            return false;
+        }
+        if (petCount < MAX_PETS) {
+            pets[petCount++] = pet;
+            return true;
+        } else {
+            System.out.println("Невозможно добавить больше питомцев.");
+            return false;
+        }
+    }
 }
