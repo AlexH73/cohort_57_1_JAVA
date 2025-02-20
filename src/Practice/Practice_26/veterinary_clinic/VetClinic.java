@@ -1,58 +1,39 @@
 package Practice.Practice_26.veterinary_clinic;
 
 class VetClinic {
-    private Client[] clients;
-    private Veterinarian[] veterinarians;
-    private Appointment[] appointments;
-    private int clientCount;
-    private int vetCount;
-    private int appointmentCount;
-    private static final int MAX_CLIENTS = 100;
-    private static final int MAX_VETS = 10;
-    private static final int MAX_APPOINTMENTS = 200;
+    private Client[] clients = new Client[10];
+    private Veterinarian[] veterinarians = new Veterinarian[5];
+    private int clientCount = 0;
+    private int vetCount = 0;
 
-    public VetClinic() {
-        this.clients = new Client[MAX_CLIENTS];
-        this.veterinarians = new Veterinarian[MAX_VETS];
-        this.appointments = new Appointment[MAX_APPOINTMENTS];
-        this.clientCount = 0;
-        this.vetCount = 0;
-        this.appointmentCount = 0;
-    }
-
-    public boolean registerClient(Client client) {
-        if (clientCount < MAX_CLIENTS) {
+    public void registerClient(Client client) {
+        if (clientCount < clients.length) {
             clients[clientCount++] = client;
-            return true;
-        } else {
-            System.out.println("Невозможно добавить больше клиентов.");
-            return false;
         }
     }
 
-    public boolean addVeterinarian(Veterinarian veterinarian) {
-        if (vetCount < MAX_VETS) {
-            veterinarians[vetCount++] = veterinarian;
-            return true;
-        } else {
-            System.out.println("Невозможно добавить больше ветеринаров.");
-            return false;
+    public void addVeterinarian(Veterinarian vet) {
+        if (vetCount < veterinarians.length) {
+            veterinarians[vetCount++] = vet;
         }
     }
 
-    public boolean scheduleAppointment(Animal animal, Veterinarian veterinarian, String date) {
-        if (appointmentCount < MAX_APPOINTMENTS) {
-            appointments[appointmentCount++] = new Appointment(date, animal, veterinarian);
-            return true;
-        } else {
-            System.out.println("Невозможно добавить больше приемов.");
-            return false;
+    public Veterinarian findVeterinarianBySpecialization(String specialization) {
+        for (Veterinarian vet : veterinarians) {
+            if (vet != null && vet.getSpecialization().equals(specialization)) {
+                return vet;
+            }
         }
+        return null;
     }
 
-    public void showAllAppointments() {
-        for (int i = 0; i < appointmentCount; i++) {
-            System.out.println(appointments[i]);
+    public void scheduleAppointment(Animal animal, Veterinarian veterinarian, String date) {
+        if (veterinarian.getSpecialization().contains("Собаки") && animal instanceof Dog ||
+                veterinarian.getSpecialization().contains("Кошки") && animal instanceof Cat ||
+                veterinarian.getSpecialization().contains("Экзотические") && animal instanceof ExoticAnimal) {
+            System.out.println("Запись: " + animal.getName() + " к " + veterinarian.getName() + " на " + date);
+        } else {
+            System.out.println("Ошибка: Врач " + veterinarian.getName() + " не специализируется на данном животном.");
         }
     }
 }

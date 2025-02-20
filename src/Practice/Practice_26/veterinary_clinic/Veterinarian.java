@@ -1,10 +1,14 @@
 package Practice.Practice_26.veterinary_clinic;
 
 class Veterinarian extends Person {
-    private String spezialization;
+    private String specialization;
 
-    public Veterinarian(String name, int age, String phoneNumber, String spezialization) {
+    public Veterinarian(String name, int age, String phoneNumber, String specialization) {
         super(name, age, phoneNumber);
-        this.spezialization = spezialization;
+        this.specialization = specialization;
+    }
+
+    public String getSpecialization() {
+        return specialization;
     }
 }
