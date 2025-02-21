@@ -9,7 +9,7 @@ public class PaymentMethod {
         this.currency = currency;
     }
 
-    public void pay() {
+    public void pay(String number) {
         System.out.println("Das ist überwiesen !");
     }
 
@@ -17,15 +17,11 @@ public class PaymentMethod {
         return amount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
     public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public void refund() {
+        System.out.println("Zurück erhalten: " + amount + " " + currency);
     }
 }
