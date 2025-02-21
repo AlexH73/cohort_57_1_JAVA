@@ -27,9 +27,11 @@ class VetClinic {
     public void registerClient(Client client) {
         if (clientCount < clients.length) {
             clients[clientCount++] = client;
-            System.out.println("Клиент " + client.getName() + " зарегистрирован в клинике.");
+            System.out.println("Клиент " + VetClinicSystem.Color.YELLOW + client.getName() +
+                    VetClinicSystem.Color.GREEN + " зарегистрирован в клинике." + VetClinicSystem.Color.RESET);
         } else {
-            System.out.println("Клиника не может принять больше клиентов.");
+            System.out.println(VetClinicSystem.Color.RED + "Клиника не может принять больше клиентов." +
+                    VetClinicSystem.Color.RESET);
         }
     }
 
@@ -41,9 +43,11 @@ class VetClinic {
     public void addVeterinarian(Veterinarian vet) {
         if (vetCount < veterinarians.length) {
             veterinarians[vetCount++] = vet;
-            System.out.println("Ветеринар " + vet.getName() + " добавлен в клинику.");
+            System.out.println("Ветеринар " + VetClinicSystem.Color.YELLOW + vet.getName() +
+                    VetClinicSystem.Color.GREEN + " добавлен в клинику." + VetClinicSystem.Color.RESET);
         } else {
-            System.out.println("Клиника не может принять больше ветеринаров.");
+            System.out.println(VetClinicSystem.Color.RED +
+                    "Клиника не может принять больше ветеринаров." + VetClinicSystem.Color.RESET);
         }
     }
 
@@ -73,9 +77,12 @@ class VetClinic {
         if (veterinarian.getSpecialization().contains("Собаки") && animal instanceof Dog ||
                 veterinarian.getSpecialization().contains("Кошки") && animal instanceof Cat ||
                 veterinarian.getSpecialization().contains("Экзотические") && animal instanceof ExoticAnimal) {
-            System.out.println("Запись: " + animal.getName() + " к " + veterinarian.getName() + " на " + date);
+            System.out.println("Запись: " + VetClinicSystem.Color.CYAN + animal.getName() + " к " + veterinarian.getName() +
+                    " на " + VetClinicSystem.Color.YELLOW + date + VetClinicSystem.Color.RESET);
         } else {
-            System.out.println("Ошибка: Врач " + veterinarian.getName() + " не специализируется на данном виде животных.");
+            System.out.println(VetClinicSystem.Color.RED + "Ошибка: Врач " +
+                    veterinarian.getName() + " не специализируется на данном виде животных." +
+                    VetClinicSystem.Color.RESET);
         }
     }
 }

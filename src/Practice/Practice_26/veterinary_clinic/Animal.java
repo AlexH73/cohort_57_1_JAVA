@@ -55,6 +55,7 @@ public class Animal {
      */
     @Override
     public String toString() {
-        return name + ", " + age + " лет, Владелец: " + owner.getName();
+        return VetClinicSystem.Color.PURPLE +  name + ", " + age +
+                " лет, Владелец: " + owner.getName() + VetClinicSystem.Color.RESET;
     }
 }
