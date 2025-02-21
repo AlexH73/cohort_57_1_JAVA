@@ -1,16 +1,21 @@
 package Practice.Practice_26.veterinary_clinic;
 
+/**
+ * Главный класс для тестирования системы ветеринарной клиники.
+ */
 public class VetClinicSystem {
     public static void main(String[] args) {
-        System.out.println("=== Регистрация клиентов и питомцев ===");
+        System.out.println("\n" + Color.BLUE + "=== Регистрация клиентов и питомцев ===" + Color.RESET);
         VetClinic clinic = new VetClinic();
 
+        // Создание клиентов
         Client client1 = new Client("Иван Петров", 35, "123-456-789");
         Client client2 = new Client("Анна Смирнова", 28, "987-654-321");
         Client client3 = new Client("Сергей Иванов", 40, "111-222-333");
         Client client4 = new Client("Мария Кузнецова", 30, "222-333-444");
         Client client5 = new Client("Олег Никифоров", 25, "333-444-555");
 
+        // Создание животных
         Dog dog1 = new Dog("Бобик", 5, client1);
         Dog dog2 = new Dog("Шарик", 2, client3);
         Cat cat1 = new Cat("Мурка", 3, client2);
@@ -19,6 +24,7 @@ public class VetClinicSystem {
         ExoticAnimal snake = new ExoticAnimal("Гадюка", 4, client3, "Змея");
         ExoticAnimal turtle = new ExoticAnimal("Черепаха", 10, client5, "Пресноводная");
 
+        // Добавление животных к клиентам
         client1.addPet(dog1);
         client1.addPet(parrot);
         client2.addPet(cat1);
@@ -27,6 +33,7 @@ public class VetClinicSystem {
         client4.addPet(cat2);
         client5.addPet(turtle);
 
+        // Регистрация клиентов в клинике
         clinic.registerClient(client1);
         clinic.registerClient(client2);
         clinic.registerClient(client3);
@@ -35,6 +42,7 @@ public class VetClinicSystem {
 
         System.out.println("\n=== Добавление ветеринаров ===");
 
+        // Создание и добавление ветеринаров
         Veterinarian vet1 = new Veterinarian("Доктор Айболит", 45, "555-1234", "Собаки и кошки");
         Veterinarian vet2 = new Veterinarian("Доктор Зоолог", 50, "555-5678", "Экзотические животные");
         Veterinarian vet3 = new Veterinarian("Доктор Грызунов", 38, "555-9999", "Грызуны");
@@ -47,8 +55,9 @@ public class VetClinicSystem {
 
         System.out.println("\n=== Запись на прием ===");
 
+        // Запись животных на прием к ветеринарам
         clinic.scheduleAppointment(dog1, vet1, "2025-03-01");
-        clinic.scheduleAppointment(cat1, vet1, "2025-03-02");
+        clinic.scheduleAppointment(cat1, vet1, "2025-03-02"); // Ошибка: неправильная специализация
         clinic.scheduleAppointment(parrot, vet2, "2025-03-03");
         clinic.scheduleAppointment(dog2, vet1, "2025-03-04");
         clinic.scheduleAppointment(snake, vet2, "2025-03-05");
@@ -58,7 +67,7 @@ public class VetClinicSystem {
 
 
 
-        // Врачи
+/*        // Врачи
         Veterinarian vet21 = new Veterinarian("Иванов Иван Иванович", 55, "333-4445", "Собаки");
         Veterinarian vet22 = new Veterinarian("Петрова Анна Сергеевна", 33,"111-7778","Кошки");
         Veterinarian vet23 = new Veterinarian("Иванов Иван Иванович", 55, "333-4445", "Собаки"); // Дубликат имени, для проверки обработки ошибок
@@ -77,7 +86,7 @@ public class VetClinicSystem {
         clinic.scheduleAppointment(cat1, vet1, "2025-03-02");
         clinic.scheduleAppointment(parrot, vet2, "2025-03-03");
         clinic.scheduleAppointment(dog2, vet1, "2025-03-04");
-        clinic.scheduleAppointment(snake, vet2, "2025-03-05");
+        clinic.scheduleAppointment(snake, vet2, "2025-03-05");*/
 /*
 
         System.out.println("===============================================");
@@ -168,5 +177,17 @@ public class VetClinicSystem {
         public static final String PURPLE = "\u001B[35m";
         public static final String CYAN = "\u001B[36m";
         public static final String WHITE = "\u001B[37m";*/
+    }
+
+    // Цвета для консоли (ANSI escape codes)
+    public static class Color {
+        public static final String RESET = "\u001B[0m";
+        public static final String RED = "\u001B[31m";
+        public static final String GREEN = "\u001B[32m";
+        public static final String YELLOW = "\u001B[33m";
+        public static final String BLUE = "\u001B[34m";
+        public static final String PURPLE = "\u001B[35m";
+        public static final String CYAN = "\u001B[36m";
+        public static final String WHITE = "\u001B[37m";
     }
 }
