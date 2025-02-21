@@ -15,6 +15,10 @@ public class Animal {
         return name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     public Client getOwner() {
         return owner;
     }

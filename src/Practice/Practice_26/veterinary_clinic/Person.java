@@ -15,6 +15,14 @@ public class Person {
         return name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
     @Override
     public String toString() {
         return name + ", " + age + " лет, Тел: " + phoneNumber;

@@ -1,20 +1,33 @@
 package Practice.Practice_26.veterinary_clinic;
 
 class VetClinic {
-    private Client[] clients = new Client[10];
-    private Veterinarian[] veterinarians = new Veterinarian[5];
-    private int clientCount = 0;
-    private int vetCount = 0;
+    private Client[] clients;
+    private Veterinarian[] veterinarians;
+    private int clientCount;
+    private int vetCount;
+
+    public VetClinic() {
+        this.clients = new Client[10];
+        this.veterinarians = new Veterinarian[5];
+        this.clientCount = 0;
+        this.vetCount = 0;
+    }
 
     public void registerClient(Client client) {
         if (clientCount < clients.length) {
             clients[clientCount++] = client;
+            System.out.println("Клиент " + client.getName() + " зарегистрирован в клинике.");
+        } else {
+            System.out.println("Клиника не может принять больше клиентов.");
         }
     }
 
     public void addVeterinarian(Veterinarian vet) {
         if (vetCount < veterinarians.length) {
             veterinarians[vetCount++] = vet;
+            System.out.println("Ветеринар " + vet.getName() + " добавлен в клинику.");
+        } else {
+            System.out.println("Клиника не может принять больше ветеринаров.");
         }
     }
 

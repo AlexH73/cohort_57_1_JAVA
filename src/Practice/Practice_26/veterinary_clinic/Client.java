@@ -14,10 +14,15 @@ class Client extends Person {
     public boolean addPet(Animal pet) {
         if (petCount < MAX_PETS) {
             pets[petCount++] = pet;
+            System.out.println("Питомец " + pet.getName() + " добавлен к клиенту " + getName());
             return true;
         } else {
-            System.out.println("Невозможно добавить больше питомцев.");
+            System.out.println("Невозможно добавить больше питомцев к клиенту " + getName());
             return false;
         }
+    }
+
+    public Animal[] getPets() {
+        return pets;
     }
 }
