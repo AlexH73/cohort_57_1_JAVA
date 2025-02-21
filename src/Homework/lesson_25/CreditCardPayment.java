@@ -4,7 +4,6 @@ package Homework.lesson_25;
 public class CreditCardPayment extends PaymentMethod {
     private String cardNumber;
 
-    //Конструктор
     public CreditCardPayment(double amount, String currency, String cardNumber) {
         super(amount, currency);
         this.cardNumber = cardNumber;
