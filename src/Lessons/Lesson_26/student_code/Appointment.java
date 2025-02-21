@@ -6,7 +6,7 @@ public class Appointment {
     private Veterinarian veterinarian;
     private String diagnosis;
 
-    public Appointment(String date, Animal animal, Veterinarian veterinarian, String diagnosis) {
+    public Appointment(String date, Animal animal, Veterinarian veterinarian) {
         this.date = date;
         this.animal = animal;
         this.veterinarian = veterinarian;
