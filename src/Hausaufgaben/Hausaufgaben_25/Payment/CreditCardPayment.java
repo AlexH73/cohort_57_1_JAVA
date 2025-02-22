@@ -15,7 +15,7 @@ public class CreditCardPayment extends PaymentMethod{
 
     @Override
     public void refund() {
-        System.out.println("Geld wurde zurück überwiesen " + creditCardNumber + getAmount() + getCurrency());
+        System.out.println("Geld wurde zurück überwiesen " +"CardNumber" + " "+ creditCardNumber+ " " + getAmount() + getCurrency());
     }
 
 }

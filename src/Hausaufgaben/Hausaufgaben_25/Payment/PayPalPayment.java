@@ -9,7 +9,7 @@ public class PayPalPayment extends PaymentMethod{
 
     @Override
     public void pay(String number) {
-        System.out.println("Paypal hat das Geld Überwiesen !");
+        System.out.println("Paypal hat das Geld Überwiesen ! " + getAmount());
     }
 
     @Override

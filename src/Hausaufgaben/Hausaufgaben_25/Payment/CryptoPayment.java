@@ -10,11 +10,11 @@ public class CryptoPayment extends PaymentMethod {
 
     @Override
     public void pay(String number) {
-        System.out.println("Coins wurden Überwiesen !");
+        System.out.println("Coins wurden Überwiesen ! " + getAmount());
     }
 
     @Override
     public void refund() {
-        System.out.println("Ihr Bitcoin wurde zurück überwiesen: ");
+        System.out.println("Ihr Bitcoin wurde zurück überwiesen: " + getAmount());
     }
 }
