@@ -10,7 +10,7 @@ public class Employee {
     }
 
     public void work(){
-        System.out.println(name + position + "Варит Кофе!");
+        System.out.println(name + position + "Варит Кофе");
     }
 
     public String getName() {
