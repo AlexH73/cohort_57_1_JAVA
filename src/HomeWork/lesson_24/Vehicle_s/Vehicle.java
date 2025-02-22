@@ -5,6 +5,7 @@ public class Vehicle {
     private int capacity;
 
     public void move() {
+
         System.out.println("Транспорт движется. ");
     }
 

@@ -1,13 +1,18 @@
 package HomeWork.lesson_24.User_s;
-/*
+
 public class UserUsage {
     public static void main(String[] args) {
 
-        User schoolboy = new User("Petrof", "petrof@gmail.com");
-        System.out.println("Schoolboy: ");
+        PremiumStudent studentData = new PremiumStudent
+                ("Puschkin.A","puschkin@gmail.com",
+                        "525252","Junior");
 
-        Student student1 = new Student();
-        student1.studentID();
+        System.out.println("  Карта студента: " + studentData);
+
+        studentData.getUserMail();
+        studentData.getUserMail();
+        studentData.studentID();
+        studentData.membershipLevel();
+
     }
 }
-*/

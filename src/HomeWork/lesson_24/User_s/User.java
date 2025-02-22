@@ -19,7 +19,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "userName = " + userName +
-                ", userMail = " + userMail ;
+        return "\nuserName: " + userName +
+                "\nuserMail: " + userMail ;
     }
 }

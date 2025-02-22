@@ -5,6 +5,7 @@ public class Animal {
     private int age;
 
     public void makeSound() {
+
         System.out.println("Животное издаёт звуки ");
     }
 
