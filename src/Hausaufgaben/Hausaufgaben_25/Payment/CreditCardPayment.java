@@ -9,8 +9,13 @@ public class CreditCardPayment extends PaymentMethod{
     }
 
     @Override
-    public void pay() {
+    public void pay(String number) {
         System.out.println("Kreditkarte akzeptiert !");
+    }
+
+    @Override
+    public void refund() {
+        System.out.println("Geld wurde zurück überwiesen " + creditCardNumber + getAmount() + getCurrency());
     }
 
 }
