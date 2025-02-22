@@ -9,8 +9,7 @@ public class UserUsage {
 
         System.out.println("  Карта студента: " + studentData);
 
-        studentData.getUserMail();
-        studentData.getUserMail();
+
         studentData.studentID();
         studentData.membershipLevel();
 
