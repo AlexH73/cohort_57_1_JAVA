@@ -1,5 +1,5 @@
 package Hausaufgaben.Hausaufgaben_24.PaymentMethod;
-// 2. `CreditCard` наследует `PaymentMethod` и добавляет `creditLimit`.
+/* 2. `CreditCard` наследует `PaymentMethod` и добавляет `creditLimit`.
 public class CreditCard extends PaymentMethod{
     private double creditLimit;
 
@@ -24,10 +24,13 @@ public class CreditCard extends PaymentMethod{
         super.setAccountNumber(accountNumber);
     }
 
-    @Override
-    public double getBalance() {
-        setBalance();
+   // @Override
+   // public double getBalance() {
+     //   setBalance();
     }
-        super();
+   //     super();
 
 }
+
+
+ */

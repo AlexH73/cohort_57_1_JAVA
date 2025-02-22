@@ -1,5 +1,5 @@
 package Hausaufgaben.Hausaufgaben_24.PaymentMethod;
-
+/*
 public class GoldCreditCard extends CreditCard {
     private double cashbackPercentage;
 
@@ -40,3 +40,5 @@ public class GoldCreditCard extends CreditCard {
     GoldCreditLimit limit = new GoldCreditLimit();
     limit.cashbackPercentage();
 }
+
+ */

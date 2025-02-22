@@ -1,5 +1,5 @@
 package Hausaufgaben.Hausaufgaben_24.PaymentMethod;
-
+/*
 public class PaymentMethod {
     private String accountNumber;
     private double balance;
@@ -25,3 +25,5 @@ public class PaymentMethod {
         this.balance = balance;
     }
 }
+
+ */

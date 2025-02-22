@@ -14,4 +14,7 @@ public class Flight extends Transport{
     public void book() {
        System.out.println(classType);
     }
+
+    public void chooseServiceClass(String эконом) {
+    }
 }
