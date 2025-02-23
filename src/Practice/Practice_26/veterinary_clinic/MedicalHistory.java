@@ -25,12 +25,12 @@ class MedicalHistory {
     public boolean addAppointment(Appointment appointment) {
         if (appointmentCount < MAX_APPOINTMENTS) {
             appointments[appointmentCount++] = appointment;
-            System.out.println(VetClinicSystem.Color.GREEN + "Добавлена запись о приеме:  " +
-                    VetClinicSystem.Color.RESET + appointment);
+            System.out.println(Color.GREEN + "Добавлена запись о приеме:  " +
+                    Color.RESET + appointment);
             return true;
         } else {
-            System.out.println(VetClinicSystem.Color.RED +
-                    "Невозможно добавить больше записей в историю." + VetClinicSystem.Color.RESET);
+            System.out.println(Color.RED +
+                    "Невозможно добавить больше записей в историю." + Color.RESET);
             return false;
         }
     }
@@ -40,9 +40,9 @@ class MedicalHistory {
      */
     public void showHistory() {
         if (appointmentCount == 0) {
-            System.out.println(VetClinicSystem.Color.RED + "Медицинская история пуста." + VetClinicSystem.Color.RESET);
+            System.out.println(Color.RED + "Медицинская история пуста." + Color.RESET);
         } else {
-            System.out.println(VetClinicSystem.Color.BLUE + "\n=== Медицинская история ===" + VetClinicSystem.Color.RESET);
+            System.out.println(Color.BLUE + "\n=== Медицинская история ===" + Color.RESET);
             for (int i = 0; i < appointmentCount; i++) {
                 System.out.println(appointments[i]);
             }

@@ -55,6 +55,6 @@ public class Person {
      */
     @Override
     public String toString() {
-        return VetClinicSystem.Color.CYAN +  name + ", " + age + " лет, Тел: " + phoneNumber + VetClinicSystem.Color.RESET;
+        return Color.CYAN +  name + ", " + age + " лет, Тел: " + phoneNumber + Color.RESET;
     }
 }

@@ -20,19 +20,35 @@ class VetClinic {
     }
 
     /**
+     * Увеличить размер массива клиентов при необходимости.
+     */
+    private void expandClientArray() {
+        Client[] newClients = new Client[clients.length * 2];
+        System.arraycopy(clients, 0, newClients, 0, clients.length);
+        clients = newClients;
+    }
+
+    /**
+     * Увеличить размер массива ветеринаров при необходимости.
+     */
+    private void expandVeterinarianArray() {
+        Veterinarian[] newVets = new Veterinarian[veterinarians.length * 2];
+        System.arraycopy(veterinarians, 0, newVets, 0, veterinarians.length);
+        veterinarians = newVets;
+    }
+
+    /**
      * Зарегистрировать клиента в клинике.
      *
      * @param client Клиент для регистрации.
      */
     public void registerClient(Client client) {
-        if (clientCount < clients.length) {
-            clients[clientCount++] = client;
-            System.out.println("Клиент " + VetClinicSystem.Color.YELLOW + client.getName() +
-                    VetClinicSystem.Color.GREEN + " зарегистрирован в клинике." + VetClinicSystem.Color.RESET);
-        } else {
-            System.out.println(VetClinicSystem.Color.RED + "Клиника не может принять больше клиентов." +
-                    VetClinicSystem.Color.RESET);
+        if (clientCount >= clients.length) {
+            expandClientArray();
         }
+        clients[clientCount++] = client;
+        System.out.println("Клиент " + Color.YELLOW + client.getName() +
+                Color.GREEN + " зарегистрирован в клинике." + Color.RESET);
     }
 
     /**
@@ -41,14 +57,12 @@ class VetClinic {
      * @param vet Ветеринар для добавления.
      */
     public void addVeterinarian(Veterinarian vet) {
-        if (vetCount < veterinarians.length) {
-            veterinarians[vetCount++] = vet;
-            System.out.println("Ветеринар " + VetClinicSystem.Color.YELLOW + vet.getName() +
-                    VetClinicSystem.Color.GREEN + " добавлен в клинику." + VetClinicSystem.Color.RESET);
-        } else {
-            System.out.println(VetClinicSystem.Color.RED +
-                    "Клиника не может принять больше ветеринаров." + VetClinicSystem.Color.RESET);
+        if (vetCount >= veterinarians.length) {
+            expandVeterinarianArray();
         }
+        veterinarians[vetCount++] = vet;
+        System.out.println("Ветеринар " + Color.YELLOW + vet.getName() +
+                Color.GREEN + " добавлен в клинику." + Color.RESET);
     }
 
     /**
@@ -77,12 +91,12 @@ class VetClinic {
         if (veterinarian.getSpecialization().contains("Собаки") && animal instanceof Dog ||
                 veterinarian.getSpecialization().contains("Кошки") && animal instanceof Cat ||
                 veterinarian.getSpecialization().contains("Экзотические") && animal instanceof ExoticAnimal) {
-            System.out.println("Запись: " + VetClinicSystem.Color.CYAN + animal.getName() + " к " + veterinarian.getName() +
-                    " на " + VetClinicSystem.Color.YELLOW + date + VetClinicSystem.Color.RESET);
+            System.out.println("Запись: " + Color.CYAN + animal.getName() + " к " + veterinarian.getName() +
+                    " на " + Color.YELLOW + date + Color.RESET);
         } else {
-            System.out.println(VetClinicSystem.Color.RED + "Ошибка: Врач " +
+            System.out.println(Color.RED + "Ошибка: Врач " +
                     veterinarian.getName() + " не специализируется на данном виде животных." +
-                    VetClinicSystem.Color.RESET);
+                    Color.RESET);
         }
     }
 }

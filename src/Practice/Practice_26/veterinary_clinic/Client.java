@@ -30,13 +30,13 @@ class Client extends Person {
     public boolean addPet(Animal pet) {
         if (petCount < MAX_PETS) {
             pets[petCount++] = pet;
-            System.out.println(VetClinicSystem.Color.GREEN + "Питомец " + pet.getName() +
-                    " добавлен к клиенту " + getName() + VetClinicSystem.Color.RESET);
+            System.out.println(Color.GREEN + "Питомец " + pet.getName() +
+                    " добавлен к клиенту " + getName() + Color.RESET);
             return true;
         } else {
-            System.out.println(VetClinicSystem.Color.RED +
+            System.out.println(Color.RED +
                     "Невозможно добавить больше питомцев к клиенту " +
-                    getName() + VetClinicSystem.Color.RESET);
+                    getName() + Color.RESET);
             return false;
         }
     }

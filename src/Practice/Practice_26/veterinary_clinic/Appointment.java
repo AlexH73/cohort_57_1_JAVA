@@ -39,9 +39,9 @@ class Appointment {
      */
     @Override
     public String toString() {
-        return "Дата: " + VetClinicSystem.Color.YELLOW + date + VetClinicSystem.Color.RESET +
-                ", Животное: " + VetClinicSystem.Color.CYAN + animal.getName() + VetClinicSystem.Color.RESET +
-                ", Врач: " + VetClinicSystem.Color.CYAN + veterinarian.getName() + VetClinicSystem.Color.RESET +
-                ", Диагноз: " + VetClinicSystem.Color.PURPLE + diagnosis + VetClinicSystem.Color.RESET;
+        return "Дата: " + Color.YELLOW + date + Color.RESET +
+                ", Животное: " + Color.CYAN + animal.getName() + Color.RESET +
+                ", Врач: " + Color.CYAN + veterinarian.getName() + Color.RESET +
+                ", Диагноз: " + Color.PURPLE + diagnosis + Color.RESET;
     }
 }
