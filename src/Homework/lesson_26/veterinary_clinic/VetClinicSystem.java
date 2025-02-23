@@ -5,7 +5,7 @@ package Homework.lesson_26.veterinary_clinic;
  */
 public class VetClinicSystem {
     public static void main(String[] args) {
-        System.out.println("\n" + Color.BLUE + "=== Регистрация клиентов и питомцев ===" + Color.RESET);
+        System.out.println("\n" + Color.BLUE.code + "=== Регистрация клиентов и питомцев ===" + Color.RESET.code);
         VetClinic clinic = new VetClinic();
 
         // Создание клиентов
@@ -41,7 +41,7 @@ public class VetClinicSystem {
         clinic.registerClient(client5);
 
         // Создание и добавление ветеринаров
-        System.out.println(Color.BLUE + "\n=== Добавление ветеринаров ===" + Color.RESET);
+        System.out.println(Color.BLUE.code + "\n=== Добавление ветеринаров ===" + Color.RESET.code);
         Veterinarian vet1 = new Veterinarian("Доктор Айболит", 45, "555-1234", "Собаки и кошки");
         Veterinarian vet2 = new Veterinarian("Доктор Зоолог", 50, "555-5678", "Экзотические животные");
         Veterinarian vet3 = new Veterinarian("Доктор Грызунов", 38, "555-9999", "Грызуны");
@@ -53,7 +53,7 @@ public class VetClinicSystem {
         clinic.addVeterinarian(vet4);
 
         // Запись животных на прием к ветеринарам
-        System.out.println(Color.BLUE + "\n=== Запись на прием ===" + Color.RESET);
+        System.out.println(Color.BLUE.code + "\n=== Запись на прием ===" + Color.RESET.code);
         clinic.scheduleAppointment(dog1, vet1, "2025-03-01");
         clinic.scheduleAppointment(cat1, vet1, "2025-03-02"); // Ошибка: неправильная специализация
         clinic.scheduleAppointment(parrot, vet2, "2025-03-03");
@@ -63,7 +63,7 @@ public class VetClinicSystem {
         clinic.scheduleAppointment(cat2, vet4, "2025-03-07");
         clinic.scheduleAppointment(dog1, vet3, "2025-03-08"); // Ошибка: неправильная специализация
 
-        System.out.println(Color.BLUE + "\n=== Добавление записи в медицинскую историю ===" + Color.RESET);
+        System.out.println(Color.BLUE.code + "\n=== Добавление записи в медицинскую историю ===" + Color.RESET.code);
 
         // Создание медицинской истории и добавление записей
         MedicalHistory medicalHistory = new MedicalHistory();
@@ -95,13 +95,34 @@ public class VetClinicSystem {
     }
 
     // Цвета для консоли (ANSI escape codes)
-    public static class Color {
-        public static final String RESET = "\u001B[0m";
-        public static final String RED = "\u001B[31m";
-        public static final String GREEN = "\u001B[32m";
-        public static final String YELLOW = "\u001B[33m";
-        public static final String BLUE = "\u001B[34m";
-        public static final String PURPLE = "\u001B[35m";
-        public static final String CYAN = "\u001B[36m";
+//    public static class Color {
+//        public static final String RESET = "\u001B[0m";
+//        public static final String RED = "\u001B[31m";
+//        public static final String GREEN = "\u001B[32m";
+//        public static final String YELLOW = "\u001B[33m";
+//        public static final String BLUE = "\u001B[34m";
+//        public static final String PURPLE = "\u001B[35m";
+//        public static final String CYAN = "\u001B[36m";
+//    }
+
+    // вместо static class
+    public enum Color {
+        RESET("\u001B[0m"),
+        RED("\u001B[31m"),
+        GREEN("\u001B[32m"),
+        YELLOW("\u001B[33m"),
+        CYAN("\u001B[36m"),
+        PURPLE("\u001B[35m"),
+        BLUE("\u001B[34m");
+
+        protected final String code;
+
+        Color(String code) {
+            this.code = code;
+        }
+
+        public String toString() {
+            return code;
+        }
     }
 }
