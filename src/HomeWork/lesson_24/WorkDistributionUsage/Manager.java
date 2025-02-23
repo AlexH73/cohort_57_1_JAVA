@@ -5,6 +5,7 @@ public class Manager extends Employee {
     public Manager(String name, String position) {
         super(name, "Manager - ");
     }
+
     @Override
     public void work() {
         super.work();

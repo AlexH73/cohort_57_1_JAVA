@@ -11,7 +11,5 @@ public class EmployeeOfYearUsage {
         Developer worker2 = new Developer("Иван - ", "Разработчик - ");
         worker2.work();
 
-
-
     }
 }

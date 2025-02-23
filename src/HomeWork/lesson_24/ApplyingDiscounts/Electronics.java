@@ -8,6 +8,6 @@ public class Electronics extends Product {
 
     @Override
     public void applyDiscount() {
-        super.applyDiscount(0.1);
+        super.applyDiscount();
     }
 }
