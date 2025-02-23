@@ -13,4 +13,9 @@ public class CryptoPayment extends PaymentMethod {
     public void pay() {
         System.out.println("Оплата " + amount + " " + currency + " с криптокошелька " + walletAdresse);
     }
+
+    @Override
+    public void refund() {
+        System.out.println("Возврат средств невозможен для криптовалютных платежей.");
+    }
 }
