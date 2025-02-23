@@ -1,7 +1,5 @@
-package Homework;
+package Homework.user;
 
-public class User {
-}
 // TODO: Реализовать иерархию пользователей в онлайн-обучении.
 // 1. `User` (базовый класс) содержит `username` и `email`.
 // 2. `Student` наследует `User` и добавляет `studentId`.
@@ -25,28 +23,3 @@ class User {
     }
 }
 
-class Student extends User {
-    private String studentId;
-
-    public Student(String username, String email, String studentId) {
-        super(username, email);
-        this.studentId = studentId;
-    }
-
-    public String getStudentId() {
-        return studentId;
-    }
-}
-
-class PremiumStudent extends Student {
-    private String membershipLevel;
-
-    public PremiumStudent(String username, String email, String studentId, String membershipLevel) {
-        super(username, email, studentId);
-        this.membershipLevel = membershipLevel;
-    }
-
-    public String getMembershipLevel() {
-        return membershipLevel;
-    }
-}

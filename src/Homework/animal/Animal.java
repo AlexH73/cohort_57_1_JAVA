@@ -1,7 +1,5 @@
-package Homework;
+package Homework.animal;
 
-public class animal {
-}
 // TODO: Создать базовый класс `Animal` с полями `name` и `age`.
 // 1. Реализовать метод `makeSound()`, который выводит общий звук.
 // 2. Создать подкласс `Dog`, который переопределяет `makeSound()` и выводит "Гав!".
@@ -20,15 +18,3 @@ class Animal {
         System.out.println("Животное издает звук");
     }
 }
-
-class Dog extends Animal {
-
-    public Dog(String name, int age) {
-        super(name, age);  // Вызов конструктора родительского класса
-    }
-    @Override
-    public void makeSound() {
-        System.out.println("Гав!");
-    }
-}
-
