@@ -13,6 +13,8 @@ class VetClinic {
      * Конструктор для инициализации массивов клиентов и ветеринаров.
      */
     public VetClinic() {
+        // я понимаю, что мы в перспективе перейдем к List и вы уже понимаете эти стркутуры данных,
+        // но при этом нет механизма увеличения размера
         this.clients = new Client[10];
         this.veterinarians = new Veterinarian[5];
         this.clientCount = 0;
