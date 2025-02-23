@@ -13,4 +13,6 @@ public class PayPalPayment extends PaymentMethod{
     public void pay() {
         System.out.println("Оплата " + amount + " " + currency + " через PayPal аккаунт " + email);
     }
+
+
 }

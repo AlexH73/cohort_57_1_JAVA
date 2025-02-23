@@ -15,5 +15,10 @@ public class PaymentMethodTest {
         for (PaymentMethod paymentMethod : paymentMethods) {
             paymentMethod.pay();
         }
+/*
+        System.out.println("\nПопытка возврата:");
+        for (PaymentMethod payment : payments) {
+            payment.refund();
+        }*/
     }
 }
