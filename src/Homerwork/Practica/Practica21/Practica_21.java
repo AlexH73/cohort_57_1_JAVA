@@ -1,4 +1,4 @@
-package Homerwork.Practica;
+package Homerwork.Practica.Practica21;
 /*4. Практика
 // TODO: Доработать класс AudioTrack
 // 1. Добавить новое поле `genre` (String) для хранения музыкального жанра.

@@ -1,4 +1,4 @@
-package Homerwork.Practica;
+package Homerwork.Practica.Practica22;
 /*4. Практика
 // TODO: Создать класс User
 // 1. Добавить поля:
