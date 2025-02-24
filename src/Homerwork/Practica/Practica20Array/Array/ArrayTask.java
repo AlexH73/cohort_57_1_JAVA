@@ -1,4 +1,4 @@
-package Homerwork.Practica.Practica19;
+package Homerwork.Practica.Practica20Array.Array;
 /*Практическое задание
 1)Создайте массив из 10 чисел, заполните его квадратами индексов и выведите на экран.*/
 public class ArrayTask {
@@ -32,6 +32,4 @@ public class ArrayTask {
             System.out.println(num + " ");
         }
     }
-
-
 }

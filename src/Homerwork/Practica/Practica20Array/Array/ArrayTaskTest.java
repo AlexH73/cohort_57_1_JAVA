@@ -1,6 +1,6 @@
-package Homerwork.Practica.Practica19;
+package Homerwork.Practica.Practica20Array.Array;
 
-import static Homerwork.Practica.Practica19.ArrayTask.*;
+import static Homerwork.Practica.Practica20Array.Array.ArrayTask.*;
 
 public class ArrayTaskTest {
     public static void main(String[] args) {
