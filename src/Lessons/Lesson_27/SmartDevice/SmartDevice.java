@@ -1,20 +1,20 @@
 package Lessons.Lesson_27.SmartDevice;
 
-public class SmartDevice implements CameraInterface {
-    public static void main(String[] args) {
-        SmartDevice device = new SmartDevice();
-        //device.takeAPhoto();
-
-        // пример полиморфизма, когда мы берем один тип данных и реализацию через другой
-        CameraInterface camera1 = new SmartDevice();
-        CameraInterface camera2 = new OldCamera();
-
-        camera1.takeAPhoto();
-        camera2.takeAPhoto();
-    }
+public class SmartDevice implements CameraInterface, MusicPlayerInterf {
 
     @Override
     public void takeAPhoto() {
         System.out.println("смарт девайс сделал фото");
+    }
+
+
+    @Override
+    public void playMusic() {
+        System.out.println("Смарт девайс воспроизводит музыку со спотифай");
+    }
+
+    @Override
+    public void recordMusic() {
+        System.out.println("Смарт девайс записал музыку и сохранил в привязанное облако");
     }
 }
