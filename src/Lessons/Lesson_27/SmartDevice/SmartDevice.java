@@ -1,9 +1,11 @@
 package Lessons.Lesson_27.SmartDevice;
 
-public class SmartDevice extends Computer {
+public class SmartDevice implements CameraInterface {
     public static void main(String[] args) {
+    }
 
-        new SmartDevice().connectToTheInternet();
-
+    @Override
+    public void takeAPhoto() {
+        System.out.println("смарт девайс сделал фото");
     }
 }
