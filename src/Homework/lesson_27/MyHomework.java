@@ -7,5 +7,8 @@ public class MyHomework {
     // krnfkejfnedf
 
     // не знаю, как исправить код ниже, так чтобы работал:
-    System.out.println(100);
+    public static void main(String[] args) {
+        // любой исполняемый код должен быть внутри методов:
+        System.out.println(100);
+    }
 }
