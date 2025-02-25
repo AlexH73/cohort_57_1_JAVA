@@ -1,5 +1,5 @@
 <details style="padding-top: 18px">
-  <summary><b>Lesson 28: OOP Principles.</b></summary>
+  <summary><b>Lesson 27: OOP Principles.</b></summary>
 
 <details style="padding-top: 18px">
   <summary><b>Lesson 23: OOP Principles. Encapsulation</b></summary>
@@ -1533,9 +1533,9 @@ Each subclass should **implement its own version of `send()`**.
 </details>
 
 <details style="padding-top: 18px">
-<summary><b> Lesson 28: OOP. The Principle of "Abstraction" </b></summary>
+<summary><b> Lesson 27: OOP. The Principle of "Abstraction" </b></summary>
 
-# Lesson 28: OOP. The Principle of "Abstraction"
+# Lesson 27: OOP. The Principle of "Abstraction"
 
 ## Introduction to Abstraction in OOP
 
@@ -1778,7 +1778,7 @@ Abstraction **hides complexity** and allows focusing on **what an object does ra
 ---------
 
 <details style="padding-top: 18px">
-  <summary><b>Урок 28: Принципы ООП </b></summary>
+  <summary><b>Урок 27: Принципы ООП </b></summary>
 
 <details style="padding-top: 18px">
   <summary><b>Урок 23: Принципы ООП. Инкапсуляция </b></summary>
@@ -3576,7 +3576,7 @@ public class Main {
 </details>
 
 <details style="padding-top: 18px">
-<summary><b> Урок 28. ООП. Принцип "Абстракция" </b></summary>
+<summary><b> Урок 27. ООП. Принцип "Абстракция" </b></summary>
 
 # Lesson 20. ООП. Принцип "Абстракция"
 
