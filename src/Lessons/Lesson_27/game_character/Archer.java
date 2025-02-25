@@ -13,6 +13,7 @@ public class Archer implements GameCharacter, Skill, Ranged{
     @Override
     public void  performAction() {
         attack(null);
+        rangedAttack(null);
     }
 
     @Override

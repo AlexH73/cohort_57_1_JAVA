@@ -12,6 +12,7 @@ public class Rogue implements GameCharacter, Skill, Stealthy {
     @Override
     public void  performAction() {
         attack(null);
+        stealthyAttack(null);
     }
 
     @Override
