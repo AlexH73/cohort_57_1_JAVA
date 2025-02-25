@@ -5,7 +5,7 @@ public class Person {
     private String name;
     private String phoneNumber;
 
-    public Person(int age, String name, String phoneNumber) {
+    public Person(String name, int age, String phoneNumber) {
         this.age = age;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -16,4 +16,8 @@ public class Person {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return name + ", " + age + " лет, телефонный номер: " + phoneNumber;
+    }
 }
