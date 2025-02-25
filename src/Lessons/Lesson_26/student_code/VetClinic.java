@@ -1,41 +1,58 @@
-/*
 package Lessons.Lesson_26.student_code;
 
-public class VetClinic {
+class VetClinic {
+    private Client[] clients;
+    private Veterinarian[] veterinarians;
+    private Appointment[] appointments;
+    private int clientCount;
+    private int vetCount;
+    private int appointmentCount;
+    private static final int MAX_CLIENTS = 100;
+    private static final int MAX_VETS = 10;
+    private static final int MAX_APPOINTMENTS = 200;
 
-   private String listClient;
-   private String listVeterinarian;
-   private String listAppointment;
-
-    public VetClinic(String listClient, String listVeterinarian, String listAppointment) {
-        this.listClient = listClient;
-        this.listVeterinarian = listVeterinarian;
-        this.listAppointment = listAppointment;
+    public VetClinic() {
+        this.clients = new Client[MAX_CLIENTS];
+        this.veterinarians = new Veterinarian[MAX_VETS];
+        this.appointments = new Appointment[MAX_APPOINTMENTS];
+        this.clientCount = 0;
+        this.vetCount = 0;
+        this.appointmentCount = 0;
     }
 
-    public void registerClient(Client client) {
-
-
+    public boolean registerClient(Client client) {
+        if (clientCount < MAX_CLIENTS) {
+            clients[clientCount++] = client;
+            return true;
+        } else {
+            System.out.println("Невозможно добавить больше клиентов.");
+            return false;
+        }
     }
 
-
-    public void addPetToClient(Client client, Animal pet) {
-
+    public boolean addVeterinarian(Veterinarian veterinarian) {
+        if (vetCount < MAX_VETS) {
+            veterinarians[vetCount++] = veterinarian;
+            return true;
+        } else {
+            System.out.println("Невозможно добавить больше ветеринаров.");
+            return false;
+        }
     }
 
-
-    public void scheduleAppointment(Animal animal, Veterinarian veterinarian, String date) {
-
+    public boolean scheduleAppointment(Animal animal, Veterinarian veterinarian, String date) {
+        if (appointmentCount < MAX_APPOINTMENTS) {
+            appointments[appointmentCount++] = new Appointment(date, animal, veterinarian);
+            return true;
+        } else {
+            System.out.println("Невозможно добавить больше приемов.");
+            return false;
+        }
     }
-
-
-    public void getMedicalHistory(Animal animal) {
-
-    }
-
 
     public void showAllAppointments() {
-
+        for (int i = 0; i < appointmentCount; i++) {
+            System.out.println(appointments[i]);
+        }
     }
 }
-*/
