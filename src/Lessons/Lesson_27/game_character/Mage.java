@@ -27,12 +27,13 @@ public class Mage implements GameCharacter, Skill, Healable {
     @Override
     public void takeDamage(int damage) {
         health -= damage;
-
     }
+
     @Override
     public  void  attack(GameCharacter target) {
         target.takeDamage(5);
     }
+
     @Override
     public void heal(GameCharacter target) {
         target.takeDamage(-5);

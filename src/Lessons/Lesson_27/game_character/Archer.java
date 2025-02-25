@@ -32,6 +32,11 @@ public class Archer implements GameCharacter, Skill, Ranged{
 
     @Override
     public void rangedAttack(GameCharacter target) {
-      ///  target.takeDamage(1);
+      //  target.takeDamage(1);
+    }
+
+    @Override
+    public void attack(GameCharacter target) {
+       // target.takeDamage(2);
     }
 }
