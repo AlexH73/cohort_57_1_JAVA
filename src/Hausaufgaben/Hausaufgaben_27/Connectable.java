@@ -1,5 +1,5 @@
 package Hausaufgaben.Hausaufgaben_27;
-
+ import java.util.Random;
 public interface Connectable {
     /**
      * Подключает устройство к Wi-Fi сети.
@@ -12,7 +12,7 @@ public interface Connectable {
      * Проверяет статус подключения.
      * @return true, если подключено, false – в противном случае.
      */
-    import java.util.Random;
+
 
 public class WiFiManager {
 
