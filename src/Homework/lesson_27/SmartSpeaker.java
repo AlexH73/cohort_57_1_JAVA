@@ -1,9 +1,10 @@
 package Homework.lesson_27;
 
-public class SmartSpeaker implements Connectable{
+public class SmartSpeaker implements Connectable, VoiceControllable {
     private boolean isConnected;
     private  int volumeLevel;
     private  String playingTrack;
+    private String wakeWord = "Alexa";
 
     @Override
     public void connectToWiFi(String network) {
@@ -34,4 +35,19 @@ public class SmartSpeaker implements Connectable{
         System.out.println("Громкость установлена на " + volumeLevel);
     }
 
+    //Дополнительные улучшения : 3.Выполняет голосовую команду.
+    @Override
+    public void activateVoiceCommand(String command) {
+        System.out.println(wakeWord + " выполняет команду: " + command);
+
+
+    }
+    //Дополнительные улучшения :Устанавливает ключевую фразу для активации
+    // голосового управления.
+    @Override
+    public void setWakeWord(String word) {
+        wakeWord = word;
+        System.out.println("Ключевое слово изменено на: " + wakeWord);
+
+    }
 }

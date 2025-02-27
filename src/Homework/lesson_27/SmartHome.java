@@ -18,11 +18,15 @@ public class SmartHome {
             if (device instanceof SmartLight) {
                 ((SmartLight) device).setBrightness(75);
                 ((SmartLight) device).setColorTemperature(5000);
+                ((SmartLight) device).scheduleActivation("12:00");
             } else if (device instanceof SmartThermostat) {
                 ((SmartThermostat) device).setTemperature(22);
+                ((SmartThermostat) device).getPowerConsumption();
             } else if (device instanceof SmartSpeaker) {
                 ((SmartSpeaker) device).playMusic("Imagine Dragons - Thunder");
                 ((SmartSpeaker) device).adjustVolume(50);
+                ((SmartSpeaker) device).activateVoiceCommand(" ");
+                ((SmartSpeaker) device).setWakeWord(" ");
             }
         }
 
