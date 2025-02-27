@@ -11,24 +11,27 @@ public class Warrior implements GameCharacter, Skill{
     }
 
     @Override
-    public void attack(GameCharacter target){
+    public void attack(GameCharacter target) {
         ///target.takeDamage(3);
     }
 
     @Override
-    public void  performAction(){
+    public void  performAction() {
         attack(null);
     }
+
     @Override
-    public String getName(){
+    public String getName() {
         return this.name;
     }
+
     @Override
-    public int getHealth(){
+    public int getHealth() {
         return this.health;
     }
+
     @Override
-    public void takeDamage(int damage){
-       health -=damage;
+    public void takeDamage(int damage) {
+       health -= damage;
     }
 }
