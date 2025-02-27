@@ -33,4 +33,9 @@ public class SmartLight implements Connectable {
         colorTemperature = temperature;
         System.out.println("Цветовая температура установлена на " + colorTemperature);
     }
+//Дополнительные улучшения : 1.Планировщик активации устройства,
+// который автоматически включает/выключает устройство в указанное время
+    public void scheduleActivation(String time) {
+        System.out.println("Умная лампа включится в " + time);
+    }
 }
