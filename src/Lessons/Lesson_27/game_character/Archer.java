@@ -1,6 +1,6 @@
 package Lessons.Lesson_27.game_character;
 
-public class Archer implements GameCharacter, Skill, Ranged{
+public class Archer implements GameCharacter, Skill, Ranged {
 
     private String name;
     private int health;
@@ -33,5 +33,10 @@ public class Archer implements GameCharacter, Skill, Ranged{
     @Override
     public void rangedAttack(GameCharacter target) {
       ///  target.takeDamage(1);
+    }
+
+    @Override
+    public void attack(GameCharacter target) {
+
     }
 }
