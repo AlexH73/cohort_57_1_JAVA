@@ -4,7 +4,7 @@ public interface Connectable {
     /**
      * @param network Название сети.
      */
-    void connectToWiFi(String network); //Подключает устройство к Wi-Fi
+    void connectToWiFi(String network); //Подключает устройство к заданной сети  Wi-Fi
 
 
     void disconnectFromWiFi();          //Отключает устройство от Wi-Fi
