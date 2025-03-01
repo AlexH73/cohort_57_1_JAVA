@@ -1,4 +1,4 @@
-package Homerwork.Practica;
+package Homerwork.Practica23;
 /*4. Практика: Геттеры, сеттеры и `this`
 Задание: Реализовать геттеры и сеттеры
 Цель упражнения
@@ -51,5 +51,5 @@ class ProductReview {
     private String reviewText;
 }
 */
-public class Practica_232 {
+public class Practica_23 {
 }
