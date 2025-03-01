@@ -3,7 +3,7 @@ package Homework.lesson_27;
 /**
  * Класс, представляющий умную колонку, реализующую интерфейсы Connectable и VoiceControllable.
  */
-public class SmartSpeaker implements Connectable, VoiceControllable {
+public class SmartSpeaker implements Connectable, VoiceControllable, ElectricityMeter {
     private boolean isConnected;       // Статус подключения к Wi-Fi
     private int volumeLevel;           // Уровень громкости (0-100)
     private String playingTrack;       // Воспроизводимый трек
@@ -72,5 +72,24 @@ public class SmartSpeaker implements Connectable, VoiceControllable {
     public void adjustVolume(int level) {
         volumeLevel = level;
         System.out.println("Громкость: " + level + "%");
+    }
+
+    /**
+     * Реализация метода потребления энергии.
+     */
+    @Override
+    public double energyConsumption() {
+        return 0.03;
+    }
+
+    @Override
+    public String toString() {
+        return "Умная колонка {" +
+                "Уровень громкости =" + volumeLevel +
+                ", Воспроизводимый трек =" + playingTrack +
+                ", Статус подключения к Wi-Fi =" + isConnected +
+                ", Потребление энергии =" + energyConsumption() + measurement +
+                ", Ключевое слово для голосового управления ='" + wakeWord + '\'' +
+                '}';
     }
 }

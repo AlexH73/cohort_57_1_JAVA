@@ -3,12 +3,12 @@ package Homework.lesson_27;
 /**
  * Класс, представляющий умную лампу, реализующую интерфейсы Connectable, VoiceControllable и Schedulable.
  */
-public class SmartLight implements Connectable, VoiceControllable, Schedulable {
+public class SmartLight implements Connectable, VoiceControllable, Schedulable, ElectricityMeter {
     private int brightnessLevel;        // Уровень яркости (0-100)
     private int colorTemperature;       // Цветовая температура (1000-10000K)
     private boolean isConnected;        // Статус подключения к Wi-Fi
     private boolean isOn;               // Состояние включения
-    private String wakeWord = "Алиса";  // Ключевое слово для голосового управления
+    private String wakeWord = "Лампа";  // Ключевое слово для голосового управления
 
     // Реализация методов Connectable
     @Override
@@ -38,6 +38,12 @@ public class SmartLight implements Connectable, VoiceControllable, Schedulable {
     public void setWakeWord(String word) {
         wakeWord = word;
         System.out.println("Ключевое слово: " + word);
+    }
+
+    // Реализация метода ElectricityMeter
+    @Override
+    public double energyConsumption() {
+        return 0.07;
     }
 
     // Специфичные методы лампы
@@ -86,5 +92,17 @@ public class SmartLight implements Connectable, VoiceControllable, Schedulable {
         } else {
             System.out.println("Лампа будет включена таймером в: " + time);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Умная лампа {" +
+                "Уровень яркости =" + brightnessLevel +
+                ", Цветовая температура =" + colorTemperature +
+                ", Статус подключения к Wi-Fi =" + isConnected +
+                ", Состояние =" + isOn +
+                ", Потребление энергии =" + energyConsumption() + measurement +
+                ", Ключевое слово для голосового управления ='" + wakeWord + '\'' +
+                '}';
     }
 }

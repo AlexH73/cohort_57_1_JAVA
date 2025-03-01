@@ -5,12 +5,11 @@ package Homework.lesson_27;
  */
 public class SmartHome {
     public static void main(String[] args) {
+        SmartLight light = new SmartLight();
+        SmartThermostat thermostat = new SmartThermostat();
+        SmartSpeaker speaker = new SmartSpeaker();
         // Создание массива устройств, реализующих интерфейс Connectable
-        Connectable[] devices = {
-                new SmartLight(),
-                new SmartThermostat(),
-                new SmartSpeaker()
-        };
+        Connectable[] devices = {light, thermostat, speaker};
 
         // Управление подключением
         for (Connectable device : devices) {
@@ -26,16 +25,19 @@ public class SmartHome {
         }
 
         // Использование уникальных функций умных устройств
-        SmartLight light = new SmartLight();
         light.setBrightness(75);        // Установка яркости лампы
         light.setColorTemperature(4000); // Установка цветовой температуры лампы
         light.turnOff();                // Выключение лампы
         light.scheduleActivation("20:00"); // Планирование активации лампы
+        thermostat.setTemperature(22);      // Установка целевой температуры термостата
+        System.out.println();
 
-        SmartThermostat thermo = new SmartThermostat();
-        thermo.setTemperature(22);      // Установка целевой температуры термостата
-
-        SmartSpeaker speaker = new SmartSpeaker();
         speaker.playMusic("Queen - Bohemian Rhapsody"); // Воспроизведение музыки на колонке
+        System.out.println();
+
+        System.out.println("Вывод toString");
+        for (Connectable device : devices) {
+            System.out.println(device);
+        }
     }
 }

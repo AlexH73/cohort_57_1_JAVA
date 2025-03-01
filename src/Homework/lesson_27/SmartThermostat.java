@@ -3,11 +3,11 @@ package Homework.lesson_27;
 /**
  * Класс, представляющий умный термостат, реализующий интерфейсы Connectable и VoiceControllable.
  */
-public class SmartThermostat implements Connectable, VoiceControllable {
+public class SmartThermostat implements Connectable, VoiceControllable, ElectricityMeter {
     private int currentTemperature;    // Текущая температура
     private int targetTemperature;     // Целевая температура
     private boolean isConnected;       // Статус подключения к Wi-Fi
-    private String wakeWord = "Алиса"; // Ключевое слово для голосового управления
+    private String wakeWord = "Термо"; // Ключевое слово для голосового управления
 
     /**
      * Подключает термостат к Wi-Fi сети.
@@ -80,5 +80,24 @@ public class SmartThermostat implements Connectable, VoiceControllable {
     public void updateCurrentTemperature(int temp) {
         currentTemperature = temp;
         System.out.println("Текущая температура обновлена: " + temp + "°C");
+    }
+
+    /**
+     * Реализация метода потребления энергии.
+     */
+    @Override
+    public double energyConsumption() {
+        return 0.0002;
+    }
+
+    @Override
+    public String toString() {
+        return "Умный термостат {" +
+                "Текущая температура =" + currentTemperature +
+                ", Целевая температура =" + targetTemperature +
+                ", Статус подключения к Wi-Fi =" + isConnected +
+                ", Потребление энергии =" + energyConsumption() + measurement +
+                ", Ключевое слово для голосового управления ='" + wakeWord + '\'' +
+                '}';
     }
 }
