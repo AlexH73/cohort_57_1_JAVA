@@ -1,4 +1,4 @@
-package Homerwork.Practica.ModifiersAccessField;
+package Homerwork.Practica.Practica23.ModifiersAccessField;
 /*Задание: Выбрать правильные модификаторы доступа
 Ниже представлены несколько классов с полями, у которых пока нет модификаторов доступа.
 Ваша задача — назначить правильные модификаторы (public, private, protected), следуя принципам инкапсуляции.

@@ -1,4 +1,4 @@
-package Homerwork.Practica23;
+package Homerwork.Practica.Practica23;
 /*4. Практика: Геттеры, сеттеры и `this`
 Задание: Реализовать геттеры и сеттеры
 Цель упражнения

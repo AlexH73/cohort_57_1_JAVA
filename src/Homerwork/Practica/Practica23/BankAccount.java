@@ -1,4 +1,4 @@
-package Homerwork.Practica23;
+package Homerwork.Practica.Practica23;
 //1. Поле `balance` не может быть отрицательным
 // 2. Поле `accountNumber` нельзя менять после создания объекта.
 public class BankAccount {
@@ -7,7 +7,8 @@ public class BankAccount {
 
     public BankAccount(String accountNumber, double balance) {
         this.accountNumber = accountNumber;
-        setBalance(balance);
+        setBalance(balance); //логика проверки на отрицательный баланс уже реализована в setBalance(),
+        // чтобы не дублировать этот код в конструкторе проще просто вызвать setBalance(balance);
     }
 
     public String getAccountNumber() {

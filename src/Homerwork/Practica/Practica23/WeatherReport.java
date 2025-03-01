@@ -1,4 +1,4 @@
-package Homerwork.Practica23;
+package Homerwork.Practica.Practica23;
 // 1. Поле `temperature` должно быть в диапазоне от -100 до 100 градусов.
 // 2. Поле `condition` может быть только "Sunny", "Rainy", "Cloudy" или "Snowy".
 public class WeatherReport {
