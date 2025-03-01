@@ -9,6 +9,7 @@ public class SmartAPPMain {
         };
 
         for (Connectable device : devices) {
+            System.out.println("Статус подключения: " + device.checkConnectionStatus());
             device.connectToWiFi("HomeWiFi");
             System.out.println("Статус подключения: " + device.checkConnectionStatus());
             device.disconnectFromWiFi();
