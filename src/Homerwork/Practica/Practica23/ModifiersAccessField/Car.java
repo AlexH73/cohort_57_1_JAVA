@@ -1,4 +1,4 @@
-package Homerwork.Practica.ModifiersAccessField;
+package Homerwork.Practica.Practica23.ModifiersAccessField;
 /*// TODO: Назначить модификаторы доступа для полей.
 
 class Car {

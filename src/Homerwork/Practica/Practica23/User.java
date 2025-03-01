@@ -1,4 +1,4 @@
-package Homerwork.Practica23;
+package Homerwork.Practica.Practica23;
 
 public class User {
     private String username;
