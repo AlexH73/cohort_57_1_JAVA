@@ -1,17 +1,16 @@
 package Lessons.Lesson_27.game_character;
 
-public class Mage implements GameCharacter, Skill, Healable {
+public class Priest implements GameCharacter, Healable{
     private String name;
     private int health;
 
-    public Mage(String name) {
+    public Priest(String name) {
         this.name = name;
         this.health = 100;
     }
 
     @Override
     public void performAction() {
-        attack(null);
         heal(null);
     }
 
@@ -31,13 +30,7 @@ public class Mage implements GameCharacter, Skill, Healable {
     }
 
     @Override
-    public  void  attack(GameCharacter target) {
-        target.takeDamage(5);
-    }
-
-    @Override
     public void heal(GameCharacter target) {
-        target.takeDamage(-5);
+        target.takeDamage(-7);
     }
 }
-
