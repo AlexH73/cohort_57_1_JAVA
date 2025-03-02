@@ -15,6 +15,6 @@ public class SmartThermostat extends SmartDevice {
 
     @Override
     public String getDeviceName() {
-        return "Умный термостат";
+        return "Умный термостат ";
     }
 }

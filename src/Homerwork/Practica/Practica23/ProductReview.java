@@ -1,4 +1,4 @@
-package Homerwork.Practica23;
+package Homerwork.Practica.Practica23;
 // 1. Поле `rating` должно быть от 1 до 5.
 // 2. Поле `reviewText` не должно быть пустым.
 public class ProductReview {
