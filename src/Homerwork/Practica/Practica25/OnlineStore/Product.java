@@ -1,4 +1,4 @@
-package Homerwork.Practica.Practica25;
+package Homerwork.Practica.Practica25.OnlineStore;
 //✔ Метод applyDiscount(), который выводит "Скидка пока не применяется."
 // Метод displayInfo(): Выводит информацию о товаре.(для себя)
 public class Product {

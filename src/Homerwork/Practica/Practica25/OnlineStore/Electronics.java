@@ -1,4 +1,5 @@
-package Homerwork.Practica.Practica25;
+package Homerwork.Practica.Practica25.OnlineStore;
+
 //✔ Electronics – добавляет warranty (гарантия в годах).
 //✔ У Electronics метод applyDiscount() снижает цену на 10%.
 public class Electronics extends Product {
