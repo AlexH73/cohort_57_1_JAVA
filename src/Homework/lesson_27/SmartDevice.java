@@ -62,7 +62,7 @@ public abstract class SmartDevice implements Connectable,
     @Override
     public void scheduleDeactivation(String time) {
         deactivationTime = time;
-        System.out.println(getDeviceName() + " запланировано выключение в " + activationTime);
+        System.out.println(getDeviceName() + " запланировано выключение в " + deactivationTime);
     }
 
     //Дополнительные улучшения : 2.Система учёта энергопотребления, позволяющую подсчитать
@@ -90,7 +90,10 @@ public abstract class SmartDevice implements Connectable,
     @Override
     public void setWakeWord(String word) {
         wakeWord = word;
-        System.out.println(getDeviceName() + " теперь активируется по слову:  " + wakeWord);
+        System.out.println(getDeviceName() + " теперь активируется по слову:  " + word);
     }
+
+
+
 }
 

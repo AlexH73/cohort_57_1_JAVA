@@ -1,7 +1,7 @@
 package Homework.lesson_27;
 
 
-public class SmartSpeaker extends SmartDevice {
+public  class SmartSpeaker extends SmartDevice {
     private String playingTrack;
     private int volumeLevel;
 
@@ -17,6 +17,6 @@ public class SmartSpeaker extends SmartDevice {
 
     @Override
     public String getDeviceName() {
-        return "Умная колонка";
+        return "Умная колонка ";
     }
 }

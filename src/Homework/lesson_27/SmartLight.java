@@ -1,6 +1,6 @@
 package Homework.lesson_27;
 
-public class SmartLight extends SmartDevice {
+public  class SmartLight extends SmartDevice {
     private int brightnessLevel;
     private int colorTemperature;
 
@@ -16,6 +16,6 @@ public class SmartLight extends SmartDevice {
 
     @Override
     public String getDeviceName() {
-        return "Умная лампа";
+        return "Умная лампа ";
     }
 }
