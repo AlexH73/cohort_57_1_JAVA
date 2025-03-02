@@ -1,7 +1,8 @@
-package Homerwork.Practica.Practica25;
+package Homerwork.Practica.Practica25.OnlineStore;
+
 //✔ Grocery – добавляет expirationDate (срок годности).
 //✔ У Grocery метод applyDiscount() снижает цену на 50%, если срок годности скоро истекает.
-public class Grocery extends Product{
+public class Grocery extends Product {
     private boolean expirationDate = false;
 
     public Grocery(String name, double price, boolean expirationDate) {

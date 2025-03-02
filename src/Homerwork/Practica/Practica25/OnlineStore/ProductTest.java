@@ -1,4 +1,5 @@
-package Homerwork.Practica.Practica25;
+package Homerwork.Practica.Practica25.OnlineStore;
+
 //✔ Создать массив Product[], добавить туда товары разных типов и применить к ним скидки
 public class ProductTest {
     public static void main(String[] args) {

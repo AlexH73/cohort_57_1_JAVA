@@ -1,7 +1,8 @@
-package Homerwork.Practica.Practica25;
+package Homerwork.Practica.Practica25.OnlineStore;
+
 //✔ Clothing – добавляет size (размер) и color (цвет).
 // ✔ У Clothing метод applyDiscount() снижает цену на 20%, если сезон распродаж.
-public class Clothing extends Product{
+public class Clothing extends Product {
     private String size;
     private  String color;
     private boolean isSaleSeason = false;  //Идет ли сезон распродаж
