@@ -1,21 +1,22 @@
 package Homework.lesson_25;
-/*✔ CryptoPayment – реализует pay(), имитируя оплату криптовалютой.*/
+//✔ CryptoPayment – реализует pay(), имитируя оплату криптовалютой.
 public class CryptoPayment extends PaymentMethod {
-    private String walletAdresse;
+    private String walletAddress;
 
-    //Конструктор
-    public CryptoPayment( double amount, String currency, String walletAdresse) {
+    public CryptoPayment(double amount, String currency, String walletAddress) {
         super(amount, currency);
-        this.walletAdresse = walletAdresse;
+        this.walletAddress = walletAddress;
     }
 
     @Override
     public void pay() {
-        System.out.println("Оплата " + amount + " " + currency + " с криптокошелька " + walletAdresse);
+        System.out.println("Оплата " + getAmount() + " "
+                + getCurrency() + " через криптокошелек: " + walletAddress);
     }
 
     @Override
-    public void refund() {
-        System.out.println("Возврат средств невозможен для криптовалютных платежей.");
+    public void pay(String transactionId) {
+        System.out.println("Оплата " + getAmount() + " " + getCurrency() +
+                " через криптокошелек(ID: " + transactionId + "): " + walletAddress);
     }
 }

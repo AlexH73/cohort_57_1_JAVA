@@ -1,9 +1,8 @@
 package Homework.lesson_25;
-/*✔ PayPalPayment – реализует pay(), имитируя оплату через PayPal.*/
-public class PayPalPayment extends PaymentMethod{
+//✔ PayPalPayment – реализует pay(), имитируя оплату через PayPal.
+public class PayPalPayment extends PaymentMethod {
     private String email;
 
-    //Конструктор
     public PayPalPayment(double amount, String currency, String email) {
         super(amount, currency);
         this.email = email;
@@ -11,8 +10,14 @@ public class PayPalPayment extends PaymentMethod{
 
     @Override
     public void pay() {
-        System.out.println("Оплата " + amount + " " + currency + " через PayPal аккаунт " + email);
+        System.out.println("Оплата " + getAmount() +
+                " " + getCurrency() + " через PayPal- аккаунт: " + email);
     }
 
-
+    @Override
+    public void pay(String transactionId) {
+        System.out.println("Оплата " + getAmount() + " " + getCurrency() +
+                " через PayPal(ID: " + transactionId + "): " + email);
+    }
 }
+
