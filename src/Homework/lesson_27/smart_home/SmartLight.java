@@ -1,4 +1,4 @@
-package Homework.lesson_27;
+package Homework.lesson_27.smart_home;
 
 /**
  * Класс, представляющий умную лампу, реализующую интерфейсы Connectable, VoiceControllable и Schedulable.

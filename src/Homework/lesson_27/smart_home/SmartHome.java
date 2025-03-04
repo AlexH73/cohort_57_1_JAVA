@@ -1,4 +1,4 @@
-package Homework.lesson_27;
+package Homework.lesson_27.smart_home;
 
 /**
  * Главный класс для управления умным домом.
