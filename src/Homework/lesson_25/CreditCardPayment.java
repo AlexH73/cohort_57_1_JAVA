@@ -1,6 +1,5 @@
 package Homework.lesson_25;
-/*Шаг 2: Создание подклассов для различных способов оплаты
-✔ CreditCardPayment – реализует pay(), имитируя оплату кредитной картой.*/
+//✔ CreditCardPayment – реализует pay(), имитируя оплату кредитной картой.
 public class CreditCardPayment extends PaymentMethod {
     private String cardNumber;
 
@@ -11,6 +10,14 @@ public class CreditCardPayment extends PaymentMethod {
 
     @Override
     public void pay() {
-        System.out.println("Оплата " + amount + " " + currency + " с кредитной карты " + cardNumber);
+        System.out.println("Оплата " + getAmount() + " " + getCurrency() +
+                " через кредитную карту: " + cardNumber);
+
+    }
+
+    @Override
+    public void pay(String transactionId) {
+        System.out.println("Оплата " + getAmount() + " " + getCurrency() +
+                " через кредитную карту(ID: " + transactionId + "): " + cardNumber);
     }
 }
