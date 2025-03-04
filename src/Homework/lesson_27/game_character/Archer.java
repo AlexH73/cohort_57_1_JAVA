@@ -1,4 +1,4 @@
-package Lessons.Lesson_27.game_character;
+package Homework.lesson_27.game_character;
 
 /**
  * Класс лучника, реализующий ближние и дальние атаки.

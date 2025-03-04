@@ -1,4 +1,4 @@
-package Lessons.Lesson_27.game_character;
+package Homework.lesson_27.game_character;
 
 public class Priest extends BaseGameCharacter implements Healable {
     private static final int HEAL_POWER = 30;
