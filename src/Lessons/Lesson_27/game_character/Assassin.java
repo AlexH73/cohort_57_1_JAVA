@@ -5,8 +5,8 @@ public class Assassin implements GameCharacter, Skill, Stealthy, Ranged{
     private int health;
 
     public Assassin(String name) {
-        this.name = name;
-        this.health = 100;
+        super();
+        System.out.println("🗡️ Ассасин " + name + " вышел на охоту!");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Assassin implements GameCharacter, Skill, Stealthy, Ranged{
 
     @Override
     public String getName() {
-        return this.name;
+        return "";
     }
 
     @Override

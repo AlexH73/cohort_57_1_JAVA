@@ -1,42 +1,42 @@
 package Lessons.Lesson_27.game_character;
 
-public class Rogue implements GameCharacter, Skill, Stealthy {
-    private String name;
-    private int health;
+/**
+ * Класс Разбойника (Rogue)
+ */
+public class Rogue extends BaseGameCharacter implements Skill, Stealthy {
+    private boolean isHidden = true;
 
     public Rogue(String name) {
-        this.name = name;
-        this.health = 100;
+        super(name);
+        System.out.println("🥷 Разбойник " + name + " скрывается в тени!");
     }
 
     @Override
-    public void  performAction() {
-        attack(null);
-        stealthyAttack(null);
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public int getHealth() {
-        return this.health;
-    }
-
-    @Override
-    public void takeDamage(int damage) {
-        health -= damage;
-    }
-
-    @Override
-    public void attack(GameCharacter target) {
-        target.takeDamage(3);
+    public void performAction() {
+        if (isHidden) {
+            stealthyAttack(null);
+            isHidden = false;
+        } else {
+            attack(null);
+            isHidden = true;
+        }
     }
 
     @Override
     public void stealthyAttack(GameCharacter target) {
-        target.takeDamage(6);
+        int damage = 35;
+        System.out.println("🔪 " + name + " наносит коварный удар из тени!");
+        if (target != null) {
+            target.takeDamage(damage);
+        }
+    }
+
+    @Override
+    public void attack(GameCharacter target) {
+        int damage = 20;
+        System.out.println("⚔️ " + name + " атакует коротким мечом!");
+        if (target != null) {
+            target.takeDamage(damage);
+        }
     }
 }
