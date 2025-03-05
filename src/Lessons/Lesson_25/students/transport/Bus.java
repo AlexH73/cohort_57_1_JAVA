@@ -1,8 +1,11 @@
 package Lessons.Lesson_25.students.transport;
 
 public class Bus extends Transport {
-    public Bus(int transportNumber, String departureTime, String arrivalTime, double price) {
+    private int classType;
+
+    public Bus(int transportNumber, String departureTime, String arrivalTime, double price,int classType) {
         super(transportNumber, departureTime, arrivalTime, price);
+        this.classType = classType;
     }
     @Override
     public void book(){
