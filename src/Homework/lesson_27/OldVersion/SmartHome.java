@@ -1,4 +1,4 @@
-package Homework.lesson_27;
+package Homework.lesson_27.OldVersion;
 
 public class SmartHome {
     public static void main(String[] args) {
