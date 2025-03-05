@@ -1,4 +1,4 @@
-package Homework.lesson_27;
+package Homework.lesson_27.OldVersion;
 //5.Интерфейс нужен для того, чтобы умные устройства управлялись голосом
 public interface VoiceControllable {
     void activateVoiceCommand(String command); //выполняет голосовую команду

@@ -1,10 +1,8 @@
-package Homework.lesson_27;
-
-import java.time.LocalTime;
+package Homework.lesson_27.OldVersion;
 
 //Абстрактный класс все умные устройства наследуются от него
 public abstract class SmartDevice implements Connectable,
-        PowerControllable, EnergyConsumable, Schedulable, VoiceControllable{
+        PowerControllable, EnergyConsumable, Schedulable, VoiceControllable {
     protected boolean isConnected = false; //показывает, подключено ли устройство к сети, по умолчанию false.
     protected boolean powerState = false; //определяет, включено или выключено устройство, по умолчанию false.
     protected double powerConsumption = 0; //хранит количество потребленной электроэнергии (в ватт-часах, Вт/ч),

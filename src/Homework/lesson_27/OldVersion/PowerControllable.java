@@ -1,4 +1,4 @@
-package Homework.lesson_27;
+package Homework.lesson_27.OldVersion;
 //2.Интерфейс нужен для управления питанием
 public interface PowerControllable {
     void turnOn();  //включает все устройство
