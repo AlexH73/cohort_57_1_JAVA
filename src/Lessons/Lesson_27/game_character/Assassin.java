@@ -10,10 +10,24 @@ public class Assassin implements GameCharacter, Skill, Stealthy, Ranged{
     }
 
     @Override
-    public void  performAction() {
-        attack(null);
-        stealthyAttack(null);
-        rangedAttack(null);
+    public void performAction() {
+        if (shouldUseStealthAttack()) {
+            stealthyAttack();
+        } else {
+            rangedAttack();
+        }
+    }
+
+    private void stealthyAttack() {
+        System.out.println("Performing a stealthy attack!");
+    }
+
+    private void rangedAttack() {
+        System.out.println("Performing a ranged attack!");
+    }
+
+    private boolean shouldUseStealthAttack() {
+        return Math.random() < 0.5;
     }
 
     @Override
