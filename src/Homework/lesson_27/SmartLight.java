@@ -1,8 +1,8 @@
 package Homework.lesson_27;
 
-public class SmartLight implements Connectable, Schedulable  {
-    private int brightnessLevel = 0;
-    private int colorTemperature = 0;
+public class SmartLight implements Connectable, Schedulable, CountableKWH  {
+    private int brightnessLevel;
+    private int colorTemperature;
     private String network = "";
     private String scheduledTime = "";
     public boolean isActivated = true;
@@ -18,6 +18,11 @@ public class SmartLight implements Connectable, Schedulable  {
     }
 
     @Override
+    public double getKWH() {
+        return 223.23;
+    }
+
+    @Override
     public void connectToWiFi(String network) {
         this.network = network;
         System.out.println("SmartLight was connected to " + network);
@@ -26,7 +31,7 @@ public class SmartLight implements Connectable, Schedulable  {
 
     @Override
     public void disconnectFromWiFi() {
-        System.out.println("SmartLight was disconnected to " + network);
+        System.out.println("SmartLight was disconnected from " + network);
         this.network = "";
     }
 
@@ -49,6 +54,7 @@ public class SmartLight implements Connectable, Schedulable  {
         return "SmartLight{" +
                 "brightnessLevel=" + brightnessLevel +
                 ", colorTemperature=" + colorTemperature +
+                ", kWh =" + getKWH() +
                 ", network='" + network + '\'' +
                 '}';
     }
