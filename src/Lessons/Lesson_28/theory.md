@@ -1,6 +1,4 @@
-
-
-# Урок 28: ArrayList
+Урок 28: Java Collection Framework
 ---
 ## JCF
 
