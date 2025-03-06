@@ -1,6 +1,6 @@
 package Homework.lesson_27;
 
-public class SmartThermostat implements Connectable {
+public class SmartThermostat implements Connectable, CountableKWH {
     private int currentTemperature = 0;
     private int targetTemperature = 0;
     private String network = "";
@@ -14,6 +14,10 @@ public class SmartThermostat implements Connectable {
         return currentTemperature;
     }
 
+    public double getKWH() {
+        return 0.005;
+    }
+
     @Override
     public void connectToWiFi(String network) {
         this.network = network;
@@ -23,7 +27,7 @@ public class SmartThermostat implements Connectable {
 
     @Override
     public void disconnectFromWiFi() {
-        System.out.println("SmartThermostat was disconnected to " + network);
+        System.out.println("SmartThermostat was disconnected from " + network);
         this.network = "";
     }
 
@@ -36,9 +40,10 @@ public class SmartThermostat implements Connectable {
     @Override
     public String toString() {
         return "SmartThermostat{" +
-                "network='" + network + '\'' +
                 ", currentTemperature=" + currentTemperature +
                 ", targetTemperature=" + targetTemperature +
+                ", kWh =" + getKWH() +
+                ", network='" + network + '\'' +
                 '}';
     }
 
