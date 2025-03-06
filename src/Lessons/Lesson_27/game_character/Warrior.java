@@ -1,37 +1,26 @@
 package Lessons.Lesson_27.game_character;
 
-public class Warrior implements GameCharacter, Skill{
+/**
+ * Класс Воина (Warrior)
+ */
+public class Warrior extends BaseGameCharacter implements Skill {
+    public Warrior(String name) {
+        super(name);
+        System.out.println("⚔️ Воин " + name + " вступает в бой!");
+    }
 
-    private String name;
-    private int health;
-
-    public Warrior(String name){
-        this.name=name;
-        this.health=100;
+    @Override
+    public void performAction() {
+        System.out.println("\n▶ " + name + " размахивает мечом!");
+        attack(null); // В реальной игре должна быть цель
     }
 
     @Override
     public void attack(GameCharacter target) {
-        ///target.takeDamage(3);
-    }
-
-    @Override
-    public void  performAction() {
-        attack(null);
-    }
-
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public int getHealth() {
-        return this.health;
-    }
-
-    @Override
-    public void takeDamage(int damage) {
-       health -= damage;
+        int damage = 25;
+        System.out.println("🗡️ " + name + " наносит рубящий удар!");
+        if (target != null) {
+            target.takeDamage(damage);
+        }
     }
 }
