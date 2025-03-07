@@ -33,9 +33,6 @@ public class Manager {
         }
     }
 
-
-
-
     public String getName() {
         return name;
     }
