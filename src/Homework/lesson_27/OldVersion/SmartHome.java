@@ -36,8 +36,8 @@ public class SmartHome {
             device.scheduleDeactivation("22:30");
             //Голосовое управление
             device.setWakeWord("Шура");
-            device.activateVoiceCommand("Включи музыку");
             device.activateVoiceCommand("Тушите свет!");
+            device.activateVoiceCommand("Включи музыку");
             //Выключение устройства
             device.turnOff();
             System.out.println("Устройство выключено? " + (!device.isOn() ? "Да" : "Нет"));
