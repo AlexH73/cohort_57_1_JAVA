@@ -115,7 +115,12 @@ public class Main {
                     p.getSoldPerMonth());
         }
 
-        System.out.println("\u001B[34m+--------------------------+-----------+--------+----------+---------------+\u001B[0m");
+        System.out.println("\u001B[34m+" +
+                "-".repeat(26) + "+" +
+                "-".repeat(11) + "+" +
+                "-".repeat(8) + "+" +
+                "-".repeat(10) + "+" +
+                "-".repeat(15) + "+\u001B[0m");
         System.out.printf("\u001B[34m| \u001B[0m Всего товаров: %55d \u001B[34m |\u001B[0m%n", products.size());
         System.out.println("\u001B[34m+" + "-".repeat(74) + "+\u001B[0m");
     }
