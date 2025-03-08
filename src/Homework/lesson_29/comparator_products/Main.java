@@ -103,7 +103,7 @@ public class Main {
     private static void prettyPrint(List<Product> products) {
         System.out.println("\nРезультаты сортировки:");
         System.out.println("\u001B[34m+--------------------------+-----------+--------+----------+---------------+");
-        System.out.println("| Название                 | Цена ($)  | Рейтинг | Наличие | Продажи/месяц |");
+        System.out.println("| Название                 | Цена ($)  | Рейтинг|  Наличие | Продажи/месяц |");
         System.out.println("+--------------------------+-----------+--------+----------+---------------+\u001B[0m");
 
         for (Product p : products) {
