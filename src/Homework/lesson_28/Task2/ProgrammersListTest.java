@@ -1,6 +1,4 @@
-package Homework.lesson_28;
-
-import Homework.lesson_28.Task2.Programmer2;
+package Homework.lesson_28.Task2;
 
 import java.util.List;
 
@@ -19,10 +17,9 @@ public class ProgrammersListTest {
 
         List<Programmer2> javaProgrammers = programmersList.getProgrammersWithTechnology("Java");
         System.out.println("Программисты, владеющие Java:");
-        for (Programmer2 p : javaProgrammers) {
-            System.out.println(p.getName());
+        for (Programmer2 programmer : javaProgrammers) {
+            System.out.println(programmer.getName());
         }
-
 
     }
 
