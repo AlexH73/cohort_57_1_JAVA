@@ -116,8 +116,8 @@ public class Main {
         }
 
         System.out.println("\u001B[34m+--------------------------+-----------+--------+----------+---------------+\u001B[0m");
-        System.out.printf("\u001B[34m| \u001B[0m Всего товаров: %-37d \u001B[34m |\u001B[0m%n", products.size());
-        System.out.println("\u001B[34m+--------------------------------------------------------------------------+\u001B[0m");
+        System.out.printf("\u001B[34m| \u001B[0m Всего товаров: %55d \u001B[34m |\u001B[0m%n", products.size());
+        System.out.println("\u001B[34m+" + "-".repeat(74) + "+\u001B[0m");
     }
 
     // Метод сортировки (без изменений)
