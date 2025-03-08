@@ -1,6 +1,4 @@
-package Homework.lesson_28;
-
-import Homework.lesson_28.Task2.Programmer2;
+package Homework.lesson_28.Task2;
 
 import java.util.ArrayList;
 import java.util.List;

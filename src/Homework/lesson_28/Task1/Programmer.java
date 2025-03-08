@@ -24,7 +24,7 @@ public class Programmer {
         }
     }
 
-    // List.copyOf(technologies), создать неизменяемый список(нельзя модифицировать снаружи).
+    // List.copyOf(technologies), создать неизменяемый список.
     //метод возвращает список технологий программиста.
     public List<String> getTechnologies() {
         return List.copyOf(technologies);
