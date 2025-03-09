@@ -28,6 +28,7 @@ public class SmartThermostat implements Connectable {
     }
 
     public int getCurrentTemperature() {
+
         return currentTemperature;
     }
 }

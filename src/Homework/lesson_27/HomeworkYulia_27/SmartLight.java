@@ -28,6 +28,7 @@ public class SmartLight implements Connectable {
     // Метод лишь информирует нас о текущем уровне освещенности, что вводит в заблуждение -
     // мы передали желаемый уровень освещенности, но лишь узнали текущий. Какой смысл?
     public void setBrightness(int level) {
+
         System.out.println("Яркость установлена на " + brightnessLevel);
     }
 
