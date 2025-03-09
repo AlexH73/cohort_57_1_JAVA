@@ -22,11 +22,13 @@ public class SmartSpeaker implements Connectable {
         return isConnected;
     }
 
+    // замечание, как в классе с умной лампочкой - зачем мне в этом методе указывать какой-то трек,
+    // который все равно не будет воспроизведен?
     public void playMusic(String track) {
         System.out.println("Воспроизводится трек: " + playingTrack);
     }
 
-
+    // аналогично с громкостью - передаи уровень громкости, но лишь узнали текущий уровень
     public void adjustVolume(int level) {
         System.out.println("Громкость установлена на " + volumeLevel);
     }
