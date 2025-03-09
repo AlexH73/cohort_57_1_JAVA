@@ -7,7 +7,7 @@ public class SmartLight implements Connectable {
 
     public void setBrightness(int level) {
         this.brightnessLevel = level;
-        System.out.println("Яркость установлена на " + level);
+        System.out.println("Яркость установлена " + level);
 
     }
 
