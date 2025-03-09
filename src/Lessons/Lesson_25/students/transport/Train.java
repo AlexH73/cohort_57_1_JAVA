@@ -1,25 +1,26 @@
 package Lessons.Lesson_25.students.transport;
 
 public class Train extends Transport {
-    private String carriageType;
+    private String wagonType;
 
-    public Train(int transportNumber, String departureTime, String arrivalTime, double price, String carriageType) {
+    public Train(int transportNumber, String departureTime, String arrivalTime, double price, String wagonType) {
         super(transportNumber, departureTime, arrivalTime, price);
-        this.carriageType = carriageType;
+        this.wagonType = wagonType;
     }
 
     @Override
     public void book() {
-        System.out.println("Забронирован билет на поезд " + getTransportNumber() + " в вагоне " + carriageType);
+        if (selectCarriageType()) {
+            System.out.println("Первый класс." + wagonType);
+        } else {
+            System.out.println("Вторй класс." + wagonType);
+        }
     }
 
-    public void selectCarriageType(String carriageType) {
-        this.carriageType = carriageType;
-        System.out.println("Выбран тип вагона: " + carriageType);
+    public boolean selectCarriageType(){
+        return true;
     }
 
-    @Override
-    public void cancelBooking() {
-        System.out.println("Отмена бронирования на поезд " + getTransportNumber());
-    }
+
 }
+

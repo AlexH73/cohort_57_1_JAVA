@@ -8,6 +8,7 @@ public class MusicPlayerGUI {
         // Создаем фрейм
         JFrame frame = new JFrame("Music Player");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         frame.setSize(300, 200);
 
         // Создаем панель
