@@ -1,4 +1,4 @@
-package Homework.lesson_28.Programmer;
+package Homework.lesson_28.Programmers;
 
 import java.util.ArrayList;
 import java.util.List;

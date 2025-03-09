@@ -1,4 +1,4 @@
-package Homework.lesson_28.Programmer;
+package Homework.lesson_28.Programmers;
 
 public class ProgrammerUsage {
     public static void main(String[] args) {
