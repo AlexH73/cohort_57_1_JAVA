@@ -24,12 +24,14 @@ public class SmartLight implements Connectable {
         return isConnected;
     }
 
-
+    // непонятно хачем нам сеттер, если мы не изменяем никоим образом значение brightnessLevel.
+    // Метод лишь информирует нас о текущем уровне освещенности, что вводит в заблуждение -
+    // мы передали желаемый уровень освещенности, но лишь узнали текущий. Какой смысл?
     public void setBrightness(int level) {
         System.out.println("Яркость установлена на " + brightnessLevel);
     }
 
-
+    // аналогичное замечание что и для яркости
     public void setColorTemperature(int temperature) {
         System.out.println("Цветовая температура установлена на " + colorTemperature);
     }
