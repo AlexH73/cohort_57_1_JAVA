@@ -22,6 +22,7 @@ public class SmartThermostat implements Connectable {
         return isConnected;
     }
 
+    // аналогичное замечание, как и в предыдущих классах
     public void setTemperature(int targetTemp) {
         System.out.println("Желаемая температура установлена на " + targetTemperature);
     }
