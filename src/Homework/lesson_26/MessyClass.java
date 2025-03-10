@@ -7,7 +7,7 @@ public class MessyClass {
     private int myVar = 10;
 
     // Метод с неправильным именованием (по стандарту - lowerCamelCase)
-    public void DoSomething() {
+    public void doSomething() {
         System.out.println("Doing something...");
     }
 
@@ -19,7 +19,7 @@ public class MessyClass {
 
     public static void main(String[] args) {
         MessyClass obj = new MessyClass();
-        obj.DoSomething();
+        obj.doSomething();
         int result = obj.calculateSum(5, 10);
         System.out.println("Result: " + result);
     }
