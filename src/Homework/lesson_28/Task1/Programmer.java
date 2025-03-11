@@ -1,16 +1,15 @@
 package Homework.lesson_28.Task1;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Programmer {
     private String name;
-    private Set<String> technologies; //Используем Set<String>, чтобы избежать дубликатов.
+    private List<String> technologies; //Можно еще использовать Set<String>, чтобы избежать дубликатов.
 
     public Programmer(String name) {
         this.name = name;
-        this.technologies = new HashSet<>();
+        this.technologies = new ArrayList<>();
     }
 
     //contains(technology) — это метод интерфейса Set, который проверяет,
