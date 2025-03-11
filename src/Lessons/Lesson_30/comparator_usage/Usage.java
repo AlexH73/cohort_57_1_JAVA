@@ -30,6 +30,8 @@ public class Usage {
         list.sort(new HouseSquareComparator());
         show(list);
 
+        // встроенный метод интерфейса Comparator.reversed() позволяет отсортировать
+        // в обратном порядке без написания отдельной реализации.
         list.sort(new HouseSquareComparator().reversed());
         show(list);
 
