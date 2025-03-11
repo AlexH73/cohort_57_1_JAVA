@@ -56,6 +56,12 @@ public class House {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "House{" +
+                "square=" + square +
+                ", pricePerM=" + pricePerM +
+                ", yearOfBuild=" + yearOfBuild +
+                ", roomCount=" + roomCount +
+                ", floor=" + floor +
+                '}';
     }
 }
