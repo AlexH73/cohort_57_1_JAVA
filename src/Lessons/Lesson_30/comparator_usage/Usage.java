@@ -1,6 +1,7 @@
 package Lessons.Lesson_30.comparator_usage;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Usage {
@@ -17,7 +18,7 @@ public class Usage {
         house4.setPricePerM(1500);
         house5.setPricePerM(2100);
 
-        List<House> list = new ArrayList<>();
+        List<House> list = new LinkedList<>();
 
         list.add(house1);
         list.add(house2);
