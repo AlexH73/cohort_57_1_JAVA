@@ -1,22 +1,23 @@
 package Lessons.Lesson_30.classwork;
 
 public class Task {
-    private String taskDescription;
-    private String deadlineDate; // format "YYYY-mm-dd"
-    private int priority;// от 0 до 10, 0 - низкий приоритет, 10 - самый высокий приоритет
+    private String taskDescription; // Описание задачи
+    private String deadlineDate; //  Дата выполнения в формате "YYYY-mm-dd"
+    private int priority;// Приоритет от 0 (высший) до 10 (низший)
 
+    // Основной конструктор
     public Task(String taskDescription, String deadlineDate, int priority) {
         this.taskDescription = taskDescription;
         this.deadlineDate = deadlineDate;
         this.priority = priority;
     }
 
+    // Вспомогательный конструктор с значениями по умолчанию
     public Task(String taskDescription) {
-        this.taskDescription = taskDescription;
-        this.priority = 5;
-        this.deadlineDate = "2025-04-11";
+        this(taskDescription, "2025-04-11", 5); // Вызов основного конструктора
     }
 
+    // Геттеры и сеттеры
     public String getTaskDescription() {
         return taskDescription;
     }
@@ -39,10 +40,5 @@ public class Task {
 
     public void setPriority(int priority) {
         this.priority = priority;
-    }
-
-    public static void main(String[] args) {
-        Task task = new Task("Создать класс Task", "2025-04-11", 10);
-
     }
 }
