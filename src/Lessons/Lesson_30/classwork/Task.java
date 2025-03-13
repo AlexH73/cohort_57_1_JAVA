@@ -43,6 +43,5 @@ public class Task {
 
     public static void main(String[] args) {
         Task task = new Task("Создать класс Task", "2025-04-11", 10);
-
     }
 }
