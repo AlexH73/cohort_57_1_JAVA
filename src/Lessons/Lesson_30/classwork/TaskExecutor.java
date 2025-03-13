@@ -28,7 +28,8 @@ public class TaskExecutor implements TaskExecutorInterface {
     public Task getTaskByDate() {
         if (tasks.isEmpty()) return null;
         List<Task> sorted = new ArrayList<>(tasks);
-        Collections.sort(sorted, new DateComparator());
+        sorted.sort(new DateComparator());
+        // Collections.sort(sorted, new DateComparator());
         return sorted.get(0);
     }
 
