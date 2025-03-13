@@ -18,6 +18,7 @@ public class Classwork2 {
         iterCollection(set);
         System.out.print("list = [ ");
         iterCollection(list);
+
     }
 
     private static Collection<Integer> setElements(Collection<Integer> collection) {
