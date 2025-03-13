@@ -1,6 +1,7 @@
 package Hausaufgaben.Hausaufgaben_28.Untericht_28_2;
 
-public class Person {private String name;
+public class Person {
+    private String name;
     private int age;
 
     public Person(String name, int age) {
