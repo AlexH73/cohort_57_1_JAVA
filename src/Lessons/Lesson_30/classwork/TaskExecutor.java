@@ -18,7 +18,7 @@ public class TaskExecutor implements TaskExecutorInterface {
     public Task getTaskByPriority() {
         if (tasks.isEmpty()) return null; // Проверка на пустой список
         List<Task> sorted = new ArrayList<>(tasks); // Копируем список
-        sorted.sort(new PriorityComparator());
+        // sorted.sort(new PriorityComparator());
         // Collections.sort(sorted, new PriorityComparator()); // Сортируем
         return sorted.get(0); // Возвращаем первый элемент
     }
@@ -28,7 +28,7 @@ public class TaskExecutor implements TaskExecutorInterface {
     public Task getTaskByDate() {
         if (tasks.isEmpty()) return null;
         List<Task> sorted = new ArrayList<>(tasks);
-        sorted.sort(new DateComparator());
+        // sorted.sort(new DateComparator());
         // Collections.sort(sorted, new DateComparator());
         return sorted.get(0);
     }
