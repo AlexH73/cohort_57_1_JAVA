@@ -1,7 +1,9 @@
 package Lessons.Lesson_31.classwork;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SetOperations {
     public static void main(String[] args) {
