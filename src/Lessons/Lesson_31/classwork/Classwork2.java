@@ -1,5 +1,7 @@
 package Lessons.Lesson_31.classwork;
 
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 
 public class Classwork2 {
@@ -12,8 +14,11 @@ public class Classwork2 {
         System.out.println("list.size() = " + list.size());
         System.out.println("set.size() = " + set.size());
 
+        System.out.print("set = [ ");
         iterCollection(set);
+        System.out.print("list = [ ");
         iterCollection(list);
+
     }
 
     private static Collection<Integer> setElements(Collection<Integer> collection) {
@@ -31,6 +36,8 @@ public class Classwork2 {
 
         collection.add(4);
 
+        collection.add(null);
+
         return collection;
     }
 
@@ -38,6 +45,6 @@ public class Classwork2 {
         for (Object o : collection.toArray()) {
             System.out.print(o + " ");
         }
-        System.out.println();
+        System.out.println("]");
     }
 }

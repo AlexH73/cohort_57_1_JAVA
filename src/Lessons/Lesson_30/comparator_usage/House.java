@@ -80,6 +80,6 @@ public class House {
         result = 31 * result + getYearOfBuild();
         // result = 31 * result + getRoomCount();
         result = 31 * result + getFloor();
-        return result;
+        return 1;
     }
 }
