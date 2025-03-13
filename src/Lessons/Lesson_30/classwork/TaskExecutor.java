@@ -18,7 +18,8 @@ public class TaskExecutor implements TaskExecutorInterface {
     public Task getTaskByPriority() {
         if (tasks.isEmpty()) return null; // Проверка на пустой список
         List<Task> sorted = new ArrayList<>(tasks); // Копируем список
-        Collections.sort(sorted, new PriorityComparator()); // Сортируем
+        sorted.sort(new PriorityComparator());
+        // Collections.sort(sorted, new PriorityComparator()); // Сортируем
         return sorted.get(0); // Возвращаем первый элемент
     }
 
