@@ -10,7 +10,8 @@ public class Usage {
         House house2 = new House(5, 1, 2003, 35);
         House house3 = new House(1, 2, 2025, 80);
         House house4 = new House(2, 3, 2020, 63.49999999);
-        House house5 = new House(10, 5, 2000, 110);
+        House house5 = new House(11, 5, 2000, 110);
+        House house6 = new House(11, 5, 2000, 110);
 
         house1.setPricePerM(2000);
         house2.setPricePerM(2300);
@@ -42,6 +43,12 @@ public class Usage {
         list.sort(new HouseSquareComparator());
         show(list);
 
+
+        System.out.println("house1.hashCode() = " + house1.hashCode());
+        System.out.println("house2.hashCode() = " + house2.hashCode());
+        System.out.println("house3.hashCode() = " + house3.hashCode());
+        System.out.println("house4.hashCode() = " + house4.hashCode());
+        System.out.println("house5.hashCode() = " + house5.hashCode());
     }
 
     private static void show(List<House> list) {
