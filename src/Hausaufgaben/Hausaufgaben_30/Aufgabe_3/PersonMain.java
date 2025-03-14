@@ -13,6 +13,16 @@ public class PersonMain {
 
         System.out.println(person);
 
-
+        String searchName = "Мuster";
+        int index = person.indexOf(searchName);
+        if (index != -1) {
+            System.out.println("Person " + searchName + " gefunden " + index);
+        } else {
+            System.out.println("Person " + searchName + " nicht gefunden");
+        }
+        if (index != -1) {
+            person.add(index,"lück","Lacki",32);
+            System.out.println("Имя пользователя на индексе " + index + "обновлено на "  + person.get(index));
+        }
     }
 }
