@@ -1,7 +1,6 @@
 package Homework.lesson_31;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -23,10 +22,6 @@ public class Main {
 
         System.out.println("\n=== ТЕСТИРОВАНИЕ СТРОК ===");
         testStringOperations(operations, fruitsWithDuplicates, fruits1, fruits2);
-
-        System.out.println("\n=== ТЕСТИРОВАНИЕ ПУСТЫХ СПИСКОВ ===");
-        System.out.println("Уникальны ли []? -> " + (operations.areIntegerElementsUnique(Collections.emptyList())? "Да" : "Нет"));
-        System.out.println("Объединение пустых списков: " + operations.unionOfIntegerLists(Collections.emptyList(), Collections.emptyList()));
     }
 
     private static void testIntegerOperations(CollectionOperationsHomework ops,
