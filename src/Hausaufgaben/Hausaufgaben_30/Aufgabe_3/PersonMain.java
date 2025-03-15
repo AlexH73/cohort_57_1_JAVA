@@ -13,16 +13,19 @@ public class PersonMain {
 
         System.out.println(person);
 
-        String searchName = "Мuster";
-        int index = person.indexOf(searchName);
-        if (index != -1) {
-            System.out.println("Person " + searchName + " gefunden " + index);
-        } else {
-            System.out.println("Person " + searchName + " nicht gefunden");
-        }
-        if (index != -1) {
-            person.add(index,"lück","Lacki",32);
-            System.out.println("Имя пользователя на индексе " + index + "обновлено на "  + person.get(index));
+
+
+        String searchName = "Мuster".toLowerCase();
+        int index = -1;
+        for (int i = 0; i < person.size(); i++) {
+            if (person.get(i).getFirstname().toLowerCase().equals(searchName)) {
+                index = i;
+                break;
+            }
+            if (index != -1) {
+                person.add(index, new Person("lück", "Lacki", 32));
+                System.out.println("Person nach Index:- " + index + " erneuert auf " + person.get(index));
+            }
         }
     }
 }
