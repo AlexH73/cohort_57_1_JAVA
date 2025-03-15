@@ -41,8 +41,8 @@ public class Main {
         System.out.println(list1 + " ∖ " + list2 + " = " + ops.differenceOfIntegerLists(list1, list2));
 
         System.out.println("\nПроверка уникальности:");
-        System.out.println("Уникальны ли " + list1 + "? -> " + (ops.areIntegerElementsUnique(list1)? "Да" : "Нет"));
-        System.out.println("Уникальны ли " + withDupes + "? -> " + (ops.areIntegerElementsUnique(withDupes)? "Да" : "Нет"));
+        System.out.println("Уникальны ли " + list1 + "? -> " + (ops.areIntegerElementsUnique(list1) ? "Да" : "Нет"));
+        System.out.println("Уникальны ли " + withDupes + "? -> " + (ops.areIntegerElementsUnique(withDupes) ? "Да" : "Нет"));
     }
 
     private static void testStringOperations(CollectionOperationsHomework ops,
@@ -62,7 +62,7 @@ public class Main {
         System.out.println(list1 + " ∖ " + list2 + " = " + ops.differenceOfStringLists(list1, list2));
 
         System.out.println("\nПроверка уникальности:");
-        System.out.println("Уникальны ли " + list1 + "? -> " + (ops.areStringElementsUnique(list1)? "Да" : "Нет"));
-        System.out.println("Уникальны ли " + withDupes + "? -> " + (ops.areStringElementsUnique(withDupes)? "Да" : "Нет"));
+        System.out.println("Уникальны ли " + list1 + "? -> " + (ops.areStringElementsUnique(list1) ? "Да" : "Нет"));
+        System.out.println("Уникальны ли " + withDupes + "? -> " + (ops.areStringElementsUnique(withDupes) ? "Да" : "Нет"));
     }
 }
