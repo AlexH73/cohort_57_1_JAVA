@@ -5,10 +5,14 @@ public class ProgrammerTest {
         Programmer programmer = new Programmer("ALF");
         programmer.addTechnology("Java");
         programmer.addTechnology("Git");
+        programmer.addTechnology("JavaScript");
         programmer.addTechnology("Java");
 
+        System.out.println("-------------------------------------");
         System.out.println("Список технологий: " + programmer.getTechnologies());
         System.out.println("Владеет ли ALF Java ? " + programmer.hasTechnology("Java"));
         System.out.println("Владеет ли ALF Python ? " + programmer.hasTechnology("Python"));
+
+        System.out.println(programmer);
     }
 }

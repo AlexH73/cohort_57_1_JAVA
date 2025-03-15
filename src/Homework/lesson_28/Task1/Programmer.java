@@ -23,13 +23,23 @@ public class Programmer {
         }
     }
 
+    //Метод для получения списка технологий
     // List.copyOf(technologies), создать неизменяемый список.
-    //метод возвращает список технологий программиста.
     public List<String> getTechnologies() {
         return List.copyOf(technologies);
     }
 
+    //Метод для проверки владения технологией
     public boolean hasTechnology(String technology) {
         return technologies.contains(technology);
+    }
+
+    //Метод для вывода информации о программисте
+    @Override
+    public String toString() {
+        return "Programmer{" +
+                "name='" + name + '\'' +
+                ", technologies=" + technologies +
+                '}';
     }
 }
