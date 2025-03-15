@@ -10,6 +10,9 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
     // Реализация методов для Integer
     @Override
     public boolean areIntegerElementsUnique(List<Integer> list) {
+        // Вызов метода валидации на null
+        // Это просто как идея, можно так же внедрить во все методы.
+        validateInput(list);
         return new HashSet<>(list).size() == list.size();
     }
 
@@ -68,6 +71,15 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
 
     @Override
     public boolean areStringElementsUnique(List<String> list) {
+        validateInput(list);
         return new HashSet<>(list).size() == list.size();
+    }
+
+    // Валидация на null
+    private void validateInput(List<?> list) {
+        if (list == null) {
+            System.out.println("Входной список не должен быть null");
+            return;
+        }
     }
 }
