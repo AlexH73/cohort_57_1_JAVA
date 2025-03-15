@@ -64,4 +64,22 @@ public class House {
                 ", floor=" + floor +
                 '}';
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof House house)) return false;
+
+        return Double.compare(getSquare(), house.getSquare()) == 0 && getYearOfBuild() == house.getYearOfBuild()  && getFloor() == house.getFloor();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Double.hashCode(getSquare());
+        // result = 31 * result + Double.hashCode(getPricePerM());
+        result = 31 * result + getYearOfBuild();
+        // result = 31 * result + getRoomCount();
+        result = 31 * result + getFloor();
+        return 1;
+    }
 }
