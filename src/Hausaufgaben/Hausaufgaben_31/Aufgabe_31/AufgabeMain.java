@@ -16,4 +16,5 @@ public class AufgabeMain {
         System.out.println("Differenz: " + operations.differenceOfIntegerLists(list1, list2));
         System.out.println("Eindeutig?: " + operations.areIntegerElementsUnique(list1));
     }
+
 }
