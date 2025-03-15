@@ -78,8 +78,7 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
     // Валидация на null
     private void validateInput(List<?> list) {
         if (list == null) {
-            System.out.println("Входной список не должен быть null");
-            return;
+            throw new IllegalArgumentException("Входной список не должен быть null");
         }
     }
 }
