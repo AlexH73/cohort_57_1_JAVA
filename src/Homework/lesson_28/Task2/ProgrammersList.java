@@ -16,7 +16,7 @@ public class ProgrammersList {
         programmers.add(programmer);
     }
 
-    // Метод для получения всех программистов, владеющих заданной технологией
+    //Метод для получения всех программистов, владеющих заданной технологией
     public List<Programmer> getProgrammersByTechnology(String technology) {
         List<Programmer> result = new ArrayList<>();
         for (Programmer programmer : programmers) {
@@ -27,7 +27,7 @@ public class ProgrammersList {
         return result;
     }
 
-    // Метод для вывода списка программистов
+    //Метод для вывода списка программистов
     public void printProgrammers() {
         for (Programmer programmer : programmers) {
             System.out.println(programmer);

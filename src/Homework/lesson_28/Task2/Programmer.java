@@ -10,12 +10,11 @@ public class Programmer {
     public Programmer(String name) {
         this.name = name;
         this.technologies = new ArrayList<>();
-
     }
 
     //Метод для проверки владения технологией
     public boolean hasTechnology(String technology) {
-        return technology.contains(technology);
+        return technologies.contains(technology);
     }
 
     public void addTechnology(String technology) {
