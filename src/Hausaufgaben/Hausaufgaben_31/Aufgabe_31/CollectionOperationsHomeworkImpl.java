@@ -13,21 +13,21 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
     @Override
     public List<Integer> unionOfIntegerLists(List<Integer> list1, List<Integer> list2) {
         Set<Integer> resultSet = new HashSet<>(list1);
-        resultSet.addAll(list2); // Combine unique elements
+        resultSet.addAll(list2);
         return new ArrayList<>(resultSet);
     }
 
     @Override
     public List<Integer> intersectionOfIntegerLists(List<Integer> list1, List<Integer> list2) {
         Set<Integer> resultSet = new HashSet<>(list1);
-        resultSet.retainAll(list2); // Keep only elements present in both lists
+        resultSet.retainAll(list2);
         return new ArrayList<>(resultSet);
     }
 
     @Override
     public List<Integer> differenceOfIntegerLists(List<Integer> list1, List<Integer> list2) {
         Set<Integer> resultSet = new HashSet<>(list1);
-        resultSet.removeAll(list2); // Remove elements of list2 from list1
+        resultSet.removeAll(list2);
         return new ArrayList<>(resultSet);
     }
 
