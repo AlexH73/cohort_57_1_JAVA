@@ -26,8 +26,20 @@ public class PhoneBook implements PhoneBookInterface {
         return numberPhone;
     }
 
+/**
+     * Обновляет номер телефона для существующего контакта.
+            * Если контакт не найден, метод ничего не делает.
+     *
+    * @param name имя контакта
+     * @param newPhoneNumber новый номер телефона
+     * @return true, если номер был обновлён, false, если контакт не найден
+     */
     @Override
     public boolean updatePhoneNumber(String name, String newPhoneNumber) {
+        if (phoneBook.containsKey(name)){
+            phoneBook.put(name, newPhoneNumber);
+            return phoneBook.containsValue(newPhoneNumber);
+        }
         return false;
     }
 
