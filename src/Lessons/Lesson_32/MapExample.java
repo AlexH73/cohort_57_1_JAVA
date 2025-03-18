@@ -29,6 +29,24 @@ public class MapExample {
         System.out.println("map.containsKey(\"Norway\") = " + map.containsKey("Norway"));
         System.out.println("map.containsKey(\"Japan\") = " + map.containsKey("Japan"));
 
+        // перебор значений?
+        map.keySet(); // возвращает сет, который содержит только ключи
+
+        Set<String> keyset = map.keySet();
+
+        for (String key : keyset) {
+            Integer value = map.get(key);
+
+            System.out.println(value);
+        }
+
+        Map<Integer, List<String>> pages = new HashMap<>();
+
+        pages.put(1, List.of("Привет", "дорогой", "читатель!"));
+        pages.put(2, List.of("Эта", "книга", "посвящена", "ю.ф.вфв"));
+
+        printMap(pages);
+
     }
 
 
