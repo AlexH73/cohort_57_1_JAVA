@@ -64,6 +64,10 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean removeContact(String name) {
+        if (phoneBook.containsKey(name)) {
+            phoneBook.remove(name);
+            return true;
+        }
         return false;
     }
 
