@@ -1,6 +1,7 @@
 package Hausaufgaben.Hausaufgaben_31.Aufgabe_31;
 
 import java.util.List;
+import java.util.Set;
 
 public class AufgabeMain {
     public static void main(String[] args) {
@@ -9,6 +10,11 @@ public class AufgabeMain {
         // Beispiel: Testen mit Zahlen
         List<Integer> list1 = List.of(1, 2, 2, 3, 4, 4, 5);
         List<Integer> list2 = List.of(3, 4, 5, 6, 7, 8, 8);
+
+        Set<String> set1 = Set.of("Apple", "Banana", "Cherry","Tomato");
+        Set<String> set2 = Set.of("Apple", "Banana", "Cherry","Tomato");
+
+
 
         System.out.println("Anzahl der Duplikate: " + operations.countDuplicatesInteger(list1));
         System.out.println("Vereinigung: " + operations.unionOfIntegerLists(list1, list2));

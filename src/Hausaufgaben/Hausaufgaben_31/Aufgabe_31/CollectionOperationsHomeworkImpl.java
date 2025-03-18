@@ -8,6 +8,7 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
     public int countDuplicatesInteger(List<Integer> list) {
         Set<Integer> uniqueSet = new HashSet<>(list);
         return list.size() - uniqueSet.size();
+
     }
 
     @Override
