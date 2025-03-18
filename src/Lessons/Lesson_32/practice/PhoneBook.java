@@ -79,6 +79,9 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean containsContact(String name) {
+        if (phoneBook.containsKey(name)){
+            return true;
+        }
         return false;
     }
 
@@ -90,6 +93,9 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean containsPhoneNumber(String phoneNumber) {
+        if (phoneBook.containsValue(phoneNumber)){
+            return true;
+        }
         return false;
     }
 
@@ -108,7 +114,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public void clearPhoneBook() {
-
+    phoneBook.clear();
     }
 
     /**
