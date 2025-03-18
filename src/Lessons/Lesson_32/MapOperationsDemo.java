@@ -9,9 +9,9 @@ public class MapOperationsDemo {
         Map<String, String> phoneBook = new HashMap<>();
 
         // 2. Добавление записей
-        phoneBook.put("Иван", "+49-900-123-45-67");
-        phoneBook.put("Мария", "+49-901-234-56-78");
-        phoneBook.put("Алексей", "+49-902-345-67-89");
+        phoneBook.put("Иван", "+49-170-123-45-67");
+        phoneBook.put("Мария", "+49-171-234-56-78");
+        phoneBook.put("Алексей", "+49-172-345-67-89");
 
         System.out.println("Исходная телефонная книга: " + phoneBook);
 
@@ -23,7 +23,7 @@ public class MapOperationsDemo {
         System.out.println("Номер Ольги: " + phoneBook.getOrDefault("Ольга", "Контакт не найден"));
 
         // 5. Обновление номера телефона
-        phoneBook.put("Иван", "+49-900-999-99-99");
+        phoneBook.put("Иван", "+49-170-999-99-99");
         System.out.println("Обновленный номер Ивана: " + phoneBook.get("Иван"));
 
         // 6. Удаление контакта
@@ -33,8 +33,8 @@ public class MapOperationsDemo {
         // 7. Проверка наличия ключа (есть ли контакт "Мария")
         System.out.println("Есть ли Мария в списке? " + phoneBook.containsKey("Мария"));
 
-        // 8. Проверка наличия значения (есть ли номер "+49-900-999-99-99")
-        System.out.println("Есть ли номер +49-900-999-99-99 в списке? " + phoneBook.containsValue("+49-900-999-99-99"));
+        // 8. Проверка наличия значения (есть ли номер "+49-170-999-99-99")
+        System.out.println("Есть ли номер +49-170-999-99-99 в списке? " + phoneBook.containsValue("+49-170-999-99-99"));
 
         // 9. Вывод всех контактов (ключи)
         System.out.println("Все контакты: " + phoneBook.keySet());
