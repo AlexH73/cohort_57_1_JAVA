@@ -19,6 +19,9 @@ public class MapOperationsDemo {
         String phoneNumber = phoneBook.get("Мария");
         System.out.println("Номер Марии: " + phoneNumber);
 
+         phoneNumber = phoneBook.get("Никита");
+        System.out.println("Номер Никита: " + phoneNumber);
+
         // 4. Попытка получить номер несуществующего контакта
         System.out.println("Номер Ольги: " + phoneBook.getOrDefault("Ольга", "Контакт не найден"));
 
