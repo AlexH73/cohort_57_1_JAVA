@@ -22,7 +22,8 @@ public class PhoneBook implements PhoneBookInterface {
 
     @Override
     public String getPhoneNumber(String name) {
-        return "";
+        String numberPhone = phoneBook.get(name);
+        return numberPhone;
     }
 
     @Override
