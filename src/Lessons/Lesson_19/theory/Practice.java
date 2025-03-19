@@ -5,7 +5,6 @@ public class Practice {
         System.out.println(add(-5, 2));
         printOS();
 
-        //asdfasd
     }
 
     /**
