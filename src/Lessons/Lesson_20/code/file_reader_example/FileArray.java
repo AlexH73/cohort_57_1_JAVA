@@ -5,81 +5,56 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileArray {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         File file1 = new File("src/Lessons/Lesson_20/code/file_reader_example/file_1.txt");
 
         if (file1.exists()) {
-            System.out.println("файл существует!");
+            System.out.println("Файл існує!");
         } else {
-            System.out.println("файл не существует!");
+            System.out.println("Файл не існує!");
+            return; // Вихід із програми, якщо файл не знайдено
         }
 
-        // таким образом будем чиать из файла:
-        Scanner scanner = new Scanner(file1);
+        try (Scanner scanner = new Scanner(file1)) { // Автоматичне закриття Scanner
+            if (scanner.hasNextLine()) {
+                String fileContent = scanner.nextLine();
+                System.out.println("fileContent = " + fileContent);
+            } else {
+                System.out.println("Файл порожній.");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Помилка читання файлу: " + e.getMessage());
+        }
 
-        String fileContent = scanner.nextLine();
-
-        System.out.println("fileContent = " + fileContent);
-
-        scannerArray();
+        try {
+            MethodScannerArrayV2();
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не знайдено: " + e.getMessage());
+        }
     }
 
-    public static void scannerArray() throws FileNotFoundException {
+    public static void MethodScannerArrayV2() throws FileNotFoundException {
         String basePath = "src/Lessons/Lesson_20/code/file_reader_example/file_";
 
-        Scanner[] scanners = new Scanner[3]; // {null, null, null}
+        Scanner[] scanners = new Scanner[3];
 
-        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
-        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
+        try {
+            scanners[0] = new Scanner(new File(basePath + "1.txt"));
+            scanners[1] = new Scanner(new File(basePath + "2.txt"));
+            scanners[2] = new Scanner(new File(basePath + "3.txt"));
 
-        File file = new File(basePath+ "3.txt");
-
-        scanners[2] = new Scanner(file);
-
-        String contentScanner2 = scanners[2].nextLine();
-        System.out.println("scanners[2].nextLine() = " + contentScanner2);
-
-        scanners[2] = new Scanner(System.in);
-
-        System.out.println("Enter new data:");
-//        String terminalData = scanners[2].nextLine();
-//
-//        System.out.println("terminalData = " + terminalData);
-
-        System.out.println("scanners.length = " + scanners.length);
-    }
-
-    public static void scannerArray() throws FileNotFoundException {
-        String basePath = "src/Lessons/Lesson_20/code/file_reader_example/file_";
-
-        Scanner[] scanners = new Scanner[3]; // {null, null, null}
-
-
-        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
-        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
-        scanners[2] = new Scanner(new File(basePath+ "3.txt"));
-
-
-        String contentScanner2 = scanners[2].nextLine();
-        System.out.println("scanners[2].nextLine() = " + contentScanner2);
-
-
-    }
-
-    public static void scannerArray() throws FileNotFoundException {
-        String basePath = "src/Lessons/Lesson_20/code/file_reader_example/file_";
-
-        Scanner[] scanners = new Scanner[3]; // {null, null, null}
-
-
-        scanners[0] = new Scanner(new File(basePath+ "1.txt"));
-        scanners[1] = new Scanner(new File(basePath+ "2.txt"));
-        scanners[2] = new Scanner(new File(basePath+ "3.txt"));
-
-
-        String contentScanner2 = scanners[2].nextLine();
-        System.out.println("scanners[2].nextLine() = " + contentScanner2);
-
-
+            if (scanners[2].hasNextLine()) {
+                String contentScanner2 = scanners[2].nextLine();
+                System.out.println("scanners[2].nextLine() = " + contentScanner2);
+            } else {
+                System.out.println("Файл 3.txt порожній.");
+            }
+        } finally {
+            for (Scanner scanner : scanners) {
+                if (scanner != null) {
+                    scanner.close(); // Закриваємо всі Scanner
+                }
+            }
+        }
     }
 }

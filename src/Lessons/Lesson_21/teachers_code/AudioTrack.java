@@ -2,64 +2,57 @@ package Lessons.Lesson_21.teachers_code;
 
 import java.awt.Image;
 
-/*Задание 1: Доработка класса AudioTrack
-Добавить новый метод isLongTrack(), который возвращает true, если длительность трека больше 300 секунд (5 минут),
-и false в противном случае.
-Изменить метод displayTrackInfo(), чтобы он также выводил результат метода isLongTrack().
-Протестировать класс, создав несколько объектов AudioTrack и вызвав все методы.
- */
-
+/* Задание 1: Доработка класса AudioTrack */
 public class AudioTrack {
-
     String title;
     String artist;
     int durationInSeconds;
     String genre;
     Image cover;
 
-   public AudioTrack(String title, String artist, int durationInSeconds, String genre, Image cover) {
-    this.title =title;
-    this.artist =artist;
-    this.durationInSeconds =durationInSeconds;
-    this.genre =genre;
+    // Конструктор без @Override, оскільки він не перевизначає метод
+    public AudioTrack(String title, String artist, int durationInSeconds, String genre, Image cover) {
+        this.title = title;
+        this.artist = artist;
+        this.durationInSeconds = durationInSeconds;
+        this.genre = genre;
+        this.cover = cover;
+    }
+
+    // Перевантажений конструктор для створення об'єкта без зображення
+    public AudioTrack(String title, String artist, int durationInSeconds, String genre) {
+        this(title, artist, durationInSeconds, genre, null);
+    }
+
+    public boolean isLongTrack() {
+        return durationInSeconds > 300;
+    }
+
+    public void displayTrackInfo() {
+        System.out.println("Название: " + title);
+        System.out.println("Исполнитель: " + artist);
+        System.out.println("Жанр: " + genre);
+        System.out.println("Длительность: " + durationInSeconds + " секунд");
+        System.out.println("Длинный трек? " + (isLongTrack() ? "Да" : "Нет"));
+    }
+
+    // Метод main не може бути перевизначеним, прибираємо @Override
+    public static void main(String[] args) {
+        AudioTrack audioTrack1 = new AudioTrack("Sonne", "Rammstein", 250, "Rock");
+        AudioTrack audioTrack2 = new AudioTrack("Scandal", "Tina Karol", 280, "Pop");
+
+        audioTrack1.displayTrackInfo();
+        System.out.println();
+        audioTrack2.displayTrackInfo();
+    }
 }
 
-        public boolean isLongTrack() {
-            return durationInSeconds > 300;
-
-        }
-
-        public void displayTrackInfo() {
-            System.out.println("Название" + title);
-            System.out.println("Исполнитель" + artist);
-            System.out.println("Жанр" + genre);
-            System.out.println("Длительность" + durationInSeconds + "секунд");
-            System.out.println("Длинный трек?" + (isLongTrack() ? "Да" : "Нет"));
-        }
-
-        public static void main(String[] args) {
-            AudioTrack audioTrack1 = new AudioTrack("Sonne", "Rammstein", 250, "Rock");
-            AudioTrack audioTrack2 = new AudioTrack("Scandal", "Tina Karol", 280, "Pop");
-
-            audioTrack1.displayTrackInfo();
-            System.out.println();
-            audioTrack2.displayTrackInfo();
-        }
-
-}
-
-/*Задание 2: Улучшение класса Message
-Добавить новый метод isFrom(String username), который проверяет, отправлено ли сообщение указанным пользователем.
-Добавить метод shortPreview(int maxLength), который возвращает первые maxLength символов сообщения + "...", если оно длиннее указанного лимита.
-Создать несколько объектов Message и протестировать новый функционал.
-*/
-
+/* Задание 2: Улучшение класса Message */
 class Message {
     String sender;
     String receiver;
     String text;
     String timestamp;
-
 
     public Message(String sender, String receiver, String text, String timestamp) {
         this.sender = sender;
@@ -77,10 +70,7 @@ class Message {
     }
 
     public String shortPreview(int maxLength) {
-        if (text.length() > maxLength) {
-            return text.substring(0, maxLength) + "...";
-        }
-        return text;
+        return text.length() > maxLength ? text.substring(0, maxLength) + "..." : text;
     }
 
     public static void main(String[] args) {
@@ -95,15 +85,8 @@ class Message {
     }
 }
 
-/*Задание 3: Расширение класса Task
-Добавить поле priority (целое число), которое обозначает приоритет задачи (чем меньше число, тем выше приоритет).
-Реализовать метод isHighPriority(), который возвращает true, если приоритет задачи меньше 3, и false в противном случае.
-В методе displayTask() добавить вывод приоритета и его классификацию (например, "Высокий", "Средний", "Низкий").
-Протестировать код создав несколько задач.
-*/
-
+/* Задание 3: Расширение класса Task */
 class Task {
-    // Поля
     String title;
     String description;
     String status;
@@ -125,14 +108,11 @@ class Task {
     }
 
     public void displayTask() {
-        String priorityDescription;
-        if (priority == 1) {
-            priorityDescription = "Высокий";
-        } else if (priority == 2) {
-            priorityDescription = "Средний";
-        } else {
-            priorityDescription = "Низкий";
-        }
+        String priorityDescription = switch (priority) {
+            case 1 -> "Высокий";
+            case 2 -> "Средний";
+            default -> "Низкий";
+        };
 
         System.out.println("Задача: " + title);
         System.out.println("Описание: " + description);
