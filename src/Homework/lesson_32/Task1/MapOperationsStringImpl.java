@@ -1,15 +1,9 @@
 package Homework.lesson_32.Task1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-//    * Удаляет дублирующиеся значения в переданной `Map`, оставляя только уникальные.
-//     * Если значение встречается более одного раза, все соответствующие ключи должны быть удалены.
-//     * Допускается один `null` в качестве значения.
-//     *
-//     * @param map Map, в которой необходимо удалить повторяющиеся значения.
-//     * @param <K> Тип ключей.
-//     * @param <V> Тип значений.
 public class MapOperationsStringImpl implements MapOperationsHomework {
     // метод обобщенный (generic). Он принимает Map<K, V>, где:
     //K – тип ключа (например, String, Integer).
@@ -23,6 +17,16 @@ public class MapOperationsStringImpl implements MapOperationsHomework {
         }
     }
 
+    List<K> keysToRemove = new ArrayList<>();
+       for (Map.Entry<K, V> entry : map.entrySet()) {
+        V value = entry.getValue();
+        if (valueCount.get(value) > 1) {
+            keysToRemove.add(entry.getKey());
+        }
+    }
+    // Сбор ключей для удаления
+
+
 
 
     // Удаление всех ключей, у которых значения встречаются более одного раза
@@ -30,11 +34,9 @@ public class MapOperationsStringImpl implements MapOperationsHomework {
 
 
     //Mетод вызывает обобщенный метод removeSameValuesAnyTypes, передавая Map<String, String>.
+    @Override
     public void removeSameValues(Map<String, String> map) {
         removeSameValuesAnyTypes(map);
 
-    }
-
-    private class V {
     }
 }
