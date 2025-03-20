@@ -28,6 +28,8 @@ public class CollectionTasksImpl implements CollectionTasks {
      * @param queue очередь чисел.
      * @param k количество шагов сдвига.
      * @return очередь после выполнения сдвига.
+     *
+     * [1 2 3 4 5 6] , 3 -> [4 5 6 1 2 3]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k){
         return null;
@@ -54,6 +56,9 @@ public class CollectionTasksImpl implements CollectionTasks {
      *
      * @param numbers список чисел.
      * @return второе наибольшее число или `Integer.MIN_VALUE`, если его нет.
+     *
+     * [1, 2, 3, 4, 5] -> 4
+     * [4, 4, 4, 4] -> Integer.MIN_VALUE
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
@@ -80,6 +85,8 @@ public class CollectionTasksImpl implements CollectionTasks {
      * @param list1 первый список чисел.
      * @param list2 второй список чисел.
      * @return объединенный список с уникальными значениями.
+     *
+     * .addAll();
      */
     @Override
     public List<Integer> mergeUniqueLists(List<Integer> list1, List<Integer> list2) {
@@ -131,6 +138,10 @@ public class CollectionTasksImpl implements CollectionTasks {
      *
      * @param input входная строка.
      * @return первый неповторяющийся символ или ``, если такого нет.
+     *
+     * "aaaaaa" -> ''
+     * aaabbbcddd -> c
+     * abc -> 'a'
      */
     @Override
     public Character findFirstUniqueCharacter(String input) {
