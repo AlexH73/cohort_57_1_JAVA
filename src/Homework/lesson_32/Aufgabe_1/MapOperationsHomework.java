@@ -1,23 +1,32 @@
 package Homework.lesson_32.Aufgabe_1;
 
-/**
- * Интерфейс для работы с Map, позволяющий удалять дублирующиеся значения.
- * Студенты должны реализовать этот интерфейс и обеспечить корректную работу метода `removeSameValues`.
- *
- * Примеры тестовых данных:
- * - Исходная `Map<String, String>`: {"A" -> "Apple", "B" -> "Banana", "C" -> "Apple"}
- *   Ожидаемый результат: {"B" -> "Banana"}
- *
- * - Исходная `Map<Integer, Integer>`: {1 -> 10, 2 -> 20, 3 -> 10, 4 -> 30}
- *   Ожидаемый результат: {2 -> 20, 4 -> 30}
- *
- */
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
-// Интерфейс
-public interface MapProcessor<K, V> {
-    void removeSameValues(Map<K, V> map);
+/**
+ * Interface für Operationen mit einer Map, das Methoden zur Entfernung
+ * von duplizierten Werten bietet.
+ */
+public interface MapOperationsHomework {
+
+    /**
+     * Entfernt doppelte Werte aus der angegebenen Map. Diese Methode ist generisch
+     * und funktioniert mit beliebigen Typen von Schlüsseln und Werten.
+     *
+     * @param map Die Map, aus der doppelte Werte entfernt werden sollen.
+     * @param <K> Der Typ der Schlüssel in der Map.
+     * @param <V> Der Typ der Werte in der Map.
+     * @throws IllegalArgumentException wenn die Map null oder leer ist.
+     */
+    <K, V> void removetSameValuesAnyTypes(Map<K, V> map);
+
+    /**
+     * Entfernt doppelte Werte aus einer Map mit Strings als Schlüssel und Werte.
+     * Diese Methode ist spezifisch für Maps des Typs `Map<String, String>`.
+     *
+     * @param map Die Map mit Strings als Schlüssel und Werten, aus der doppelte
+     *            Werte entfernt werden sollen.
+     * @throws IllegalArgumentException wenn die Map null oder leer ist.
+     */
+    void removetSameValues(Map<String, String> map);
 }
+

@@ -1,4 +1,4 @@
-package Hausaufgaben.Hausaufgaben_31.Aufgabe_31;
+package Homework.lesson_31.Aufgabe_31;
 
 import java.util.List;
 import java.util.Set;

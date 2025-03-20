@@ -1,8 +1,6 @@
-package Hausaufgaben.Hausaufgaben_31.Aufgabe_31;
+package Homework.lesson_31.Aufgabe_31;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public interface CollectionOperationsHomework {
   //  int duplicates = list.size() - new HashSet<>(list).size();
