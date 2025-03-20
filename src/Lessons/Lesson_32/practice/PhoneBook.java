@@ -25,7 +25,7 @@ public class PhoneBook implements PhoneBookInterface {
             return false;
         }
         this.phoneBook.put(name, phoneNumber);
-        return phoneBook.containsKey(name);
+        return true;
     }
 
     /**
@@ -36,8 +36,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public String getPhoneNumber(String name) {
-        String numberPhone = phoneBook.get(name);
-        return numberPhone;
+        return phoneBook.get(name);
     }
 
     /**
@@ -51,7 +50,7 @@ public class PhoneBook implements PhoneBookInterface {
     public boolean updatePhoneNumber(String name, String newPhoneNumber) {
         if (phoneBook.containsKey(name)) {
             phoneBook.put(name, newPhoneNumber);
-            return phoneBook.containsValue(newPhoneNumber);
+            return true;
         }
         return false;
     }
@@ -64,7 +63,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean removeContact(String name) {
-        return false;
+        return phoneBook.remove(name) != null;
     }
 
     /**
@@ -75,7 +74,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean containsContact(String name) {
-        return false;
+        return phoneBook.containsKey(name);
     }
 
     /**
@@ -86,7 +85,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean containsPhoneNumber(String phoneNumber) {
-        return false;
+        return phoneBook.containsValue(phoneNumber);
     }
 
     /**
@@ -96,7 +95,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public Map<String, String> getAllContacts() {
-        return Map.of();
+        return new TreeMap<>(phoneBook); // Сохраняет сортировку по имени
     }
 
     /**
@@ -104,7 +103,7 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public void clearPhoneBook() {
-
+        phoneBook.clear();
     }
 
     /**
@@ -114,6 +113,6 @@ public class PhoneBook implements PhoneBookInterface {
      */
     @Override
     public boolean isPhoneBookEmpty() {
-        return false;
+        return phoneBook.isEmpty();
     }
 }
