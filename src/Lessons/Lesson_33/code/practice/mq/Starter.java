@@ -7,7 +7,8 @@ public class Starter {
     static SimpleTaskCreator taskCreator = new SimpleTaskCreator(manager);
 
     public static void main(String[] args) throws InterruptedException {
-        startStackTask();
+        //startStackTask();
+        startQueueTask();
     }
 
     static void startQueueTask() {
