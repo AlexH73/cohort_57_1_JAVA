@@ -1,18 +1,23 @@
 package Lessons.Lesson_33.practice;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
 /**
- * Реализация интерфейса CollectionTasks.
- * Студенты должны реализовать логику методов в соответствии с их описанием.
+ * Реализация интерфейса CollectionTasks. Студенты должны реализовать логику методов в соответствии с их описанием.
  */
 public class CollectionTasksImpl implements CollectionTasks {
+    public static void main(String[] args) {
+        CollectionTasks tasks = new CollectionTasksImpl();
+
+        System.out.println(tasks.countWordFrequency(List.of("one", "two", "three", "two", "three", "four")));
+    }
 
     /**
-     * Переставляет слова в предложении в обратном порядке.
-     * Возвращает строку, где порядок слов изменен на обратный, но порядок символов внутри слов сохранен.
+     * Переставляет слова в предложении в обратном порядке. Возвращает строку, где порядок слов изменен на обратный, но
+     * порядок символов внутри слов сохранен.
      *
      * @param sentence входное предложение.
      * @return строка с переставленными словами.
@@ -26,21 +31,19 @@ public class CollectionTasksImpl implements CollectionTasks {
      * Выполняет циклический сдвиг элементов очереди на `k` позиций.
      *
      * @param queue очередь чисел.
-     * @param k количество шагов сдвига.
+     * @param k     количество шагов сдвига.
      * @return очередь после выполнения сдвига.
-     *
+     * <p>
      * [1 2 3 4 5 6] , 3 -> [4 5 6 1 2 3]
      */
-    public Queue<Integer> rotateQueue(Queue<Integer> queue, int k){
+    public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
         return null;
     }
 
     /**
-     * Определяет день с максимальными и минимальными расходами.
-     * Дана `Map<Integer, List<Double>>`, где ключ — день месяца, а значение — список покупок за этот день.
-     * Метод должен вернуть массив `int[2]`, где:
-     * - `result[0]` — день с минимальными тратами.
-     * - `result[1]` — день с максимальными тратами.
+     * Определяет день с максимальными и минимальными расходами. Дана `Map<Integer, List<Double>>`, где ключ — день
+     * месяца, а значение — список покупок за этот день. Метод должен вернуть массив `int[2]`, где: - `result[0]` — день
+     * с минимальными тратами. - `result[1]` — день с максимальными тратами.
      *
      * @param dailyExpenses мапа, содержащая траты по дням.
      * @return массив из двух значений: [день_с_мин_тратами, день_с_макс_тратами].
@@ -51,14 +54,12 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Находит второе максимальное число в списке.
-     * Если такого нет — вернуть `Integer.MIN_VALUE`.
+     * Находит второе максимальное число в списке. Если такого нет — вернуть `Integer.MIN_VALUE`.
      *
      * @param numbers список чисел.
      * @return второе наибольшее число или `Integer.MIN_VALUE`, если его нет.
-     *
-     * [1, 2, 3, 4, 5] -> 4
-     * [4, 4, 4, 4] -> Integer.MIN_VALUE
+     * <p>
+     * [1, 2, 3, 4, 5] -> 4 [4, 4, 4, 4] -> Integer.MIN_VALUE
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
@@ -67,25 +68,44 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Подсчитывает количество повторений каждого слова в списке.
-     * Должен вернуть `Map<String, Integer>`, где ключ — слово, а значение — количество его повторений.
+     * Подсчитывает количество повторений каждого слова в списке. Должен вернуть `Map<String, Integer>`, где ключ —
+     * слово, а значение — количество его повторений.
      *
      * @param words список слов.
      * @return мапа, содержащая слова и их частоту встречаемости.
+     * <p>
+     * "Яблоко" и "яблоко" -> разные слова
      */
     @Override
     public Map<String, Integer> countWordFrequency(List<String> words) {
-        return null;
+        // Шаг 1. Посмотрел в условия и создал мапу, которую верну.
+        Map<String, Integer> map = new HashMap<>();
+
+        // ТК мап позволяет проверить наличие ключа, я просто переберу все слова по очереди
+        // и если в мап есть такой ключ, то увеличу значение (val) по этому ключу на 1,
+        // если нет - положу в мапу map.put(слово, 1) тк оно встретилось впервые.
+        for (int i = 0; i < words.size(); i++) {
+            String word = words.get(i);
+            if (map.containsKey(word)) {
+                int key = map.get(word);
+                key++;
+                map.put(word, key);
+            } else {
+                map.put(word, 1);
+            }
+        }
+
+        return map;
     }
 
     /**
-     * Объединяет два списка в один, удаляя дубликаты.
-     * Метод должен возвращать новый список, содержащий только уникальные элементы из обоих списков.
+     * Объединяет два списка в один, удаляя дубликаты. Метод должен возвращать новый список, содержащий только
+     * уникальные элементы из обоих списков.
      *
      * @param list1 первый список чисел.
      * @param list2 второй список чисел.
      * @return объединенный список с уникальными значениями.
-     *
+     * <p>
      * .addAll();
      */
     @Override
@@ -94,10 +114,10 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Фильтрует список строк по заданной минимальной длине слова.
-     * Оставляет только слова, длина которых больше `minLength`.
+     * Фильтрует список строк по заданной минимальной длине слова. Оставляет только слова, длина которых больше
+     * `minLength`.
      *
-     * @param words список слов.
+     * @param words     список слов.
      * @param minLength минимально допустимая длина слова.
      * @return список слов, удовлетворяющих условию.
      */
@@ -107,8 +127,8 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Группирует строки по их длине.
-     * Вернет `Map<Integer, List<String>>`, где ключ — длина слова, а значение — список всех слов данной длины.
+     * Группирует строки по их длине. Вернет `Map<Integer, List<String>>`, где ключ — длина слова, а значение — список
+     * всех слов данной длины.
      *
      * @param words список слов.
      * @return мапа, содержащая длину слова как ключ и список слов соответствующей длины как значение.
@@ -119,8 +139,7 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Находит пересечение трех списков.
-     * Вернет `List<Integer>`, содержащий числа, встречающиеся во всех трех списках.
+     * Находит пересечение трех списков. Вернет `List<Integer>`, содержащий числа, встречающиеся во всех трех списках.
      *
      * @param list1 первый список чисел.
      * @param list2 второй список чисел.
@@ -133,15 +152,12 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Определяет первый неповторяющийся символ в строке.
-     * Вернет ``, содержащий первый уникальный символ.
+     * Определяет первый неповторяющийся символ в строке. Вернет ``, содержащий первый уникальный символ.
      *
      * @param input входная строка.
      * @return первый неповторяющийся символ или ``, если такого нет.
-     *
-     * "aaaaaa" -> ''
-     * aaabbbcddd -> c
-     * abc -> 'a'
+     * <p>
+     * "aaaaaa" -> '' aaabbbcddd -> c abc -> 'a'
      */
     @Override
     public Character findFirstUniqueCharacter(String input) {
@@ -149,10 +165,10 @@ public class CollectionTasksImpl implements CollectionTasks {
     }
 
     /**
-     * Находит уникальные пары чисел, сумма которых равна заданному числу.
-     * Вернет `List<List<Integer>>`, содержащий только уникальные пары.
+     * Находит уникальные пары чисел, сумма которых равна заданному числу. Вернет `List<List<Integer>>`, содержащий
+     * только уникальные пары.
      *
-     * @param numbers список чисел.
+     * @param numbers   список чисел.
      * @param targetSum целевое значение суммы.
      * @return список пар чисел, дающих `targetSum`.
      */
