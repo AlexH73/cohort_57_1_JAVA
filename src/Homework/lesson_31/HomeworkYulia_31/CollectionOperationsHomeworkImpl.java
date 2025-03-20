@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 
-
 public class CollectionOperationsHomeworkImpl implements CollectionOperationsHomework {
 
     // Методы для работы с числами
@@ -42,10 +41,6 @@ public class CollectionOperationsHomeworkImpl implements CollectionOperationsHom
     public boolean areIntegerElementsUnique(List<Integer> list) {
         return new HashSet<>(list).size() == list.size();
     }
-
-
-
-
 
 
     // Методы для работы со строками
