@@ -21,27 +21,3 @@ import java.util.Set;
 public interface MapProcessor<K, V> {
     void removeSameValues(Map<K, V> map);
 }
-
-// Реализация интерфейса
-public class MapProcessorImpl<K, V> implements MapProcessor<K, V> {
-
-    @Override
-    public void removeSameValues(Map<K, V> map) {
-        Map<K, V> copy = new HashMap<>(map);
-        Set<V> uniqueValues = new HashSet<>();
-        Set<V> duplicateValues = new HashSet<>();
-
-        // Определяем уникальные и дублирующиеся значения
-        for (V value : copy.values()) {
-            if (!uniqueValues.add(value)) {
-                duplicateValues.add(value);
-            }
-        }
-
-        // Удаляем записи с дублирующимися значениями
-        for (Map.Entry<K, V> entry : copy.entrySet()) {
-            if (duplicateValues.contains(entry.getValue())) {
-                map.remove(entry.getKey());
-            }
-        }
-    }
