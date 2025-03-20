@@ -1,9 +1,6 @@
 package Lessons.Lesson_33.practice;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Реализация интерфейса CollectionTasks. Студенты должны реализовать логику методов в соответствии с их описанием.
@@ -12,7 +9,8 @@ public class CollectionTasksImpl implements CollectionTasks {
     public static void main(String[] args) {
         CollectionTasks tasks = new CollectionTasksImpl();
 
-        System.out.println(tasks.countWordFrequency(List.of("one", "two", "three", "two", "three", "four")));
+        //System.out.println(tasks.countWordFrequency(List.of("one", "two", "three", "two", "three", "four")));
+        System.out.println(tasks.reverseWordsInSentence("Переставляет слова в предложении в обратном порядке"));
     }
 
     /**
@@ -24,7 +22,17 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public String reverseWordsInSentence(String sentence) {
-        return null;
+        Stack<String> stack = new Stack<>();
+
+        String[] words = sentence.split(" ");
+        for (String word : words) {
+            stack.push(word);
+        }
+        String[] words2 = new String[words.length];
+        for (int i = 0; i < words.length; i++) {
+            words2[i] = stack.pop();
+        }
+        return String.join(" ", words2);
     }
 
     /**
