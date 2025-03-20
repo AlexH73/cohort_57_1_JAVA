@@ -1,6 +1,5 @@
-package Homework.lesson_32;
+package Homework.lesson_32.Task1;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +10,7 @@ import java.util.Map;
 //     * @param map Map, в которой необходимо удалить повторяющиеся значения.
 //     * @param <K> Тип ключей.
 //     * @param <V> Тип значений.
-public class MapOperationsStringImpl implements MapOperationsHomework{
+public class MapOperationsStringImpl implements MapOperationsHomework {
     // метод обобщенный (generic). Он принимает Map<K, V>, где:
     //K – тип ключа (например, String, Integer).
     //V – тип значения (например, String, Integer).
