@@ -77,9 +77,17 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
+        int max = numbers.get(0);
+        for (int i = 0; i < numbers.size(); i++){
+            if (max < numbers.get(i)){
+                max = numbers.get(i);
+        }
+
+        }
 
         return Integer.MIN_VALUE;
     }
+
 
     /**
      * Подсчитывает количество повторений каждого слова в списке. Должен вернуть `Map<String, Integer>`, где ключ —
