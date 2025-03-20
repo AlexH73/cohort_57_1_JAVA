@@ -34,12 +34,10 @@ public class StackOperationsDemo {
 
         // Удаление верхнего элемента (pop)
         String removedElement = stack.pop();
-        System.out.println("Удалён верхний элемент: " + removedElement); // element = stack.get(stack.size() - 1); -> stack.remove(element);
         System.out.println("Стек после удаления: " + stack);
 
         // Получение верхнего элемента без удаления (peek)
         System.out.println("Верхний элемент без удаления: " + stack.peek());
-        System.out.println("Стек после peek(): " + stack);
 
         // Поиск элемента в стеке
         int position = stack.search("Элемент 2");
@@ -52,12 +50,6 @@ public class StackOperationsDemo {
         System.out.print("Итерация по стеку: ");
         for (String item : stack) {
             System.out.print(item + " ");
-        }
-        System.out.println("");
-
-        // В стеке доступна итерация по индексу, тк он расширяет класс Vector
-        for (int i = 0; i < stack.size(); i++) {
-            System.out.print(stack.get(i) + " ");
         }
         System.out.println();
 

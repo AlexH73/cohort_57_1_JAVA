@@ -32,13 +32,11 @@ public class QueueOperationsDemo {
         System.out.println("Исходная очередь: " + queue);
 
         // Удаление элемента из начала очереди (dequeue)
-        String removedElement = queue.poll();  // element = queue.get(0); -> queue.remove(element);
         System.out.println("Удалён первый элемент: " + removedElement);
         System.out.println("Очередь после удаления: " + queue);
 
         // Получение первого элемента без удаления
         System.out.println("Первый элемент без удаления: " + queue.peek());
-        System.out.println("Очередь после peek(): " + queue);
 
         // Проверка наличия элемента
         System.out.println("Очередь содержит 'Третий'? " + queue.contains("Третий"));
