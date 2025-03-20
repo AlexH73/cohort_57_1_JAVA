@@ -43,9 +43,15 @@ public class CollectionTasksImpl implements CollectionTasks {
      * @return очередь после выполнения сдвига.
      * <p>
      * [1 2 3 4 5 6] , 3 -> [4 5 6 1 2 3]
+     *
+     * [1 2 3 4 5 6] , 1 -> [2 3 4 5 6] element = [1 2 3 4 5 6].poll() -> [2 3 4 5 6].offer(element) -> [2 3 4 5 6 1]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-        return null;
+        for (int i = 0; i < k; i++ ){
+            Integer integer = queue.poll();
+            queue.offer(integer);
+        }
+        return queue;
     }
 
     /**
