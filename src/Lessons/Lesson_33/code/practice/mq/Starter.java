@@ -1,5 +1,7 @@
 package Lessons.Lesson_33.code.practice.mq;
 
+import java.util.Deque;
+
 public class Starter {
     static SimpleManager manager = new SimpleManager();
 
@@ -7,8 +9,8 @@ public class Starter {
     static SimpleTaskCreator taskCreator = new SimpleTaskCreator(manager);
 
     public static void main(String[] args) throws InterruptedException {
-        //startStackTask();
-        startQueueTask();
+        startStackTask();
+        //startQueueTask();
     }
 
     static void startQueueTask() {
