@@ -22,19 +22,44 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public String reverseWordsInSentence(String sentence) {
-        Stack<String> stack = new Stack<>();
+        // Prüfung auf null oder leeren String
+        if (sentence == null || sentence.trim().isEmpty()) {
+            throw new IllegalArgumentException("Der Satz darf nicht null oder leer sein.");
+        }
 
         String[] words = sentence.split(" ");
-        for (String word : words) {
-            stack.push(word);
+
+        // Prüfung, ob das Array leer ist (alle Wörter sind Leerzeichen)
+        if (words.length == 0) {
+            throw new IllegalArgumentException("Der Satz enthält keine gültigen Wörter.");
         }
-        String[] words2 = new String[words.length];
-        for (int i = 0; i < words.length; i++) {
-            words2[i] = stack.pop();
+
+        StringBuilder reversedSentence = new StringBuilder();
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedSentence.append(words[i]);
+            if (i > 0) {
+                reversedSentence.append(" ");
+            }
         }
-        return String.join(" ", words2);
+
+        return reversedSentence.toString();
     }
 
+    /**   public String reverseWordsInSentence(String sentence) {
+           Stack<String> stack = new Stack<>();
+
+           String[] words = sentence.split(" ");
+           for (String word : words) {
+               stack.push(word);
+           }
+           String[] words2 = new String[words.length];
+           for (int i = 0; i < words.length; i++) {
+               words2[i] = stack.pop();
+           }
+           return String.join(" ", words2);
+       }
+   **/
     /**
      * Выполняет циклический сдвиг элементов очереди на `k` позиций.
      *
@@ -47,13 +72,35 @@ public class CollectionTasksImpl implements CollectionTasks {
      * [1 2 3 4 5 6] , 1 -> [2 3 4 5 6] element = [1 2 3 4 5 6].poll() -> [2 3 4 5 6].offer(element) -> [2 3 4 5 6 1]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-        for (int i = 0; i < k; i++ ){
+        // Überprüfung auf null oder leere Queue
+        if (queue == null || queue.isEmpty()) {
+            throw new IllegalArgumentException("Die Queue darf nicht null oder leer sein.");
+        }
+
+        // Überprüfung auf ungültige Rotationsanzahl
+        if (k < 0) {
+            throw new IllegalArgumentException("Die Rotationsanzahl k muss eine nicht-negative Zahl sein.");
+        }
+
+        // Optimierung: k kann größer als die Größe der Queue sein
+        k = k % queue.size();
+
+        for (int i = 0; i < k; i++) {
             Integer integer = queue.poll();
             queue.offer(integer);
         }
+
         return queue;
     }
 
+    /** public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
+         for (int i = 0; i < k; i++ ){
+             Integer integer = queue.poll();
+             queue.offer(integer);
+         }
+         return queue;
+     }
+ **/
     /**
      * Определяет день с максимальными и минимальными расходами. Дана `Map<Integer, List<Double>>`, где ключ — день
      * месяца, а значение — список покупок за этот день. Метод должен вернуть массив `int[2]`, где: - `result[0]` — день
@@ -77,17 +124,43 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        int max = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++){
-            if (max < numbers.get(i)){
-                max = numbers.get(i);
+        // Überprüfung auf null oder leere Liste
+        if (numbers == null || numbers.size() < 2) {
+            throw new IllegalArgumentException("Die Liste muss mindestens zwei Elemente enthalten.");
         }
 
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for (int num : numbers) {
+            if (num > max) {
+                secondMax = max; // Der bisherige maximale Wert wird zweitmaximal
+                max = num; // Neuer maximaler Wert
+            } else if (num > secondMax && num < max) {
+                secondMax = num; // Aktualisiere den zweitgrößten Wert
+            }
         }
 
-        return Integer.MIN_VALUE;
+        // Überprüfung, ob ein gültiger zweitgrößter Wert gefunden wurde
+        if (secondMax == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("Kein eindeutiger zweitgrößter Wert vorhanden.");
+        }
+
+        return secondMax;
     }
 
+    /**   public int findSecondMax(List<Integer> numbers) {
+           int max = numbers.get(0);
+           for (int i = 0; i < numbers.size(); i++){
+               if (max < numbers.get(i)){
+                   max = numbers.get(i);
+           }
+
+           }
+
+           return Integer.MIN_VALUE;
+       }
+   **/
 
     /**
      * Подсчитывает количество повторений каждого слова в списке. Должен вернуть `Map<String, Integer>`, где ключ —
