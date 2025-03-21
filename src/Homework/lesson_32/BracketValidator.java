@@ -12,7 +12,48 @@ import java.util.List;
  * - Вход: "{[( )]}" → Выход: true
  * - Вход: "{[}" → Выход: false
  */
+import java.util.Stack;
+
 public interface BracketValidator {
+    boolean isValid(String sequence);
+
+    static void main(String[] args) {
+        BracketValidator validator = new BracketValidatorImpl();
+
+        System.out.println(validator.isValid("([ ] { })")); // true
+        System.out.println(validator.isValid("[(])"));      // false
+        System.out.println(validator.isValid("{[( )]}"));   // true
+        System.out.println(validator.isValid("{[}"));       // false
+    }
+}
+
+class BracketValidatorImpl implements BracketValidator {
+    @Override
+    public boolean isValid(String sequence) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : sequence.toCharArray()) {
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            } else if (ch == ')' || ch == ']' || ch == '}') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                char openBracket = stack.pop();
+                if (!isMatchingPair(openBracket, ch)) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    private boolean isMatchingPair(char open, char close) {
+        return (open == '(' && close == ')') ||
+               (open == '[' && close == ']') ||
+               (open == '{' && close == '}');
+    }
+}
+
 
     /**
      * Проверяет, является ли переданная строка корректной скобочной последовательностью.

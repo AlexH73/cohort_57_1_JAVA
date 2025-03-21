@@ -29,4 +29,3 @@ public interface MapOperationsHomework {
      */
     void removetSameValues(Map<String, String> map);
 }
-
