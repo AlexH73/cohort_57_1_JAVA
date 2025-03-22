@@ -55,7 +55,7 @@ public class SequenceChecking implements BracketValidator {
                 resultChars.add(c);                              // Сохраняем открывающие
             } else if (isCloseBracket(c)) {
                 if (stack.isEmpty()) {
-                    resultChars.add(getOpeningBracket(c));                                  // Пропускаем лишние закрывающие
+                    resultChars.add(getOpeningBracket(c));       // Пропускаем лишние закрывающие
                     resultChars.add(c);
                     continue;
                 }
@@ -63,8 +63,8 @@ public class SequenceChecking implements BracketValidator {
                 if (isMatching(top, c)) {                       // Корректная пара
                     stack.pop();
                     resultChars.add(c);
-                } else {                                        // Замена на правильную закрывающую
-                    resultChars.add(getClosingBracket(top));
+                } else {
+                    resultChars.add(getClosingBracket(top));    // Замена на правильную закрывающую
                     stack.pop();
 
                     if (stack.isEmpty()) {
@@ -76,13 +76,13 @@ public class SequenceChecking implements BracketValidator {
                     if (isMatching(top, c)) {                       // Корректная пара
                         stack.pop();
                         resultChars.add(c);
-                    } else {                                        // Замена на правильную закрывающую
-                        resultChars.add(getOpeningBracket(c));
+                    } else {
+                        resultChars.add(getOpeningBracket(c));      // Замена на правильную открывающую
                         resultChars.add(c);
                     }
                 }
             } else {
-                resultChars.add(c);                             // Сохранение других символов
+                resultChars.add(c);                                 // Сохранение других символов
             }
         }
 
