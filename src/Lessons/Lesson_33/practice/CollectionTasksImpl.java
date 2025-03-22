@@ -37,17 +37,26 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public String reverseWordsInSentence(String sentence) {
-        Stack<String> stack = new Stack<>();
+        if (sentence == null || sentence.isEmpty()) {
+            return sentence;
+        }
 
-        String[] words = sentence.split(" ");
-        for (String word : words) {
-            stack.push(word);
+        // Удаляем пробелы в начале/конце и разбиваем на слова
+        String trimmedSentence = sentence.trim();
+        if (trimmedSentence.isEmpty()) {
+            return "";
         }
-        String[] words2 = new String[words.length];
-        for (int i = 0; i < words.length; i++) {
-            words2[i] = stack.pop();
+        String[] words = trimmedSentence.split(" +"); // Учет множественных пробелов
+
+        // Собираем слова в обратном порядке
+        String reversed = "";
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversed += words[i];
+            if (i > 0) {
+                reversed += " "; // Добавляем пробел между словами
+            }
         }
-        return String.join(" ", words2);
+        return reversed;
     }
 
     /**
