@@ -14,7 +14,7 @@ public class Main {
         stringMap.put("C", "Apple");
 
         mapOps.removeSameValues(stringMap);
-        System.out.println(stringMap); // Ожидаемый результат: {B=Banana}
+        System.out.println(stringMap);
 
 
         Map<Integer, Integer> intMap = new LinkedHashMap<>();
@@ -30,32 +30,24 @@ public class Main {
 
         WarehouseInventory warehouse = new WarehouseInventoryImpl();
 
-        // Добавление товаров
-        warehouse.addItem("Монитор", 25);
+        warehouse.addItem("Монитор", 35);
         warehouse.addItem("Клавиатура", 40);
-        warehouse.addItem("Мышь", 30);
+        warehouse.addItem("Ноутбук", 50);
 
-        // Проверка получения количества
         System.out.println("Количество мониторов: " + warehouse.getQuantity("Монитор"));
 
-        // Проверка обновления количества
         warehouse.updateQuantity("Монитор", 20);
         System.out.println("Обновленное количество мониторов: " + warehouse.getQuantity("Монитор"));
 
-        // Проверка удаления товара
         warehouse.removeItem("Клавиатура");
         System.out.println("Содержит ли склад клавиатуру? " + warehouse.containsItem("Клавиатура"));
 
-        // Проверка наличия товара
-        System.out.println("Есть ли мыши на складе? " + warehouse.containsItem("Мышь"));
+        System.out.println("Есть ли ноутбуки на складе? " + warehouse.containsItem("Ноутбук"));
 
-        // Проверка на пустоту
         System.out.println("Склад пуст? " + warehouse.isInventoryEmpty());
 
-        // Вывод всех товаров
         System.out.println("Все товары на складе: " + warehouse.getAllItems());
 
-        // Очистка инвентаря
         warehouse.clearInventory();
         System.out.println("После очистки склад пуст? " + warehouse.isInventoryEmpty());
     }
