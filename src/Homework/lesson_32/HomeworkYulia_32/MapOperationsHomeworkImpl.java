@@ -7,13 +7,12 @@ public class MapOperationsHomeworkImpl implements MapOperationsHomework {
 
     @Override
     public <K, V> void removeSameValuesAnyTypes(Map<K, V> map) {
-        // Подсчет количества вхождений каждого значения
-        Map<V, Integer> valueCount = new HashMap<>();
+
+        Map <V, Integer> valueCount = new HashMap<>();
         for (V value : map.values()) {
             valueCount.put(value, valueCount.getOrDefault(value, 0) + 1);
         }
 
-        // Удаление всех ключей, значения которых встречаются более одного раза
         map.entrySet().removeIf(entry -> valueCount.get(entry.getValue()) > 1);
     }
 
