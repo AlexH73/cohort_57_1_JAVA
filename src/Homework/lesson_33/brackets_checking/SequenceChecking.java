@@ -39,6 +39,7 @@ public class SequenceChecking implements BracketValidator {
 
         System.out.println(validator.getInvalidBracketIndexes("{[}"));       // Вывод: [2]
         System.out.println(validator.fixBracketSequence("{[!"));             // Вывод: {[!]}
+        System.out.println(validator.fixBracketSequence("[[}]"));             // Вывод: [[]{}]
 
     }
 
@@ -54,18 +55,34 @@ public class SequenceChecking implements BracketValidator {
                 resultChars.add(c);                              // Сохраняем открывающие
             } else if (isCloseBracket(c)) {
                 if (stack.isEmpty()) {
-                    continue;                                   // Пропускаем лишние закрывающие
+                    resultChars.add(getOpeningBracket(c));       // Пропускаем лишние закрывающие
+                    resultChars.add(c);
+                    continue;
                 }
                 char top = stack.peek();
-                if (isMatching(top, c)) {                       // Корректная пара
+                if (isMatching(top, c)) {                        // Корректная пара
                     stack.pop();
                     resultChars.add(c);
-                } else {                                        // Замена на правильную закрывающую
-                    resultChars.add(getClosingBracket(top));
+                } else {
+                    resultChars.add(getClosingBracket(top));     // Замена на правильную закрывающую
                     stack.pop();
+
+                    if (stack.isEmpty()) {
+                        resultChars.add(getOpeningBracket(c));
+                        resultChars.add(c);
+                        continue;
+                    }
+                    top = stack.peek();
+                    if (isMatching(top, c)) {                     // Корректная пара
+                        stack.pop();
+                        resultChars.add(c);
+                    } else {
+                        resultChars.add(getOpeningBracket(c));    // Замена на правильную открывающую
+                        resultChars.add(c);
+                    }
                 }
             } else {
-                resultChars.add(c);                             // Сохранение других символов
+                resultChars.add(c);                               // Сохранение других символов
             }
         }
 
@@ -162,6 +179,17 @@ public class SequenceChecking implements BracketValidator {
             return ']';
         } else if (open == '{') {
             return '}';
+        }
+        return '\0'; // Заглушка (никогда не выполнится при корректных вызовах)
+    }
+
+    private Character getOpeningBracket(char close) {
+        if (close == ')') {
+            return '(';
+        } else if (close == ']') {
+            return '[';
+        } else if (close == '}') {
+            return '{';
         }
         return '\0'; // Заглушка (никогда не выполнится при корректных вызовах)
     }
