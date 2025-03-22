@@ -9,8 +9,23 @@ public class CollectionTasksImpl implements CollectionTasks {
     public static void main(String[] args) {
         CollectionTasks tasks = new CollectionTasksImpl();
 
-        //System.out.println(tasks.countWordFrequency(List.of("one", "two", "three", "two", "three", "four")));
+        System.out.println("\n=== Проверка метода countWordFrequency ===");
+        System.out.println(tasks.countWordFrequency(List.of("one", "two", "three", "two", "three", "four")));
+
+        System.out.println("\n=== reverseWordsInSentence ===");
         System.out.println(tasks.reverseWordsInSentence("Переставляет слова в предложении в обратном порядке"));
+
+        System.out.println("\n=== Проверка метода findUniquePairsWithSum ===");
+        List<Integer> numbers = Arrays.asList(1, 2, 2, 3);
+        int targetSum = 4;
+        List<List<Integer>> pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
+        System.out.println(pairs); // [[1, 3], [2, 2]]
+
+        numbers = Arrays.asList(3, 1, 2, 3);
+        targetSum = 4;
+        pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
+        System.out.println(pairs); // [[1, 3]]
+
     }
 
     /**
@@ -43,11 +58,11 @@ public class CollectionTasksImpl implements CollectionTasks {
      * @return очередь после выполнения сдвига.
      * <p>
      * [1 2 3 4 5 6] , 3 -> [4 5 6 1 2 3]
-     *
+     * <p>
      * [1 2 3 4 5 6] , 1 -> [2 3 4 5 6] element = [1 2 3 4 5 6].poll() -> [2 3 4 5 6].offer(element) -> [2 3 4 5 6 1]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-        for (int i = 0; i < k; i++ ){
+        for (int i = 0; i < k; i++) {
             Integer integer = queue.poll();
             queue.offer(integer);
         }
@@ -78,10 +93,10 @@ public class CollectionTasksImpl implements CollectionTasks {
     @Override
     public int findSecondMax(List<Integer> numbers) {
         int max = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++){
-            if (max < numbers.get(i)){
+        for (int i = 0; i < numbers.size(); i++) {
+            if (max < numbers.get(i)) {
                 max = numbers.get(i);
-        }
+            }
 
         }
 
@@ -196,6 +211,18 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<List<Integer>> findUniquePairsWithSum(List<Integer> numbers, int targetSum) {
-        return null;
+        Set<List<Integer>> uniquePairs = new HashSet<>();
+        Set<Integer> seen = new HashSet<>();
+
+        for (int num : numbers) {
+            int complement = targetSum - num;
+            if (seen.contains(complement)) {
+                // Сортируем пару для избежания дубликатов (a, b) и (b, a)
+                List<Integer> pair = Arrays.asList(Math.min(num, complement), Math.max(num, complement));
+                uniquePairs.add(pair);
+            }
+            seen.add(num);
+        }
+        return new ArrayList<>(uniquePairs);
     }
 }
