@@ -1,8 +1,5 @@
 package Homework.lesson_32.Aufgabe_2;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class WarehouseInventoryMain {
     public static void main(String[] args) {
         WarehouseInventory ware = new WarehouseInventoryImpl();

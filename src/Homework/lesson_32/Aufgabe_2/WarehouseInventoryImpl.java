@@ -3,7 +3,7 @@ package Homework.lesson_32.Aufgabe_2;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WarehouseInventoryImpl implements WarehouseInventory{
+public class WarehouseInventoryImpl implements WarehouseInventory {
 
 private final Map<String, Integer> ware = new HashMap<>();
     @Override
