@@ -127,7 +127,7 @@ public class CollectionTasksImpl implements CollectionTasks {
         Integer firstMax = Integer.MIN_VALUE;
         Integer secondMax = Integer.MIN_VALUE;
 
-        for (Integer num : numbers) {
+        for (Integer num : numbers) {              // Учитывает все элементы, даже если они повторяются
             if (num > firstMax) {
                 secondMax = firstMax;
                 firstMax = num;
