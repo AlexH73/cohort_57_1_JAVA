@@ -19,12 +19,24 @@ public class CollectionTasksImpl implements CollectionTasks {
         List<Integer> numbers = Arrays.asList(1, 2, 2, 3);
         int targetSum = 4;
         List<List<Integer>> pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
-        System.out.println(pairs); // [[1, 3], [2, 2]]
+        System.out.println(pairs);                                                // Ожидаем [[1, 3], [2, 2]]
 
         numbers = Arrays.asList(3, 1, 2, 3);
         targetSum = 4;
         pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
-        System.out.println(pairs); // [[1, 3]]
+        System.out.println(pairs);                                                // Ожидаем [[1, 3]]
+
+        System.out.println("\n=== Проверка метода findFirstUniqueCharacter ===");
+        System.out.println(tasks.findFirstUniqueCharacter("aaaaaa"));       // Ожидаем ''
+        System.out.println(tasks.findFirstUniqueCharacter("aaabbbcddd"));   // Ожидаем 'c'
+        System.out.println(tasks.findFirstUniqueCharacter("abc"));          // Ожидаем 'a'
+
+        System.out.println("\n=== Проверка метода findCommonElements ===");
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> numbers2 = Arrays.asList(1, 5, 6, 3);
+        List<Integer> numbers3 = Arrays.asList(1, 7, 8, 9, 5);
+        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));       // Ожидаем [1, 5]
+
 
     }
 
@@ -194,7 +206,14 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> findCommonElements(List<Integer> list1, List<Integer> list2, List<Integer> list3) {
-        return null;
+        if (list1 == null || list2 == null || list3 == null) {  // Проверка на null
+            return new ArrayList<>();
+        }
+
+        Set<Integer> set = new HashSet<>(list1);
+        set.retainAll(list2);                                   // Пересечение list1 и list2
+        set.retainAll(list3);                                   // Пересечение с list3
+        return new ArrayList<>(set);
     }
 
     /**
@@ -207,7 +226,24 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public Character findFirstUniqueCharacter(String input) {
-        return null;
+        if (input == null || input.isEmpty()) return '\0';
+
+        Map<Character, Integer> charCount = new LinkedHashMap<>();  // LinkedHashMap сохраняет порядок
+
+        // Первый проход: подсчет количества символов
+        for (char c : input.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Второй проход: поиск первого символа с количеством 1
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        // Если уникальных символов нет
+        return '\0';
     }
 
     /**
