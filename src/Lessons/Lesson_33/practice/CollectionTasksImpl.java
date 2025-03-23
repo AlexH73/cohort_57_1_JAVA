@@ -19,12 +19,17 @@ public class CollectionTasksImpl implements CollectionTasks {
         List<Integer> numbers = Arrays.asList(1, 2, 2, 3);
         int targetSum = 4;
         List<List<Integer>> pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
-        System.out.println(pairs); // [[1, 3], [2, 2]]
+        System.out.println(pairs);                                                // Ожидаем [[1, 3], [2, 2]]
 
         numbers = Arrays.asList(3, 1, 2, 3);
         targetSum = 4;
         pairs = tasks.findUniquePairsWithSum(numbers, targetSum);
-        System.out.println(pairs); // [[1, 3]]
+        System.out.println(pairs);                                                // Ожидаем [[1, 3]]
+
+        System.out.println("\n=== Проверка метода findFirstUniqueCharacter ===");
+        System.out.println(tasks.findFirstUniqueCharacter("aaaaaa"));       // Ожидаем ''
+        System.out.println(tasks.findFirstUniqueCharacter("aaabbbcddd"));   // Ожидаем 'c'
+        System.out.println(tasks.findFirstUniqueCharacter("abc"));          // Ожидаем 'a'
 
     }
 
@@ -207,7 +212,24 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public Character findFirstUniqueCharacter(String input) {
-        return null;
+        if (input == null || input.isEmpty()) return '\0';
+
+        Map<Character, Integer> charCount = new LinkedHashMap<>();  // LinkedHashMap сохраняет порядок
+
+        // Первый проход: подсчет количества символов
+        for (char c : input.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Второй проход: поиск первого символа с количеством 1
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        // Если уникальных символов нет
+        return '\0';
     }
 
     /**
