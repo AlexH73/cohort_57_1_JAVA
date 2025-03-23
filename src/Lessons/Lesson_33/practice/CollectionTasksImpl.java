@@ -131,7 +131,7 @@ public class CollectionTasksImpl implements CollectionTasks {
             if (num > firstMax) {
                 secondMax = firstMax;
                 firstMax = num;
-            } else if (num > secondMax && num != firstMax) {
+            } else if (num > secondMax && !num.equals(firstMax)) {
                 secondMax = num;
             }
         }
