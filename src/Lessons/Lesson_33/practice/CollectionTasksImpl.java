@@ -37,6 +37,13 @@ public class CollectionTasksImpl implements CollectionTasks {
         List<Integer> numbers3 = Arrays.asList(1, 7, 8, 9, 5);
         System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));       // Ожидаем [1, 5]
 
+        System.out.println("\n=== Проверка метода findSecondMax ===");
+        System.out.println(tasks.findSecondMax(numbers1));          // Ожидаем 4
+        System.out.println(tasks.findSecondMax(numbers2));          // Ожидаем 5
+        System.out.println(tasks.findSecondMax(numbers3));          // Ожидаем 8
+
+
+
 
     }
 
@@ -113,15 +120,22 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        int max = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++) {
-            if (max < numbers.get(i)) {
-                max = numbers.get(i);
-            }
-
+        if (numbers == null || numbers.isEmpty() || numbers.size() < 2) {
+            return '\0';
         }
 
-        return Integer.MIN_VALUE;
+        Integer firstMax = Integer.MIN_VALUE;
+        Integer secondMax = Integer.MIN_VALUE;
+
+        for (Integer num : numbers) {
+            if (num > firstMax) {
+                secondMax = firstMax;
+                firstMax = num;
+            } else if (num > secondMax && num != firstMax) {
+                secondMax = num;
+            }
+        }
+        return (secondMax != Integer.MIN_VALUE) ? secondMax : '\0';
     }
 
 
