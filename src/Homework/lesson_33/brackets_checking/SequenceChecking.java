@@ -183,6 +183,7 @@ public class SequenceChecking implements BracketValidator {
         return '\0'; // Заглушка (никогда не выполнится при корректных вызовах)
     }
 
+    // Получение открывающей скобки по закрывающей
     private Character getOpeningBracket(char close) {
         if (close == ')') {
             return '(';
