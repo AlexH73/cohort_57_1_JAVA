@@ -31,6 +31,13 @@ public class CollectionTasksImpl implements CollectionTasks {
         System.out.println(tasks.findFirstUniqueCharacter("aaabbbcddd"));   // Ожидаем 'c'
         System.out.println(tasks.findFirstUniqueCharacter("abc"));          // Ожидаем 'a'
 
+        System.out.println("\n=== Проверка метода findCommonElements ===");
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> numbers2 = Arrays.asList(1, 5, 6, 3);
+        List<Integer> numbers3 = Arrays.asList(1, 7, 8, 9, 5);
+        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));       // Ожидаем [1, 5]
+
+
     }
 
     /**
@@ -199,7 +206,14 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> findCommonElements(List<Integer> list1, List<Integer> list2, List<Integer> list3) {
-        return null;
+        if (list1 == null || list2 == null || list3 == null) {  // Проверка на null
+            return new ArrayList<>();
+        }
+
+        Set<Integer> set = new HashSet<>(list1);
+        set.retainAll(list2);                                   // Пересечение list1 и list2
+        set.retainAll(list3);                                   // Пересечение с list3
+        return new ArrayList<>(set);
     }
 
     /**
