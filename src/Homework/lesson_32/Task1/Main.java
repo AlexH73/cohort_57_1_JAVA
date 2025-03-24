@@ -13,7 +13,7 @@ public class Main {
 
         MapOperationsStringImpl operations = new MapOperationsStringImpl();
         operations.removeSameValues(stringMap);
-        System.out.println("Результат для Map<String, string>: " + stringMap);
+        System.out.println("Результат для Map<String, String>: " + stringMap);
 
         //Пример 2: Работа с Map<Integer, Integer>
         Map<Integer, Integer> integerMap =new HashMap<>();
