@@ -6,6 +6,8 @@ public interface WarehouseInventory {
 
     boolean addItem(String itemName, int quantity);
 
+    int getQuantity(String itemName);
+
     boolean updateQuantity(String itemName, int newQuantity);
 
     boolean removeItem(String itemName);
@@ -18,3 +20,8 @@ public interface WarehouseInventory {
 
     boolean isInventoryEmpty();
 }
+
+
+
+
+

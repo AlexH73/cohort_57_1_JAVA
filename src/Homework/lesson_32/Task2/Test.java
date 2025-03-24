@@ -15,10 +15,9 @@ public class Test {
         Map<String, Integer> items = warehouse.getAllItems();
         System.out.println("Товары на складе: " + items);
 
-
         //Обновление количества товара
         warehouse.updateQuantity("Монитор", 100);
-        System.out.println("Обновленное количество мониторов: " + warehouse.updateQuantity("Монитор", 100));
+        System.out.println("Обновленное количество мониторов: " + warehouse.getQuantity("Монитор"));
 
         //Проверка наличия товара
         System.out.println("Есть ли клавиатура на складе? " + warehouse.containsItem("Клавиатура"));
@@ -30,7 +29,7 @@ public class Test {
         System.out.println("Склад пуст? " + warehouse.isInventoryEmpty());
         // Очистка склада
         warehouse.clearInventory();
-        System.out.println("Склад после очистки: " + warehouse.isInventoryEmpty());
+        System.out.println("Склад после очистки: " + warehouse.getAllItems());
         System.out.println("Склад пуст? " + warehouse.isInventoryEmpty());
 
 
