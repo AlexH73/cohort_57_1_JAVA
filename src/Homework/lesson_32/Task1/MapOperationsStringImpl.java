@@ -17,7 +17,6 @@ public class MapOperationsStringImpl implements MapOperationsHomework {
             valueCount.put(value, valueCount.getOrDefault(value, 0) + 1);
         }
 
-
         // Сбор ключей для удаления
         List<K> keysToRemove = new ArrayList<>();
         for (Map.Entry<K, V> entry : map.entrySet()) {
@@ -27,15 +26,15 @@ public class MapOperationsStringImpl implements MapOperationsHomework {
             }
         }
 
-    }
 // Удаление всех ключей, у которых значения встречаются более одного раза
-
-
+        for (K key : keysToRemove) {
+            map.remove(key);
+        }
+    }
 
     //Mетод вызывает обобщенный метод removeSameValuesAnyTypes, передавая Map<String, String>.
     @Override
     public void removeSameValues(Map<String, String> map) {
         removeSameValuesAnyTypes(map);
-
     }
 }
