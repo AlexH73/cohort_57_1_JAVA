@@ -5,8 +5,6 @@ import java.util.Map;
 
 public class WarehouseInventoryImpl implements WarehouseInventory {
     private Map<String, Integer> inventory;
-    boolean itemName;
-    int quantity;
 
     public WarehouseInventoryImpl() {
         this.inventory = new HashMap<>();
@@ -43,7 +41,7 @@ public class WarehouseInventoryImpl implements WarehouseInventory {
      * Обновляет количество товара на складе.
      * Если товар не найден, метод ничего не делает.
      *
-     * @param itemName название товара
+     * @param itemName    название товара
      * @param newQuantity новое количество товара
      * @return true, если количество товара было обновлено, иначе false
      */
