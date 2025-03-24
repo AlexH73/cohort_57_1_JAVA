@@ -2,6 +2,7 @@ package Homework.lesson_32.Task1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MapOperationsStringImpl implements MapOperationsHomework {
@@ -10,26 +11,24 @@ public class MapOperationsStringImpl implements MapOperationsHomework {
     //V – тип значения (например, String, Integer).
     @Override
     public <K, V> void removeSameValuesAnyTypes(Map<K, V> map) {
-        Map<V,Integer> valueCount = new HashMap<>();
+        Map<V, Integer> valueCount = new HashMap<>();
         //Подсчет частоты значений:
         for (V value : map.values()) {
-            valueCount.put(value,valueCount.getOrDefault(value,0) + 1);
+            valueCount.put(value, valueCount.getOrDefault(value, 0) + 1);
         }
-    }
 
-    List<K> keysToRemove = new ArrayList<>();
-       for (Map.Entry<K, V> entry : map.entrySet()) {
-        V value = entry.getValue();
-        if (valueCount.get(value) > 1) {
-            keysToRemove.add(entry.getKey());
+
+        // Сбор ключей для удаления
+        List<K> keysToRemove = new ArrayList<>();
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            V value = entry.getValue();
+            if (valueCount.get(value) > 1) {
+                keysToRemove.add(entry.getKey());
+            }
         }
+
     }
-    // Сбор ключей для удаления
-
-
-
-
-    // Удаление всех ключей, у которых значения встречаются более одного раза
+// Удаление всех ключей, у которых значения встречаются более одного раза
 
 
 
