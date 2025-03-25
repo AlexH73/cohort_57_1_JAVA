@@ -12,8 +12,6 @@ public class TeacherCode {
         counter++;
 
         getStackOverflowException();
-
-        System.out.println("hello");
     }
 }
 
