@@ -1,6 +1,7 @@
 package Lessons.Lesson_33.practice;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Реализация интерфейса CollectionTasks. Студенты должны реализовать логику методов в соответствии с их описанием.
@@ -45,7 +46,10 @@ public class CollectionTasksImpl implements CollectionTasks {
         System.out.println("\n=== Проверка метода mergeUniqueLists ===");
         System.out.println(tasks.mergeUniqueLists(numbers1, numbers2));           // Ожидаем[1, 2, 3, 4, 5, 6]
 
-
+        System.out.println("\n=== Проверка метода filterWordsByLength ===");
+        List<String> words = Arrays.asList("apple", "cat", "java", "stream", "a");
+        List<String> filtered = tasks.filterWordsByLength(words, 3);
+        System.out.println(filtered);                                             // Ожидаем[apple, java, stream]
 
     }
 
@@ -205,7 +209,10 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<String> filterWordsByLength(List<String> words, int minLength) {
-        return null;
+        return words.stream()
+                .filter(word -> word != null && word
+                        .length() > minLength)
+                .collect(Collectors.toList());
     }
 
     /**
