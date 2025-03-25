@@ -26,6 +26,8 @@ public class ExampleCheckedException {
 
             System.out.println("Ниже будет распечатано сообщение из ошибки:");
             exception.printStackTrace();
+        } finally {
+            System.out.println("код из блока finally вфполняется всегда! Если есть исключение и если его нет");
         }
 
         System.out.println("\n\nзакончил свою работу благополучно");
