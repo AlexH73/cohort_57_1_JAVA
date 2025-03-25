@@ -14,8 +14,13 @@ public class ExceptionTasksImpl implements ExceptionTasks{
      */
     @Override
     public int divide(int dividend, int divisor) {
-        return 0;
+        if (divisor == 0) {
+            throw new ArithmeticException("Деление на ноль недопустимо");
+        }
+        int result = dividend / divisor;
+        return result;
     }
+
 
     /**
      * Возвращает элемент из списка по указанному индексу.
@@ -60,5 +65,11 @@ public class ExceptionTasksImpl implements ExceptionTasks{
         // Нет точки после '@' → выбросить исключение. (сравнить индексы '@' и '.')
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        ExceptionTasksImpl task = new ExceptionTasksImpl();
+        task.divide(5,0);
+
     }
 }
