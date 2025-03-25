@@ -72,35 +72,13 @@ public class CollectionTasksImpl implements CollectionTasks {
      * [1 2 3 4 5 6] , 1 -> [2 3 4 5 6] element = [1 2 3 4 5 6].poll() -> [2 3 4 5 6].offer(element) -> [2 3 4 5 6 1]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-        // Überprüfung auf null oder leere Queue
-        if (queue == null || queue.isEmpty()) {
-            throw new IllegalArgumentException("Die Queue darf nicht null oder leer sein.");
-        }
-
-        // Überprüfung auf ungültige Rotationsanzahl
-        if (k < 0) {
-            throw new IllegalArgumentException("Die Rotationsanzahl k muss eine nicht-negative Zahl sein.");
-        }
-
-        // Optimierung: k kann größer als die Größe der Queue sein
-        k = k % queue.size();
-
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++ ){
             Integer integer = queue.poll();
             queue.offer(integer);
         }
-
         return queue;
     }
 
-    /** public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-         for (int i = 0; i < k; i++ ){
-             Integer integer = queue.poll();
-             queue.offer(integer);
-         }
-         return queue;
-     }
- **/
     /**
      * Определяет день с максимальными и минимальными расходами. Дана `Map<Integer, List<Double>>`, где ключ — день
      * месяца, а значение — список покупок за этот день. Метод должен вернуть массив `int[2]`, где: - `result[0]` — день
@@ -124,43 +102,17 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        // Überprüfung auf null oder leere Liste
-        if (numbers == null || numbers.size() < 2) {
-            throw new IllegalArgumentException("Die Liste muss mindestens zwei Elemente enthalten.");
+        int max = numbers.get(0);
+        for (int i = 0; i < numbers.size(); i++){
+            if (max < numbers.get(i)){
+                max = numbers.get(i);
         }
 
-        int max = Integer.MIN_VALUE;
-        int secondMax = Integer.MIN_VALUE;
-
-        for (int num : numbers) {
-            if (num > max) {
-                secondMax = max; // Der bisherige maximale Wert wird zweitmaximal
-                max = num; // Neuer maximaler Wert
-            } else if (num > secondMax && num < max) {
-                secondMax = num; // Aktualisiere den zweitgrößten Wert
-            }
         }
 
-        // Überprüfung, ob ein gültiger zweitgrößter Wert gefunden wurde
-        if (secondMax == Integer.MIN_VALUE) {
-            throw new IllegalArgumentException("Kein eindeutiger zweitgrößter Wert vorhanden.");
-        }
-
-        return secondMax;
+        return Integer.MIN_VALUE;
     }
 
-    /**   public int findSecondMax(List<Integer> numbers) {
-           int max = numbers.get(0);
-           for (int i = 0; i < numbers.size(); i++){
-               if (max < numbers.get(i)){
-                   max = numbers.get(i);
-           }
-
-           }
-
-           return Integer.MIN_VALUE;
-       }
-   **/
 
     /**
      * Подсчитывает количество повторений каждого слова в списке. Должен вернуть `Map<String, Integer>`, где ключ —
