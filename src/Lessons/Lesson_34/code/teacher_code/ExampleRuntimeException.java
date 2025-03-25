@@ -19,7 +19,11 @@ public class ExampleRuntimeException {
     private static void throwNullPointerException() {
         List<String> list = null;
 
-        list.size();
+        try {
+            list.size();
+        } catch (NullPointerException e) {
+            System.out.println("не получилось узнать размер листа, тк это null");
+        }
     }
 
     private static void throwIndexExeption() {

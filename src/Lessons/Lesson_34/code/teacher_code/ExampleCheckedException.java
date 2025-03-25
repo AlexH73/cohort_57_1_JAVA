@@ -10,7 +10,7 @@ public class ExampleCheckedException {
     // где возникла ошибка
     // public static void main(String[] args) throws FileNotFoundException {
     public static void main(String[] args) {
-        String path = "src/Lessons/Lesson_34/code/teacher_code/example2.txt";
+        String path = "src/Lessons/Lesson_34/code/teacher_code/example.txt";
         Scanner scanner = null;
         File file = new File(path);
 
@@ -26,6 +26,8 @@ public class ExampleCheckedException {
 
             System.out.println("Ниже будет распечатано сообщение из ошибки:");
             exception.printStackTrace();
+        } finally {
+            System.out.println("код из блока finally выполняется всегда! Если есть исключение и если его нет");
         }
 
         System.out.println("\n\nзакончил свою работу благополучно");
