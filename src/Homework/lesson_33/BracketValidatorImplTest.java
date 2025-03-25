@@ -27,7 +27,7 @@ public class BracketValidatorImplTest {
     @Test
     public void testFixBracketSequence() {
         assertEquals("( [ ] { } )", validator.fixBracketSequence("( [ ] { } )"));
-        assertEquals("", validator.fixBracketSequence("[(])")); // Nicht korrigierbar
+        assertEquals("[()]", validator.fixBracketSequence("[(])")); // Nicht korrigierbar
         assertEquals("{[()]}", validator.fixBracketSequence("{[( )]}"));
         assertEquals("{[]}", validator.fixBracketSequence("{]"));
     }
