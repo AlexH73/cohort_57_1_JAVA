@@ -122,12 +122,12 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        if (numbers == null || numbers.isEmpty() || numbers.size() < 2) {
-            return '\0';
+        if (numbers == null || numbers.isEmpty()) {
+            return Integer.MIN_VALUE;
         }
 
-        Integer firstMax = Integer.MIN_VALUE;
-        Integer secondMax = Integer.MIN_VALUE;
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
 
         for (Integer num : numbers) {              // Учитывает все элементы, даже если они повторяются
             if (num > firstMax) {
@@ -137,7 +137,7 @@ public class CollectionTasksImpl implements CollectionTasks {
                 secondMax = num;
             }
         }
-        return (secondMax != Integer.MIN_VALUE) ? secondMax : '\0';
+        return (secondMax != Integer.MIN_VALUE) ? secondMax : Integer.MIN_VALUE;
     }
 
 
