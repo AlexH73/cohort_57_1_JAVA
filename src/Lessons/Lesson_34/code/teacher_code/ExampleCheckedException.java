@@ -10,7 +10,7 @@ public class ExampleCheckedException {
     // где возникла ошибка
     // public static void main(String[] args) throws FileNotFoundException {
     public static void main(String[] args) {
-        String path = "src/Lessons/Lesson_34/code/teacher_code/example2.txt";
+        String path = "src/Lessons/Lesson_34/code/teacher_code/example.txt";
         Scanner scanner = null;
         File file = new File(path);
 
