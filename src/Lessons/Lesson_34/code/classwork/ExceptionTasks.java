@@ -17,7 +17,7 @@ public interface ExceptionTasks {
      * @param divisor делитель.
      * @return результат деления.
      */
-    double divide(int dividend, int divisor);
+    int divide(int dividend, int divisor);
 
     /**
      * Возвращает элемент из списка по указанному индексу.
