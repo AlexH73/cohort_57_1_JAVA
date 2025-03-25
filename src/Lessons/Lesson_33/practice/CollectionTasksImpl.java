@@ -1,6 +1,7 @@
 package Lessons.Lesson_33.practice;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Реализация интерфейса CollectionTasks. Студенты должны реализовать логику методов в соответствии с их описанием.
@@ -35,15 +36,20 @@ public class CollectionTasksImpl implements CollectionTasks {
         List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> numbers2 = Arrays.asList(1, 5, 6, 3);
         List<Integer> numbers3 = Arrays.asList(1, 7, 8, 9, 5);
-        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));       // Ожидаем [1, 5]
+        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));// Ожидаем [1, 5]
 
         System.out.println("\n=== Проверка метода findSecondMax ===");
-        System.out.println(tasks.findSecondMax(numbers1));          // Ожидаем 4
-        System.out.println(tasks.findSecondMax(numbers2));          // Ожидаем 5
-        System.out.println(tasks.findSecondMax(numbers3));          // Ожидаем 8
+        System.out.println(tasks.findSecondMax(numbers1));                        // Ожидаем 4
+        System.out.println(tasks.findSecondMax(numbers2));                        // Ожидаем 5
+        System.out.println(tasks.findSecondMax(numbers3));                        // Ожидаем 8
 
+        System.out.println("\n=== Проверка метода mergeUniqueLists ===");
+        System.out.println(tasks.mergeUniqueLists(numbers1, numbers2));           // Ожидаем[1, 2, 3, 4, 5, 6]
 
-
+        System.out.println("\n=== Проверка метода filterWordsByLength ===");
+        List<String> words = Arrays.asList("apple", "cat", "java", "stream", "a");
+        List<String> filtered = tasks.filterWordsByLength(words, 3);
+        System.out.println(filtered);                                             // Ожидаем[apple, java, stream]
 
     }
 
@@ -120,12 +126,12 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        if (numbers == null || numbers.isEmpty() || numbers.size() < 2) {
-            return '\0';
+        if (numbers == null || numbers.isEmpty()) {
+            return Integer.MIN_VALUE;
         }
 
-        Integer firstMax = Integer.MIN_VALUE;
-        Integer secondMax = Integer.MIN_VALUE;
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
 
         for (Integer num : numbers) {              // Учитывает все элементы, даже если они повторяются
             if (num > firstMax) {
@@ -135,7 +141,7 @@ public class CollectionTasksImpl implements CollectionTasks {
                 secondMax = num;
             }
         }
-        return (secondMax != Integer.MIN_VALUE) ? secondMax : '\0';
+        return (secondMax != Integer.MIN_VALUE) ? secondMax : Integer.MIN_VALUE;
     }
 
 
@@ -182,7 +188,15 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> mergeUniqueLists(List<Integer> list1, List<Integer> list2) {
-        return null;
+        // Создаем новый список для объединения, чтобы не изменять исходные
+        List<Integer> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+
+        // Удаляем дубликаты через Set
+        Set<Integer> uniqueSet = new LinkedHashSet<>(mergedList); // LinkedHashSet сохраняет порядок
+
+        // Возвращаем новый список
+        return new ArrayList<>(uniqueSet);
     }
 
     /**
@@ -195,7 +209,10 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<String> filterWordsByLength(List<String> words, int minLength) {
-        return null;
+        return words.stream()
+                .filter(word -> word != null && word
+                        .length() > minLength)
+                .collect(Collectors.toList());
     }
 
     /**
