@@ -20,8 +20,9 @@ public class ExampleCheckedException {
             while (scanner.hasNext()) {
                 System.out.println(scanner.nextLine());
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (FileNotFoundException exception) {
+            System.out.printf("Файл %s не был найден. Сообщение об ошибке:\n" +
+                    "%s\n", file.getPath(), exception.getMessage());
         }
 
 
