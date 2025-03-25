@@ -13,7 +13,7 @@ public class ExceptionTasksImpl implements ExceptionTasks{
      * @return результат деления.
      */
     @Override
-    public double divide(int dividend, int divisor) {
+    public int divide(int dividend, int divisor) {
         return 0;
     }
 
