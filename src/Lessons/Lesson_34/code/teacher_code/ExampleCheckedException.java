@@ -23,8 +23,10 @@ public class ExampleCheckedException {
         } catch (FileNotFoundException exception) {
             System.out.printf("Файл %s не был найден. Сообщение об ошибке:\n" +
                     "%s\n", file.getPath(), exception.getMessage());
-        }
 
+            System.out.println("Ниже будет распечатано сообщение из ошибки:");
+            exception.printStackTrace();
+        }
 
         System.out.println("\n\nзакончил свою работу благополучно");
     }
