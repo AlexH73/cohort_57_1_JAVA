@@ -2,12 +2,7 @@ package Lessons.Lesson_34.code.classwork;
 
 import java.util.List;
 
-/**
- * Интерфейс для практики работы с исключениями.
- * Студенты должны реализовать этот интерфейс, выбрасывая соответствующие исключения в определённых ситуациях.
- */
-public interface ExceptionTasks {
-
+public class ExceptionTasksImpl implements ExceptionTasks{
     /**
      * Делит одно число на другое.
      * Если второй аргумент равен нулю — выбросить {@link ArithmeticException} с сообщением:
@@ -17,7 +12,10 @@ public interface ExceptionTasks {
      * @param divisor делитель.
      * @return результат деления.
      */
-    int divide(int dividend, int divisor);
+    @Override
+    public int divide(int dividend, int divisor) {
+        return 0;
+    }
 
     /**
      * Возвращает элемент из списка по указанному индексу.
@@ -28,7 +26,11 @@ public interface ExceptionTasks {
      * @param index индекс для доступа к элементу.
      * @return строка из списка по указанному индексу.
      */
-    String getElementByIndex(List<String> list, int index);
+    @Override
+    public String getElementByIndex(List<String> list, int index) {
+        return "";
+    }
+
 
     /**
      * Проверяет корректность строки e-mail.
@@ -44,5 +46,19 @@ public interface ExceptionTasks {
      * @param email строка e-mail.
      * @return true, если e-mail валидный.
      */
-    boolean validateEmail(String email);
+    @Override
+    public boolean validateEmail(String email) {
+        if (email == null) {
+            throw new IllegalArgumentException("email равен null");
+        }
+
+        if (email.isBlank()) {
+            throw new IllegalArgumentException("email пустой");
+        }
+
+        // Отсутствует символ '@' → выбросить исключение.
+        // Нет точки после '@' → выбросить исключение. (сравнить индексы '@' и '.')
+
+        return true;
+    }
 }
