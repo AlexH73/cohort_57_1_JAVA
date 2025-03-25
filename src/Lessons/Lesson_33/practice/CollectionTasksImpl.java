@@ -35,13 +35,15 @@ public class CollectionTasksImpl implements CollectionTasks {
         List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> numbers2 = Arrays.asList(1, 5, 6, 3);
         List<Integer> numbers3 = Arrays.asList(1, 7, 8, 9, 5);
-        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));       // Ожидаем [1, 5]
+        System.out.println(tasks.findCommonElements(numbers1, numbers2, numbers3));// Ожидаем [1, 5]
 
         System.out.println("\n=== Проверка метода findSecondMax ===");
-        System.out.println(tasks.findSecondMax(numbers1));          // Ожидаем 4
-        System.out.println(tasks.findSecondMax(numbers2));          // Ожидаем 5
-        System.out.println(tasks.findSecondMax(numbers3));          // Ожидаем 8
+        System.out.println(tasks.findSecondMax(numbers1));                        // Ожидаем 4
+        System.out.println(tasks.findSecondMax(numbers2));                        // Ожидаем 5
+        System.out.println(tasks.findSecondMax(numbers3));                        // Ожидаем 8
 
+        System.out.println("\n=== Проверка метода mergeUniqueLists ===");
+        System.out.println(tasks.mergeUniqueLists(numbers1, numbers2));           // Ожидаем[1, 2, 3, 4, 5, 6]
 
 
 
@@ -182,7 +184,15 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> mergeUniqueLists(List<Integer> list1, List<Integer> list2) {
-        return null;
+        // Создаем новый список для объединения, чтобы не изменять исходные
+        List<Integer> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+
+        // Удаляем дубликаты через Set
+        Set<Integer> uniqueSet = new LinkedHashSet<>(mergedList); // LinkedHashSet сохраняет порядок
+
+        // Возвращаем новый список
+        return new ArrayList<>(uniqueSet);
     }
 
     /**
