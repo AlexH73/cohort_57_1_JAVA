@@ -8,7 +8,7 @@ public class TeacherCode {
     }
 
     public static void getStackOverflowException() {
-        System.out.printf("Attempt %d before StackOverFlow exception has been throwed\n", counter);
+        System.out.printf("Attempt %d before StackOverFlow error has been throwed\n", counter);
         counter++;
 
         getStackOverflowException();
