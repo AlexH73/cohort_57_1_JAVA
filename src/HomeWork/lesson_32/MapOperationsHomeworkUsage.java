@@ -5,7 +5,17 @@ import java.util.Map;
 
 public class MapOperationsHomeworkUsage {
     public static void main(String[] args) {
-        Map<String, String> duplicateControlStr = new HashMap<>();
+        MapOperationsHomework duplicateControlStr = new MapOperationsHomework() {
+            @Override
+            public <K, V> void removeSameValuesAnyTypes(Map<K, V> map) {
+
+            }
+
+            @Override
+            public void removeSameValues(Map<String, String> map) {
+
+            }
+        };
 
         duplicateControlStr.put("A","Apple");
         duplicateControlStr.put("B","Banana");
@@ -19,7 +29,7 @@ public class MapOperationsHomeworkUsage {
         duplicateControlInt.put(4, 30);
 
 
-        System.out.println(duplicateControlStr);
+        System.out.println(duplicateControlInt.clear());
     }
 
 }
