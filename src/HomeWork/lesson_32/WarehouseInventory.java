@@ -6,9 +6,6 @@ import java.util.Map;
 public class WarehouseInventory implements WarehouseInventoryInterface {
     private Map<String, Integer> warenInventory;
 
-    public WarehouseInventory(Map<String, Integer> warenInventory) {
-        this.warenInventory = warenInventory;
-    }
 
 
     /**
@@ -42,7 +39,6 @@ public class WarehouseInventory implements WarehouseInventoryInterface {
      */
     public boolean addItem(String itemName, int quantity) {
 
-    }
 
 
     /**
