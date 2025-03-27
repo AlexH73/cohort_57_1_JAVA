@@ -35,7 +35,7 @@ public interface SimpleExceptionTasks {
      * @return первый элемент массива
      * @throws EmptyArrayException если массив пуст
      */
-    // int getFirstElement(int[] arr) throws EmptyArrayException;
+    int getFirstElement(int[] arr) throws EmptyArrayException;
 
     /**
      * Ищет индекс первого вхождения элемента target в массиве.

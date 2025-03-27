@@ -6,11 +6,14 @@ public class SimpleExceptionTasksImpl {
         try {
             simpleExceptionTasks.divide(5, 5);
             simpleExceptionTasks.validateLength("Проверяет, соответствует ли длина " +
-                    "строки ожидаемому значению.", 40);
+                    "строки ожидаемому значению.", 61);
+            //int[] numbers = {};
+            int[] numbers = {1,2,3};
+            System.out.println("Первый элемент массива = " + simpleExceptionTasks.getFirstElement(numbers));
         } catch (NegativeDividerException negativeDividerException) {
             System.err.println("Было выброшено исключение NegativeDividerException - " +
                     "попытка делить на отрицательное число: " + negativeDividerException.getMessage());
-        } catch (InvalidLengthException invalidLengthException) {
+        } catch (InvalidLengthException | EmptyArrayException invalidLengthException) {
             System.err.println("Ошибка: " + invalidLengthException.getMessage());
         }
     }
@@ -47,5 +50,20 @@ public class SimpleExceptionTasksImpl {
         }
 
         System.out.println("Ожидаемая длина строки " + expectedLength + " равна действительной " + input.length());
+    }
+
+    /**
+     * Возвращает первый элемент массива.
+     * Если массив пуст — выбрасывается исключение EmptyArrayException.
+     *
+     * @param arr входной массив
+     * @return первый элемент массива
+     * @throws EmptyArrayException если массив пуст
+     */
+    int getFirstElement(int[] arr) throws EmptyArrayException {
+        if (arr == null || arr.length == 0) {
+            throw new EmptyArrayException("Массив пуст");
+        }
+        return arr[0];
     }
 }
