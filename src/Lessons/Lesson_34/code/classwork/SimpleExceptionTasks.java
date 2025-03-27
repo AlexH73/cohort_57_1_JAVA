@@ -46,7 +46,7 @@ public interface SimpleExceptionTasks {
      * @return индекс первого вхождения target
      * @throws ElementNotFoundException если элемент не найден
      */
-    // int findIndex(int[] arr, int target) throws ElementNotFoundException;
+    int findIndex(int[] arr, int target) throws ElementNotFoundException;
 
     /**
      * Проверяет, что число чётное.
