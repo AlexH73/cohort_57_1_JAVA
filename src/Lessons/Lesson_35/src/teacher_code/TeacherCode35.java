@@ -44,8 +44,10 @@ public class TeacherCode35 {
 
         File unexistDir = new File("src/Lessons/Lesson_35/src/teacher_code/file_not_exist");
 
+        unexistDir.delete();
+
         if (!unexistDir.exists()) {
-            unexistDir.createNewFile();
+            unexistDir.mkdir();
             System.out.println("New directory has been created: " + unexistDir.getPath());
         }
     }
