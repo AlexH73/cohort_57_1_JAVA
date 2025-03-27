@@ -54,5 +54,15 @@ public class TeacherCode35 {
         System.out.println("textFile.length() = " + textFile.length());
         System.out.println("textFile.lastModified() = " + textFile.lastModified());
         textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file_renamed.txt"));
+
+        File classwork35dir = new File("src/Lessons/Lesson_35/src/practice/classwork");
+
+        if (classwork35dir.exists() && classwork35dir.isDirectory()) {
+            File[] filesInClasswork35dir = classwork35dir.listFiles();
+
+            for (File file : filesInClasswork35dir) {
+                System.out.println(file.getPath());
+            }
+        }
     }
 }
