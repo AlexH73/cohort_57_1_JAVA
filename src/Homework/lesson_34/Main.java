@@ -9,7 +9,7 @@ public class Main {
         // Примеры с try-catch при вызове метода
         try {
             // Корректные данные
-            System.out.println("Круг: " + calculator.calculateArea(List.of(5.0)));
+            System.out.printf("Круг: %.2f%n", calculator.calculateArea(List.of(5.0)));
             System.out.println("Прямоугольник: " + calculator.calculateArea(List.of(4.0, 3.0)));
             System.out.println("Треугольник: " + calculator.calculateArea(List.of(3.0, 4.0, 5.0)));
 
