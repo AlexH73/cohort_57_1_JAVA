@@ -50,5 +50,9 @@ public class TeacherCode35 {
             unexistDir.mkdir();
             System.out.println("New directory has been created: " + unexistDir.getPath());
         }
+
+        System.out.println("textFile.length() = " + textFile.length());
+        System.out.println("textFile.lastModified() = " + textFile.lastModified());
+        textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file_renamed.txt"));
     }
 }
