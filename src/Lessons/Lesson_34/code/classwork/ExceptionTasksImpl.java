@@ -2,33 +2,41 @@ package Lessons.Lesson_34.code.classwork;
 
 import java.util.List;
 
-public class ExceptionTasksImpl implements ExceptionTasks{
+public class ExceptionTasksImpl implements ExceptionTasks {
     /**
      * Делит одно число на другое.
      * Если второй аргумент равен нулю — выбросить {@link ArithmeticException} с сообщением:
      * "Деление на ноль недопустимо".
      *
      * @param dividend делимое.
-     * @param divisor делитель.
+     * @param divisor  делитель.
      * @return результат деления.
      */
     @Override
     public int divide(int dividend, int divisor) {
-        return 0;
+        if (divisor == 0) {
+            throw new ArithmeticException("Деление на ноль недопустимо");
+        }
+        int result = dividend / divisor;
+        return result;
     }
+
 
     /**
      * Возвращает элемент из списка по указанному индексу.
      * Если индекс выходит за пределы допустимого диапазона, выбросить {@link IndexOutOfBoundsException}
      * с сообщением: "Индекс <index> вне допустимого диапазона от 0 до <maxIndex>".
      *
-     * @param list список элементов.
+     * @param list  список элементов.
      * @param index индекс для доступа к элементу.
      * @return строка из списка по указанному индексу.
      */
     @Override
     public String getElementByIndex(List<String> list, int index) {
-        return "";
+        if (index < 0 || index >= list.size()) {
+            throw new IndexOutOfBoundsException(" Индекс " + index + " вне допустимого диапазона от 0 до " + (list.size() - 1));
+        }
+        return list.get(index);
     }
 
 
@@ -60,5 +68,11 @@ public class ExceptionTasksImpl implements ExceptionTasks{
         // Нет точки после '@' → выбросить исключение. (сравнить индексы '@' и '.')
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        ExceptionTasksImpl task = new ExceptionTasksImpl();
+        task.divide(5, 0);
+
     }
 }

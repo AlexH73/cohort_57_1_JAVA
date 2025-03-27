@@ -1,6 +1,7 @@
 package Lessons.Lesson_33.practice;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Реализация интерфейса CollectionTasks. Студенты должны реализовать логику методов в соответствии с их описанием.
@@ -27,39 +28,24 @@ public class CollectionTasksImpl implements CollectionTasks {
             throw new IllegalArgumentException("Der Satz darf nicht null oder leer sein.");
         }
 
-        String[] words = sentence.split(" ");
-
-        // Prüfung, ob das Array leer ist (alle Wörter sind Leerzeichen)
-        if (words.length == 0) {
-            throw new IllegalArgumentException("Der Satz enthält keine gültigen Wörter.");
+        // Удаляем пробелы в начале/конце и разбиваем на слова
+        String trimmedSentence = sentence.trim();
+        if (trimmedSentence.isEmpty()) {
+            return "";
         }
+        String[] words = trimmedSentence.split(" +"); // Учет множественных пробелов
 
-        StringBuilder reversedSentence = new StringBuilder();
-
+        // Собираем слова в обратном порядке
+        String reversed = "";
         for (int i = words.length - 1; i >= 0; i--) {
-            reversedSentence.append(words[i]);
+            reversed += words[i];
             if (i > 0) {
-                reversedSentence.append(" ");
+                reversed += " "; // Добавляем пробел между словами
             }
         }
-
-        return reversedSentence.toString();
+        return reversed;
     }
 
-    /**   public String reverseWordsInSentence(String sentence) {
-           Stack<String> stack = new Stack<>();
-
-           String[] words = sentence.split(" ");
-           for (String word : words) {
-               stack.push(word);
-           }
-           String[] words2 = new String[words.length];
-           for (int i = 0; i < words.length; i++) {
-               words2[i] = stack.pop();
-           }
-           return String.join(" ", words2);
-       }
-   **/
     /**
      * Выполняет циклический сдвиг элементов очереди на `k` позиций.
      *
@@ -68,11 +54,11 @@ public class CollectionTasksImpl implements CollectionTasks {
      * @return очередь после выполнения сдвига.
      * <p>
      * [1 2 3 4 5 6] , 3 -> [4 5 6 1 2 3]
-     *
+     * <p>
      * [1 2 3 4 5 6] , 1 -> [2 3 4 5 6] element = [1 2 3 4 5 6].poll() -> [2 3 4 5 6].offer(element) -> [2 3 4 5 6 1]
      */
     public Queue<Integer> rotateQueue(Queue<Integer> queue, int k) {
-        for (int i = 0; i < k; i++ ){
+        for (int i = 0; i < k; i++) {
             Integer integer = queue.poll();
             queue.offer(integer);
         }
@@ -102,15 +88,22 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public int findSecondMax(List<Integer> numbers) {
-        int max = numbers.get(0);
-        for (int i = 0; i < numbers.size(); i++){
-            if (max < numbers.get(i)){
-                max = numbers.get(i);
+        if (numbers == null || numbers.isEmpty()) {
+            return Integer.MIN_VALUE;
         }
 
-        }
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
 
-        return Integer.MIN_VALUE;
+        for (Integer num : numbers) {              // Учитывает все элементы, даже если они повторяются
+            if (num > firstMax) {
+                secondMax = firstMax;
+                firstMax = num;
+            } else if (num > secondMax && !num.equals(firstMax)) {
+                secondMax = num;
+            }
+        }
+        return (secondMax != Integer.MIN_VALUE) ? secondMax : Integer.MIN_VALUE;
     }
 
 
@@ -157,7 +150,15 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> mergeUniqueLists(List<Integer> list1, List<Integer> list2) {
-        return null;
+        // Создаем новый список для объединения, чтобы не изменять исходные
+        List<Integer> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+
+        // Удаляем дубликаты через Set
+        Set<Integer> uniqueSet = new LinkedHashSet<>(mergedList); // LinkedHashSet сохраняет порядок
+
+        // Возвращаем новый список
+        return new ArrayList<>(uniqueSet);
     }
 
     /**
@@ -170,7 +171,10 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<String> filterWordsByLength(List<String> words, int minLength) {
-        return null;
+        return words.stream()
+                .filter(word -> word != null && word
+                        .length() > minLength)
+                .collect(Collectors.toList());
     }
 
     /**
@@ -195,7 +199,14 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<Integer> findCommonElements(List<Integer> list1, List<Integer> list2, List<Integer> list3) {
-        return null;
+        if (list1 == null || list2 == null || list3 == null) {  // Проверка на null
+            return new ArrayList<>();
+        }
+
+        Set<Integer> set = new HashSet<>(list1);
+        set.retainAll(list2);                                   // Пересечение list1 и list2
+        set.retainAll(list3);                                   // Пересечение с list3
+        return new ArrayList<>(set);
     }
 
     /**
@@ -208,7 +219,24 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public Character findFirstUniqueCharacter(String input) {
-        return null;
+        if (input == null || input.isEmpty()) return '\0';
+
+        Map<Character, Integer> charCount = new LinkedHashMap<>();  // LinkedHashMap сохраняет порядок
+
+        // Первый проход: подсчет количества символов
+        for (char c : input.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Второй проход: поиск первого символа с количеством 1
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        // Если уникальных символов нет
+        return '\0';
     }
 
     /**
@@ -221,6 +249,18 @@ public class CollectionTasksImpl implements CollectionTasks {
      */
     @Override
     public List<List<Integer>> findUniquePairsWithSum(List<Integer> numbers, int targetSum) {
-        return null;
+        Set<List<Integer>> uniquePairs = new HashSet<>();
+        Set<Integer> seen = new HashSet<>();
+
+        for (int num : numbers) {
+            int complement = targetSum - num;
+            if (seen.contains(complement)) {
+                // Сортируем пару для избежания дубликатов (a, b) и (b, a)
+                List<Integer> pair = Arrays.asList(Math.min(num, complement), Math.max(num, complement));
+                uniquePairs.add(pair);
+            }
+            seen.add(num);
+        }
+        return new ArrayList<>(uniquePairs);
     }
 }
