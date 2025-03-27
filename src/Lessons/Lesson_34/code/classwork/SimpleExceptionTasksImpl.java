@@ -10,11 +10,13 @@ public class SimpleExceptionTasksImpl {
             //int[] numbers = {};
             int[] numbers = {1, 2, 3};
             System.out.println("Первый элемент массива = " + simpleExceptionTasks.getFirstElement(numbers));
-            System.out.println("Индекс: " + simpleExceptionTasks.findIndex(numbers, 7));
+            System.out.println("Индекс: " + simpleExceptionTasks.findIndex(numbers, 3));
+            simpleExceptionTasks.checkEven(7);
+
         } catch (NegativeDividerException negativeDividerException) {
             System.err.println("Было выброшено исключение NegativeDividerException - " +
                     "попытка делить на отрицательное число: " + negativeDividerException.getMessage());
-        } catch (InvalidLengthException | EmptyArrayException | ElementNotFoundException invalidException) {
+        } catch (InvalidLengthException | EmptyArrayException | ElementNotFoundException | OddNumberException invalidException) {
             System.err.println("Ошибка: " + invalidException.getMessage());
         }
     }
@@ -89,5 +91,20 @@ public class SimpleExceptionTasksImpl {
         }
 
         throw new ElementNotFoundException("Элемент " + target + " не найден");
+    }
+
+    /**
+     * Проверяет, что число чётное.
+     * Если число нечётное — выбрасывается OddNumberException.
+     *
+     * @param number число для проверки
+     * @throws OddNumberException если число нечётное
+     */
+    void checkEven(int number) throws OddNumberException{
+        if (number % 2 != 0) {
+            throw new OddNumberException("Число " + number + " нечётное");
+        }
+
+        System.out.println("Число " + number + " чётное");
     }
 }

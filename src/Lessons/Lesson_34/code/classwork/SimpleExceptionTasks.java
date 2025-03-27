@@ -55,5 +55,5 @@ public interface SimpleExceptionTasks {
      * @param number число для проверки
      * @throws OddNumberException если число нечётное
      */
-    // void checkEven(int number) throws OddNumberException;
+    void checkEven(int number) throws OddNumberException;
 }
