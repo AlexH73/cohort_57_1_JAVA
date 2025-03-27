@@ -11,9 +11,26 @@ public class TeacherCode35 {
 
         File textFile = new File(path);
 
+        System.out.println("textFile.exists() = " + textFile.exists());
         System.out.println("textFile.isFile() = " + textFile.isFile());
         System.out.println("textFile.isDirectory() = " + textFile.isDirectory());
 
-        // File directory = new File();
+        File directory = new File("src/Lessons/Lesson_35/src/teacher_code/");
+
+        System.out.println("directory.exists() = " + directory.exists());
+        System.out.println("directory.isDirectory() = " + directory.isDirectory());
+        System.out.println("directory.isFile() = " + directory.isFile());
+
+        File fileThatNotExist = new File("src/Lessons/Lesson_35/src/teacher_code/file_not_exist.txt");
+
+        System.out.println("fileThatNotExist.exists() = " + fileThatNotExist.exists());
+        System.out.println("fileThatNotExist.isDirectory() = " + fileThatNotExist.isDirectory());
+        System.out.println("fileThatNotExist.isFile() = " + fileThatNotExist.isFile());
+
+        System.out.println("fileThatNotExist.createNewFile() = " + fileThatNotExist.createNewFile());
+
+        System.out.println("fileThatNotExist.exists() = " + fileThatNotExist.exists());
+        System.out.println("fileThatNotExist.isDirectory() = " + fileThatNotExist.isDirectory());
+        System.out.println("fileThatNotExist.isFile() = " + fileThatNotExist.isFile());
     }
 }
