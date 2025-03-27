@@ -13,8 +13,8 @@ public class SimpleExceptionTasksImpl {
         } catch (NegativeDividerException negativeDividerException) {
             System.err.println("Было выброшено исключение NegativeDividerException - " +
                     "попытка делить на отрицательное число: " + negativeDividerException.getMessage());
-        } catch (InvalidLengthException | EmptyArrayException invalidLengthException) {
-            System.err.println("Ошибка: " + invalidLengthException.getMessage());
+        } catch (InvalidLengthException | EmptyArrayException invalidException) {
+            System.err.println("Ошибка: " + invalidException.getMessage());
         }
     }
 
