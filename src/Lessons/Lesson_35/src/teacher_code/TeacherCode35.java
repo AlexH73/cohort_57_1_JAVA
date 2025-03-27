@@ -42,5 +42,17 @@ public class TeacherCode35 {
         System.out.println("fileThatNotExist.isDirectory() = " + fileThatNotExist.isDirectory());
         System.out.println("fileThatNotExist.isFile() = " + fileThatNotExist.isFile());
 
+        File unexistDir = new File("src/Lessons/Lesson_35/src/teacher_code/file_not_exist");
+
+        unexistDir.delete();
+
+        if (!unexistDir.exists()) {
+            unexistDir.mkdir();
+            System.out.println("New directory has been created: " + unexistDir.getPath());
+        }
+
+        System.out.println("textFile.length() = " + textFile.length());
+        System.out.println("textFile.lastModified() = " + textFile.lastModified());
+        textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file_renamed.txt"));
     }
 }
