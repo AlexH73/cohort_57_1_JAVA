@@ -4,10 +4,14 @@ public class SimpleExceptionTasksImpl {
     public static void main(String[] args) {
         SimpleExceptionTasksImpl simpleExceptionTasks = new SimpleExceptionTasksImpl();
         try {
-            simpleExceptionTasks.divide(5, -5);
+            simpleExceptionTasks.divide(5, 5);
+            simpleExceptionTasks.validateLength("Проверяет, соответствует ли длина " +
+                    "строки ожидаемому значению.", 40);
         } catch (NegativeDividerException negativeDividerException) {
-            System.out.println("Было выброшено исключение NegativeDividerException - " +
+            System.err.println("Было выброшено исключение NegativeDividerException - " +
                     "попытка делить на отрицательное число: " + negativeDividerException.getMessage());
+        } catch (InvalidLengthException invalidLengthException) {
+            System.err.println("Ошибка: " + invalidLengthException.getMessage());
         }
     }
 
@@ -26,5 +30,22 @@ public class SimpleExceptionTasksImpl {
         }
 
         return a / b;
+    }
+
+    /**
+     * Проверяет, соответствует ли длина строки ожидаемому значению.
+     * Если длина строки отличается от expectedLength — выбрасывается InvalidLengthException.
+     *
+     * @param input          строка для проверки
+     * @param expectedLength ожидаемая длина строки
+     * @throws InvalidLengthException если длина строки не совпадает с expectedLength
+     */
+    void validateLength(String input, int expectedLength) throws InvalidLengthException {
+        if (input.length() != expectedLength) {
+            throw new InvalidLengthException("Длина строки " + input.length() +
+                    " не совпадает с заданной " + expectedLength + "!");
+        }
+
+        System.out.println("Ожидаемая длина строки " + expectedLength + " равна действительной " + input.length());
     }
 }

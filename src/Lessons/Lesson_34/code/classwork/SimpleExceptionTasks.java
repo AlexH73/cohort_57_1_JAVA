@@ -25,7 +25,7 @@ public interface SimpleExceptionTasks {
      * @param expectedLength ожидаемая длина строки
      * @throws InvalidLengthException если длина строки не совпадает с expectedLength
      */
-    // void validateLength(String input, int expectedLength) throws InvalidLengthException;
+    void validateLength(String input, int expectedLength) throws InvalidLengthException;
 
     /**
      * Возвращает первый элемент массива.
