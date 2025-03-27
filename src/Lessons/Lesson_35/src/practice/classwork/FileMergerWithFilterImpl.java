@@ -37,7 +37,7 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
 
                 String line = bfReader.readLine();
                 while (line != null) {
-                    bfWriter.write(line);
+                    bfWriter.write(line + "\n");
 
                     line = bfReader.readLine();
                 }
