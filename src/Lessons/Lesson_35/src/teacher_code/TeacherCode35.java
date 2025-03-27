@@ -1,6 +1,8 @@
 package Lessons.Lesson_35.src.teacher_code;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -53,8 +55,7 @@ public class TeacherCode35 {
 
         System.out.println("textFile.length() = " + textFile.length());
         System.out.println("textFile.lastModified() = " + textFile.lastModified());
-        textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file_renamed.txt"));
-        textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file.txt"));
+        // textFile.renameTo(new File("src/Lessons/Lesson_35/src/teacher_code/file_renamed.txt"));
 
         File classwork35dir = new File("src/Lessons/Lesson_35/src/practice/classwork");
 
@@ -65,5 +66,7 @@ public class TeacherCode35 {
                 System.out.println(file.getPath());
             }
         }
+
+
     }
 }
