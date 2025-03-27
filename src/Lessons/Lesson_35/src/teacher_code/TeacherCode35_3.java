@@ -39,6 +39,7 @@ public class TeacherCode35_3 {
             throw new RuntimeException(e);
         } finally {
             bfWriter.close();
+            bfReader.close();
         }
     }
 }
