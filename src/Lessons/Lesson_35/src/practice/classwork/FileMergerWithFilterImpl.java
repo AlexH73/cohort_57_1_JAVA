@@ -26,5 +26,6 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
         //    2.3. Если строка НЕ содержит keyword, записать её в выходной файл
         //    2.4. Закрыть BufferedReader
         // Шаг 3. Закрыть BufferedWriter
+
     }
 }
