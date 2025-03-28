@@ -6,8 +6,8 @@ public class StudentCode35 {
     public static void main(String[] args) {
         File dir = new File("src/Other");
 
-        System.out.println(dir.isDirectory());
-        System.out.println(dir.isFile());
+        System.out.println("Это папка? " + (dir.isDirectory() ? "Да" : "Нет"));
+        System.out.println("Это файл? " + (dir.isFile() ? "Да" : "Нет"));
 
     }
 }
