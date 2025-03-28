@@ -36,36 +36,18 @@ public class LineNumberingFileCopierImpl implements LineNumberingFileCopier {
         // Шаг 3. Создать счетчик строк и читать файл построчно
         // Шаг 4. Для каждой строки записывать в формате "номер. строка"
         // Шаг 5. Закрыть все потоки в блоке finally (или использовать try-with-resources)
-        File readFile = new File(inputFilePath);
-        File writFile = new File(outputFilePath);
-
-        if (!writFile.exists()) {
-            writFile.createNewFile();
-        }
-
-        FileReader reader = new FileReader(readFile);
-        FileWriter writer = new FileWriter(writFile);
-
-        BufferedReader bfReader = new BufferedReader(reader);
-        BufferedWriter bfWriter = new BufferedWriter(writer);
-
-        try {
+        try (
+                BufferedReader bfReader = new BufferedReader(new FileReader(inputFilePath));
+                BufferedWriter bfWriter = new BufferedWriter(new FileWriter(outputFilePath))
+        ) {
             int counter = 1;
-            String line = bfReader.readLine();
+            String line;
 
-            while (line != null) {
-                String string = counter + ". " + line + "\n";
-                bfWriter.write(string);
-
+            while ((line = bfReader.readLine()) != null) {
+                bfWriter.write(counter + ". " + line);
+                bfWriter.newLine();
                 counter++;
-
-                line = bfReader.readLine();
             }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        } finally {
-            bfReader.close();
-            bfWriter.close();
         }
     }
 }
