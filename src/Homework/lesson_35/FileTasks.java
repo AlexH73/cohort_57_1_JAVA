@@ -1,6 +1,6 @@
 package Homework.lesson_35;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Класс с задачами на работу с файлами. Реализация методов пока отсутствует.
@@ -27,9 +27,37 @@ public class FileTasks {
      * @param inputFile  исходный файл
      * @param outputFile файл для записи результата
      */
-    public void copyFileWithLineNumbers(File inputFile, File outputFile) {
-        // TODO: Реализовать метод
+    public void copyFileWithLineNumbers(File inputFile, File outputFile) throws IOException {
+        File readFile = new File(inputFilePath);
+        File WriteFile = new File(outputFilePath);
+
+        if (!writeFile.exists()) {
+            writeFile.createNewFile();
+        }
+
+        FileReader reader = new FileReader(riedFile);
+        FileWriter writer = new FileWriter(writeFile);
+
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+        try {
+            int counter = 1;
+            String line = bufferedReader.readLine();
+
+            while (line != null) {
+                String string = counter + ". " + line + "\n";
+                bufferedWriter.write(string);
+                counter++;
+                line = bufferedReader.readLine();
+            }
+        } catch (IOException ioException) {
+        ioException.printStackTrace();
+    }finally {
+        bufferedReader.close();
+        bufferedWriter.close();
     }
+        // TODO: Реализовать метод
 
     /**
      * Задача 4: Сортировка строк в текстовом файле и запись в новый файл.
