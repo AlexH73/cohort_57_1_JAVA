@@ -1,6 +1,6 @@
 package Homework.lesson_36;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Класс с задачами на работу с файлами. Реализация методов пока отсутствует.
@@ -28,7 +28,22 @@ public class FileTasks {
      * @param outputFile файл для записи результата
      */
     public void copyFileWithLineNumbers(File inputFile, File outputFile) {
-        // TODO: Реализовать метод
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))){
+
+            String line;
+            int lineNumber = 1;
+
+            while ((line = reader.readLine()) != null) {
+                String numberedLine = lineNumber + ". " + line;
+                writer.write(numberedLine);
+                writer.newLine();
+                lineNumber ++;
+            }
+        } catch (IOException e) {
+            System.err.println("Ошибка при обработке файла: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
