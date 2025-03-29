@@ -1,6 +1,10 @@
 package Homework.lesson_36;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Класс с задачами на работу с файлами. Реализация методов пока отсутствует.
@@ -62,7 +66,31 @@ public class FileTasks {
      * @param outputFile файл для записи отсортированных строк
      */
     public void sortLinesInFile(File inputFile, File outputFile) {
-        // TODO: Реализовать метод
+        List<String> lines = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))){
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty()) { // Удаляем пустые и пробельные строки
+                    lines.add(line);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Ошибка при чтении файла: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        Collections.sort(lines); // Сортировка строк в алфавитном порядке
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            for (String sortLine : lines) {
+                writer.write(sortLine);
+                writer.newLine(); // Добавляем разделитель строк
+            }
+        } catch (IOException e) {
+            System.err.println("Ошибка при записи файла: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**

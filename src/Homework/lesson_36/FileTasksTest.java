@@ -70,7 +70,7 @@ public class FileTasksTest {
      * - строки отсортированы по алфавиту.
      */
     public static void testSortLinesInFile() {
-        File source = new File(baseDir + "/unsorted.txt");
+        File source = new File(baseDir + "/source.txt");
         File target = new File(baseDir + "/sorted.txt");
 
         try {
