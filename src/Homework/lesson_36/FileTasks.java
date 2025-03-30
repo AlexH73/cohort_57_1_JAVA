@@ -113,6 +113,19 @@ public class FileTasks {
      * @param newWord    новое слово
      */
     public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) {
-        // TODO: Реализовать метод
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Замена всех вхождений слова в строке
+                String modifiedLine = line.replace(oldWord, newWord);
+                writer.write(modifiedLine);
+                writer.newLine(); // Сохранение перевода строки
+            }
+        } catch (IOException e) {
+            System.err.println("Ошибка при обработке файла: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
