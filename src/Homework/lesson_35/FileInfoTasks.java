@@ -21,8 +21,17 @@ public class FileInfoTasks {
      * @param file файл или директория для проверки
      */
     public void checkFileType(File file) {
-        // TODO: Реализовать метод
+        if (file.exists()) {
+            if (file.isFile()) {
+                System.out.println(file + " - это файл.");
+            } else if (file.isDirectory()) {
+                System.out.println(file + " - это директория.");
+            }
+        } else {
+            System.out.println("Файл или директория не существует: " + file);
+        }
     }
+
 
     /**
      * Задача 2: Получение абсолютного пути и размера файла.
@@ -37,10 +46,15 @@ public class FileInfoTasks {
      * @param file файл для анализа
      */
     public void printFilePathAndSize(File file) {
-        // TODO: Реализовать метод
+        if (file.exists() && file.isFile()) {
+            System.out.println("Абсолютный путь: " + file.getAbsolutePath());
+            System.out.println("Размер файла: " + file.length() + " байт");
+        } else {
+            System.out.println("Файл не существует или не является файлом: " + file);
+        }
     }
 
-    /**
+/**
      * Задача 3: Создание файла, если он не существует.
      *
      * Если файла не существует — создать его.
@@ -53,7 +67,15 @@ public class FileInfoTasks {
      * @param file файл, который нужно создать
      */
     public void createFileIfNotExists(File file) {
-        // TODO: Реализовать метод
+        if (file.exists()) {
+            if (file.isFile()) {
+                System.out.println(file + " - это файл.");
+            } else if (file.isDirectory()) {
+                System.out.println(file + " - это директория.");
+            }
+        } else {
+            System.out.println("Файл или директория не существует: " + file);
+        }
     }
 
     /**
@@ -68,7 +90,17 @@ public class FileInfoTasks {
      * @param file файл или директория для удаления
      */
     public void deleteFileOrDirectory(File file) {
-        // TODO: Реализовать метод
+        if (file.exists()) {
+            if (file.isDirectory() && file.list().length > 0) {
+                System.out.println("Невозможно удалить директорию, так как она не пуста: " + file);
+            } else if (file.delete()) {
+                System.out.println("Удалено: " + file);
+            } else {
+                System.out.println("Не удалось удалить: " + file);
+            }
+        } else {
+            System.out.println("Файл или директория не существует: " + file);
+        }
     }
 
     /**
@@ -84,7 +116,23 @@ public class FileInfoTasks {
      * @param dir директория для анализа
      */
     public void printDirectoryContents(File dir) {
-        // TODO: Реализовать метод
+        if (!dir.exists()) {
+            System.out.println("Директория не существует: " + dir);
+            return;
+        }
+        if (!dir.isDirectory()) {
+            System.out.println("Это не директория: " + dir);
+            return;
+        }
+        File[] files = dir.listFiles();
+        if (files == null || files.length == 0) {
+            System.out.println("Директория пуста: " + dir);
+            return;
+        }
+        System.out.println("Содержимое директории " + dir + ":");
+        for (File file : files) {
+            System.out.println("- " + file.getName());
+        }
     }
 
     /**
@@ -99,6 +147,14 @@ public class FileInfoTasks {
      * @param dir директория для создания
      */
     public void createDirectory(File dir) {
-        // TODO: Реализовать метод
+        if (!dir.exists()) {
+            if (dir.mkdir()) {
+                System.out.println("Директория создана: " + dir);
+            } else {
+                System.out.println("Не удалось создать директорию: " + dir);
+            }
+        } else {
+            System.out.println("Директория уже существует: " + dir);
+        }
     }
 }
