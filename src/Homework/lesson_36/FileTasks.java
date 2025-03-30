@@ -2,7 +2,6 @@ package Homework.lesson_36;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,14 +13,14 @@ public class FileTasks {
 
     /**
      * Задача 1: Копирование текстового файла с добавлением номера строки.
-     *
+     * <p>
      * Программа должна считать текст из исходного файла и записать его в новый файл,
      * добавляя к каждой строке её порядковый номер (начиная с 1).
-     *
+     * <p>
      * Пример:
      * Исходная строка: "Привет, мир!"
      * Результат: "1. Привет, мир!"
-     *
+     * <p>
      * Подсказки по реализации:
      * - Используй `BufferedReader` и `FileReader` для чтения строк из файла.
      * - Используй `BufferedWriter` и `FileWriter` для записи результата.
@@ -33,7 +32,7 @@ public class FileTasks {
      */
     public void copyFileWithLineNumbers(File inputFile, File outputFile) {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))){
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
 
             String line;
             int lineNumber = 1;
@@ -42,7 +41,7 @@ public class FileTasks {
                 String numberedLine = lineNumber + ". " + line;
                 writer.write(numberedLine);
                 writer.newLine();
-                lineNumber ++;
+                lineNumber++;
             }
         } catch (IOException e) {
             System.err.println("Ошибка при обработке файла: " + e.getMessage());
@@ -52,10 +51,10 @@ public class FileTasks {
 
     /**
      * Задача 4: Сортировка строк в текстовом файле и запись в новый файл.
-     *
+     * <p>
      * Необходимо прочитать все строки из исходного файла, отсортировать их в алфавитном порядке
      * и сохранить в новый файл.
-     *
+     * <p>
      * Подсказки по реализации:
      * - Считай все строки в список (`List<String>`), использовав `BufferedReader`.
      * - Используй `Collections.sort()` или `list.sort()`.
@@ -68,7 +67,7 @@ public class FileTasks {
     public void sortLinesInFile(File inputFile, File outputFile) {
         List<String> lines = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))){
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!line.trim().isEmpty()) { // Удаляем пустые и пробельные строки
@@ -95,13 +94,13 @@ public class FileTasks {
 
     /**
      * Задача 6: Замена слова в текстовом файле.
-     *
+     * <p>
      * Заменить все вхождения заданного слова в тексте файла на новое слово и записать результат в другой файл.
-     *
+     * <p>
      * Пример:
      * Слово для замены: "Java", новое слово: "Python"
      * Исходная строка: "Я учу Java" → "Я учу Python"
-     *
+     * <p>
      * Подсказки по реализации:
      * - Читай построчно, заменяй через метод `String.replace(oldWord, newWord)`.
      * - Записывай результат в новый файл построчно.
