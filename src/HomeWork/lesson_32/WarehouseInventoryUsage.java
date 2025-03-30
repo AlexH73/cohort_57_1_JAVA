@@ -11,6 +11,6 @@ public class WarehouseInventoryUsage {
         warenInventory.put("Клавиатура", 40);
         warenInventory.put("Мышь", 30);
 
-        System.out.println(warenInventory.addItem);
+        System.out.println(warenInventory);
     }
 }
