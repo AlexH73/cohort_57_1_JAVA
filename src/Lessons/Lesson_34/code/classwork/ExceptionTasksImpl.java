@@ -1,5 +1,6 @@
 package Lessons.Lesson_34.code.classwork;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExceptionTasksImpl implements ExceptionTasks {
@@ -33,7 +34,7 @@ public class ExceptionTasksImpl implements ExceptionTasks {
      */
     @Override
     public String getElementByIndex(List<String> list, int index) {
-        if (index < 0 || index >= list.size()) {
+        if (index < 0 || index > list.size() - 1) {
             throw new IndexOutOfBoundsException(" Индекс " + index + " вне допустимого диапазона от 0 до " + (list.size() - 1));
         }
         return list.get(index);
@@ -65,14 +66,32 @@ public class ExceptionTasksImpl implements ExceptionTasks {
         }
 
         // Отсутствует символ '@' → выбросить исключение.
+        if (!email.contains("@")){
+            throw new IllegalArgumentException("Отсутствует символ '@'");
+        }
+
         // Нет точки после '@' → выбросить исключение. (сравнить индексы '@' и '.')
+        if (email.indexOf("@") > email.indexOf(".")){
+            throw new IllegalArgumentException("Нет точки после '@'");
+        }
 
         return true;
     }
 
     public static void main(String[] args) {
         ExceptionTasksImpl task = new ExceptionTasksImpl();
-        task.divide(5, 0);
+        System.out.println(task.divide(5, 3));
+        //task.divide(5, 0);
+        List<String> list = new ArrayList<>();
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        //task.getElementByIndex(list, 3);
+        System.out.println(task.getElementByIndex(list, 2));
+        //task.validateEmail("moj email.tut");
+        //task.validateEmail("moj email.tut@");
+        //task.validateEmail("moj@email tut");
+        System.out.println(task.validateEmail("moj@email.tut"));
 
     }
 }
