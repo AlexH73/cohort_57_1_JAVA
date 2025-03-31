@@ -7,7 +7,7 @@ public class SerializationDemo {
     public static void main(String[] args) {
         UserProfile user = new UserProfile("User123", "secretPassword", 30);
 
-        String fileName = "basic_programming/lesson_33/src/practice/serializable/userProfile.ser";
+        String fileName = "src/Lessons/Lesson_35/src/practice/serializable/userProfile.ser";
 
         System.out.println("Original User Profile: " + user);
 
