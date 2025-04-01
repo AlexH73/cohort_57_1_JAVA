@@ -1,4 +1,4 @@
-package Homework.lesson_35.Task1;
+package Homework.lesson_36.Task1;
 /**
  * Задача 1: Копирование текстового файла с добавлением номера строки.
  * <p>
