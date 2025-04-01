@@ -10,15 +10,19 @@ import java.io.*;
  * Использовать BufferedReader
  */
 public class Classwork36 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args){
         String path1 = "/some/incorrect/file.txt";
         String path2 = null;
         String path3 = "src/Lessons/Lesson_36/src/practice/classwork/out.txt";
+        try {
+            System.out.println("countWordsInFile(path1) = " + countWordsInFile(path1));
+            System.out.println("countWordsInFile(path2) = " + countWordsInFile(path2));
+            System.out.println("countWordsInFile(path3) = " + countWordsInFile(path3));
 
-        System.out.println("countWordsInFile(path1) = " + countWordsInFile(path1));
-        System.out.println("countWordsInFile(path2) = " + countWordsInFile(path2));
-        System.out.println("countWordsInFile(path3) = " + countWordsInFile(path3));
-
+        } catch (IOException e) {
+            System.err.println("Ошибка при обработке файла: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     // учесть обработку ошибок
@@ -46,6 +50,7 @@ public class Classwork36 {
                     wordsCount += words.length;
                 }
             } catch (IOException e) {
+                System.err.println("Ошибка при обработке файла: " + e.getMessage());
                 e.printStackTrace();
             }
         }
