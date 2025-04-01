@@ -12,12 +12,12 @@ public class SerializationDemo {
         System.out.println("Original User Profile: " + user);
 
         // Сериализация
-        //serialize(user, fileName);
+        serialize(user, fileName);
 
         // Десериализация
-        //UserProfile deserializedUser = deserialize(fileName);
+        UserProfile deserializedUser = deserialize(fileName);
 
-        //System.out.println("Deserialized User Profile: " + deserializedUser);
+        System.out.println("Deserialized User Profile: " + deserializedUser);
 
     }
 
