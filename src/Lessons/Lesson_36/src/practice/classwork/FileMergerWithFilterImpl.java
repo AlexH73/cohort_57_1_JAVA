@@ -53,6 +53,8 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
 
             for (String path : inputFilePaths) {
 
+                // данная конструкция нужна тк у нас список файлов и мы создаем много BufferedReader
+                // каждый раз открывая новое соединение и тратя ресурсы
                 try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
                     // считывает из файла текст до переноса строки
                     String line = bfReader.readLine();
