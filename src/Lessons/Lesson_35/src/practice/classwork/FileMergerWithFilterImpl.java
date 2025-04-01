@@ -34,12 +34,12 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
         try {
             for (String path : inputFilePaths) {
                 bfReader = new BufferedReader(new FileReader(path));
-
-                String line = bfReader.readLine();
-                while (line != null) {
-                    bfWriter.write(line + "\n");
-
-                    line = bfReader.readLine();
+                String line;
+                while ((line = bfReader.readLine()) != null) {
+                    if (!line.contains(keyword)) {
+                        bfWriter.write(line);
+                        bfWriter.newLine();
+                    }
                 }
             }
         } catch (IOException ioException) {
