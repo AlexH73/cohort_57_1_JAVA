@@ -1,20 +1,18 @@
 package Lessons.Lesson_36.src.practice.classwork;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 /**
  * Прочитать содержимое файла и вернуть количество слов в этом файле<p>
- *     словом считается что егодно, кроме пробела,
- *     что слева и справа имеет пробелы или перенос строк/новую строку.
- *
+ * словом считается что егодно, кроме пробела,
+ * что слева и справа имеет пробелы или перенос строк/новую строку.
+ * <p>
  * Использовать BufferedReader
- *
  */
 public class Classwork36 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         String path1 = "/some/incorrect/file.txt";
-        String path2 =null;
+        String path2 = null;
         String path3 = "src/Lessons/Lesson_36/src/practice/classwork/out.txt";
 
         System.out.println("countWordsInFile(path1) = " + countWordsInFile(path1));
@@ -26,14 +24,29 @@ public class Classwork36 {
     // учесть обработку ошибок
     // использовать счетчик слов, увеливае его на количество слов в каждой строке
     // те использовать цикл для подсчета
-    private static int countWordsInFile(String path) {
+    private static int countWordsInFile(String path) throws FileNotFoundException {
         // обратить внимание на метод split в классе String, чтобы разбить строку на массив слов
         // и через длину массива узнать количество слов.
 
+        int wordsCount = 0;
 
-        try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
+        if (path == null) {
+            return -1;
+        }
+        File filePath = new File(path);
+        if (filePath.isFile()) {
+            try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
+                String line = bfReader.readLine();
+                while (line != null) {
+                    String[] words = line.split(" ");
+                    wordsCount+= words.length;
+
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
-        return -1;
+            return wordsCount;
     }
 }
