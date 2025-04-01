@@ -1,7 +1,7 @@
 <details>
-<summary>Lesson 35. Practice IO in Java</summary>
+<summary>Lesson 36. Practice IO in Java</summary>
 
-# Lesson 35. Practice IO in Java
+# Lesson 36. Practice IO in Java
 
 ## Introduction to IO in Java
 
@@ -416,9 +416,9 @@ processing of archived data in Java applications.
 ------------------------
 
 <details>
-<summary>Урок 35. Практика IO в Java</summary>
+<summary>Урок 36. Практика IO в Java</summary>
 
-# Урок 35. Практика IO в Java
+# Урок 36. Практика IO в Java
 
 ## Введение в IO в Java
 
