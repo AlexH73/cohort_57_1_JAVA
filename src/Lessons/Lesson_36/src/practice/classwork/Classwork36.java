@@ -37,7 +37,8 @@ public class Classwork36 {
         if (filePath.isFile()) {
             try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
                 String line = bfReader.readLine();
-                while (line != null) {
+                while ((line = bfReader.readLine()) != null) {
+                    if (line.isEmpty()) continue;
                     String[] words = line.split(" ");
                     wordsCount+= words.length;
 
