@@ -27,6 +27,10 @@ public class Classwork36 {
     // использовать счетчик слов, увеливае его на количество слов в каждой строке
     // те использовать цикл для подсчета
     private static int countWordsInFile(String path) {
+        // обратить внимание на метод split в классе String, чтобы разбить строку на массив слов
+        // и через длину массива узнать количество слов.
+
+
         try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
 
         }
