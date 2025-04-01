@@ -33,20 +33,21 @@ public class Classwork36 {
         if (path == null) {
             return -1;
         }
+
         File filePath = new File(path);
         if (filePath.isFile()) {
             try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
-                String line = bfReader.readLine();
+
+                String line;
                 while ((line = bfReader.readLine()) != null) {
                     if (line.isEmpty()) continue;
-                    String[] words = line.split(" ");
-                    wordsCount += words.length;
 
+                    String[] words = line.split("\\s+"); // "\\s+" - Учитываем любое количество пробелов
+                    wordsCount += words.length;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
         return wordsCount;
     }
