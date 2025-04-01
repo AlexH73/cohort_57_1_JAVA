@@ -46,36 +46,35 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
         File writFile = new File(outputFilePath);
         writFile.createNewFile();
 
-        BufferedReader bfReader = null;
 
         // в качестве аргумента при создании FileWriter(outputFilePath, true) добавлен "true" - эта опция позволяет
         // дозаписывать текст в файл, а не записывать каждый раз с нуля, удаляя старый текст.
-        try (BufferedWriter bfWriter = new BufferedWriter(new FileWriter(outputFilePath, true))){
+        try (BufferedWriter bfWriter = new BufferedWriter(new FileWriter(outputFilePath, true))) {
 
             for (String path : inputFilePaths) {
 
-                bfReader = new BufferedReader(new FileReader(path));
+                // данная конструкция нужна тк у нас список файлов и мы создаем много BufferedReader
+                // каждый раз открывая новое соединение и тратя ресурсы
+                try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
+                    // считывает из файла текст до переноса строки
+                    String line = bfReader.readLine();
+                    while (line != null) {
+                        if (!line.contains(keyword)) {
+                            bfWriter.write(line + "\n");
 
-                // считывает из файла текст до переноса строки
-                String line = bfReader.readLine();
-                while (line != null) {
-                    if (!line.contains(keyword)) {
-                        bfWriter.write(line + "\n");
+                            // метод flush() - записывает то, что было в буфере в файл, если его не использовать,
+                            // то информация будет записана, только когда будем закрывать BufferedWriter, то есть
+                            // при операции bfWriter.close(). Это не правильно, тк буфер может переполниться и
+                            // мы потеряем данные
+                            bfWriter.flush();
+                        }
 
-                        // метод flush() - записывает то, что было в буфере в файл, если его не использовать,
-                        // то информация будет записана, только когда будем закрывать BufferedWriter, то есть
-                        // при операции bfWriter.close(). Это не правильно, тк буфер может переполниться и
-                        // мы потеряем данные
-                        bfWriter.flush();
+                        line = bfReader.readLine();
                     }
-
-                    line = bfReader.readLine();
                 }
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
-        } finally {
-            bfReader.close();
         }
     }
 }
