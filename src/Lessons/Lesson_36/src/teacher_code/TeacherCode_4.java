@@ -9,10 +9,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class TeacherCode_4 {
     public static void main(String[] args) throws IOException {
-        // usingFileInputStream();
-        // usingFileOutputStream();
-        usingFileReader();
-        usingFileWriter();
+         usingFileInputStream();
+         usingFileOutputStream();
+        //usingFileReader();
+        //usingFileWriter();
 
 
     }
