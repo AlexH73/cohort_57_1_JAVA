@@ -40,7 +40,7 @@ public class Classwork36 {
                 while ((line = bfReader.readLine()) != null) {
                     if (line.isEmpty()) continue;
                     String[] words = line.split(" ");
-                    wordsCount+= words.length;
+                    wordsCount += words.length;
 
                 }
             } catch (IOException e) {
@@ -48,6 +48,6 @@ public class Classwork36 {
             }
 
         }
-            return wordsCount;
+        return wordsCount;
     }
 }
