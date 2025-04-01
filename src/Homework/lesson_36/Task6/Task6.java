@@ -1,4 +1,4 @@
-package Homework.lesson_35;
+package Homework.lesson_36.Task6;
 
 import java.io.File;
 

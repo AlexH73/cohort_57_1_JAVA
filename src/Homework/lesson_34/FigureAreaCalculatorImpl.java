@@ -19,7 +19,7 @@ public class FigureAreaCalculatorImpl implements FigureAreaCalculator {
             double s = (a + b + c) / 2;
             return Math.sqrt(s * (s - a) * (s - b) * (s - c));
         } else {
-            throw new IncorrectFigureSizeException(" Неверное количество сторон: " + size);
+            throw new IncorrectFigureSizeException(" Неверное количество аргументов: " + size);
         }
     }
 

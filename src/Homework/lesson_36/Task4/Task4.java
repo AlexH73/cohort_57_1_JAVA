@@ -1,4 +1,4 @@
-package Homework.lesson_35;
+package Homework.lesson_36.Task4;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,8 +27,7 @@ public class Task4{
         // Чтение строк из файла
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
-            while ((line = reader.readLine()) != null) ;
-            {
+            while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
         } catch (FileNotFoundException e) {
