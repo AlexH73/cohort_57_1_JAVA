@@ -9,10 +9,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class TeacherCode_4 {
     public static void main(String[] args) throws IOException {
-        // usingFileInputStream();
-        // usingFileOutputStream();
-        usingFileReader();
-        usingFileWriter();
+         usingFileInputStream();
+         usingFileOutputStream();
+        //usingFileReader();
+        //usingFileWriter();
 
 
     }
@@ -87,6 +87,7 @@ public class TeacherCode_4 {
         try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("output.bin"))) {
             byte[] data = "hello Java".getBytes();// инициализация данных для записи;
             bos.write(data);
+            bos.flush();
             // Запись выполняется эффективно, используя буфер для сбора данных перед их записью на диск.
         } catch (IOException e) {
             e.printStackTrace();
