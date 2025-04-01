@@ -1,6 +1,7 @@
 package Homework.lesson_36;
 
 import java.io.*;
+import java.util.*;
 
 /**
  * Класс с задачами на работу с файлами. Реализация методов пока отсутствует.
@@ -28,36 +29,31 @@ public class FileTasks {
      * @param outputFile файл для записи результата
      */
     public void copyFileWithLineNumbers(File inputFile, File outputFile) throws IOException {
-        File readFile = new File(inputFilePath);
-        File WriteFile = new File(outputFilePath);
-
-        if (!writeFile.exists()) {
-            writeFile.createNewFile();
+        // Sicherstellen, dass die Ausgabedatei existiert
+        if (!outputFile.exists()) {
+            outputFile.createNewFile();
         }
 
-        FileReader reader = new FileReader(riedFile);
-        FileWriter writer = new FileWriter(writeFile);
+        // Try-with-resources zur automatischen Schließung der Streams
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile))) {
 
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        BufferedWriter bufferedWriter = new BufferedWriter(writer);
-
-        try {
-            int counter = 1;
-            String line = bufferedReader.readLine();
-
-            while (line != null) {
-                String string = counter + ". " + line + "\n";
-                bufferedWriter.write(string);
-                counter++;
-                line = bufferedReader.readLine();
+            int zeilenNummer = 1; // Zähler für die Zeilennummerierung
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                // Hinzufügen der Zeilennummer vor der eigentlichen Zeile
+                bufferedWriter.write(zeilenNummer + ". " + zeile);
+                bufferedWriter.newLine();
+                zeilenNummer++;
             }
-        } catch (IOException ioException) {
-        ioException.printStackTrace();
-    }finally {
-        bufferedReader.close();
-        bufferedWriter.close();
+        } catch (FileNotFoundException e) {
+            System.err.println("Datei nicht gefunden: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Ein I/O-Fehler ist aufgetreten: " + e.getMessage());
+        }
     }
-        // TODO: Реализовать метод
+
+    // TODO: Реализовать метод
 
     /**
      * Задача 4: Сортировка строк в текстовом файле и запись в новый файл.
@@ -74,9 +70,38 @@ public class FileTasks {
      * @param inputFile  исходный файл
      * @param outputFile файл для записи отсортированных строк
      */
-    public void sortLinesInFile(File inputFile, File outputFile) {
-        // TODO: Реализовать метод
+    public void sortLinesInFile(File inputFile, File outputFile) throws IOException {
+        // Liste zum Speichern der Zeilen
+        List<String> zeilen = new ArrayList<>();
+
+        // Lesen der Datei und Hinzufügen der Zeilen zur Liste
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile))) {
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                zeilen.add(zeile);
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("Datei nicht gefunden: " + e.getMessage());
+            return; // Methode abbrechen, falls Datei fehlt
+        } catch (IOException e) {
+            System.err.println("Ein I/O-Fehler ist aufgetreten: " + e.getMessage());
+            return;
+        }
+
+        // Sortieren der Liste
+        Collections.sort(zeilen);
+
+        // Schreiben der sortierten Zeilen in die Ausgabedatei
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile))) {
+            for (String line : zeilen) {
+                bufferedWriter.write(line);
+                bufferedWriter.newLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Ein I/O-Fehler ist beim Schreiben aufgetreten: " + e.getMessage());
+        }
     }
+
 
     /**
      * Задача 6: Замена слова в текстовом файле.
@@ -97,7 +122,23 @@ public class FileTasks {
      * @param oldWord    слово, которое нужно заменить
      * @param newWord    новое слово
      */
-    public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) {
-        // TODO: Реализовать метод
+    public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) throws IOException {
+        // Try-with-resources zur automatischen Verwaltung der Streams
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile))) {
+
+            String zeile;
+            while ((zeile = bufferedReader.readLine()) != null) {
+                // Ersetzen aller Vorkommen des alten Worts
+                String neueZeile = zeile.replace(oldWord, newWord);
+                bufferedWriter.write(neueZeile);
+                bufferedWriter.newLine();
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("Datei nicht gefunden: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Ein I/O-Fehler ist aufgetreten: " + e.getMessage());
+        }
     }
+
 }

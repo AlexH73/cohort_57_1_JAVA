@@ -1,13 +1,10 @@
-package Lessons.Lesson_36.src.teacher_code;
+package Homework.lesson_36;
 
 import java.io.*;
-import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
 
-
-public class TeacherCode_4 {
+public class TeacherCode_4_1 {
     public static void main(String[] args) throws IOException {
         String path = "src/Lessons/Lesson_36/src/teacher_code/file.txt";
 
