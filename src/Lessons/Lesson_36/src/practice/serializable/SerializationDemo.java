@@ -5,10 +5,9 @@ import java.util.Collection;
 
 public class SerializationDemo {
     public static void main(String[] args) {
-        UserProfile user = new UserProfile("User123", "secretPassword", 30);
-
         String fileName = "src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser";
 
+        UserProfile user = new UserProfile("User123", "secretPassword", 30);
         System.out.println("Original User Profile: " + user);
 
         // Сериализация
@@ -16,7 +15,6 @@ public class SerializationDemo {
 
         // Десериализация
         UserProfile deserializedUser = deserialize(fileName);
-
         System.out.println("Deserialized User Profile: " + deserializedUser);
 
     }
