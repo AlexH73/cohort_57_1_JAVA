@@ -1,6 +1,7 @@
 package Homework.lesson_35;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Класс с задачами на закрепление методов класса {@link File}.
@@ -66,17 +67,21 @@ public class FileInfoTasks {
      *
      * @param file файл, который нужно создать
      */
-    public void createFileIfNotExists(File file) {
-        if (file.exists()) {
-            if (file.isFile()) {
-                System.out.println(file + " - это файл.");
-            } else if (file.isDirectory()) {
-                System.out.println(file + " - это директория.");
+public void createFileIfNotExists(File file) {
+    if (!file.exists()) {
+        try {
+            if (file.createNewFile()) {
+                System.out.println("Файл создан: " + file);
+            } else {
+                System.out.println("Не удалось создать файл: " + file);
             }
-        } else {
-            System.out.println("Файл или директория не существует: " + file);
+        } catch (IOException e) {
+            System.out.println("Ошибка при создании файла: " + e.getMessage());
         }
+    } else {
+        System.out.println("Файл уже существует: " + file);
     }
+}
 
     /**
      * Задача 4: Удаление файла или директории.
