@@ -19,7 +19,7 @@ public class ZipFileExample {
         String dirPath = "src/Lessons/Lesson_36/src/practice/io_stream/";
         String[] files = {dirPath + "file1.txt", dirPath + "file2.txt"};
         String zipFile = dirPath + "archive.zip";
-        String extractDir = "extractedFiles";
+        String extractDir = dirPath + "extractedFiles";
 
         createZipArchive(zipFile, files);
         extractZipArchive(zipFile, extractDir);
@@ -30,6 +30,7 @@ public class ZipFileExample {
             for (String filePath : filePaths) {
                 File file = new File(filePath);
                 if (!file.exists()) {
+                    file.createNewFile();
                     System.out.println("File does not exist: " + filePath);
                     continue;
                 }
