@@ -1,6 +1,6 @@
 package Homework.lesson_36.Task6;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Задача 6: Замена слова в текстовом файле.
@@ -23,7 +23,22 @@ import java.io.File;
  */
 
 public class Task6 {
-    public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord){
+    public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line.replace(oldWord, newWord));
+                writer.newLine();
+            }
+
+            System.out.println("Файл успешно обработан и сохранен в: " + outputFile.getAbsolutePath());
+        } catch (FileNotFoundException e) {
+            System.err.println("Ошибка: Файл не найден - " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Ошибка ввода/вывода -  " + e.getMessage());
+        }
 
     }
 }
