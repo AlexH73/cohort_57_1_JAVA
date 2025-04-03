@@ -42,12 +42,13 @@ public class Classwork36 {
         if (filePath.isFile()) {
             try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
 
-                String line;
-                while ((line = bfReader.readLine()) != null) {
-                    if (line.isEmpty()) continue;
-
-                    String[] words = line.split("\\s+"); // "\\s+" - Учитываем любое количество пробелов
-                    wordsCount += words.length;
+                String line = bfReader.readLine();
+                while (line != null) {
+                    if (!line.isBlank()) {
+                        String[] words = line.split("\\s+"); // "\\s+" - Учитываем любое количество пробелов
+                        wordsCount += words.length;
+                    }
+                    line = bfReader.readLine();
                 }
             } catch (IOException e) {
                 System.err.println("Ошибка при обработке файла: " + e.getMessage());
