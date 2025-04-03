@@ -43,9 +43,13 @@ public class Classwork36 {
             try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
 
                 String line = bfReader.readLine();
+
                 while (line != null) {
                     if (!line.isBlank()) {
+                        //String[] words = line.split(" "); // "\\s+" - Учитываем любое количество пробелов
+                        // words = "one two  three".split(" ") -> {"one", "two", "", "three"}
                         String[] words = line.split("\\s+"); // "\\s+" - Учитываем любое количество пробелов
+                        //words = "one two  three".split("\\s+") -> {"one", "two", "three"}
                         wordsCount += words.length;
                     }
                     line = bfReader.readLine();
