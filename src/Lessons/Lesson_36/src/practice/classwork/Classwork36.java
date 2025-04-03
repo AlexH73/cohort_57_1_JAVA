@@ -2,6 +2,7 @@ package Lessons.Lesson_36.src.practice.classwork;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Прочитать содержимое файла и вернуть количество слов в этом файле<p>
@@ -33,6 +34,8 @@ public class Classwork36 {
 
         try (BufferedReader bfReader = new BufferedReader(new FileReader(path))) {
 
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return -1;
     }
