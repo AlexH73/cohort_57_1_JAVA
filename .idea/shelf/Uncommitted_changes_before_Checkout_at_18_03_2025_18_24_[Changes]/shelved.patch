@@ -1,0 +1,51 @@
+Index: src/HomeWork/lesson_30/ListOfNumber.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Homework.lesson_30;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class ListOfNumbers {\r\n    public static void main(String[] args) {\r\n        List<Integer> numbers = new ArrayList<>();\r\n\r\n        numbers.add(11);\r\n        numbers.add(22);\r\n        numbers.add(33);\r\n        numbers.add(44);\r\n        numbers.add(55);\r\n        numbers.add(66);\r\n\r\n        System.out.println(\"Список: \" + numbers);\r\n\r\n        numbers.remove(2);\r\n        System.out.println(\"Список после удаления элемента: \" + numbers);\r\n\r\n        // Обновление значения элемента по индексу\r\n        numbers.set(1, 25);\r\n        System.out.println(\"Список после обновления: \" + numbers);\r\n\r\n        // Содержит ли список определённое число\r\n        boolean contains = numbers.contains(27);\r\n        System.out.println(\"Список содержит число 27: \" + contains);\r\n\r\n        int size = numbers.size();\r\n        System.out.println(\"Размер списка: \" + size);\r\n\r\n        numbers.clear();\r\n        System.out.println(\"Список после очистки: \" + numbers);\r\n    }\r\n}\r\n\r\n
+===================================================================
+diff --git a/src/HomeWork/lesson_30/ListOfNumber.java b/src/HomeWork/lesson_30/ListOfNumber.java
+--- a/src/HomeWork/lesson_30/ListOfNumber.java	(revision 81d3166374a4346b87b4a20de6cfe95d3b817196)
++++ b/src/HomeWork/lesson_30/ListOfNumber.java	(date 1742056503743)
+@@ -3,7 +3,7 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-public class ListOfNumbers {
++public class ListOfNumber {
+     public static void main(String[] args) {
+         List<Integer> numbers = new ArrayList<>();
+ 
+Index: src/HomeWork/lesson_30/UserOfList.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Homework.lesson_30;\r\n\r\nimport java.util.LinkedList;\r\nimport java.util.List;\r\n\r\npublic class UserList {\r\n    public static void main(String[] args) {\r\n        List<String> userList = new LinkedList<>();\r\n\r\n        userList.add(\"Petrow\");\r\n        userList.add(\"Iwanow\");\r\n        userList.add(\"Sidorow\");\r\n        userList.add(\"Neumann\");\r\n        userList.add(\"Gofman\");\r\n\r\n        System.out.println(\"Список пользователей: \");\r\n        for (String user : userList) {\r\n            System.out.println(user);\r\n        }\r\n\r\n        int index = userList.indexOf(\"Neumann\");\r\n        System.out.println(\"\\nNeumann находится под индексом: \" + index);\r\n\r\n        userList.add(4,\"Smirnof\");\r\n        System.out.println(\"\\nОбновляет имя пользователя по 4 индексу: \\n\" + userList);\r\n\r\n        userList.remove(3);\r\n        System.out.println(\"\\nУдалён объект `Neumann`: \" + userList);\r\n\r\n        System.out.println(\"\\nНовый cписок пользователей: \");\r\n        for (String user : userList) {\r\n            System.out.println(user);\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/HomeWork/lesson_30/UserOfList.java b/src/HomeWork/lesson_30/UserOfList.java
+--- a/src/HomeWork/lesson_30/UserOfList.java	(revision 81d3166374a4346b87b4a20de6cfe95d3b817196)
++++ b/src/HomeWork/lesson_30/UserOfList.java	(date 1742056383675)
+@@ -3,7 +3,7 @@
+ import java.util.LinkedList;
+ import java.util.List;
+ 
+-public class UserList {
++public class UserOfList {
+     public static void main(String[] args) {
+         List<String> userList = new LinkedList<>();
+ 
+Index: src/HomeWork/lesson_30/ListOfStrings.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Homework.lesson_30;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\n\r\npublic class ListOfString {\r\n    public static void main(String[] args) {\r\n        List<String> stringList = new ArrayList<>();\r\n\r\n        stringList.add(\"Mercedes\");\r\n        stringList.add(\"BMW\");\r\n        stringList.add(\"Opel\");\r\n        stringList.add(\"Volkswagen\");\r\n        stringList.add(\"Porsche\");\r\n\r\n       //Итерация\r\n        System.out.println(\"Строки в списке:\");\r\n        for (String carMake : stringList) {\r\n            System.out.println(\"Марка машины - \" + carMake);\r\n        }\r\n\r\n        // Ищем конкретную строку в списке\r\n        String searchString = \"Opel\";\r\n        if (stringList.contains(searchString)) {\r\n            System.out.println(\"\\nСтрока \\\"\" + searchString + \"\\\" найдена в списке.\");\r\n        } else {\r\n            System.out.println(\"\\nСтрока \\\"\" + searchString + \"\\\" не найдена в списке.\");\r\n        }\r\n\r\n        // Удаляем найденную строку\r\n        if (stringList.remove(searchString)) {\r\n            System.out.println(\"Строка \\\"\" + searchString + \"\\\" удалена из списка.\");\r\n        } else {\r\n            System.out.println(\"Строка \\\"\" + searchString + \"\\\" не была удалена, так как не найдена.\");\r\n        }\r\n\r\n        // Сортируем список в лексикографическом порядке\r\n        Collections.sort(stringList);\r\n\r\n        // Выводим отсортированный список\r\n        System.out.println(\"\\nОтсортированный список:\");\r\n        for (String str : stringList) {\r\n            System.out.println(str);\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/HomeWork/lesson_30/ListOfStrings.java b/src/HomeWork/lesson_30/ListOfStrings.java
+--- a/src/HomeWork/lesson_30/ListOfStrings.java	(revision 81d3166374a4346b87b4a20de6cfe95d3b817196)
++++ b/src/HomeWork/lesson_30/ListOfStrings.java	(date 1742056503750)
+@@ -4,7 +4,7 @@
+ import java.util.Collections;
+ import java.util.List;
+ 
+-public class ListOfString {
++public class ListOfStrings {
+     public static void main(String[] args) {
+         List<String> stringList = new ArrayList<>();
+ 

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8fd34a03-0908-40e3-97fb-62a49367703b" name="Changes" comment="HomeWork 34">
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/main" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JuriBuerkle&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlexH73/cohort_57_1_JAVA.git&quot;,
+    &quot;accountId&quot;: &quot;efafe940-0e64-463d-b9a9-fe744e9e5c7e&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2tuLeSL4xw3AShHJLvdoUtzReHv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Arrays20.executor": "Run",
+    "Application.Classwork.executor": "Run",
+    "Application.Classwork36.executor": "Run",
+    "Application.CollectionOperationsHomeworkUsage.executor": "Run",
+    "Application.ExampleCheckedException.executor": "Run",
+    "Application.FigureAreaCalculatorImplUsage.executor": "Run",
+    "Application.FileInfoTasksTest.executor": "Run",
+    "Application.Homework.Lesson_25.PaymentMethodUsage.executor": "Run",
+    "Application.Homework.lesson_28.ProgrammerUsage.executor": "Run",
+    "Application.ListOfNumber.executor": "Run",
+    "Application.ListOfNumbers.executor": "Run",
+    "Application.ListOfString.executor": "Run",
+    "Application.ListOfStrings.executor": "Run",
+    "Application.MapExample.executor": "Run",
+    "Application.MapOperationsDemo.executor": "Run",
+    "Application.PaymentMethodUsage.executor": "Run",
+    "Application.PerformanceComparison.executor": "Run",
+    "Application.PerformanceComparisonGUI.executor": "Run",
+    "Application.Playlist.executor": "Run",
+    "Application.ProgrammerUsage.executor": "Run",
+    "Application.ProgrammersListUsage.executor": "Run",
+    "Application.QueueOperationsDemo.executor": "Run",
+    "Application.SerializationDemo.executor": "Run",
+    "Application.SmartHome.executor": "Run",
+    "Application.TeacherCode.executor": "Run",
+    "Application.TeacherCode2.executor": "Run",
+    "Application.TeacherCode_4.executor": "Run",
+    "Application.UserList.executor": "Run",
+    "Application.UserOfList.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Juri",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/burkl/Desktop",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.PerformanceComparison">
+    <configuration name="Classwork36" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.practice.classwork.Classwork36" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_36.src.practice.classwork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PerformanceComparison" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37.src.practice.PerformanceComparison" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_37.src.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SerializationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.practice.serializable.SerializationDemo" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_36.src.practice.serializable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeacherCode2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37.src.teacher_code.TeacherCode2" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_37.src.teacher_code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeacherCode_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.teacher_code.TeacherCode_4" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_36.src.teacher_code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PerformanceComparison" />
+        <item itemvalue="Application.TeacherCode2" />
+        <item itemvalue="Application.Classwork36" />
+        <item itemvalue="Application.SerializationDemo" />
+        <item itemvalue="Application.TeacherCode_4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8fd34a03-0908-40e3-97fb-62a49367703b" name="Changes" comment="" />
+      <created>1741197107180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741197107180</updated>
+    </task>
+    <task id="LOCAL-00001" summary="HomeWork 28">
+      <option name="closed" value="true" />
+      <created>1741515420379</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741515420379</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated">
+      <option name="closed" value="true" />
+      <created>1741519069706</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741519069706</updated>
+    </task>
+    <task id="LOCAL-00003" summary="HomeWork 28">
+      <option name="closed" value="true" />
+      <created>1741521258397</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741521258397</updated>
+    </task>
+    <task id="LOCAL-00004" summary="HomeWork 27">
+      <option name="closed" value="true" />
+      <created>1741521618362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741521618362</updated>
+    </task>
+    <task id="LOCAL-00005" summary="HomeWork 30">
+      <option name="closed" value="true" />
+      <created>1742056385159</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742056385159</updated>
+    </task>
+    <task id="LOCAL-00006" summary="HomeWork 30">
+      <option name="closed" value="true" />
+      <created>1742056504915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742056504915</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <option name="closed" value="true" />
+      <created>1742318908672</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742318908672</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <option name="closed" value="true" />
+      <created>1742318968062</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742318968062</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Homework 31">
+      <option name="closed" value="true" />
+      <created>1742400067817</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742400067817</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Homework 31">
+      <option name="closed" value="true" />
+      <created>1742404165976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742404165976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="HomeWork 32/0">
+      <option name="closed" value="true" />
+      <created>1742485852861</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742485852861</updated>
+    </task>
+    <task id="LOCAL-00012" summary="HomeWork">
+      <option name="closed" value="true" />
+      <created>1742983112641</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742983112641</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HomeWork">
+      <option name="closed" value="true" />
+      <created>1742990389104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742990389104</updated>
+    </task>
+    <task id="LOCAL-00014" summary="HomeWork 34/0">
+      <option name="closed" value="true" />
+      <created>1743071293817</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1743071293817</updated>
+    </task>
+    <task id="LOCAL-00015" summary="HomeWork 34/0,5">
+      <option name="closed" value="true" />
+      <created>1743075434991</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1743075434991</updated>
+    </task>
+    <task id="LOCAL-00016" summary="HomeWork 34">
+      <option name="closed" value="true" />
+      <created>1743332957486</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1743332957486</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated" />
+    <MESSAGE value="HomeWork 28" />
+    <MESSAGE value="HomeWork 27" />
+    <MESSAGE value="HomeWork 30" />
+    <MESSAGE value="Homework 31" />
+    <MESSAGE value="update" />
+    <MESSAGE value="HomeWork 31" />
+    <MESSAGE value="HomeWork 32/0" />
+    <MESSAGE value="HomeWork" />
+    <MESSAGE value="HomeWork 34/0" />
+    <MESSAGE value="HomeWork 34/0,5" />
+    <MESSAGE value="HomeWork 34" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork 34" />
+  </component>
+</project>
