@@ -4,6 +4,10 @@
 
 В Java интерфейс коллекции ``(java.util.Collection)`` и интерфейс Map ``(java.util.Map)`` — два основных «корневых» интерфейса классов коллекций Java.
 
+<p align="center">
+  <img src="./images/java_collections.webp" alt="Java Collections Diagram" width="822"/>
+</p>
+
 ---
 
 **Какой из следующих интерфейсов наиболее подходящий для представления упорядоченного списка объектов?**
