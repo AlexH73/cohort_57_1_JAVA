@@ -74,15 +74,50 @@ public class ComplexityAssessment {
 
 
     // Метод 3
+    /**
+     * Выполняет две константные операции и двойной вложенный цикл.
+     * Во внутреннем цикле происходит вывод суммы индексов {@code i + j}.
+     *
+     * <p>Анализ временной сложности:</p>
+     *
+     * <ul>
+     *   <li><b>Константные операции:</b>
+     *     <ul>
+     *       <li>{@code System.out.println("Start")}</li>
+     *       <li>{@code System.out.println("Another constant operation")}</li>
+     *     </ul>
+     *     Обе выполняются один раз, независимо от входного параметра {@code n}, то есть — {@code O(1)}.</li>
+     *
+     *   <li><b>Внешний цикл:</b> {@code for (int i = 0; i < n; i++)} —
+     *       выполняется {@code n} раз.</li>
+     *
+     *   <li><b>Внутренний цикл:</b> {@code for (int j = 0; j < n; j++)} —
+     *       выполняется {@code n} раз для каждой итерации внешнего цикла.</li>
+     *
+     *   <li>Итого, вложенные циклы выполняют {@code n * n = n²} итераций, и на каждой итерации
+     *       выполняется операция вывода {@code System.out.println(i + j)} — она считается как {@code O(1)}.</li>
+     * </ul>
+     *
+     * <p><b>Общая временная сложность:</b></p>
+     * <pre>
+     *     O(1) (константы) + O(n²) (вложенные циклы) = O(n²)
+     * </pre>
+     *
+     * <p>Так как при асимптотическом анализе константы не учитываются,
+     * итоговая временная сложность метода — {@code O(n²)}.</p>
+     *
+     * @param n Размер входных данных, определяет количество итераций обоих циклов.
+     */
     public static void method3(int n) {
-        System.out.println("Start");
-        System.out.println("Another constant operation");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.println(i + j);
+        System.out.println("Start");                     // O(1)
+        System.out.println("Another constant operation");// O(1)
+        for (int i = 0; i < n; i++) {                    // O(n)
+            for (int j = 0; j < n; j++) {                // O(n) вложенный
+                System.out.println(i + j);               // O(1)
             }
         }
     }
+
 
     // Метод 4
     public static void method4(int n) {
