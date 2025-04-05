@@ -2,7 +2,7 @@
 
 ---
 <details>
-<summary>Можно ли унаследоваться от final класса?</summary>
+<summary>Можно ли унаследоваться от <code>final</code> класса?</summary>
 
 ## ❓Можно ли унаследоваться от `final` класса и почему?
 ### ⚠️ Ответ:
@@ -39,7 +39,7 @@ public class Dog extends Animal {
 </details>
 </details>
 <details>
-<summary>Можно ли унаследовать приватные поля private?</summary>
+<summary>Можно ли унаследовать приватные поля <code>private</code>?</summary>
 
 ## ❓Можно ли унаследовать приватные поля `private`?
 ### ⚠️ Ответ:
@@ -108,7 +108,7 @@ public class Parent {
 </details>
 </details>
 <details>
-<summary>Можно ли унаследовать статические (static) поля в Java?</summary>
+<summary>Можно ли унаследовать статические (<code>static</code>) поля в Java?</summary>
 
 ## ❓Можно ли унаследовать **статические (`static`) поля** в Java?
 ### ⚠️ Ответ:
