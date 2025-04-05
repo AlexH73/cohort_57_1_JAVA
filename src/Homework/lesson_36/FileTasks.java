@@ -38,12 +38,12 @@ public class FileTasks {
 
     public void copyFileWithLineNumbers(File inputFile, File outputFile) {
         if (inputFile == null || outputFile == null) {
-            System.out.println("Ошибка: файлы не должны быть null.");
+            System.out.println("Произошла ошибка. Файлы не должны быть null.");
             return;
         }
 
         if (!inputFile.exists()) {
-            System.out.println("Ошибка: исходный файл не найден.");
+            System.out.println("Произошла ошибка. Исходный файл не найден.");
             return;
         }
 
@@ -62,7 +62,7 @@ public class FileTasks {
             System.out.println("Файл успешно скопирован в " + outputFile.getPath());
 
         } catch (IOException e) {
-            System.out.println("Ошибка при обработке файлов: " + e.getMessage());
+            System.out.println("Произошла ошибка при обработке файлов: " + e.getMessage());
         }
     }
 
@@ -83,12 +83,12 @@ public class FileTasks {
      */
     public void sortLinesInFile(File inputFile, File outputFile) {
         if (inputFile == null || outputFile == null) {
-            System.out.println("Ошибка: файлы не должны быть null.");
+            System.out.println("Произошла ошибка. Файлы не должны быть null.");
             return;
         }
 
         if (!inputFile.exists()) {
-            System.out.println("Ошибка: исходный файл не найден.");
+            System.out.println("Произошла ошибка. Исходный файл не найден.");
             return;
         }
 
@@ -101,7 +101,7 @@ public class FileTasks {
                 lines.add(line);
             }
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            System.out.println("Произошла ошибка при чтении файла: " + e.getMessage());
             return;
         }
 
@@ -116,7 +116,7 @@ public class FileTasks {
             }
             System.out.println("Файл успешно отсортирован и записан в " + outputFile.getPath());
         } catch (IOException e) {
-            System.out.println("Ошибка при записи в файл: " + e.getMessage());
+            System.out.println("Произошла ошибка при записи в файл: " + e.getMessage());
         }
     }
 
@@ -141,12 +141,12 @@ public class FileTasks {
      */
     public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) {
         if (inputFile == null || outputFile == null || oldWord == null || newWord == null) {
-            System.out.println("Ошибка: входные параметры не должны быть null.");
+            System.out.println("Произошла ошибка. Входные параметры не должны быть null.");
             return;
         }
 
         if (!inputFile.exists()) {
-            System.out.println("Ошибка: исходный файл не найден.");
+            System.out.println("Произошла ошибка. Исходный файл не найден.");
             return;
         }
 
@@ -164,7 +164,7 @@ public class FileTasks {
             System.out.println("Замена слов выполнена. Результат записан в " + outputFile.getPath());
 
         } catch (IOException e) {
-            System.out.println("Ошибка при обработке файлов: " + e.getMessage());
+            System.out.println("Произошла ошибка при обработке файлов: " + e.getMessage());
         }
     }
 }
