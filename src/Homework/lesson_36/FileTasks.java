@@ -94,7 +94,6 @@ public class FileTasks {
 
         List<String> lines = new ArrayList<>();
 
-        // Читаем строки из файла и добавляем их в список
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -105,10 +104,8 @@ public class FileTasks {
             return;
         }
 
-        // Сортируем строки в алфавитном порядке
         Collections.sort(lines);
 
-        // Записываем отсортированные строки в новый файл
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             for (String sortedLine : lines) {
                 writer.write(sortedLine);
