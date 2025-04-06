@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class FileTasksTest {
 
-    private static final String baseDir = "src/Homework/lesson_35";
+    private static final String baseDir = "src/Homework/lesson_36";
     private static final FileTasks fileTasks = new FileTasks();
 
     public static void main(String[] args) {
