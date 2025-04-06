@@ -7,7 +7,9 @@ public class Classwork3 {
         int[] nums  = {1, 2, 3};
 
         printArr(nums);
+
         nums[2] = 234;
+
         printArr(nums);
 
         //nums[3] = 11;
