@@ -1,0 +1,5 @@
+Java IO is powerful.
+You can read, write, and manipulate files.
+exclude this line as well.
+Learning Java can improve your programming skills.
+Let's practice file operations.
