@@ -3162,12 +3162,12 @@ for (int i = 0; i < n; i++) {
 
 <details>
 <summary>Можно ли... ?</summary>
-...
+...это просто шаблон
 
 <details>
 <summary>↪️ Подробнее...⚠️</summary>
 
-...
+...тут более развернуто
 
 </details>
 </details>
