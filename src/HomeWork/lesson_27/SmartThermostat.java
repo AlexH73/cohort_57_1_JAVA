@@ -11,7 +11,7 @@ public class SmartThermostat implements Connectable {
 
     public void setTemperature(int targetTemp){
         this.targetTemperature = targetTemp;
-        System.out.println("Желаемая температура " + targetTemp);
+        System.out.println("Желаемая температура  " + targetTemp);
     }
 
     @Override

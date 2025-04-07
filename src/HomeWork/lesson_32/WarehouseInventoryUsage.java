@@ -7,7 +7,7 @@ public class WarehouseInventoryUsage {
     public static void main(String[] args) {
         Map<String, Integer> warenInventory = new HashMap<>();
 
-        warenInventory.put("Монитор", 25);
+        warenInventory.put("Монитор", 257);
         warenInventory.put("Клавиатура", 40);
         warenInventory.put("Мышь", 30);
 

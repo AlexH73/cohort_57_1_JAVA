@@ -1,3 +1,4 @@
+/*
 package Homework.lesson_32;
 
 import java.util.HashMap;
@@ -33,3 +34,4 @@ public class MapOperationsHomeworkUsage {
     }
 
 }
+*/

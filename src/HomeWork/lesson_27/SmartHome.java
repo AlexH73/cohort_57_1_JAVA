@@ -9,7 +9,7 @@ public class SmartHome {
         };
 
         for (Connectable device : devices) {
-            device.connectToWiFi("HomeWiFi");
+            device.connectToWiFi("HomeWifi");
             System.out.println("Статус подключения: " + device.CheckConnectionStatus());
             device.disconnectFromWiFi();
         }

@@ -1,3 +1,4 @@
+/*
 package Homework.lesson_32;
 
 import java.util.HashMap;
@@ -17,8 +18,8 @@ public class MapOperationsHomework implements MapOperationsHomeworkInterface {
      * - Исходная `Map<Integer, Integer>`: {1 -> 10, 2 -> 20, 3 -> 10, 4 -> 30}
      *   Ожидаемый результат: {2 -> 20, 4 -> 30}
      *
-     */
-
+*/
+/*
         /**
          * Удаляет дублирующиеся значения в переданной `Map`, оставляя только уникальные.
          * Если значение встречается более одного раза, все соответствующие ключи должны быть удалены.
@@ -28,12 +29,14 @@ public class MapOperationsHomework implements MapOperationsHomeworkInterface {
          * @param <K> Тип ключей.
          * @param <V> Тип значений.
          */
-        <K, V> void removeSameValuesAnyTypes (Map<K, V> map);
+ //       <K, V> void removeSameValuesAnyTypes (Map<K, V> map);
 
         /**
          * Упрощенная версия метода `removeSameValues`, работающая только с `Map<String, String>`.
          *
          * @param map Map с ключами и значениями типа `String`.
          */
-        void removeSameValues(Map<String, String> map);
-    }
+ //       void removeSameValues(Map<String, String> map);
+ /*   }
+
+*/

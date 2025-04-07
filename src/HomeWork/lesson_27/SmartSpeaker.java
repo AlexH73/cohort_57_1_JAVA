@@ -7,7 +7,7 @@ public class SmartSpeaker implements Connectable {
 
     public void adjustVolume(int level) {
         this.volumeLevel = level;
-        System.out.println("Громкость: " + level);
+        System.out.println("Громкость " + level);
     }
 
     public void playMusic(String track){

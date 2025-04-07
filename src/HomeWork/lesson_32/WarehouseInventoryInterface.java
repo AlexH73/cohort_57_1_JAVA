@@ -1,5 +1,7 @@
 package Homework.lesson_32;
 
+import java.util.Map;
+
 public interface WarehouseInventoryInterface {
 
     /**
