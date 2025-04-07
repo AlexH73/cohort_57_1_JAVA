@@ -1,0 +1,5 @@
+This is the third file for testing.
+File merging and filtering are useful techniques.
+Sometimes you need to exclude specific information.
+Like this line, exclude it from the final output.
+Happy coding!
