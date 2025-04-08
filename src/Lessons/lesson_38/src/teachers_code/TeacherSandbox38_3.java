@@ -56,10 +56,11 @@ public class TeacherSandbox38_3 {
     // O(n^2)
     private static void bubbleSort(int[] nums) {
         int counter = 1;
-        boolean sorted = true;
 
         for (int i = 0; i < nums.length; i++) {
             System.out.println(Arrays.toString(nums));
+            boolean sorted = true;
+
             for (int j = 1; j < nums.length; j++) {
                 counter++;
                 if (nums[j - 1] > nums[j]) {
