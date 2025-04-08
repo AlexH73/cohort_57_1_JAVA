@@ -26,6 +26,27 @@ public class FileMergerWithFilterImpl implements FileMergerWithFilter {
         //    2.3. Если строка НЕ содержит keyword, записать её в выходной файл
         //    2.4. Закрыть BufferedReader
         // Шаг 3. Закрыть BufferedWriter
+        File writFile = new File(outputFilePath);
+        writFile.createNewFile();
+        BufferedWriter bfWriter = new BufferedWriter(new FileWriter(outputFilePath, true));
+        BufferedReader bfReader = null;
 
+        try {
+            for (String path : inputFilePaths) {
+                bfReader = new BufferedReader(new FileReader(path));
+                String line;
+                while ((line = bfReader.readLine()) != null) {
+                    if (!line.contains(keyword)) {
+                        bfWriter.write(line);
+                        bfWriter.newLine();
+                    }
+                }
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } finally {
+            bfReader.close();
+            bfWriter.close();
+        }
     }
 }
