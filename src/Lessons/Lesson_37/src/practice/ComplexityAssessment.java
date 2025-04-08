@@ -3,8 +3,10 @@ package Lessons.Lesson_37.src.practice;
 public class ComplexityAssessment {
 
     // Метод 1
+    //
     public static void method1(int n) {
         System.out.println("Constant operation");
+
         for (int i = 0; i < n; i++) {
             System.out.println(i);
         }
