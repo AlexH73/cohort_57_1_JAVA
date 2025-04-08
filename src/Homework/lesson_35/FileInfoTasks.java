@@ -94,7 +94,25 @@ public class FileInfoTasks {
      * @param file файл или директория для удаления
      */
     public void deleteFileOrDirectory(File file) {
-        // TODO: Реализовать метод
+        if (file == null || !file.exists()) {
+            System.out.println("Файл или директория не существует.");
+            return;
+        }
+
+        if (file.isDirectory()) {
+            File[] contents = file.listFiles();
+            if (contents != null && contents.length > 0) {
+                System.out.println("Директория не пуста: " + file.getAbsolutePath());
+                return;
+            }
+        }
+
+        if (file.delete()) {
+            System.out.println("Удалено: " + file.getAbsolutePath());
+        } else {
+            System.out.println("Не удалось удалить: " + file.getAbsolutePath());
+        }
+
     }
 
     /**
@@ -110,7 +128,27 @@ public class FileInfoTasks {
      * @param dir директория для анализа
      */
     public void printDirectoryContents(File dir) {
-        // TODO: Реализовать метод
+        if (dir == null || !dir.exists()) {
+            System.out.println("Указанный путь не существует.");
+            return;
+        }
+
+        if (!dir.isDirectory()) {
+            System.out.println("Это не директория: " + dir.getAbsolutePath());
+            return;
+        }
+
+        File[] contents = dir.listFiles();
+        if (contents == null || contents.length == 0) {
+            System.out.println("Директория пуста: " + dir.getAbsolutePath());
+            return;
+        }
+
+        System.out.println("Содержимое директории: " + dir.getAbsolutePath());
+        for (File file : contents) {
+            System.out.println((file.isDirectory() ? "[DIR]" : "[FILE]") + file.getName());
+        }
+
     }
 
     /**
@@ -125,6 +163,22 @@ public class FileInfoTasks {
      * @param dir директория для создания
      */
     public void createDirectory(File dir) {
-        // TODO: Реализовать метод
+        if (dir == null || !dir.exists()) {
+            System.out.println("Ошибка: передан null-объект.");
+            return;
+        }
+
+        if (dir.exists()) {
+            System.out.println("Директория уже существует: " + dir.getAbsolutePath());
+            return;
+        }
+
+        if (dir.mkdir()) {
+            System.out.println("Директория создана: " + dir.getAbsolutePath());
+        } else {
+            System.out.println("Ошибка при создании директории: " + dir.getAbsolutePath());
+
+        }
+
     }
 }

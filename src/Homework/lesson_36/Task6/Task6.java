@@ -29,9 +29,13 @@ public class Task6 {
 
             String line;
             while ((line = reader.readLine()) != null) {
+
+
                 writer.write(line.replace(oldWord, newWord));
                 writer.newLine();
+
             }
+
 
             System.out.println("Файл успешно обработан и сохранен в: " + outputFile.getAbsolutePath());
         } catch (FileNotFoundException e) {

@@ -21,6 +21,7 @@ public class FileInfoTasksTest {
     }
 
     public static void testCheckFileType() {
+
         File file = new File("src/Homework/lesson_35/FileInfoTasks.java");
         File dir = new File("src/Homework/lesson_35");
 
