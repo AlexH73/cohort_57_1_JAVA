@@ -12,16 +12,18 @@ public class TeacherSandbox38_2 {
         int[] myLocalNums3 = {12, 5, -23, 898, 54, -23, 898, 54, 4, 4, 5, 4, 0, 189};
         int myTarget3 = 567;
 
-        int[] sortedArray = getArray(30);
-        binarySearch(sortedArray, 12);
-        binarySearch(sortedArray, 120);
-        binarySearch(sortedArray, 0);
-        binarySearch(sortedArray, -100);
+        int[] sortedArray = getArray(65534);
+//        binarySearch(sortedArray, 12);
+//        binarySearch(sortedArray, 120);
+//        binarySearch(sortedArray, 0);
+        binarySearch(sortedArray, 10);
+
 
     }
 
     // nums = {12, 5, -23, 898, 54, 4, 4, 5, 4, 0, 189}
     // target = 4
+    // O(n)
     private static boolean linearSearch(int[] nums, int target) {
         for (int i = 0; i <= nums.length - 1; i++) {
             if (nums[i] == target) {
@@ -31,14 +33,19 @@ public class TeacherSandbox38_2 {
         return false;
     }
 
-
+    //O(log n)
     private static boolean binarySearch(int[] nums, int target) {
         int beginIndex = 0;
         int endIndex = nums.length - 1;
         int medianIndex = (beginIndex + endIndex) / 2;
+        int counter= 1;
 
         while (beginIndex <= endIndex) {
+            counter++;
+
             if(nums[medianIndex] == target) {
+                System.out.println(counter);
+                System.out.println(Math.pow(2, counter));
                 return true;
             }
 
@@ -51,6 +58,8 @@ public class TeacherSandbox38_2 {
             }
         }
 
+        System.out.println(counter);
+        System.out.println(Math.pow(2, counter));
         return false;
     }
 
