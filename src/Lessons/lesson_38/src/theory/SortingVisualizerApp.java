@@ -1,16 +1,13 @@
 package Lessons.lesson_38.src.theory;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Random;
 
 public class SortingVisualizerApp {
-    private static int[] array;  // Массив для сортировки
-    private static int[] highlightedIndices = new int[2];  // Для хранения индексов подсвеченных элементов
-    private static int highlightIndex1 = -1;
-    private static int highlightIndex2 = -1;
+    private static int[] array;
+    private static int[] highlightedIndices = {-1, -1};
+    private static int stepCounter = 0;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -18,31 +15,24 @@ public class SortingVisualizerApp {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(new BorderLayout());
 
-            // Создаем корневую панель
-            JPanel rootPanel = new JPanel(new BorderLayout());
-
-            // Создаем панель управления
             JPanel controlPanel = new JPanel(new FlowLayout());
-
-            // Добавляем поле для ввода размера массива
             JTextField arraySizeField = new JTextField(8);
+            JLabel stepLabel = new JLabel("Steps: 0");
+
             controlPanel.add(new JLabel("Array Size:"));
             controlPanel.add(arraySizeField);
 
-            // Добавляем кнопку для начала сортировки
             JButton startButton = new JButton("Create new Array");
-            JButton bubbleSort = new JButton("Start bubble sorting");
-            JButton mergeSort = new JButton("Start Merge sorting");
-            JButton quickSort = new JButton("Start Quick sorting");
+            JButton startSortButton = new JButton("Start Sorting");
+
+            String[] sortMethods = {"Bubble Sort", "Merge Sort", "Quick Sort", "Heap Sort", "Hybrid Sort"};
+            JComboBox<String> sortSelection = new JComboBox<>(sortMethods);
+
             controlPanel.add(startButton);
-            controlPanel.add(bubbleSort);
-            controlPanel.add(mergeSort);
-            controlPanel.add(quickSort);
+            controlPanel.add(sortSelection);
+            controlPanel.add(startSortButton);
+            controlPanel.add(stepLabel);
 
-            // Добавляем панель управления на корневую панель
-            rootPanel.add(controlPanel, BorderLayout.NORTH);
-
-            // Создаем панель для визуализации
             JPanel visualizationPanel = new JPanel() {
                 @Override
                 protected void paintComponent(Graphics g) {
@@ -50,216 +40,190 @@ public class SortingVisualizerApp {
                     if (array != null) {
                         int panelWidth = getWidth();
                         int panelHeight = getHeight();
+                        int barWidth = Math.max(2, panelWidth / array.length);
+                        int padding = 2;
 
-                        int arrayLength = array.length;
-                        int barWidth = 10;
-                        int padding = 10;  // отступ с каждой стороны
-
-                        // Вычисляем начальную и конечную точки по оси X
-                        int totalWidth = arrayLength * barWidth + (arrayLength - 1) * padding;
-                        int startX = (panelWidth - totalWidth) / 2;
-                        int endX = startX + totalWidth;
-
-                        // Отрисовываем рамку
-                        g.drawRect(startX - padding, 0 + padding, endX - startX + padding, panelHeight - 2 * padding);
-
-
-                        // Отрисовываем столбцы
-                        int x = startX;
                         for (int i = 0; i < array.length; i++) {
-                            if (i == highlightedIndices[0] || i == highlightedIndices[1]) {
-                                g.setColor(Color.RED);  // меняем цвет на красный для подсветки
-                            }
+                            g.setColor((i == highlightedIndices[0] || i == highlightedIndices[1]) ? Color.RED : Color.BLACK);
                             int height = array[i];
-                            g.fillRect(x, panelHeight - height - padding, barWidth, height);
-                            g.setColor(Color.BLACK);  // возвращаем цвет обратно на черный
-                            x += barWidth + padding;
+                            g.fillRect(i * (barWidth + padding), panelHeight - height - padding, barWidth, height);
                         }
                     }
                 }
             };
 
-
             visualizationPanel.setBackground(Color.WHITE);
+            startButton.addActionListener(e -> {
+                int size = Integer.parseInt(arraySizeField.getText());
+                array = generateArray(size);
+                stepCounter = 0;
+                stepLabel.setText("Steps: " + stepCounter);
+                visualizationPanel.repaint();
+            });
 
-            // Добавляем панель для визуализации на корневую панель
-            rootPanel.add(visualizationPanel, BorderLayout.CENTER);
-
-            // Обработка клика по кнопке
-            startButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    int size = Integer.parseInt(arraySizeField.getText());
-                    array = generateArray(size);
-                    visualizationPanel.repaint();
+            startSortButton.addActionListener(e -> new Thread(() -> {
+                String selectedSort = (String) sortSelection.getSelectedItem();
+                switch (selectedSort) {
+                    case "Bubble Sort" -> bubbleSort(array, visualizationPanel, stepLabel);
+                    case "Merge Sort" -> mergeSort(array, 0, array.length - 1, visualizationPanel, stepLabel);
+                    case "Quick Sort" -> quickSort(array, 0, array.length - 1, visualizationPanel, stepLabel);
+                    case "Heap Sort" -> heapSort(array, visualizationPanel, stepLabel);
+                    case "Hybrid Sort" -> hybridSort(array, visualizationPanel, stepLabel);
                 }
-            });
+            }).start());
 
-            bubbleSort.addActionListener(e -> {
-                Thread sortingThread = new Thread(() -> {
-                    bubbleSort(array, visualizationPanel);
-                });
-                sortingThread.start();
-            });
-
-            mergeSort.addActionListener(e -> {
-                Thread sortingThread = new Thread(() -> {
-                    mergeSort(array, 0, array.length - 1, visualizationPanel);
-                });
-                sortingThread.start();
-            });
-
-            quickSort.addActionListener(e -> {
-                Thread sortingThread = new Thread(() -> {
-                    quickSort(array, 0, array.length - 1, visualizationPanel);
-                });
-                sortingThread.start();
-            });
-
-
-            // Добавляем корневую панель на фрейм
-            frame.add(rootPanel);
-
-            // Устанавливаем размер окна
+            frame.add(controlPanel, BorderLayout.NORTH);
+            frame.add(visualizationPanel, BorderLayout.CENTER);
             frame.setSize(800, 600);
-
-            // Показываем окно
             frame.setVisible(true);
         });
     }
 
-    // Генерирует массив случайных чисел
+    private static void heapSort(int[] arr, JPanel panel, JLabel stepLabel) {
+        int n = arr.length;
+
+        // Heap aufbauen (Max-Heap)
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(arr, n, i, panel, stepLabel);
+        }
+
+        // Elemente extrahieren und Heap anpassen
+        for (int i = n - 1; i > 0; i--) {
+            swapAndHighlight(arr, 0, i, panel, stepLabel);
+            heapify(arr, i, 0, panel, stepLabel);
+        }
+    }
+
+    private static void heapify(int[] arr, int n, int i, JPanel panel, JLabel stepLabel) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (left < n && arr[left] > arr[largest]) largest = left;
+        if (right < n && arr[right] > arr[largest]) largest = right;
+
+        if (largest != i) {
+            swapAndHighlight(arr, i, largest, panel, stepLabel);
+            heapify(arr, n, largest, panel, stepLabel);
+        }
+    }
+
+    private static void hybridSort(int[] arr, JPanel panel, JLabel stepLabel) {
+        heapSort(arr, panel, stepLabel);  // Erst Heap Sort zur groben Vorsortierung
+        mergeQuickSort(arr, 0, arr.length - 1, panel, stepLabel);  // Dann Merge + Quick Sort anwenden
+    }
+
+    private static void mergeQuickSort(int[] arr, int left, int right, JPanel panel, JLabel stepLabel) {
+        if (right - left < 10) {
+            quickSort(arr, left, right, panel, stepLabel);
+            return;
+        }
+
+        if (left >= right) return;
+
+        int mid = left + (right - left) / 2;
+        mergeQuickSort(arr, left, mid, panel, stepLabel);
+        mergeQuickSort(arr, mid + 1, right, panel, stepLabel);
+        merge(arr, left, mid, right, panel, stepLabel);
+    }
+
+
     private static int[] generateArray(int size) {
         int[] newArray = new int[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            newArray[i] = random.nextInt(500);  // Максимальная высота столбца
+            newArray[i] = random.nextInt(500);
         }
         return newArray;
     }
 
-    private static void swapAndHighlight(int[] array, int i, int j, JPanel panel) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-
-        highlightedIndices[0] = i;
-        highlightedIndices[1] = j;
-
-        panel.repaint();
-        sleepForVisualization();
-
-        // очистка после подсветки
-        highlightedIndices[0] = -1;
-        highlightedIndices[1] = -1;
-    }
-
-    private static void bubbleSort(int[] array, JPanel panel) {
+    private static void bubbleSort(int[] array, JPanel panel, JLabel stepLabel) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - i - 1; j++) {
                 if (array[j] > array[j + 1]) {
-                    swapAndHighlight(array, j, j + 1, panel);
+                    swapAndHighlight(array, j, j + 1, panel, stepLabel);
                 }
             }
         }
     }
 
-
-    private static void quickSort(int[] array, int low, int high, JPanel panel) {
-        if (low < high) {
-            int pi = partition(array, low, high, panel);
-            quickSort(array, low, pi - 1, panel);
-            quickSort(array, pi + 1, high, panel);
+    private static void mergeSort(int[] array, int left, int right, JPanel panel, JLabel stepLabel) {
+        if (left < right) {
+            int middle = (left + right) / 2;
+            mergeSort(array, left, middle, panel, stepLabel);
+            mergeSort(array, middle + 1, right, panel, stepLabel);
+            merge(array, left, middle, right, panel, stepLabel);
         }
     }
 
-    private static int partition(int[] array, int low, int high, JPanel panel) {
-        int pivot = array[high];
-        int i = (low - 1);
-        for (int j = low; j < high; j++) {
-            if (array[j] < pivot) {
-                i++;
+    private static void merge(int[] array, int left, int middle, int right, JPanel panel, JLabel stepLabel) {
+        int[] temp = Arrays.copyOfRange(array, left, right + 1);
+        int i = left, j = middle + 1, k = left;
 
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-
-                panel.repaint();
-                sleepForVisualization();
-            }
+        while (i <= middle && j <= right) {
+            array[k++] = temp[i - left] <= temp[j - left] ? temp[i++ - left] : temp[j++ - left];
+            updateStepCounter(stepLabel);
+            SwingUtilities.invokeLater(panel::repaint);
+            sleepForVisualization();
         }
 
-        int temp = array[i + 1];
-        array[i + 1] = array[high];
-        array[high] = temp;
+        while (i <= middle) {
+            array[k++] = temp[i++ - left];
+            updateStepCounter(stepLabel);
+            SwingUtilities.invokeLater(panel::repaint);
+            sleepForVisualization();
+        }
 
-        panel.repaint();
-        sleepForVisualization();
+        while (j <= right) {
+            array[k++] = temp[j++ - left];
+            updateStepCounter(stepLabel);
+            SwingUtilities.invokeLater(panel::repaint);
+            sleepForVisualization();
+        }
+    }
 
+    private static void quickSort(int[] arr, int low, int high, JPanel panel, JLabel stepLabel) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high, panel, stepLabel);
+            quickSort(arr, low, pivotIndex - 1, panel, stepLabel);
+            quickSort(arr, pivotIndex + 1, high, panel, stepLabel);
+        }
+    }
+
+    private static int partition(int[] arr, int low, int high, JPanel panel, JLabel stepLabel) {
+        int pivot = arr[high];
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) swapAndHighlight(arr, ++i, j, panel, stepLabel);
+        }
+        swapAndHighlight(arr, i + 1, high, panel, stepLabel);
         return i + 1;
+    }
+
+    private static void swapAndHighlight(int[] array, int i, int j, JPanel panel, JLabel stepLabel) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+        highlightedIndices[0] = i;
+        highlightedIndices[1] = j;
+        updateStepCounter(stepLabel);
+        SwingUtilities.invokeLater(panel::repaint);
+        sleepForVisualization();
+        highlightedIndices[0] = -1;
+        highlightedIndices[1] = -1;
+    }
+
+    private static void updateStepCounter(JLabel stepLabel) {
+        stepCounter++;
+        SwingUtilities.invokeLater(() -> stepLabel.setText("Steps: " + stepCounter));
     }
 
     private static void sleepForVisualization() {
         try {
-            Thread.sleep(300);
+            Thread.sleep(50);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-
-
-    private static void mergeSort(int[] array, int left, int right, JPanel panel) {
-        if (left < right) {
-            int middle = (left + right) / 2;
-            mergeSort(array, left, middle, panel);
-            mergeSort(array, middle + 1, right, panel);
-            merge(array, left, middle, right, panel);
-        }
-    }
-
-    private static void merge(int[] array, int left, int middle, int right, JPanel panel) {
-        int n1 = middle - left + 1;
-        int n2 = right - middle;
-
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-
-        for (int i = 0; i < n1; i++)
-            L[i] = array[left + i];
-        for (int j = 0; j < n2; j++)
-            R[j] = array[middle + 1 + j];
-
-        int i = 0, j = 0, k = left;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                array[k] = L[i];
-                i++;
-            } else {
-                array[k] = R[j];
-                j++;
-            }
-            k++;
-
-            panel.repaint();
-            sleepForVisualization();
-        }
-
-        while (i < n1) {
-            array[k] = L[i];
-            i++;
-            k++;
-
-            panel.repaint();
-            sleepForVisualization();
-        }
-
-        while (j < n2) {
-            array[k] = R[j];
-            j++;
-            k++;
-
-            panel.repaint();
-            sleepForVisualization();
-        }
-    }
 }
+
