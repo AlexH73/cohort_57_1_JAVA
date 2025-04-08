@@ -888,5 +888,150 @@ public class PerformanceComparison {
 данных, и помогает разработчикам понять, какой алгоритм лучше всего подходит для решения конкретной задачи.
 
 ![img.png](img.png)
+
+
+<details>
+<summary>Пример кода</summary>
+
+```java
+
+public class BigOExamples {
+
+    /**
+     * Константная сложность O(1).
+     * Возвращает элемент по индексу из массива.
+     * Сложность O(1), так как операция получения элемента по индексу всегда выполняется за одно и то же время,
+     * независимо от размера массива.
+     */
+    public static int constantTime(int[] array, int index) {
+        return array[index];
+    }
+
+    /**
+     * Линейная сложность O(n).
+     * Считает сумму всех элементов массива.
+     * Сложность O(n), так как необходимо пройти по всем элементам массива ровно один раз.
+     */
+    public static int linearTime(int[] array) {
+        int sum = 0;
+        for (int value : array) {
+            sum += value;
+        }
+        return sum;
+    }
+
+    /**
+     * Квадратичная сложность O(n^2).
+     * Считает сумму всех возможных пар элементов массива.
+     * Сложность O(n^2), так как используется вложенный цикл, и для каждого элемента массива выполняется
+     * операция со всеми элементами массива.
+     */
+    public static int quadraticTime(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                sum += array[i] + array[j];
+            }
+        }
+        return sum;
+    }
+
+    /**
+     * Логарифмическая сложность O(log n).
+     * Бинарный поиск элемента в отсортированном массиве.
+     * Сложность O(log n), так как на каждом шаге алгоритм сокращает область поиска вдвое.
+     */
+    public static int logarithmicTime(int[] sortedArray, int key) {
+        int left = 0;
+        int right = sortedArray.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (sortedArray[mid] == key) {
+                return mid;
+            }
+            if (sortedArray[mid] < key) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1; // элемент не найден
+    }
+
+    /**
+     * Линейно-логарифмическая сложность O(n log n).
+     * Алгоритм сортировки слиянием (Merge Sort).
+     * Сложность O(n log n), так как массив делится пополам (логарифмическая часть), а затем элементы
+     * сливаются обратно (линейная часть).
+     */
+    public static void mergeSort(int[] array) {
+        if (array.length > 1) {
+            int mid = array.length / 2;
+            int[] left = new int[mid];
+            int[] right = new int[array.length - mid];
+
+            System.arraycopy(array, 0, left, 0, mid);
+            System.arraycopy(array, mid, right, 0, array.length - mid);
+
+            mergeSort(left);
+            mergeSort(right);
+
+            merge(array, left, right);
+        }
+    }
+
+    private static void merge(int[] result, int[] left, int[] right) {
+        int i = 0, j = 0, k = 0;
+
+        while (i < left.length && j < right.length) {
+            if (left[i] <= right[j]) {
+                result[k++] = left[i++];
+            } else {
+                result[k++] = right[j++];
+            }
+        }
+
+        while (i < left.length) {
+            result[k++] = left[i++];
+        }
+
+        while (j < right.length) {
+            result[k++] = right[j++];
+        }
+    }
+
+    /**
+     * Экспоненциальная сложность O(2^n).
+     * Подсчёт n-го числа Фибоначчи через рекурсию.
+     * Сложность O(2^n), так как каждый вызов функции вызывает два дополнительных вызова,
+     * образуя дерево вызовов, количество которых удваивается на каждом шаге.
+     */
+    public static int exponentialTime(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return exponentialTime(n - 1) + exponentialTime(n - 2);
+    }
+
+    /**
+     * Факториальная сложность O(n!).
+     * Подсчёт факториала числа n через рекурсию.
+     * Сложность O(n!), так как для вычисления факториала нужно выполнить n рекурсивных вызовов,
+     * где каждый вызов порождает уменьшение задачи на единицу.
+     */
+    public static long factorialTime(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorialTime(n - 1);
+    }
+}
+
+
+```
+
+</details>
 </details>
 </details>
