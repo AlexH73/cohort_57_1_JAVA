@@ -33,6 +33,7 @@ bin/
 #Homework/
 .idea/
 *.iml
+*.xml
 .gitignore
 .obsidian
 /src/Homework/lesson_35/test_created.txt
