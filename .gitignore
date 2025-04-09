@@ -31,7 +31,11 @@ bin/
 # Другие папки и файлы
 
 #Homework/
-Homework/temp/
 .idea/
 *.iml
 .gitignore
+.obsidian
+/src/Homework/lesson_35/test_created.txt
+/src/Homework/lesson_36/files/
+/src/Lessons/Lesson_35/src/practice/classwork/files/
+/src/Lessons/Lesson_35/src/practice/classwork/newFile.txt
