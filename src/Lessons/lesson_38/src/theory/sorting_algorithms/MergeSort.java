@@ -11,7 +11,7 @@ public class MergeSort implements Sorting{
     // Второй подмассив - arr[m+1..r]
     public static void merge(int arr[], int l, int m, int r) {
         // Определение размеров двух подмассивов для слияния
-        int n1 = m - l + 1;
+        int n1 = m - l + 1;//(1 -учитываем последний элемент с индексом m, включительно)
         int n2 = r - m;
 
         // Создание временных массивов
