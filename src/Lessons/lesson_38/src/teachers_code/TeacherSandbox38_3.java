@@ -85,7 +85,7 @@ public class TeacherSandbox38_3 {
         for (int i = 0; i < size; i++) {
             result[i] = i;
         }
-
+// line from Yulianna
         return result;
     }
 }
