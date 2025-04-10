@@ -52,7 +52,7 @@ public class LanguageCard39 {
 
     public static void main(String[] args) {
         // Пример использования класса LanguageCard
-        LanguageCard myCard = new LanguageCard();
+        LanguageCard39 myCard = new LanguageCard39();
 
         // Добавление слов
         myCard.addWord("apple", "яблоко");
