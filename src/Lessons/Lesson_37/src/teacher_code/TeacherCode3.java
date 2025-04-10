@@ -75,19 +75,23 @@ public class TeacherCode3 {
     }
 
     // O(x) * O(y) ->  худшем случае эти числа одинаково большие, тогда ->
-    // O(x * x) -> O(x^2)
+    // O(x * x) ->
+    // O(x^3) != O(x^2)
     private static void methodE(int x, int y) {
         // O(x)
         for (int i = 0; i < x; i++) {
             // O(y)
             for (int j = 0; j < y; j++) {
                 System.out.println("x * y = " + x * y);
+                for (int k = 0; k < x; k++) {
+                    System.out.println("x * x *x = " + x * x * x);
+                }
             }
         }
     }
 
     // O(x) * O(y) + O(z)  ->  худшем случае эти числа одинаково большие, тогда ->
-    // O(x * x + 20 * x) -> O(x^2 + 20 * x) -> O(x^2 + x) ->  тк в данном примере квадратичная сложность оказывает существенно большее
+    // O(x * x + 6 * x) -> O(x^2 + 6 * x) -> O(x^2 + x) ->  тк в данном примере квадратичная сложность оказывает существенно большее
     // влияение, чем линейная, мы можем  пренебречь линейной в пользу более сложной для упрощения оценки сложности ->
     // O(x^2)
     private static void methodE(int x, int y, int z) {
@@ -95,7 +99,7 @@ public class TeacherCode3 {
         for (int i = 0; i < x; i++) {
             // O(y)
             for (int j = 0; j < y; j++) {
-                System.out.println("x * y = " + x * y);
+                System.out.println("x * y = " + x * y);// единица времени
             }
         }
 
