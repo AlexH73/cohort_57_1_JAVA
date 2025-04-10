@@ -11,7 +11,25 @@ public class Classwork39 {
     }
 
     static int fibonacci(int number) {
+        if (number <= 0) {
+            return -1;
+        }
+        if (number == 1) {
+            return 1;
+        }
+        if (number == 2 ) {
+            return 2;
+        }
+        int a = 0;
+        int b = 1;
+        int c;
+        for (int i = 2; i < number ; i++) {
+            c=a+b;
+            a=b;
+            b=c;
 
-        return  -1;
+        }
     }
+    //7= 1+(1+2+3+5+8+13+21)=54
+    //10 = 1+1+2+3+5+8+13+21+34+55+89=232
 }
