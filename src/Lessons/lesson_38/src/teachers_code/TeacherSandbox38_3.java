@@ -79,7 +79,7 @@ public class TeacherSandbox38_3 {
     }
 
 
-    private static int[] getSortedArray(int size) {
+    public static int[] getSortedArray(int size) {
         int[] result = new int[size];
 
         for (int i = 0; i < size; i++) {
