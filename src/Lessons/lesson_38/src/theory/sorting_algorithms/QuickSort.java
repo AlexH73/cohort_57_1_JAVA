@@ -7,6 +7,7 @@ package Lessons.lesson_38.src.theory.sorting_algorithms;
 public class QuickSort implements Sorting{
 
     // Функция для перестановки элементов
+    //O (n * Log n)
     private static int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int i = (low - 1); // индекс меньшего элемента
