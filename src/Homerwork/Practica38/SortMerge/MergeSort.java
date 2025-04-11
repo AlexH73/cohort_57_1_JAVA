@@ -8,6 +8,9 @@ package Homerwork.Practica38.SortMerge;
 import Homerwork.Practica38.Sort.Sorting;
 
 public class MergeSort implements Sorting {
+    public static void main(String[] args) {
+
+    }
     // Объединение двух подмассивов arr[]
     // Первый подмассив - arr[l..m]
     // Второй подмассив - arr[m+1..r]
