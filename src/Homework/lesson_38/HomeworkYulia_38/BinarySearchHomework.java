@@ -11,7 +11,7 @@ public class BinarySearchHomework {
 
             if (arr[mid] == target) {
                 result = mid;
-                right = mid - 1; // Продолжаем поиск влево
+                right = mid - 1;
             } else if (arr[mid] < target) {
                 left = mid + 1;
             } else {
@@ -32,7 +32,7 @@ public class BinarySearchHomework {
 
             if (arr[mid] == target) {
                 result = mid;
-                left = mid + 1; // Продолжаем поиск вправо
+                left = mid + 1;
             } else if (arr[mid] < target) {
                 left = mid + 1;
             } else {
@@ -43,7 +43,7 @@ public class BinarySearchHomework {
         return result;
     }
 
-    // Пример использования:
+    // вывод результата:
     public static void main(String[] args) {
         BinarySearchHomework bsh = new BinarySearchHomework();
         int[] nums = {1, 2, 2, 2, 3, 4, 5};
