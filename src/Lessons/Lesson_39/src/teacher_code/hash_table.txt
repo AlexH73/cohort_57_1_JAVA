@@ -1,0 +1,40 @@
+[] - ячейка в массиве
+{} - список (LinkedList)
+
+Hash table (empty)
+[0] -> {}
+[1] -> {}
+[2] -> {}
+[3] -> {}
+[4] -> {}
+
+movie1 ("name", 123)        -> hash code = 67;
+movie2 ("other name", 75)   -> hash code = -69091;
+movie3 ("comedy", 94)       -> hash code = 5642;
+movie4 ("horror", 123)      -> hash code = 545;
+
+Как узнать индекс в какую ячейку положить фильм?
+По остатку от деления!
+Потому что остаток от деления ВСЕГДА меньше, чем делеитель!
+
+movie1Index = 67 % 5 (hashTable.length) = 2
+movie2Index = -69091 % 5 (hashTable.length) = |-1| = 1
+movie3Index = 5642 % 5 = 2
+movie4Index = 545 % 5 = 0
+
+Hash table (empty)
+[0] -> {movie4}
+[1] -> {movie2}
+[2] -> {movie1, movie3}
+[3] -> {}
+[4] -> {}
+
+movie5 ("action", 140)      -> hash code = 86524;
+movie5Index = 86524 % 5 = 4
+
+
+// содкржится ли movie5 в хеш таблице?
+hashTable.contains(movie5) - > проверяем только содержимое ячейки 4,
+тк мы по хешкоду вычислили, где должен был бы находиться в хештаблице movie5,
+если бы он там был -> тк ячейка 4 пуста, следовательно такого фильма в нашей хеш таблице 100% нет!
+-> false

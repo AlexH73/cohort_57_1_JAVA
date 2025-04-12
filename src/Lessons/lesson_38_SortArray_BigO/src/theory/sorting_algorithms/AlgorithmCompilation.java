@@ -6,7 +6,7 @@ public class AlgorithmCompilation {
     private static int[] staticArr;
 
     public static void main(String[] args) {
-        generateRandomArray(100000);
+        generateRandomArray(10000);
 
         Sorting[] sortings = {new BubbleSort(), new ShellSort(), new HeapSort(), new InsertionSort(), new MergeSort(),
                 new QuickSort(),
