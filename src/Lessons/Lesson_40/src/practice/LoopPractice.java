@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class LoopPractice {
     public static void main(String[] args) {
         //sumFromOneToN();
-        System.out.println(isPrime(11));
-        // guessNumber();
+        //System.out.println(isPrime(11));
+        guessNumber();
         // multiplicationTable();
         // reverseDigits();
     }
@@ -59,7 +59,24 @@ public class LoopPractice {
      * а программа подсказывает: больше или меньше. Цикл продолжается, пока пользователь не угадает.
      */
     public static void guessNumber() {
-        // TODO: Реализуйте решение здесь
+        try (Scanner scanner = new Scanner(System.in);) {
+            int random = (int) (Math.random() * 100);
+            System.out.println("Введите число: ");
+            int n = scanner.nextInt();
+            while (true) {
+                if (n == random) {
+                    System.out.println("Урааа!!!");
+                    break;
+                } else if (random < n) {
+                    System.out.println("Число n больше загаданного. Попробуй еще раз.");
+                } else {
+                    System.out.println("Число n меньше загаданного. Попробуй еще раз.");
+                }
+                n = scanner.nextInt();
+            }
+
+        }
+
     }
 
     /**
