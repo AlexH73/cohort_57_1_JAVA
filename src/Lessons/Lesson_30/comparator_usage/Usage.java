@@ -6,26 +6,26 @@ import java.util.List;
 
 public class Usage {
     public static void main(String[] args) {
-        House house1 = new House(2, 3, 1990, 63.49999998);
-        House house2 = new House(5, 1, 2003, 35);
-        House house3 = new House(1, 2, 2025, 80);
-        House house4 = new House(2, 3, 2020, 63.49999999);
-        House house5 = new House(11, 5, 2000, 110);
-        House house6 = new House(11, 5, 2000, 110);
+        House30 House301 = new House30(2, 3, 1990, 63.49999998);
+        House30 House302 = new House30(5, 1, 2003, 35);
+        House30 House303 = new House30(1, 2, 2025, 80);
+        House30 House304 = new House30(2, 3, 2020, 63.49999999);
+        House30 House305 = new House30(11, 5, 2000, 110);
+        House30 House306 = new House30(11, 5, 2000, 110);
 
-        house1.setPricePerM(2000);
-        house2.setPricePerM(2300);
-        house3.setPricePerM(1700);
-        house4.setPricePerM(1500);
-        house5.setPricePerM(2100);
+        House301.setPricePerM(2000);
+        House302.setPricePerM(2300);
+        House303.setPricePerM(1700);
+        House304.setPricePerM(1500);
+        House305.setPricePerM(2100);
 
-        List<House> list = new LinkedList<>();
+        List<House30> list = new LinkedList<>();
 
-        list.add(house1);
-        list.add(house2);
-        list.add(house3);
-        list.add(house4);
-        list.add(house5);
+        list.add(House301);
+        list.add(House302);
+        list.add(House303);
+        list.add(House304);
+        list.add(House305);
 
         show(list);
 
@@ -44,16 +44,16 @@ public class Usage {
         show(list);
 
 
-        System.out.println("house1.hashCode() = " + house1.hashCode());
-        System.out.println("house2.hashCode() = " + house2.hashCode());
-        System.out.println("house3.hashCode() = " + house3.hashCode());
-        System.out.println("house4.hashCode() = " + house4.hashCode());
-        System.out.println("house5.hashCode() = " + house5.hashCode());
+        System.out.println("House301.hashCode() = " + House301.hashCode());
+        System.out.println("House302.hashCode() = " + House302.hashCode());
+        System.out.println("House303.hashCode() = " + House303.hashCode());
+        System.out.println("House304.hashCode() = " + House304.hashCode());
+        System.out.println("House305.hashCode() = " + House305.hashCode());
     }
 
-    private static void show(List<House> list) {
-        for (House house : list) {
-            System.out.println(house.toString());
+    private static void show(List<House30> list) {
+        for (House30 House30 : list) {
+            System.out.println(House30.toString());
         }
         System.out.println("=================================================");
     }
