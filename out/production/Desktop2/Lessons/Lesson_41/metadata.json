@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/task/DateTimeConversionTasks.java",
+    "src/practice/task/DateTimePracticeTasks.java",
+    "src/practice/DateTimeFormatParseExample.java",
+    "src/practice/InstantExample.java",
+    "src/practice/CalendarExample.java",
+    "src/practice/LocalDateExample.java",
+    "src/practice/LocalDateTimeExample.java",
+    "src/practice/ZoneIdExample.java"
+  ],
+  "video": ""
+}

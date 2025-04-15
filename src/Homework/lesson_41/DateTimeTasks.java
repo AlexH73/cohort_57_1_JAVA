@@ -12,7 +12,6 @@ public class DateTimeTasks {
      * Пример: Сегодняшняя дата: 2025-04-13
      */
     public static void printTodayDate() {
-
     }
 
     /**
@@ -79,7 +78,7 @@ public class DateTimeTasks {
     }
 
     public static void main(String[] args) {
-        printTodayDate();
+        printTodayDate();;;
         printBirthDate(2004, 6, 1);
         printAge(LocalDate.of(2004, 6, 1));
         printCurrentTime();
