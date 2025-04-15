@@ -1,30 +1,30 @@
 package Lessons.Lesson_31.classwork;
 
-import Lessons.Lesson_30.comparator_usage.House;
+import Lessons.Lesson_30.comparator_usage.House30;
 
 import java.util.*;
 
 public class Classwork {
     public static void main(String[] args) {
-        House house5 = new House(11, 5, 2000, 110);
-        House house6 = new House(11, 90, 2000, 110);
+        House30 house305 = new House30(11, 5, 2000, 110);
+        House30 house306 = new House30(11, 90, 2000, 110);
 
-        System.out.println("house5.hashCode() = " + house5.hashCode());
-        System.out.println("house6.hashCode() = " + house6.hashCode());
+        System.out.println("house5.hashCode() = " + house305.hashCode());
+        System.out.println("house6.hashCode() = " + house306.hashCode());
 
-        System.out.println("house5 == house6 = " + (house5 == house6));
-        System.out.println("house5.equals(house6) = " + house5.equals(house6));
+        System.out.println("house5 == house6 = " + (house305 == house306));
+        System.out.println("house5.equals(house6) = " + house305.equals(house306));
 
-        List<House> houses = new ArrayList<>();
-        houses.add(house5);
-        houses.add(house6);
-        System.out.println("houses.size() = " + houses.size());
+        List<House30> house30s = new ArrayList<>();
+        house30s.add(house305);
+        house30s.add(house306);
+        System.out.println("houses.size() = " + house30s.size());
 
-        Set<House> houseSet = new HashSet<>();
+        Set<House30> house30Set = new HashSet<>();
 
-        houseSet.add(house5);
-        houseSet.add(house6);
-        System.out.println("houseSet.size() = " + houseSet.size());
+        house30Set.add(house305);
+        house30Set.add(house306);
+        System.out.println("houseSet.size() = " + house30Set.size());
 
 
     }
