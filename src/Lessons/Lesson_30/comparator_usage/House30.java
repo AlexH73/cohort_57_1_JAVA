@@ -1,13 +1,13 @@
 package Lessons.Lesson_30.comparator_usage;
 
-public class House {
+public class House30 {
     private double square;
     private double pricePerM;
     private int yearOfBuild;
     private int roomCount;
     private int floor;
 
-    public House(int floor, int roomCount, int yearOfBuild, double square) {
+    public House30(int floor, int roomCount, int yearOfBuild, double square) {
         this.floor = floor;
         this.roomCount = roomCount;
         this.yearOfBuild = yearOfBuild;
@@ -68,9 +68,9 @@ public class House {
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof House house)) return false;
+        if (!(o instanceof House30 house30)) return false;
 
-        return Double.compare(getSquare(), house.getSquare()) == 0 && getYearOfBuild() == house.getYearOfBuild()  && getFloor() == house.getFloor();
+        return Double.compare(getSquare(), house30.getSquare()) == 0 && getYearOfBuild() == house30.getYearOfBuild()  && getFloor() == house30.getFloor();
     }
 
     @Override
