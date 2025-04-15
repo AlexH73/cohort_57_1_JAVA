@@ -20,15 +20,16 @@ public class LoopPractice {
      * Пример: Ввод: 1 → Вывод: Сумма: 1 ----> 1=1 <p>
      */
     public static void sumFromOneToN() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число N: ");
-        int n = scanner.nextInt();
-        int sum = 0;
-        for (int i = 0; i <= n; i++) {
-            sum += i;
-        }
+        try (Scanner scanner = new Scanner(System.in);) {
+            System.out.println("Введите число N: ");
+            int n = scanner.nextInt();
+            int sum = 0;
+            for (int i = 0; i <= n; i++) {
+                sum += i;
+            }
 
-        System.out.println("Сумма чисел от 0 до " + n + " равна " + sum);
+            System.out.println("Сумма чисел от 0 до " + n + " равна " + sum);
+        }
     }
 
     /**
