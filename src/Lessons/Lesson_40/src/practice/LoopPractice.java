@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class LoopPractice {
     public static void main(String[] args) {
-        sumFromOneToN();
-        // isPrime();
+        //sumFromOneToN();
+        System.out.println(isPrime(11));
         // guessNumber();
         // multiplicationTable();
         // reverseDigits();
@@ -41,8 +41,16 @@ public class LoopPractice {
      * Пример: Ввод: 12 → Вывод: false <p>
      */
     public static boolean isPrime(int n) {
-        // TODO: Реализуйте решение здесь
-        return false;
+        int x = 2;
+        // Примитивный вариант
+        //while (x < n) {
+        while (x < Math.sqrt(n)) {
+            if (n % x == 0) {
+                return false;
+            }
+            x++;
+        }
+        return true;
     }
 
     /**
