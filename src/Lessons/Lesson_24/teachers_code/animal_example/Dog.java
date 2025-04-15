@@ -1,6 +1,6 @@
 package Lessons.Lesson_24.teachers_code.animal_example;
 
-public class Dog extends Animal {
+public class Dog extends AnimalUsage {
     public void secure() {
         System.out.println("Собака охраняет");
     }
