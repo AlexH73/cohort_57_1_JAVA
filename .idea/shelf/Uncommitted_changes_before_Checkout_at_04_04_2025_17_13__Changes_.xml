@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_04_04_2025_17_13_[Changes]" date="1743779638953" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_04_2025_17_13_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 04.04.2025 17:13 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" />
+    <option name="AFTER_PATH" value="src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_04_2025_17_13_[Changes]/userProfile.ser" />
+  </binary>
+</changelist>
