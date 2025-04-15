@@ -14,6 +14,7 @@ public interface ISession {
      */
     IFilm getFilm();
 
+
     /**
      * Установить фильм для этого сеанса.
      *
@@ -27,6 +28,7 @@ public interface ISession {
      * @return Кинозал этого сеанса.
      */
     ICinemaHall getCinemaHall();
+
 
     /**
      * Установить кинозал для этого сеанса.

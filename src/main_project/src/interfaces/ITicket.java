@@ -1,63 +1,63 @@
 package main_project.src.interfaces;
 
 /**
- * Интерфейс ITicket предоставляет контракт для класса, представляющего билет в системе управления кинотеатром.
+ * Das Interface ITicket definiert die grundlegenden Operationen für ein Ticket im Kinoverwaltungssystem.
  */
 public interface ITicket {
 
     /**
-     * Получить сеанс, на который предназначен этот билет.
+     * Gibt den zugehörigen Session zurück, für die das Ticket ausgestellt wurde.
      *
-     * @return Сеанс этого билета.
+     * @return Die Session dieses Tickets.
      */
     ISession getSession();
 
     /**
-     * Установить сеанс для этого билета.
+     * Setzt die Session, für die das Ticket ausgestellt wird.
      *
-     * @param session Сеанс для этого билета.
+     * @param session Die Session für das Ticket.
      */
     void setSession(ISession session);
 
     /**
-     * Получить номер места, которое занимает этот билет.
+     * Gibt die Sitzplatznummer dieses Tickets zurück.
      *
-     * @return Номер места этого билета.
+     * @return Die Sitzplatznummer.
      */
     int getSeatNumber();
 
     /**
-     * Установить номер места для этого билета.
+     * Setzt die Sitzplatznummer für dieses Ticket.
      *
-     * @param seatNumber Номер места для этого билета.
+     * @param seatNumber Die neue Sitzplatznummer.
      */
     void setSeatNumber(int seatNumber);
 
     /**
-     * Получить стоимость этого билета.
+     * Gibt den Preis dieses Tickets zurück.
      *
-     * @return Стоимость билета.
+     * @return Der Preis des Tickets.
      */
     double getPrice();
 
     /**
-     * Установить стоимость для этого билета.
+     * Setzt den Preis für dieses Ticket.
      *
-     * @param price Стоимость этого билета.
+     * @param price Der neue Preis des Tickets.
      */
     void setPrice(double price);
 
     /**
-     * Получить статус этого билета (продано/не продано).
+     * Gibt den aktuellen Status des Tickets zurück (z. B. "Verfügbar" oder "Verkauft").
      *
-     * @return Статус этого билета.
+     * @return Der Status des Tickets.
      */
     String getStatus();
 
     /**
-     * Установить статус для этого билета.
+     * Setzt den Status des Tickets (z. B. "Verfügbar", "Verkauft").
      *
-     * @param status Статус для этого билета.
+     * @param status Der neue Status des Tickets.
      */
     void setStatus(String status);
 }
