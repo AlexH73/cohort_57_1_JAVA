@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LoopPractice {
     public static void main(String[] args) {
-        // sumFromOneToN();
+        sumFromOneToN();
         // isPrime();
         // guessNumber();
         // multiplicationTable();
@@ -15,12 +15,20 @@ public class LoopPractice {
      * Задача 1: Сумма чисел от 1 до N
      * Напишите программу, которая запрашивает у пользователя целое число N
      * и с помощью цикла for вычисляет сумму всех чисел от 1 до N.
-     * Пример: Ввод: 5 → Вывод: Сумма: 15 <p>
-     * Пример: Ввод: 3 → Вывод: Сумма: 6 <p>
-     * Пример: Ввод: 1 → Вывод: Сумма: 1 <p>
+     * Пример: Ввод: 5 → Вывод: Сумма: 15 ----> 1+2+3+4+5=15 <p>
+     * Пример: Ввод: 3 → Вывод: Сумма: 6 ----> 1+2+3=6 <p>
+     * Пример: Ввод: 1 → Вывод: Сумма: 1 ----> 1=1 <p>
      */
     public static void sumFromOneToN() {
-        // TODO: Реализуйте решение здесь
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите число N: ");
+        int n = scanner.nextInt();
+        int sum = 0;
+        for (int i = 0; i <= n; i++) {
+            sum += i;
+        }
+
+        System.out.println("Сумма чисел от 0 до " + n + " равна " + sum);
     }
 
     /**
