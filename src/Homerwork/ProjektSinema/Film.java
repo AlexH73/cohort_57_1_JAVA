@@ -131,6 +131,21 @@ public class Film implements IFilm {
     }
 
     @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public void remove(int i) {
+
+    }
+
+    @Override
+    public int get(int i) {
+        return 0;
+    }
+
+    @Override
     public String toString() {
         return "Film{" +
                 "name='" + name + '\'' +
