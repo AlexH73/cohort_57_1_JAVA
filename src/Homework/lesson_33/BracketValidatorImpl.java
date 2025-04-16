@@ -11,7 +11,7 @@ public class BracketValidatorImpl implements BracketValidator {
         System.out.println(validator.isValidBracketSequence("( [ ] { } )"));
         System.out.println(validator.isValidBracketSequence("[(])"));
         System.out.println(validator.isValidBracketSequence("{[( )]}"));
-        System.out.println(validator.getInvalidBracketIndexes("{[}"));
+        System.out.println(validator.getInvalidBracketIndexes("{[}}"));
         System.out.println(validator.fixBracketSequence("{[!"));
         System.out.println(validator.fixBracketSequence("[[}]"));
 
@@ -54,32 +54,31 @@ public class BracketValidatorImpl implements BracketValidator {
     //Определяет ошибочные индексы
     @Override
     public List<Integer> getInvalidBracketIndexes(String input) {
-        Deque<Character> stack = new ArrayDeque<>();     //Храним индексы открывающих скобок
+        Deque<Integer> stack = new ArrayDeque<>();     //Храним индексы открывающих скобок
         List<Integer> errors = new ArrayList<>();   //Возвращает список List<Integer> с индексами некорректных скобок.
 
         for (int i = 0; i < input.length(); i++) {  //Проход по строке
             char c = input.charAt(i);        //Символ, который мы сейчас анализируем
             if (isOpenBracket(c)) {         //Проверка открывающих скобок
-                stack.push(c);
+                stack.push(i);  //сохраняем индекс, а не символ
             } else if (isCloserBracket(c)) {    //Проверка закрывающих скобок
                 if (stack.isEmpty()) { //Если стек пуст и встречена закрывающая скобка - это лишняя закрывающая скобка.
+                    errors.add(i); //лишняя закрывающая скобка
                 } else {
-                    char top = stack.pop(); //Берем верхнюю скобку top из стека.
-                    if (!isChecking(top, c)) { //Проверяем, соответствует ли она текущей закрывающей скобке
-                        errors.add(i);  //Если скобки не совпадают - добавляем индекс i в errors.
+                    int openIndex = stack.pop(); //достаем индекс открывающей
+                    char openChar = input.charAt(openIndex); //Берем верхнюю скобку top из стека.
+                    if (!isChecking(openChar, c)) { //Проверяем, соответствует ли она текущей закрывающей скобке
+                        errors.add(i);  // закрывающая скобка не подходит
                     }
                 }
             }
         }
-        //Добавляем индексы незакрытых открывающих скобок
-        if (!stack.isEmpty()) {
-            int startIdx = input.length() - stack.size();
-            for (int i = startIdx; i < input.length(); i++) {
-                if (isOpenBracket(input.charAt(i))) {
-                    errors.add(i);
-                }
-            }
+
+        // Все оставшиеся в стеке открывающие скобки — незакрытые
+        while (!stack.isEmpty()) {
+            errors.add(stack.pop());
         }
+
         return errors;
     }
 

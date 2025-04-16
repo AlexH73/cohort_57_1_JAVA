@@ -1,6 +1,6 @@
 package Lessons.Lesson_24.teachers_code.animal_example;
 
-public class AnimalUsage {
+public abstract class AnimalUsage {
     public static void main(String[] args) {
         Animal24 animal24 = new Animal24();
         animal24.voice();
@@ -9,7 +9,7 @@ public class AnimalUsage {
         Dog24 dog = new Dog24();
         dog.secure();
         dog.voice();
-        dog.feed();
+        //dog.feed();
 
         Cat24 cat24 = new Cat24();
         cat24.hunt();
@@ -23,4 +23,6 @@ public class AnimalUsage {
 
 
     }
+
+    public abstract void voice();
 }
