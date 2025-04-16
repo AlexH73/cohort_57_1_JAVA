@@ -1,5 +1,9 @@
 package main_project.src.interfaces;
 
+import main_project.src.classes.*;
+
+
+
 /**
  * Интерфейс IAdministrator предоставляет контракт для класса, представляющего администратора в системе управления кинотеатром.
  */
@@ -12,7 +16,11 @@ public interface IAdministrator extends IUser {
      * @param duration Продолжительность фильма.
      * @return Информация о созданном фильме.
      */
-    IFilm createFilm(String name, int duration);
+    @Override
+    public IFilm createFilm(String name, int duration) {
+        System.out.println("Film erstellt: " + name);
+        return new Film(name, duration);
+    }
 
     /**
      * Создать новый сеанс в системе.
@@ -22,7 +30,11 @@ public interface IAdministrator extends IUser {
      * @param dateTime Дата и время сеанса.
      * @return Информация о созданном сеансе.
      */
-    ISession createSession(IFilm film, ICinemaHall hall, String dateTime);
+    @Override
+    public ISession createSession(IFilm film, ICinemaHall hall, String dateTime) {
+        System.out.println("Session erstellt für Film: " + film);
+        return new Session(film, hall, dateTime);
+    }
 
     /**
      * Создать новый продукт в системе.
@@ -33,28 +45,41 @@ public interface IAdministrator extends IUser {
      * @param stockQuantity Количество продукта на складе.
      * @return Информация о созданном продукте.
      */
-    IProduct createProduct(String name, double price, String description, int stockQuantity);
+    @Override
+    public IProduct createProduct(String name, double price, String description, int stockQuantity) {
+        System.out.println("Produkt erstellt: " + name);
+        return new Product(name, price, description, stockQuantity);
+    }
 
     /**
      * Удалить фильм из системы.
      *
      * @param film Фильм для удаления.
      */
-    void deleteFilm(IFilm film);
+    @Override
+    public void deleteFilm(IFilm film) {
+        System.out.println("Film gelöscht: " + film);
+    }
 
     /**
      * Удалить сеанс из системы.
      *
      * @param session Сеанс для удаления.
      */
-    void deleteSession(ISession session);
+    @Override
+    public void deleteSession(ISession session) {
+        System.out.println("Session gelöscht: " + session);
+    }
 
     /**
      * Удалить продукт из системы.
      *
      * @param product Продукт для удаления.
      */
-    void deleteProduct(IProduct product);
+    @Override
+    public void deleteProduct(IProduct product) {
+        System.out.println("Produkt gelöscht: " + product);
+    }
 
     /**
      * Генерировать отчет о продажах билетов за указанный период времени.
@@ -63,7 +88,10 @@ public interface IAdministrator extends IUser {
      * @param endDate Конечная дата периода.
      * @return Отчет о продажах билетов.
      */
-    String generateTicketSalesReport(String startDate, String endDate);
+    @Override
+    public String generateTicketSalesReport(String startDate, String endDate) {
+        return "Ticket Sales Report vom " + startDate + " bis " + endDate;
+    }
 
     /**
      * Генерировать отчет о продажах продуктов за указанный период времени.
@@ -72,5 +100,8 @@ public interface IAdministrator extends IUser {
      * @param endDate Конечная дата периода.
      * @return Отчет о продажах продуктов.
      */
-    String generateProductSalesReport(String startDate, String endDate);
+    @Override
+    public String generateProductSalesReport(String startDate, String endDate) {
+        return "Product Sales Report vom " + startDate + " bis " + endDate;
+    }
 }
