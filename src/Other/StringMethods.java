@@ -1,7 +1,5 @@
 package Other;
 
-import java.nio.charset.StandardCharsets;
-
 public class StringMethods {
     public static void main(String[] args) {
         // 1. charAt(intIndex) - Возвращает символ по указанному индексу.
