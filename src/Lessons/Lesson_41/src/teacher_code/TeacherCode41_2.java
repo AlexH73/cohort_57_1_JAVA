@@ -79,9 +79,14 @@ public class TeacherCode41_2 {
 
         LocalDateTime customDateTime = LocalDateTime.of(1970, Month.AUGUST, 3, 19, 30, 12);
 
-        DateTimeFormatter customDTFormatter = DateTimeFormatter.ofPattern("d.MMMM.yyyy-hh:mm:ss");
+        DateTimeFormatter customDTFormatter = DateTimeFormatter.ofPattern("d.MMMM.yyyy-HH:mm:ss:mss");
         String customFormattedDateTime = customDateTime.format(customDTFormatter);
         System.out.println(customFormattedDateTime);
+
+        // количество наносекунд прошедших с 1.01.1970
+        System.out.println("System.nanoTime() = " + System.nanoTime());
+        System.out.println("System.nanoTime() = " + System.nanoTime());
+        System.out.println("System.nanoTime() = " + System.nanoTime());
 
 
     }
