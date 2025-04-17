@@ -9,7 +9,7 @@ public class AnimalUsage {
         Dog dog = new Dog();
         dog.secure();
         dog.voice();
-        dog.feed();
+        //dog.feed();
 
         Cat cat = new Cat();
         cat.hunt();

@@ -9,7 +9,7 @@ public class Dog extends AnimalUsage {
         System.out.println("Собака лает");
     }
 
-    @Override
+    //@Override
     public void voice() {
         System.out.println("Собака лает");
     }

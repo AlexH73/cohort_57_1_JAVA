@@ -4,8 +4,109 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fd34a03-0908-40e3-97fb-62a49367703b" name="Changes" comment="HomeWork 34">
-      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" afterDir="false" />
+    <list default="true" id="8fd34a03-0908-40e3-97fb-62a49367703b" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_17_52_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_17_52__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_24/teachers_code/animal_example/AnimalUsage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_24/teachers_code/animal_example/AnimalUsage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_24/teachers_code/animal_example/Dog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_24/teachers_code/animal_example/Dog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseRoomCountComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseRoomCountComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseSquareComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseSquareComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseYearOfBuildComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/HouseYearOfBuildComparator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/Usage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_30/comparator_usage/Usage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_31/classwork/Classwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_31/classwork/Classwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/resources/file1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/resources/file2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/resources/file3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/practice/classwork/files/file1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/practice/classwork/files/file2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/practice/io_stream/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/teacher_code/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/teacher_code/file_new.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/src/teacher_code/out.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_36/theory.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_37/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_37/metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Desktop/Lessons/Lesson_37/theory.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_24/teachers_code/animal_example/AnimalUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_24/teachers_code/animal_example/AnimalUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_24/teachers_code/animal_example/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_24/teachers_code/animal_example/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/lesson_33.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/lesson_33.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/resources/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/resources/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/resources/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/resources/file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/resources/file3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/resources/file3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/Classwork36.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/Classwork36.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/FileMergerWithFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/FileMergerWithFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/FileMergerWithFilterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/FileMergerWithFilterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/FileMergerWithFilterImplRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/FileMergerWithFilterImplRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/LineNumberingFileCopier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/LineNumberingFileCopier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/LineNumberingFileCopierImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/LineNumberingFileCopierImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/ZipFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/ZipFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/ZipFileHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/ZipFileHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/files/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/files/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/files/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/files/file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/classwork/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/classwork/out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/BufferedFileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/BufferedFileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/IOExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/IOExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/ZipFileExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/ZipFileExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/archive.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/file1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/file1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/io_stream/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/io_stream/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/SerializationDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/serializable/SerializationDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/serializable/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/practice/serializable/userProfile.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/practice/serializable/userProfile.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/student_code/StudentCode35.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/student_code/StudentCode35.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/TeacherCode35.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/TeacherCode35.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/TeacherCode35_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/TeacherCode35_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/TeacherCode35_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/TeacherCode35_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/TeacherCode_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/TeacherCode_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/file_new.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/file_new.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/src/teacher_code/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/src/teacher_code/out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_36/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_36_IO_File/theory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/lesson_24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/lesson_24.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/practice/ComplexityAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/practice/ComplexityAssessment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/practice/ComplexityExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/practice/ComplexityExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/practice/PerformanceComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/practice/PerformanceComparison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/student_code/StudentCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/student_code/StudentCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/teacher_code/TeacherCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/teacher_code/TeacherCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/teacher_code/TeacherCode2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/teacher_code/TeacherCode2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/teacher_code/TeacherCode3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/teacher_code/TeacherCode3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/src/teacher_code/binary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/src/teacher_code/binary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/Lesson_37/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/Lesson_37_BigO_Sort/theory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/1_bPpvELo9_QqQsDz7CSbwXQ.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/1_bPpvELo9_QqQsDz7CSbwXQ.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/img_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/img_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/img_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/img_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/img_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/images/img_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/images/img_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/lesson_23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/lesson_23.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/plan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/students_code/StudentSandbox38.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/students_code/StudentSandbox38.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/TeacherSandbox38.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/TeacherSandbox38.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/TeacherSandbox38_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/TeacherSandbox38_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/TeacherSandbox38_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/TeacherSandbox38_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/binary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/binary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/teachers_code/bubble_sort.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/teachers_code/bubble_sort.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/BigOExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/BigOExamples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/LinearSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/LinearSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/SortingVisualizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/SortingVisualizerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/AlgorithmCompilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/AlgorithmCompilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/HeapSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/SearchVisualizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/SearchVisualizerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/ShellSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/ShellSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/src/theory/sorting_algorithms/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/src/theory/sorting_algorithms/Sorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lessons/lesson_38/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lessons/lesson_38_Sort_Search/theory.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +127,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="homework_Juri" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +161,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Arrays20.executor": "Run",
+    "Application.BigOExamples.executor": "Run",
+    "Application.CalendarExample.executor": "Run",
     "Application.Classwork.executor": "Run",
     "Application.Classwork36.executor": "Run",
     "Application.CollectionOperationsHomeworkUsage.executor": "Run",
@@ -88,6 +191,7 @@
     "Application.TeacherCode_4.executor": "Run",
     "Application.UserList.executor": "Run",
     "Application.UserOfList.executor": "Run",
+    "Application.ZoneIdExample.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Juri",
@@ -97,13 +201,26 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.PerformanceComparison">
-    <configuration name="Classwork36" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.practice.classwork.Classwork36" />
+  <component name="RunManager" selected="Application.ZoneIdExample">
+    <configuration name="BigOExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.lesson_38_Sort_Search.src.theory.BigOExamples" />
       <module name="Desktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lessons.Lesson_36.src.practice.classwork.*" />
+          <option name="PATTERN" value="Lessons.lesson_38_Sort_Search.src.theory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalendarExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_41.src.practice.CalendarExample" />
+      <module name="Desktop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lessons.Lesson_41.src.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,24 +229,11 @@
       </method>
     </configuration>
     <configuration name="PerformanceComparison" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37.src.practice.PerformanceComparison" />
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37_BigO_Sort.src.practice.PerformanceComparison" />
       <module name="Desktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lessons.Lesson_37.src.practice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SerializationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.practice.serializable.SerializationDemo" />
-      <module name="Desktop" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Lessons.Lesson_36.src.practice.serializable.*" />
+          <option name="PATTERN" value="Lessons.Lesson_37_BigO_Sort.src.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,11 +242,11 @@
       </method>
     </configuration>
     <configuration name="TeacherCode2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37.src.teacher_code.TeacherCode2" />
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_37_BigO_Sort.src.teacher_code.TeacherCode2" />
       <module name="Desktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lessons.Lesson_37.src.teacher_code.*" />
+          <option name="PATTERN" value="Lessons.Lesson_37_BigO_Sort.src.teacher_code.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,12 +254,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeacherCode_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_36.src.teacher_code.TeacherCode_4" />
+    <configuration name="ZoneIdExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lessons.Lesson_41.src.practice.ZoneIdExample" />
       <module name="Desktop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lessons.Lesson_36.src.teacher_code.*" />
+          <option name="PATTERN" value="Lessons.Lesson_41.src.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,11 +269,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ZoneIdExample" />
+        <item itemvalue="Application.CalendarExample" />
+        <item itemvalue="Application.BigOExamples" />
         <item itemvalue="Application.PerformanceComparison" />
         <item itemvalue="Application.TeacherCode2" />
-        <item itemvalue="Application.Classwork36" />
-        <item itemvalue="Application.SerializationDemo" />
-        <item itemvalue="Application.TeacherCode_4" />
       </list>
     </recent_temporary>
   </component>
