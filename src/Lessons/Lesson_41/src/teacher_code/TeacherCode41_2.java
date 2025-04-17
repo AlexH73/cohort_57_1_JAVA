@@ -88,6 +88,17 @@ public class TeacherCode41_2 {
         System.out.println("System.nanoTime() = " + System.nanoTime());
         System.out.println("System.nanoTime() = " + System.nanoTime());
 
+        LocalDateTime first = LocalDateTime.of(1989, Month.JUNE, 23, 04, 54, 12);
+        LocalDateTime second = LocalDateTime.of(2002, Month.MAY, 17, 11, 32, 45);
+
+        Duration duration = Duration.between(first, second);
+
+        System.out.println(duration);
+
+        System.out.println("duration.toMillis() = " + duration.toMillis());
+        System.out.println("duration.toMinutes() = " + duration.toMinutes());
+        System.out.println("duration.toDays() = " + duration.toDays());
+
 
     }
 }
