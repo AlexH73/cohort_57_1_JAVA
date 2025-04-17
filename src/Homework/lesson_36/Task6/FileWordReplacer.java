@@ -2,6 +2,7 @@ package Homework.lesson_36.Task6;
 
 import java.io.*;
 
+
 /**
  * Задача 6: Замена слова в текстовом файле.
  * <p>
@@ -22,7 +23,7 @@ import java.io.*;
  * @param newWord    новое слово
  */
 
-public class Task6 {
+public class FileWordReplacer {
     public void replaceWordInFile(File inputFile, File outputFile, String oldWord, String newWord) {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
              BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {

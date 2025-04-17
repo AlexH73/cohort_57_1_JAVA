@@ -7,16 +7,17 @@ public class Task6Main {
         File inputFile = new File("input.txt");
         File outputFile = new File("output.txt");
 
-        String oldWord = "Java";
-        String newWord = "Python";
+        // Создаем тестовый файл
+        TestFileCreator.createInputFile(inputFile);
+
+        System.out.println("Проверь файл input.txt");
 
 
         if (!inputFile.exists()) {
             System.out.println("Файл input.txt не найден. Убедитесь, что он существует в рабочей директории. ");
         }
 
-        Task6 replacer = new Task6();
-        replacer.replaceWordInFile(inputFile, outputFile, oldWord, newWord);
+
 
     }
 }
