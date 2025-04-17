@@ -29,7 +29,7 @@
 
 ### **Шаг 3: Разработка классов для хранения информации о приемах**
 ✔ `Appointment` – класс, представляющий визит питомца к ветеринару.  
-✔ Поля: `date`, `animal`, `veterinarian`, `diagnosis`.  
+✔ Поля: `date`, `animal24`, `veterinarian`, `diagnosis`.  
 ✔ Метод `conductCheckup()`, который устанавливает диагноз.  
 ✔ `MedicalHistory` – хранит список `Appointment` для конкретного животного.  
 ✔ Метод `addAppointment()`, который добавляет новый визит питомца в историю.
@@ -42,8 +42,8 @@
 ✔ Методы:
 - `registerClient(Client client)` – добавляет клиента в клинику.
 - `addPetToClient(Client client, Animal pet)` – добавляет питомца клиенту.
-- `scheduleAppointment(Animal animal, Veterinarian veterinarian, String date)` – записывает питомца на прием.
-- `getMedicalHistory(Animal animal)` – выводит историю болезни питомца.
+- `scheduleAppointment(Animal animal24, Veterinarian veterinarian, String date)` – записывает питомца на прием.
+- `getMedicalHistory(Animal animal24)` – выводит историю болезни питомца.
 - `showAllAppointments()` – отображает все запланированные визиты.
 
 ---

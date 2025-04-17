@@ -16,7 +16,7 @@ import java.io.IOException;
  *  rgb(255, 255, 255) → "FFFFFF"
  *  rgb(255, 255, 300) → "FFFFFF"
  *  rgb(0, 0, 0)       → "000000"
- *  rgb(148, 0, 211)   → "9400D3"
+ *  rgb(148, 0, 211)   → "9400D3" -> "94" + "00" + "D3" ->  9400D3
  */
 public class ColorImageGenerator {
 
