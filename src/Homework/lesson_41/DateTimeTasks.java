@@ -12,7 +12,8 @@ public class DateTimeTasks {
      * Пример: Сегодняшняя дата: 2025-04-13
      */
     public static void printTodayDate() {
-
+        LocalDate today = LocalDate.now();
+        System.out.println("Сегодняшняя дата: " + today);
     }
 
     /**
@@ -21,7 +22,8 @@ public class DateTimeTasks {
      * Пример: Я родился: 2004-06-01
      */
     public static void printBirthDate(int year, int month, int day) {
-
+        LocalDate birthDate = LocalDate.of(year, month, day);
+        System.out.println("Я родился: " + birthDate);
     }
 
     /**
@@ -30,7 +32,8 @@ public class DateTimeTasks {
      * Пример: Мне лет: 20
      */
     public static void printAge(LocalDate birthDate) {
-
+        Period period = Period.between(birthDate, LocalDate.now());
+        System.out.println("Мне: " + period.getYears() + " лет");
     }
 
     /**
@@ -39,6 +42,9 @@ public class DateTimeTasks {
      * Пример: Сейчас: 14:35:12
      */
     public static void printCurrentTime() {
+        LocalTime now = LocalTime.now();
+        DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm:ss");
+        System.out.println("Сейчас: " + time.format(now));
 
     }
 
@@ -48,7 +54,8 @@ public class DateTimeTasks {
      * Пример: Через 100 дней от 2025-04-13 будет: 2025-07-22
      */
     public static void printDatePlusDays(LocalDate startDate, int daysToAdd) {
-
+        LocalDate newDate = startDate.plusDays(daysToAdd);
+        System.out.println("Через " + daysToAdd + " дней от " + startDate + " будет: " + newDate);
     }
 
     /**
