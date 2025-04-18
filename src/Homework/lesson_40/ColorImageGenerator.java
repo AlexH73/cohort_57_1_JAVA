@@ -21,8 +21,19 @@ import java.io.IOException;
 public class ColorImageGenerator {
 
     public static String rgb(int r, int g, int b) {
-        // TODO: реализовать метод
-        return null;
+        r = clamp(r);
+        g = clamp(g);
+        b = clamp(b);
+        return toHex(r) + toHex(g) + toHex(b);
+    }
+
+    private static int clamp(int value) {
+        return Math.max(0, Math.min(value, 255));
+    }
+
+    private static String toHex(int value) {
+        String hex = Integer.toHexString(value).toUpperCase();
+        return hex.length() == 1 ? "0" + hex : hex;
     }
 
     /**
