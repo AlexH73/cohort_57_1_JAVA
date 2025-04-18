@@ -25,7 +25,7 @@ public class DateTimeTasks {
      * Пример: Я родился: 2004-06-01
      */
     public static void printBirthDate(int year, int month, int day) {
-        LocalDate dateOfBirth = LocalDate.of(1973,06,28);
+        LocalDate dateOfBirth = LocalDate.of(year,month,day);
         System.out.println("2. Я родился: " + dateOfBirth);
 
     }
@@ -36,9 +36,8 @@ public class DateTimeTasks {
      * Пример: Мне лет: 20
      */
     public static void printAge(LocalDate birthDate) {
-        LocalDate dateOfBrith = LocalDate.of(1973,06,28);
         LocalDate today = LocalDate.now();
-        Period age = Period.between(dateOfBrith,today);
+        Period age = Period.between(birthDate,today);
         System.out.println("3. Мне лет: " + age.getYears());
     }
 
