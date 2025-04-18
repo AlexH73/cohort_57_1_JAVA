@@ -1,5 +1,8 @@
 package Lessons.Lesson_41.src.practice.task;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+
 public class DateTimeConversionTasks {
 
     /**
@@ -10,7 +13,18 @@ public class DateTimeConversionTasks {
      * @return Время в UTC в формате "HH:mm:ss".
      */
     public static String convertUserTimeToUTC(String userTimeString, String userZoneId) {
-        return null;
+        // Парсинг времени пользователя
+        LocalTime userTime = LocalTime.parse(userTimeString);
+        // Текущая дата в часовом поясе пользователя
+        LocalDate currentDate = LocalDate.now(ZoneId.of(userZoneId));
+        // Создание LocalDateTime с текущей датой и временем пользователя
+        LocalDateTime userDateTime = LocalDateTime.of(currentDate, userTime);
+        // Создание ZonedDateTime в часовом поясе пользователя
+        ZonedDateTime userZoned = userDateTime.atZone(ZoneId.of(userZoneId));
+        // Конвертация в UTC
+        ZonedDateTime utcZoned = userZoned.withZoneSameInstant(ZoneOffset.UTC);
+        // Форматирование времени в UTC
+        return utcZoned.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
     }
 
     /**
@@ -22,7 +36,17 @@ public class DateTimeConversionTasks {
      * @return Результат в формате "yyyy-MM-dd HH:mm:ss zone" в целевом часовом поясе.
      */
     public static String parseAddAndConvert(String dateTimeString, long hoursToAdd, String targetZoneId) {
-        return null;
+        // Парсинг строки в LocalDateTime
+        LocalDateTime localDateTime = LocalDateTime.parse(dateTimeString, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        // Предполагаем, что исходное время в UTC
+        ZonedDateTime utcDateTime = localDateTime.atZone(ZoneOffset.UTC);
+        // Добавление часов
+        ZonedDateTime updatedDateTime = utcDateTime.plusHours(hoursToAdd);
+        // Конвертация в целевой часовой пояс
+        ZonedDateTime targetDateTime = updatedDateTime.withZoneSameInstant(ZoneId.of(targetZoneId));
+        // Форматирование результата
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss VV");
+        return targetDateTime.format(formatter);
     }
 
     public static void main(String[] args) {
