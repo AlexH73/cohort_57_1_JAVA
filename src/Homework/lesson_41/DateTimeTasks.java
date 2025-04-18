@@ -64,7 +64,8 @@ public class DateTimeTasks {
      * Пример: Распарсенная дата: 2000-01-01
      */
     public static void parseAndPrintDate(String dateString) {
-
+        LocalDate parsedDate= LocalDate.parse(dateString);
+        System.out.println("Распарсенная дата: " + parsedDate);
     }
 
     /**
@@ -73,7 +74,8 @@ public class DateTimeTasks {
      * Пример: Сегодня: 13.04.2025
      */
     public static void printFormattedDate(LocalDate date) {
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        System.out.println("Сегодня: " + date.format(formatter));
     }
 
     /**
@@ -82,7 +84,8 @@ public class DateTimeTasks {
      * Пример: Сейчас в Asia/Tokyo: 2025-04-13T22:15:00+09:00[Asia/Tokyo]
      */
     public static void printTimeInZone(String zoneId) {
-
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of(zoneId));
+        System.out.println("Сейчас в " + zoneId + ": " + zonedDateTime);
     }
 
     public static void main(String[] args) {
