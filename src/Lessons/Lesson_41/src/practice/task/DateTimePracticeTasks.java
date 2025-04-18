@@ -1,10 +1,9 @@
 package Lessons.Lesson_41.src.practice.task;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 public class DateTimePracticeTasks {
     public static void main(String[] args) {
@@ -55,7 +54,9 @@ public class DateTimePracticeTasks {
      * @return День недели в текстовом формате (например, "Понедельник").
      */
     public static String findDayOfWeek(String date) {
-        return null;
+        LocalDate localDate = LocalDate.parse(date);
+        DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+        return dayOfWeek.getDisplayName(TextStyle.FULL, new Locale("ru"));
     }
 
     /**
@@ -64,7 +65,9 @@ public class DateTimePracticeTasks {
      * @return Текущая дата и время в формате "dd MMMM yyyy, EEEE HH:mm:ss".
      */
     public static String formatCurrentDateTime() {
-        return null;
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy, EEEE HH:mm:ss", new Locale("de"));
+        return now.format(formatter);
     }
 }
 
