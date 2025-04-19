@@ -1,3 +1,4 @@
+/*
 package Lessons.Lesson_25.students.transport;
 
 public class Main {
@@ -17,3 +18,4 @@ public class Main {
         ((Flight) transports[2]).chooseServiceClass("Эконом");
     }
 }
+*/
