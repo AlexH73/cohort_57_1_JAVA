@@ -12,7 +12,8 @@ public class DateTimeTasks {
      * Пример: Сегодняшняя дата: 2025-04-13
      */
     public static void printTodayDate() {
-
+        LocalDate today = LocalDate.now();
+        System.out.println("Сегодняшняя дата: " + today);
     }
 
     /**
@@ -21,7 +22,8 @@ public class DateTimeTasks {
      * Пример: Я родился: 2004-06-01
      */
     public static void printBirthDate(int year, int month, int day) {
-
+        LocalDate birthday = LocalDate.of(year, month, day);
+        System.out.println("Я родился: " + birthday);
     }
 
     /**
@@ -30,7 +32,9 @@ public class DateTimeTasks {
      * Пример: Мне лет: 20
      */
     public static void printAge(LocalDate birthDate) {
-
+        LocalDate today = LocalDate.now();
+        Period period = Period.between(birthDate, today);
+        System.out.println("Мне лет: " + period.getYears());
     }
 
     /**
@@ -39,7 +43,8 @@ public class DateTimeTasks {
      * Пример: Сейчас: 14:35:12
      */
     public static void printCurrentTime() {
-
+        LocalTime now = LocalTime.now();
+        System.out.println("Сейчас: " + now);
     }
 
     /**
@@ -48,7 +53,8 @@ public class DateTimeTasks {
      * Пример: Через 100 дней от 2025-04-13 будет: 2025-07-22
      */
     public static void printDatePlusDays(LocalDate startDate, int daysToAdd) {
-
+        LocalDate endDate = startDate.plusDays(daysToAdd);
+        System.out.println("Через " + daysToAdd + " дней от " + startDate + " будет: " + endDate);
     }
 
     /**
@@ -57,8 +63,10 @@ public class DateTimeTasks {
      * Пример: Распарсенная дата: 2000-01-01
      */
     public static void parseAndPrintDate(String dateString) {
-
+        LocalDate parsedDate = LocalDate.parse(dateString);
+        System.out.println("Распарсенная дата: " + parsedDate);
     }
+
 
     /**
      * Задание 7.
@@ -66,8 +74,11 @@ public class DateTimeTasks {
      * Пример: Сегодня: 13.04.2025
      */
     public static void printFormattedDate(LocalDate date) {
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        String formattedDate = date.format(formatter);
+        System.out.println("Сегодня: " + formattedDate);
     }
+
 
     /**
      * Задание 8 (необязательное).
