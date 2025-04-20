@@ -4091,10 +4091,12 @@ treeMap.put("B", 20); treeMap.put("A", 10); // Автоматическая со
 
 </details>  
 
----  
+---
+
 </details>
 
 ---  
+
 <details>  
 <summary>5. 📦 Что такое <code>Set</code> и чем <code>HashSet</code> отличается от <code>TreeSet</code></summary>  
 
@@ -4171,9 +4173,13 @@ treeSet.add("cherry");
 ---
 
 </details>  
+
+---
+
 </details>  
 
 ---  
+
 <details>  
 <summary>6. 📦 Что такое <code>Iterator</code> и как он работает?</summary>  
 
