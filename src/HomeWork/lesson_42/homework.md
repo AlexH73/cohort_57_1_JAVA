@@ -1,0 +1,1 @@
+[Тест на принципы программирования](https://docs.google.com/forms/d/e/1FAIpQLSea_8y6iXJfKVZUBT-zC_WsH4ktjmiQmHXZEDa8257Sq8rtOA/viewform?usp=header)
