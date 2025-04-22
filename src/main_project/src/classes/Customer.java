@@ -59,5 +59,25 @@ public class Customer implements ICustomer {
                 ", bookingHistory=" + bookingHistory +
                 '}';
     }
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public void setUsername(String username) {
+
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public void setPassword(String password) {
+
+    }
 }
 

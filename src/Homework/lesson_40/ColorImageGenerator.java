@@ -20,16 +20,25 @@ import java.io.IOException;
  */
 public class ColorImageGenerator {
 
+    // Methode zur Umwandlung von RGB-Werten in einen Hexadezimal-Farbcode
     public static String rgb(int r, int g, int b) {
-        // TODO: реализовать метод
-        return null;
+        return "#" + toHex(clamp(r)) + toHex(clamp(g)) + toHex(clamp(b));
     }
 
-    /**
-     * Метод создаёт картинку 300x300 пикселей с фоном заданного цвета.
-     * @param hexColor строка цвета в формате "RRGGBB", например "9400D3"
-     * @param fileName имя выходного файла, например "color.jpg"
-     */
+    // Methode zur Begrenzung der Werte auf den Bereich 0-255
+    private static int clamp(int value) {
+        return Math.max(0, Math.min(255, value));
+    }
+
+    // Methode zur Umwandlung eines Ganzzahlwerts in einen zweistelligen Hexadezimal-String
+    private static String toHex(int value) {
+        return String.format("%02X", value);
+    }
+
+// * Метод создаёт картинку 300x300 пикселей с фоном заданного цвета.
+// * @param hexColor строка цвета в формате "RRGGBB", например "9400D3"
+// * @param fileName имя выходного файла, например "color.jpg"
+
     public static void saveColorImage(String hexColor, String fileName) {
         try {
             BufferedImage image = new BufferedImage(300, 300, BufferedImage.TYPE_INT_RGB);

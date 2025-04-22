@@ -47,5 +47,25 @@ public class Administrator implements IAdministrator {
     public String generateProductSalesReport(String startDate, String endDate) {
         return "Product Sales Report vom " + startDate + " bis " + endDate;
     }
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public void setUsername(String username) {
+
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public void setPassword(String password) {
+
+    }
 }
 
