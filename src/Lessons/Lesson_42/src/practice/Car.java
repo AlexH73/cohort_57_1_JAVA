@@ -1,5 +1,6 @@
 package Lessons.Lesson_42.src.practice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Car {
@@ -28,6 +29,8 @@ public class Car {
     // Этот метод делает слишком много. Он изменяет состояние и занимается выводом.
     public void showCarDetails() {
         System.out.println("Brand: " + brand + ", Model: " + model + ", Year: " + year);
+
+
         if (engineOn) {
             System.out.println("Engine is on");
         } else {
@@ -36,7 +39,7 @@ public class Car {
     }
 
     // Метод для добавления автомобиля в базу данных (нарушает SRP и DIP)
-    public void saveCarToDatabase(List<Car> database) {
+    public void saveCarToDatabase(ArrayList<Car> database) {
         database.add(this);
         System.out.println("Car saved to database.");
     }
