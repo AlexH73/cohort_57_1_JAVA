@@ -137,7 +137,7 @@ Each class should have only one reason to change. This principle states that a c
 with one task or functionality. If a class is responsible for performing multiple tasks, changing it due to requirements
 for one of the tasks may affect dependent functionality.
 
-![img.png](images%2Fimg.png)
+![img.png](images/img.png)
 
 <details style="margin-left: 20px;">
 <summary>Task 1:</summary>
@@ -152,7 +152,7 @@ Software entities (classes, modules, functions, etc.) should be open for expansi
 This means that you can add new functionality without changing existing code, which reduces the risk of introducing errors
 into an already running system.
 
-![img_1.png](images%2Fimg_1.png)
+![img_1.png](images/img_1.png)
 
 <details style="margin-left: 20px;">
 <summary>Task 2:</summary>
@@ -166,7 +166,7 @@ After that, implement a function that takes an array of objects of type `Shape` 
 Objects in the program can be replaced by their heirs without changing the correctness of the program execution. This principle
 emphasizes the importance of making subclasses interchangeable with their base classes without disrupting the program.
 
-![img_2.png](images%2Fimg_2.png)
+![img_2.png](images/img_2.png)
 
 <details style="margin-left: 20px;">
 <summary>Task 3:</summary>
@@ -180,7 +180,7 @@ but only `Eagle` can fly.
 Clients should not depend on interfaces that they do not use. It is necessary to divide large interfaces into more
 small and specific, so that the classes implementing these interfaces do not have unnecessary code that they do not need.
 
-![img_3.png](images%2Fimg_3.png)
+![img_3.png](images/img_3.png)
 
 <details style="margin-left: 20px;">
 <summary>Task 4:</summary>
@@ -195,7 +195,7 @@ High-level modules should not depend on low-level modules. Both types of modules
 In addition, abstractions should not depend on details. The details should depend on the abstractions. This principle is aimed at
 reducing dependencies between code modules, which makes it easier to test and maintain them.
 
-![img_4.png](images%2Fimg_4.png)
+![img_4.png](images/img_4.png)
 
 <details style="margin-left: 20px;">
 <summary>Task 5:</summary>
@@ -626,7 +626,7 @@ SOLID — это аббревиатура, представляющая пять
 одной задачей или функциональностью. Если класс отвечает за выполнение нескольких задач, его изменение из-за требований
 к одной из задач может повлиять на зависимую функциональность.
 
-![img.png](images%2Fimg.png)
+![img.png](images/img.png)
 
 <details style="margin-left: 20px;">
 <summary>Задание 1:</summary>
@@ -641,7 +641,7 @@ SOLID — это аббревиатура, представляющая пять
 Это означает, что можно добавлять новую функциональность, не изменяя существующий код, что снижает риск внесения ошибок
 в уже работающую систему.
 
-![img_1.png](images%2Fimg_1.png)
+![img_1.png](images/img_1.png)
 
 <details style="margin-left: 20px;">
 <summary>Задание 2:</summary>
@@ -655,7 +655,7 @@ SOLID — это аббревиатура, представляющая пять
 Объекты в программе можно заменять их наследниками без изменения правильности выполнения программы. Этот принцип
 подчеркивает важность того, чтобы подклассы были взаимозаменяемы с их базовыми классами, не нарушая работу программы.
 
-![img_2.png](images%2Fimg_2.png)
+![img_2.png](images/img_2.png)
 
 <details style="margin-left: 20px;">
 <summary>Задание 3:</summary>
@@ -669,7 +669,7 @@ SOLID — это аббревиатура, представляющая пять
 Клиенты не должны зависеть от интерфейсов, которые они не используют. Следует разделять большие интерфейсы на более
 мелкие и специфические, чтобы классы, реализующие эти интерфейсы, не имели лишнего кода, который им не нужен.
 
-![img_3.png](images%2Fimg_3.png)
+![img_3.png](images/img_3.png)
 
 <details style="margin-left: 20px;">
 <summary>Задание 4:</summary>
@@ -684,7 +684,7 @@ SOLID — это аббревиатура, представляющая пять
 Кроме того, абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций. Этот принцип направлен на
 уменьшение зависимостей между модулями кода, что облегчает их тестирование и поддержку.
 
-![img_4.png](images%2Fimg_4.png)
+![img_4.png](images/img_4.png)
 
 <details style="margin-left: 20px;">
 <summary>Задание 5:</summary>
