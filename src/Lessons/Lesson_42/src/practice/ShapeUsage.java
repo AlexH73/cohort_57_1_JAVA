@@ -12,8 +12,8 @@ public class ShapeUsage {
         int areas = 0;
         for (Shape shape : shapes) {
             areas += shape.area();
+            System.out.println(areas);
         }
 
-        System.out.println(areas);
     }
 }
