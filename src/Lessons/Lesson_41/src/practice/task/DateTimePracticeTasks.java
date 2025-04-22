@@ -1,5 +1,10 @@
 package Lessons.Lesson_41.src.practice.task;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public class DateTimePracticeTasks {
     public static void main(String[] args) {
         System.out.println("Age: " + calculateAge("1990-01-01"));
@@ -21,11 +26,15 @@ public class DateTimePracticeTasks {
     /**
      * Задача 2: Определите, сколько времени прошло между двумя моментами времени в течение дня.
      *
-     * @param startTime Время начала в формате "HH:mm:ss".
+     * @param startTime Время начала в формате "HH:mm:ss". -> "dd:MM:yyyy" + "HH:mm:ss"
      * @param endTime Время окончания в формате "HH:mm:ss".
      * @return Продолжительность между двумя моментами времени в минутах.
      */
     public static long timeBetween(String startTime, String endTime) {
+
+        LocalTime start = LocalTime.parse(startTime);
+        LocalDateTime startLDT = LocalDate.now().atTime(start);
+
         return 0;
     }
 

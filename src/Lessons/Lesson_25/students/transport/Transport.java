@@ -12,8 +12,7 @@ public class Transport {
         this.arrivalTime = arrivalTime;
         this.price = price;
     }
-
-    public void book() {
+    public void book(){
         System.out.println("Забронирован билет на транспорт");
     }
 
