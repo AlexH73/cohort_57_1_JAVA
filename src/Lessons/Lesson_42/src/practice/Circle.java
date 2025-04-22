@@ -1,6 +1,6 @@
 package Lessons.Lesson_42.src.practice;
 
-public class Circle implements Shape{
+public class Circle implements Shape {
     private int radius;
 
     public Circle(int radius) {

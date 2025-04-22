@@ -1,6 +1,6 @@
 package Lessons.Lesson_42.src.practice;
 
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
     private int sideA;
     private int sideB;
 
