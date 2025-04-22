@@ -1,10 +1,16 @@
 package Lessons.Lesson_42.src.practice;
 
 public class Rectangle implements Shape{
-    // подумать над полями
+    private int sideA;
+    private int sideB;
+
+    public Rectangle(int siteA, int siteB) {
+        this.sideA = siteA;
+        this.sideB = siteB;
+    }
 
     @Override
     public int area() {
-        return 0;
+        return this.sideA * this.sideB;
     }
 }

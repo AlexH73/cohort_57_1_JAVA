@@ -2,10 +2,10 @@ package Lessons.Lesson_42.src.practice;
 
 public class ShapeUsage {
     public static void main(String[] args) {
-        Shape circle = new Circle();
-        Shape rectangle = new Rectangle();
-        Shape circle2 = new Circle();
-        Shape rectangle2 = new Rectangle();
+        Shape circle = new Circle(7);
+        Shape rectangle = new Rectangle(10, 15);
+        Shape circle2 = new Circle(2);
+        Shape rectangle2 = new Rectangle(2, 12);
 
         Shape[] shapes = {circle, rectangle, circle2, rectangle2};
 
