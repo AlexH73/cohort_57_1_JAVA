@@ -32,4 +32,5 @@ public interface IUser {
      * @param password Новый пароль пользователя.
      */
     void setPassword(String password);
+
 }

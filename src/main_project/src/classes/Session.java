@@ -12,7 +12,7 @@ public class Session implements ISession {
     private List<ITicket> tickets;   // Список билетов для этого сеанса
 
     // Конструктор
-    public Session(IFilm film, ICinemaHall cinemaHall, String startTime, String endTime) {
+    public Session(IFilm film, ICinemaHall cinemaHall, String startTime) {
         this.film = film;
         this.cinemaHall = cinemaHall;
         this.startTime = startTime;

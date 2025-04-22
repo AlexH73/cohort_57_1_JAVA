@@ -1,4 +1,6 @@
 package Lessons.Lesson_41.src.practice.task;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -19,9 +21,15 @@ public class DateTimePracticeTasks {
      * @param birthdate Дата рождения человека в формате "yyyy-MM-dd".
      * @return Возраст человека в годах.
      */
+
+
     public static int calculateAge(String birthdate) {
-        return 0;
+        LocalDate date = LocalDate.parse(birthdate);
+        LocalDate now = LocalDate.now();
+
+        return (int) ChronoUnit.YEARS.between(date, now);
     }
+
 
     /**
      * Задача 2: Определите, сколько времени прошло между двумя моментами времени в течение дня.

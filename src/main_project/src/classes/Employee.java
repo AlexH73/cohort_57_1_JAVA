@@ -59,5 +59,25 @@ public class Employee implements IEmployee {
                 ", managedSessions=" + managedSessions +
                 '}';
     }
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public void setUsername(String username) {
+
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public void setPassword(String password) {
+
+    }
 }
 

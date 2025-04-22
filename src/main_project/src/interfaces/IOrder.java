@@ -53,4 +53,8 @@ public interface IOrder {
      * Оплатить заказ, изменяя его статус и обновляя статус связанных билетов.
      */
     void pay();
+
+    IProduct getProduct();
+
+    int getQuantity();
 }

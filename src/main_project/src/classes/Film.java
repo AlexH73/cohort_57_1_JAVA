@@ -32,6 +32,46 @@ public class Film implements IFilm {
     }
 
     @Override
+    public String getGenre() {
+        return "";
+    }
+
+    @Override
+    public void setGenre(String genre) {
+
+    }
+
+    @Override
+    public String getRating() {
+        return "";
+    }
+
+    @Override
+    public void setRating(String rating) {
+
+    }
+
+    @Override
+    public String getDescription() {
+        return "";
+    }
+
+    @Override
+    public void setDescription(String description) {
+
+    }
+
+    @Override
+    public String getLanguage() {
+        return "";
+    }
+
+    @Override
+    public void setLanguage(String language) {
+
+    }
+
+    @Override
     public String toString() {
         return "Film{name='" + name + "', duration=" + duration + "}";
     }

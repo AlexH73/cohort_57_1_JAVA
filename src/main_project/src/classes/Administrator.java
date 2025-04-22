@@ -1,8 +1,8 @@
 package main_project.src.classes;
 
-import main_project.src.interfaces.*;
 
 
+/*
 public class Administrator implements IAdministrator {
 
     @Override
@@ -20,7 +20,7 @@ public class Administrator implements IAdministrator {
     @Override
     public IProduct createProduct(String name, double price, String description, int stockQuantity) {
         System.out.println("Produkt erstellt: " + name);
-        return new Product(name, price, description, stockQuantity);
+        return new Produckt(name, price, description, stockQuantity);
     }
 
     @Override
@@ -68,4 +68,91 @@ public class Administrator implements IAdministrator {
 
     }
 }
+
+ */
+import main_project.src.interfaces.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Administrator implements IAdministrator {
+    private List<IFilm> films;
+    private List<ISession> sessions;
+    private List<IProduct> products;
+
+    public Administrator() {
+        this.films = new ArrayList<>();
+        this.sessions = new ArrayList<>();
+        this.products = new ArrayList<>();
+    }
+
+    @Override
+    public ISession createSession(IFilm film, ICinemaHall hall, String dateTime) {
+        ISession newSession = new Session(film, hall, dateTime); // Annahme: Klasse `Session` existiert
+        sessions.add(newSession);
+        return newSession;
+    }
+
+    @Override
+    public IProduct createProduct(String name, double price, String description, int stockQuantity) {
+        IProduct newProduct = new Produckt(name, price, description, stockQuantity); // Annahme: Klasse `Product` existiert
+        products.add(newProduct);
+        return newProduct;
+    }
+
+    @Override
+    public void deleteFilm(IFilm film) {
+        films.remove(film);
+    }
+
+    @Override
+    public void deleteSession(ISession session) {
+        sessions.remove(session);
+    }
+
+    @Override
+    public void deleteProduct(IProduct product) {
+        products.remove(product);
+    }
+
+    @Override
+    public String generateTicketSalesReport(String startDate, String endDate) {
+        // Beispielhafte Implementierung
+        return "Ticket Sales Report from " + startDate + " to " + endDate + ": [Details folgen...]";
+    }
+
+    @Override
+    public String generateProductSalesReport(String startDate, String endDate) {
+        // Beispielhafte Implementierung
+        return "Product Sales Report from " + startDate + " to " + endDate + ": [Details folgen...]";
+    }
+
+    @Override
+    public IFilm createFilm(String name, int duration) {
+        IFilm newFilm = new Film(name, duration); // Annahme: Klasse `Film` existiert
+        films.add(newFilm);
+        return newFilm;
+    }
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public void setUsername(String username) {
+
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+    @Override
+    public void setPassword(String password) {
+
+    }
+}
+
 
