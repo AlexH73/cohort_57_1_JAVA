@@ -95,7 +95,7 @@ public class Administrator implements IAdministrator {
 
     @Override
     public IProduct createProduct(String name, double price, String description, int stockQuantity) {
-        IProduct newProduct = new Produckt(name, price, description, stockQuantity); // Annahme: Klasse `Product` existiert
+        IProduct newProduct = new Product(name, price, description, stockQuantity); // Annahme: Klasse `Product` existiert
         products.add(newProduct);
         return newProduct;
     }
