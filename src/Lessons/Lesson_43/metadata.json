@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/FunctionalInterfaces.java",
+    "src/practice/BiFunction.java",
+    "src/practice/BiFunctionExample.java",
+    "src/practice/Action.java",
+    "src/practice/Condition.java",
+    "src/practice/Provider.java"
+  ],
+  "video": ""
+}
