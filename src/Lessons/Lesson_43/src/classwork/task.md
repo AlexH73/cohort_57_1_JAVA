@@ -9,11 +9,6 @@ interface Printer {
 }
 ```  
   - Создайте его экземпляр с помощью лямбда‑выражения, которое выводит переданное сообщение на консоль.
-- Проверьте на примере:
-```java
-Printer printer = message -> System.out.println(message);
-printer.print("Hello, FP!");
-```
 
 2. **Задача 2. Method reference и `Function`**
    - Используя предопределённый интерфейс `Function<String, Integer>`, создайте функцию, которая возвращает длину строки.
@@ -42,8 +37,7 @@ List<String> names = List.of("Alice", "Bob", "Charlie", "Diana");
 ```  
 - С помощью `Consumer<String>` и ссылки `System.out::println` выведите каждому имени приветствие вида:
 ```java
-Consumer<String> greeter = name -> System.out.println("Hello, " + name + "!");
-names.forEach(greeter);
+"Hello, " + name + "!"
 ```
 
 5. **Задача 5. Составление цепочки `Predicate` → `Function` → `Consumer`**
