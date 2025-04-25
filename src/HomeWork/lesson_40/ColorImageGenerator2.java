@@ -6,19 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Задание: Реализуйте метод rgb, который принимает три значения от 0 до 255 (красный, зелёный, синий)
- * и возвращает строку с шестнадцатеричным представлением цвета в формате "RRGGBB".
- *
- * Далее результат используется для создания изображения 300x300 пикселей.
- *
- * Примеры:
- *  rgb(255, 255, 255) → "FFFFFF"
- *  rgb(255, 255, 300) → "FFFFFF"
- *  rgb(0, 0, 0)       → "000000"
- *  rgb(148, 0, 211)   → "9400D3" -> "94" + "00" + "D3" ->  9400D3
- */
-public class ColorImageGenerator {
+public class ColorImageGenerator2 {
 
     // Methode zur Umwandlung von RGB-Werten in einen Hexadezimal-Farbcode
     public static String rgb(int r, int g, int b) {
@@ -77,20 +65,51 @@ public class ColorImageGenerator {
             e.printStackTrace();
         }
     }
+    public static void saveCheckerboardImage(String color1Hex, String color2Hex, String fileName) {
+        try {
+            if (!color1Hex.startsWith("#")) {
+                color1Hex = "#" + color1Hex;
+            }
+            if (!color2Hex.startsWith("#")) {
+                color2Hex = "#" + color2Hex;
+            }
 
+            if (color1Hex.length() != 7 || color2Hex.length() != 7) {
+                throw new IllegalArgumentException("Ungültige Farbcodes: " + color1Hex + ", " + color2Hex);
+            }
 
+            BufferedImage image = new BufferedImage(300, 300, BufferedImage.TYPE_INT_RGB);
+            Color color1 = Color.decode(color1Hex);
+            Color color2 = Color.decode(color2Hex);
 
-    public static void main(String[] args) {
-        // Пример использования
-        int r = 144, g = 0, b = 211;
+            int squareSize = 30; // Größe eines Quadrats im Schachbrettmuster
 
-        String hex = rgb(r, g, b); // ← здесь должен возвращаться "9400D3"
-        System.out.println(hex);
+            for (int x = 0; x < 300; x++) {
+                for (int y = 0; y < 300; y++) {
+                    // Berechnung, welche Farbe verwendet wird
+                    boolean isColor1 = ((x / squareSize) + (y / squareSize)) % 2 == 0;
+                    image.setRGB(x, y, isColor1 ? color1.getRGB() : color2.getRGB());
+                }
+            }
 
-        if (hex != null) {
-            saveColorImage(hex, "color.jpg");
-        } else {
-            System.out.println("Метод rgb пока не реализован.");
+            File outputFile = new File(fileName);
+            ImageIO.write(image, "jpg", outputFile);
+            System.out.println("Schachbrett-Bild gespeichert: " + outputFile.getAbsolutePath());
+
+            // Bild direkt öffnen
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(outputFile);
+            } else {
+                System.err.println("Desktop-Funktionalität wird nicht unterstützt.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println("Ungültiger Eingabewert: " + e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        saveCheckerboardImage("000000", "FFFFFF", "checkerboard.jpg");
     }
 }
