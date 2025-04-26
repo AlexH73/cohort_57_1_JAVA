@@ -16,22 +16,18 @@ public class UsageFunctional {
         useFunctionalInterface(functionalInterfaceOne);
         useFunctionalInterface(functionalInterfaceTwo);
 
-        IBuch<List<Integer>> integerListBuch = (list) -> {
-            int result = 0;
-            for (Integer i : list) {
-                result += i;
-            }
-            return result;
-        };
+        IBuch integerListBuch = (list) -> getBuch((List<Integer>) list);
+
 
         useIBuch(integerListBuch);
 
         IntegerListBuch buch = new IntegerListBuch();
-        useIBuch(integerListBuch);
+        useIBuch(buch); // здесь была ошибка, ты два раза integerListBuch передавала
 
-        IBuch<File> fileBuch = (file) -> {
+        // Теперь создаём IBuch для работы с файлом
+        IBuch fileBuch = (file) -> {
             int result = 0;
-            try (Scanner scanner = new Scanner(file)){
+            try (Scanner scanner = new Scanner((File) file)) {
                 while (scanner.hasNextInt()) {
                     result += scanner.nextInt();
                 }
@@ -42,10 +38,10 @@ public class UsageFunctional {
             }
         };
 
-        File file = new File("path/to/file");
-        fileBuch.getBuch(file);
-
-
+        // Здесь создаём файл и вызываем fileBuch
+        File file = new File("/Users/juliannaburkovska/IdeaProjects/ait_base_course/src/my_numbers.txt");
+        int result = fileBuch.getBuch(file);
+        System.out.println("Сумма чисел из файла = " + result);
     }
 
     private static void useFunctionalInterface(MyFunctionalInterface myFunctionalInterface) {
@@ -56,5 +52,11 @@ public class UsageFunctional {
         List<Integer> list = List.of(1, 2, 3);
 
         System.out.println("iBuch.getBuch(list) = " + iBuch.getBuch(list));
+    }
+
+    private static int getBuch(List<Integer> list) {
+        int result = 0;
+        for (Integer i : list) result += i;
+        return result;
     }
 }
