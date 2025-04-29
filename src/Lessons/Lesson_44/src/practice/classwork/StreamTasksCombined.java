@@ -2,6 +2,9 @@ package Lessons.Lesson_44.src.practice.classwork;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 public class StreamTasksCombined {
 
@@ -32,13 +35,15 @@ public class StreamTasksCombined {
      */
     public static List<Integer> oddPlusFive() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
+        List<Integer> num = numbers.stream().filter(number -> number % 2 != 0).mapToInt(number -> number +5).collect(toList()).orElse(0);
+
         List<Integer> result = new ArrayList<>();
         for (Integer number : numbers) {
             if (number % 2 != 0) {
                 result.add(number + 5);
             }
         }
-        return result;
+        return num;
     }
 
     /**

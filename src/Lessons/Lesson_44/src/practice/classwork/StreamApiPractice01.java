@@ -64,12 +64,12 @@ public class StreamApiPractice01 {
         String word1 = words.stream().filter(word -> word.length() > 5).findFirst().orElse("Not found");
         String result = "Not found";
         for (String word : words) {
-            if (word.length() > 5) {
+            if (word.length() > 4) {
                 result = word;
                 break;
             }
         }
-        System.out.println("First long word: " + word1);
+        System.out.println("First long word: " + word1 + " " + result);
     }
 
     /**
@@ -80,6 +80,10 @@ public class StreamApiPractice01 {
      */
     public static void checkDivisibleBySeven() {
         List<Integer> numbers = List.of(3, 10, 14, 18);
+        boolean hasDivisibleBySevenStream = numbers.stream().anyMatch(num ->num % 7 == 0);
+
+        System.out.println("Contains number divisible by 7: " + hasDivisibleBySevenStream);
+
         boolean hasDivisibleBySeven = false;
         for (Integer num : numbers) {
             if (num % 7 == 0) {
@@ -98,6 +102,10 @@ public class StreamApiPractice01 {
      */
     public static void multiplyAllNumbers() {
         List<Integer> numbers = List.of(2, 3, 4);
+        int productStream = numbers.stream().reduce((x, y) -> x * y).orElse(0);
+
+        System.out.println("Product of all numbersStream: " + productStream);
+
         int product = 1;
         for (Integer num : numbers) {
             product *= num;
