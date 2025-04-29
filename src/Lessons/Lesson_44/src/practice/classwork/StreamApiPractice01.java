@@ -73,14 +73,14 @@ public class StreamApiPractice01 {
      * Требуется применить: anyMatch
      */
     public static void checkDivisibleBySeven() {
-        List<Integer> numbers = List.of(3, 10, 14, 18);
-        boolean hasDivisibleBySeven = false;
-        for (Integer num : numbers) {
-            if (num % 7 == 0) {
-                hasDivisibleBySeven = true;
-                break;
-            }
-        }
+        List<Integer> numbers = List.of(3, 10, 18);
+        boolean hasDivisibleBySeven = numbers.stream().anyMatch(num -> num % 7 == 0);
+//        for (Integer num : numbers) {
+//            if (num % 7 == 0) {
+//                hasDivisibleBySeven = true;
+//                break;
+//            }
+//        }
         System.out.println("Contains number divisible by 7: " + hasDivisibleBySeven);
     }
 
