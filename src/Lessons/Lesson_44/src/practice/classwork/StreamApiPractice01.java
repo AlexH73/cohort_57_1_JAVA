@@ -2,6 +2,7 @@ package Lessons.Lesson_44.src.practice.classwork;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamApiPractice01 {
 
@@ -21,6 +22,10 @@ public class StreamApiPractice01 {
      */
     public static void countWordsStartingWithA() {
         List<String> words = List.of("Apple", "Banana", "Avocado", "Cherry", "apricot");
+
+        Long countStream = words.stream().filter(word -> word.startsWith("A")).count();
+        System.out.println("CountStream of words starting with 'A': " + countStream);
+
         int count = 0;
         for (String word : words) {
             if (word.startsWith("A")) {
@@ -39,6 +44,11 @@ public class StreamApiPractice01 {
     public static void collectEvenNumbers() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         List<Integer> evenNumbers = new ArrayList<>();
+
+        List<Integer> evenNumbersStream = numbers.stream().filter(number -> number % 2 == 0).collect(Collectors.toList()); // .toList() от Java 16
+
+        System.out.println("Even numbers evenNumbersStream: " + evenNumbersStream);
+
         for (Integer num : numbers) {
             if (num % 2 == 0) {
                 evenNumbers.add(num);
@@ -55,6 +65,10 @@ public class StreamApiPractice01 {
      */
     public static void findFirstLongWord() {
         List<String> words = List.of("hi", "world", "fantastic", "code");
+        String resultStream = words.stream().filter(word -> word.length() > 5).findFirst().orElse("Not found");
+
+        System.out.println("First long word resultStream: " + resultStream);
+
         String result = "Not found";
         for (String word : words) {
             if (word.length() > 5) {
@@ -73,6 +87,11 @@ public class StreamApiPractice01 {
      */
     public static void checkDivisibleBySeven() {
         List<Integer> numbers = List.of(3, 10, 14, 18);
+
+        boolean hasDivisibleBySevenStream = numbers.stream().anyMatch(number -> number % 7 == 0);
+
+        System.out.println("Contains number hasDivisibleBySevenStream divisible by 7: " + (hasDivisibleBySevenStream ? "Yes" : "No"));
+
         boolean hasDivisibleBySeven = false;
         for (Integer num : numbers) {
             if (num % 7 == 0) {
@@ -91,6 +110,11 @@ public class StreamApiPractice01 {
      */
     public static void multiplyAllNumbers() {
         List<Integer> numbers = List.of(2, 3, 4);
+
+        int productStream = numbers.stream().reduce((number, number2) -> number * number2).orElse(0);
+
+        System.out.println("Product of all numbersStream: " + productStream);
+
         int product = 1;
         for (Integer num : numbers) {
             product *= num;

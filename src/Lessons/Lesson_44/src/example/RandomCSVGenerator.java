@@ -22,8 +22,8 @@ public class RandomCSVGenerator {
     private static final Random random = new Random();
 
     public static void main(String[] args) {
-        String fileName = "basic_programming/lesson_44/src/example/people.csv"; // имя файла для записи
-        int numberOfPeople = 12; // сколько людей сгенерировать
+        String fileName = "src/Lessons/Lesson_44/src/example/people.csv"; // имя файла для записи
+        int numberOfPeople = 30; // сколько людей сгенерировать
 
         generateRandomCSV(fileName, numberOfPeople);
         generateRandomCSVWithStream(fileName.replace(".csv", "_stream.csv"), numberOfPeople);
