@@ -6,15 +6,23 @@ import java.util.stream.Collectors;
 
 public class StreamTasksCombined {
     public static void main(String[] args) {
-        System.out.println(filterAndMapToUpperStream());
-        System.out.println(filterAndMapToUpper());
+        System.out.println("filterAndMapToUpperStream() = " + filterAndMapToUpperStream());
+        System.out.println("filterAndMapToUpper() = " + filterAndMapToUpper());
+        System.out.println("oddPlusFiveStream() = " + oddPlusFiveStream());
+        System.out.println("oddPlusFive() = " + oddPlusFive());
+        System.out.println("sortByLengthAndLimit() = " + sortByLengthAndLimit());
+        System.out.println("sumOfEvenSquaresStream() = " + sumOfEvenSquaresStream());
+        System.out.println("sumOfEvenSquares() = " + sumOfEvenSquares());
+        System.out.println("allShorterThanTenStream() = " + allShorterThanTenStream());
+        System.out.println("allShorterThanTen() = " + allShorterThanTen());
+
     }
 
     /**
      * Задача 1:
      * Из списка строк выбрать только те, которые начинаются с "A",
      * привести их к верхнему регистру и собрать в новый список.
-     *
+     * <p>
      * Требуется применить: filter -> map -> collect
      */
     public static List<String> filterAndMapToUpperStream() {
@@ -24,6 +32,7 @@ public class StreamTasksCombined {
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
     }
+
     public static List<String> filterAndMapToUpper() {
         List<String> words = List.of("Apple", "apricot", "Banana", "Avocado", "cherry");
         List<String> result = new ArrayList<>();
@@ -39,9 +48,17 @@ public class StreamTasksCombined {
      * Задача 2:
      * Из списка чисел оставить только нечётные,
      * увеличить их на 5 и собрать в новый список.
-     *
+     * <p>
      * Требуется применить: filter -> map -> collect
      */
+    public static List<Integer> oddPlusFiveStream() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
+        return numbers.stream()
+                .filter(number -> number % 2 != 0)
+                .map(number -> number + 5)
+                .collect(Collectors.toList());
+    }
+
     public static List<Integer> oddPlusFive() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
         List<Integer> result = new ArrayList<>();
@@ -57,7 +74,7 @@ public class StreamTasksCombined {
      * Задача 3:
      * Отсортировать список строк по убыванию длины,
      * взять первые три строки и собрать их в список.
-     *
+     * <p>
      * Требуется применить: sorted -> limit -> collect
      */
     public static List<String> sortByLengthAndLimit() {
@@ -70,9 +87,17 @@ public class StreamTasksCombined {
     /**
      * Задача 4:
      * Найти сумму квадратов всех чётных чисел в списке.
-     *
+     * <p>
      * Требуется применить: filter -> map -> reduce
      */
+    public static int sumOfEvenSquaresStream() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .map(num -> num * num)
+                .reduce(0, Integer::sum);
+    }
+
     public static int sumOfEvenSquares() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         int sum = 0;
@@ -88,9 +113,15 @@ public class StreamTasksCombined {
      * Задача 5:
      * Проверить, что все строки в списке короче 10 символов
      * (используя allMatch).
-     *
+     * <p>
      * Требуется применить: allMatch
      */
+    public static boolean allShorterThanTenStream() {
+        List<String> words = List.of("dog", "elephant", "tiger", "bat");
+
+        return words.stream().allMatch(word -> word.length() < 10);
+    }
+
     public static boolean allShorterThanTen() {
         List<String> words = List.of("dog", "elephant", "tiger", "bat");
         for (String word : words) {
