@@ -1,5 +1,9 @@
 package Lessons.Lesson_43.src.teacher_code.functional_interface_usage;
 
-public interface IBuch {
-    int getBuch(Object t);
+import java.util.List;
+
+public interface IBuch <T>  {
+
+    int getBuch(T t);
+
 }
