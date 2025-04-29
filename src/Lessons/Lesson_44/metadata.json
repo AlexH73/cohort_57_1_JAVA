@@ -1,0 +1,18 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/functional_programming/FunctionalInterfaces.java",
+    "src/practice/functional_programming/BiFunction.java",
+    "src/practice/functional_programming/BiFunctionExample.java",
+    "src/practice/functional_programming/Action.java",
+    "src/practice/functional_programming/Condition.java",
+    "src/practice/functional_programming/Provider.java",
+    "src/practice/stream/LoopStreamCompare.java",
+    "src/practice/stream/SecondStreamExample.java",
+    "src/practice/stream/StreamExamples.java",
+    "src/practice/Classwork.java"
+  ],
+  "video": ""
+}
