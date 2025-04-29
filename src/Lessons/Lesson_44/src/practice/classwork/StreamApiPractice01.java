@@ -2,9 +2,9 @@ package Lessons.Lesson_44.src.practice.classwork;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamApiPractice01 {
-
     public static void main(String[] args) {
         countWordsStartingWithA();
         collectEvenNumbers();
@@ -21,6 +21,7 @@ public class StreamApiPractice01 {
      */
     public static void countWordsStartingWithA() {
         List<String> words = List.of("Apple", "Banana", "Avocado", "Cherry", "apricot");
+
         int count = 0;
         for (String word : words) {
             if (word.startsWith("A")) {
@@ -39,6 +40,8 @@ public class StreamApiPractice01 {
     public static void collectEvenNumbers() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         List<Integer> evenNumbers = new ArrayList<>();
+
+        System.out.println(numbers.stream().filter(num -> num % 2 == 0).toList());
         for (Integer num : numbers) {
             if (num % 2 == 0) {
                 evenNumbers.add(num);
@@ -74,6 +77,8 @@ public class StreamApiPractice01 {
     public static void checkDivisibleBySeven() {
         List<Integer> numbers = List.of(3, 10, 14, 18);
         boolean hasDivisibleBySeven = false;
+
+        System.out.println(numbers.stream().anyMatch(num -> num % 7 == 0));
         for (Integer num : numbers) {
             if (num % 7 == 0) {
                 hasDivisibleBySeven = true;
