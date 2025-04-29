@@ -2,8 +2,13 @@ package Lessons.Lesson_44.src.practice.classwork;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamTasksCombined {
+    public static void main(String[] args) {
+        System.out.println(filterAndMapToUpperStream());
+        System.out.println(filterAndMapToUpper());
+    }
 
     /**
      * Задача 1:
@@ -12,6 +17,13 @@ public class StreamTasksCombined {
      *
      * Требуется применить: filter -> map -> collect
      */
+    public static List<String> filterAndMapToUpperStream() {
+        List<String> words = List.of("Apple", "apricot", "Banana", "Avocado", "cherry");
+        return words.stream()
+                .filter(word -> word.startsWith("A"))
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
+    }
     public static List<String> filterAndMapToUpper() {
         List<String> words = List.of("Apple", "apricot", "Banana", "Avocado", "cherry");
         List<String> result = new ArrayList<>();
