@@ -1,8 +1,12 @@
 package Lessons.Lesson_44.src.example;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +44,31 @@ public class StreamFromCSVExample {
         }
     }
 
+    public static List<PersonInner> readPeopleFromCSVWithLoop(String path) {
+        File file = new File(path);
+        List<PersonInner> persons = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line = reader.readLine();
+            boolean isFirst = true;
+            while (line != null) {
+                if(isFirst) {
+                    isFirst = false;
+                    continue;
+                }
+                String[] content = line.split(",");
+                if (content.length == 3) {
+                    PersonInner personInner = new PersonInner(content[0], Integer.parseInt(content[1]),Integer.parseInt(content[2]));
+                    persons.add(personInner);
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
+
+        return persons;
+    }
+
+
     /**
      * Найти человека старше 18 лет с максимальной зарплатой.
      */
@@ -58,7 +87,7 @@ public class StreamFromCSVExample {
     /**
      * Вложенный класс PersonInner.
      */
-    public static class PersonInner {
+    private static class PersonInner {
         private String name;
         private int age;
         private int salary;
