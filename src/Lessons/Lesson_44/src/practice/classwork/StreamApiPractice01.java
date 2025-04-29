@@ -20,16 +20,17 @@ public class StreamApiPractice01 {
      * Требуется применить: filter -> count
      */
     public static void countWordsStartingWithA() {
-        List<String> words = List.of("Apple", "Banana", "Avocado", "Cherry", "apricot");
+        List<String> words = List.of("Apple", "Banana", "Ananas","Avocado", "Cherry", "apricot");
+        long x = words.stream().filter(word -> word.startsWith("A")).count();
         int count = 0;
         for (String word : words) {
             if (word.startsWith("A")) {
                 count++;
             }
         }
-        System.out.println("Count of words starting with 'A': " + count);
+        System.out.println("Count of words starting with 'A': " + x );
     }
-
+//.filter(parts -> parts.length == 3)
     /**
      * Задача 2.
      * Есть список чисел. Собери только чётные числа в новый список.
