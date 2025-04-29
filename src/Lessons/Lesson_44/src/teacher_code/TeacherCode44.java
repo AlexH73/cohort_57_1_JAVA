@@ -6,6 +6,25 @@ import java.util.List;
 
 public class TeacherCode44 {
     public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+
+        System.out.println("Arrays.toString(nums) = " + Arrays.toString(nums));
+
+        for (int num : nums) {
+            num = num + 10;
+        }
+        System.out.println("Arrays.toString(nums) = " + Arrays.toString(nums));
+
+
+//        for (int i = 0; i < nums.length; i++) {
+//            nums[i] = nums[i] + 10;
+//        }
+//        System.out.println("Arrays.toString(nums) = " + Arrays.toString(nums));
+
+
+    }
+
+    public static void tmain(String[] args) {
 
         int[] nums = {1, 2, 3};
 
