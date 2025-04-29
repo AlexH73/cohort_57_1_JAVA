@@ -1,5 +1,6 @@
 package Lessons.Lesson_44.src.example;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,8 +23,8 @@ public class RandomCSVGenerator {
     private static final Random random = new Random();
 
     public static void main(String[] args) {
-        String fileName = "basic_programming/lesson_44/src/example/people.csv"; // имя файла для записи
-        int numberOfPeople = 12; // сколько людей сгенерировать
+        String fileName = "src/Lessons/Lesson_44/src/example/people.csv"; // имя файла для записи
+        int numberOfPeople = 34; // сколько людей сгенерировать
 
         generateRandomCSV(fileName, numberOfPeople);
         generateRandomCSVWithStream(fileName.replace(".csv", "_stream.csv"), numberOfPeople);
@@ -46,6 +47,7 @@ public class RandomCSVGenerator {
                 builder.append(name).append(",").append(age).append(",").append(salary).append("\n");
             }
 
+            new File(fileName).createNewFile();
             Files.writeString(filePath, builder.toString());
             System.out.println("CSV файл успешно создан: " + filePath.toAbsolutePath());
 
@@ -69,6 +71,7 @@ public class RandomCSVGenerator {
                     })
                     .collect(Collectors.joining("\n", "name,age,salary\n", "\n")); // добавляем заголовок и переносы строк
 
+            new File(fileName).createNewFile();
             Files.writeString(filePath, content);
             System.out.println("CSV файл через Stream API успешно создан: " + filePath.toAbsolutePath());
 

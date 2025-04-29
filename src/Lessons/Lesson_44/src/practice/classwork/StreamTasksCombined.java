@@ -7,6 +7,13 @@ import java.util.stream.Collectors;
 import static java.util.stream.Collectors.*;
 
 public class StreamTasksCombined {
+    public static void main(String[] args) {
+        System.out.println("filterAndMapToUpper() = " + filterAndMapToUpper());
+        System.out.println("oddPlusFive() = " + oddPlusFive());
+        System.out.println("sortByLengthAndLimit() = " + sortByLengthAndLimit());
+        System.out.println("sumOfEvenSquares() = " + sumOfEvenSquares());
+        System.out.println("allShorterThanTen() = " + allShorterThanTen());
+    }
 
     /**
      * Задача 1:
