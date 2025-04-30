@@ -42,7 +42,11 @@ public class StreamTasksCombined {
      */
     public static List<Integer> oddPlusFive() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
-        List<Integer> num = numbers.stream().filter(number -> number % 2 != 0).mapToInt(number -> number +5).collect(toList()).orElse(0);
+        List<Integer> num = numbers.stream()
+                .filter(number -> number % 2 != 0)
+                .map(number -> number +5)
+                .collect(toList());
+        System.out.println("num = " + num);
 
         List<Integer> result = new ArrayList<>();
         for (Integer number : numbers) {
@@ -62,6 +66,12 @@ public class StreamTasksCombined {
      */
     public static List<String> sortByLengthAndLimit() {
         List<String> words = List.of("cat", "elephant", "tiger", "mouse", "lion");
+        List<String> words2 = words.stream()
+                .sorted((s1, s2) -> Integer.compare(s2.length(), s1.length()))
+                .limit(3)
+                .collect(toList());
+        System.out.println("words2 = " + words2);
+
         List<String> sorted = new ArrayList<>(words);
         sorted.sort((s1, s2) -> Integer.compare(s2.length(), s1.length()));
         return sorted.subList(0, Math.min(3, sorted.size()));
@@ -75,6 +85,13 @@ public class StreamTasksCombined {
      */
     public static int sumOfEvenSquares() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        int sum2 = numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .map(number -> number * number)
+                .reduce(0, Integer::sum);
+
+        System.out.println("sum2 = " + sum2);
+
         int sum = 0;
         for (Integer number : numbers) {
             if (number % 2 == 0) {
