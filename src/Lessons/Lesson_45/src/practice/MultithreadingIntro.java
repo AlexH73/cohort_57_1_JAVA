@@ -1,6 +1,13 @@
 package Lessons.Lesson_45.src.practice;
 
 public class MultithreadingIntro {
+    public static void main(String[] args) {
+        task1_createThreadByExtending();
+//        task2_createThreadByRunnable();
+//        task3_createTwoThreads();
+//        task4_sleepParallelOutput();
+//        task5_waitForThreadWithJoin();
+    }
 
     /**
      * Пример 1.
