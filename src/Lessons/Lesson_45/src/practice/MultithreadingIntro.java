@@ -64,8 +64,23 @@ public class MultithreadingIntro {
      * Пусть каждый выведет уникальное сообщение.
      */
     public static void task3_createTwoThreads() {
-        // Реализация должна быть добавлена студентом
+        //  Thread
+        Thread thread1 = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Hallo from Thread!");
+            }
+        };
+
+        //  Runnable
+        Runnable runnableTask = () -> System.out.println("Hallo from Runnable!");
+        Thread thread2 = new Thread(runnableTask);
+
+        // Start
+        thread1.start();
+        thread2.start();
     }
+
 
     /**
      * Пример 4.
