@@ -2,10 +2,10 @@ package Lessons.Lesson_45.src.practice;
 
 public class MultithreadingIntro {
     public static void main(String[] args) {
-        task1_createThreadByExtending();
+//        task1_createThreadByExtending();
 //        task2_createThreadByRunnable();
 //        task3_createTwoThreads();
-//        task4_sleepParallelOutput();
+        task4_sleepParallelOutput();
 //        task5_waitForThreadWithJoin();
     }
 
@@ -75,8 +75,14 @@ public class MultithreadingIntro {
         Thread thread1 = new Thread() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("Hallo from Thread!");
             }
+
         };
 
         //  Runnable
@@ -119,7 +125,23 @@ public class MultithreadingIntro {
      * Вы должны увидеть, как два потока работают параллельно.
      */
     public static void task4_sleepParallelOutput() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread(()-> {
+            for (int i = 1; i <= 5 ; i++) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("Hallo" + i);
+
+            }
+        });
+        thread.start();
+
+        for (int i = 1; i < 5; i++) {
+            System.out.println("Hallo" + i);
+
+        }
     }
 
     /**
