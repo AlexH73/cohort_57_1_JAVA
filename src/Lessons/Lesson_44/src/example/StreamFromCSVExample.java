@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 public class StreamFromCSVExample {
 
-    private static final String csvFilePath = "people.csv"; // путь к CSV файлу
+    private static final String csvFilePath = "src/Lessons/Lesson_44/src/example/people.csv"; // путь к CSV файлу
 
     public static void main(String[] args) {
         List<PersonInner> people = readPeopleFromCSV(csvFilePath);
@@ -35,9 +35,7 @@ public class StreamFromCSVExample {
             return lines.skip(1) // пропустить первую строку (заголовок)
                     .map(line -> line.split(",")) // разбить строку по запятым
                     .filter(parts -> parts.length == 3) // базовая проверка
-                    .map(parts -> new PersonInner(parts[0],
-                            Integer.parseInt(parts[1]),
-                            Integer.parseInt(parts[2])))
+                    .map(parts -> new PersonInner(parts[0], Integer.parseInt(parts[1]), Integer.parseInt(parts[2])))
                     .collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException("Ошибка чтения CSV файла: " + e.getMessage(), e);
