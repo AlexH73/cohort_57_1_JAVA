@@ -132,14 +132,20 @@ public class MultithreadingIntro {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println("Hallo" + i);
+                System.out.println("Hallo Thread" + i);
 
             }
         });
+
         thread.start();
 
         for (int i = 1; i < 5; i++) {
-            System.out.println("Hallo" + i);
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Hallo Main" + i);
 
         }
     }
