@@ -3,10 +3,10 @@ package Lessons.Lesson_45.src.practice;
 public class MultithreadingIntro {
     public static void main(String[] args) {
         task1_createThreadByExtending();
-//        task2_createThreadByRunnable();
-//        task3_createTwoThreads();
-//        task4_sleepParallelOutput();
-//        task5_waitForThreadWithJoin();
+        task2_createThreadByRunnable();
+        task3_createTwoThreads();
+        task4_sleepParallelOutput();
+        task5_waitForThreadWithJoin();
     }
 
     /**
@@ -53,7 +53,13 @@ public class MultithreadingIntro {
      * Затем запустите поток.
      */
     public static void task1_createThreadByExtending() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Запуск метода task1_createThreadByExtending()");
+            }
+        };
+        thread.start();
     }
 
     /**
@@ -62,7 +68,19 @@ public class MultithreadingIntro {
      * Поток должен выводить имя текущего потока.
      */
     public static void task2_createThreadByRunnable() {
-        // Реализация должна быть добавлена студентом
+        Runnable runnable = () -> {
+            System.out.println("Сообщение потока метода task2_createThreadByRunnable");
+
+        };
+        Thread t = new Thread(runnable);
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println("...done");
+        }
     }
 
     /**
@@ -71,7 +89,18 @@ public class MultithreadingIntro {
      * Пусть каждый выведет уникальное сообщение.
      */
     public static void task3_createTwoThreads() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Сообщение из потока Thread");
+            }
+        };
+
+        Runnable runnable = () -> System.out.println("Сообщение из потока Runnable");
+        Thread t = new Thread(runnable);
+
+        thread.start();
+        t.start();
     }
 
     /**
@@ -104,7 +133,22 @@ public class MultithreadingIntro {
      * Вы должны увидеть, как два потока работают параллельно.
      */
     public static void task4_sleepParallelOutput() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 3; i++) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Итерация дочернего потока: " + i);
+            }
+        });
+
+        thread.start();
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Итерация потока Main: " + i);
+        }
     }
 
     /**
@@ -136,7 +180,23 @@ public class MultithreadingIntro {
      * Используйте join() в главном потоке, чтобы подождать его завершения перед продолжением.
      */
     public static void task5_waitForThreadWithJoin() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread (() -> {
+            System.out.println("Поток 1 начинает свою работу");
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Поток 1 завершил свою работу");
+        });
+
+        thread.start();
+        try {
+            thread.join(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Поток Main завершил свою работу");
     }
 }
 
