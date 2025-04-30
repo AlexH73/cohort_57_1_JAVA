@@ -34,6 +34,7 @@ public class ColorImageGenerator {
     }
 
 
+
     /**
      * Метод создаёт картинку 300x300 пикселей с фоном заданного цвета.
      * @param hexColor строка цвета в формате "RRGGBB", например "9400D3"
@@ -60,9 +61,10 @@ public class ColorImageGenerator {
 
     public static void main(String[] args) {
         // Пример использования
-        int r = 148, g = 0, b = 211;
+        int r = 10, g = 10, b = 10;
 
-        String hex = rgb(r, g, b); // ← здесь должен возвращаться "9400D3"
+        String hex = rgb(r, g, b);// ← здесь должен возвращаться "9400D3"
+        System.out.println(hex);
         if (hex != null) {
             saveColorImage(hex, "color.jpg");
         } else {
