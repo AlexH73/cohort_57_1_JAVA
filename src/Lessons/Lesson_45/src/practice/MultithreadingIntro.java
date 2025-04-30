@@ -53,7 +53,13 @@ public class MultithreadingIntro {
      * Затем запустите поток.
      */
     public static void task1_createThreadByExtending() {
-        // Реализация должна быть добавлена студентом
+        Thread thread = new Thread() {
+          @Override
+          public void run() {
+              System.out.println("Многопоточность в Java");
+          }
+        };
+       thread.start();
     }
 
     /**
