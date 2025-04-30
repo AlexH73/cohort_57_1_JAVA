@@ -1,9 +1,9 @@
 package Lessons.Lesson_45.src.practice;
 
 public class MultithreadingIntro {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         task1_createThreadByExtending();
-//        task2_createThreadByRunnable();
+       task2_createThreadByRunnable();
 //        task3_createTwoThreads();
 //        task4_sleepParallelOutput();
 //        task5_waitForThreadWithJoin();
@@ -61,8 +61,14 @@ public class MultithreadingIntro {
      * Создайте поток, реализовав интерфейс Runnable.
      * Поток должен выводить имя текущего потока.
      */
-    public static void task2_createThreadByRunnable() {
-        // Реализация должна быть добавлена студентом
+    public static void task2_createThreadByRunnable() throws InterruptedException {
+        Runnable task = () -> {
+            System.out.println("Поток второй запушила");
+        };
+        Thread t = new Thread(task);
+        t.start();
+        t.join();
+        System.out.println("Finish");
     }
 
     /**
