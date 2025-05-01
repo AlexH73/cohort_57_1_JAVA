@@ -1,5 +1,10 @@
 package Homework.lesson_27;
 
+import Homework.lesson_27.OldVersion.Connectable;
+import Homework.lesson_27.OldVersion.SmartLight;
+import Homework.lesson_27.OldVersion.SmartSpeaker;
+import Homework.lesson_27.OldVersion.SmartThermostat;
+
 public class SmartTest {
     public static void main(String[] args) {
         SmartLight light = new SmartLight();

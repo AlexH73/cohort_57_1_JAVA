@@ -17,4 +17,12 @@ public class SmartThermostat extends SmartDevice {
     public String getDeviceName() {
         return "Умный термостат ";
     }
+
+    public void setTargetTemperature(int targetTemperature) {
+        this.targetTemperature = targetTemperature;
+    }
+
+    public int getTargetTemperature() {
+        return targetTemperature;
+    }
 }

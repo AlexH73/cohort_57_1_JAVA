@@ -9,7 +9,7 @@ public class AudioTrack {
     String genre;       //Новое поле для хранения музыкального жанра
 
     //Конструктор
-    public AudioTrack(String title, String artist, int durationInSeconds, String genre) {
+    public AudioTrack(String title, String artist, int durationInSeconds) {
         this.title = title;
         this.artist = artist;
         this.durationInSeconds = durationInSeconds;

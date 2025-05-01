@@ -1,5 +1,12 @@
 package Homework.lesson_25;
 
+import Homework.lesson_25.OldVersion.CreditCardPayment;
+import Homework.lesson_25.OldVersion.CryptoPayment;
+import Homework.lesson_25.OldVersion.PayPalPayment;
+import Homework.lesson_25.OldVersion.PaymentMethod;
+
+import static Homework.lesson_20.QualityOfDetailsAnalysis.i;
+
 public class Main {
     public static void main(String[] args) {
         PaymentMethod[] payments = {
@@ -12,7 +19,7 @@ public class Main {
         // Полиморфный вызов метода pay() (без transactionId)
         System.out.println("\n--------- Оплата без transactionId -----------");
         for (PaymentMethod payment : payments) {
-            payment.pay();
+            payment.pay("F3466" + (1000 + i));
 
         }
 

@@ -11,7 +11,7 @@ public class CryptoPayment extends PaymentMethod {
     }
 
     @Override
-    public void pay() {
+    public void pay(String s) {
         System.out.println("Оплата " + amount + " " + currency + " с криптокошелька " + walletAdresse);
     }
 

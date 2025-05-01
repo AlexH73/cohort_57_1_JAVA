@@ -14,7 +14,7 @@ public abstract class PaymentMethod {
         this.amount = amount;
         this.currency = currency;
     }
-    public abstract void pay();
+    public abstract void pay(String s);
 
     public void refund() {
         System.out.println("Возвращено " + amount + " " + currency);

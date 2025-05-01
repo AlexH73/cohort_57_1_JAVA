@@ -1,5 +1,7 @@
 package Homework.lesson_25.OldVersion;
 
+import static Homework.lesson_20.QualityOfDetailsAnalysis.i;
+
 /*Шаг 3: Использование полиморфизма в классе Main
 ✔ Создайте массив или список объектов PaymentMethod, содержащий разные способы оплаты.
 ✔ Проитерируйте коллекцию и вызовите pay() для каждого платежа.
@@ -15,7 +17,7 @@ public class PaymentMethodTest {
 
         //Вызываем pay() для каждого объекта (полиморфизм)
         for (PaymentMethod payment : payments) {
-            payment.pay();
+            payment.pay("F3466" + (1000 + i));
         }
     }
 }

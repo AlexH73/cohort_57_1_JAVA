@@ -11,7 +11,7 @@ public class PayPalPayment extends PaymentMethod {
     }
 
     @Override
-    public void pay() {
+    public void pay(String s) {
         System.out.println("Оплата " + amount + " " + currency + " через PayPal аккаунт " + email);
     }
 
