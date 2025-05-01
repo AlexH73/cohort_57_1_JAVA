@@ -6,6 +6,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import static java.lang.Math.clamp;
+
 /**
  * Задание: Реализуйте метод rgb, который принимает три значения от 0 до 255 (красный, зелёный, синий)
  * и возвращает строку с шестнадцатеричным представлением цвета в формате "RRGGBB".
@@ -21,8 +23,19 @@ import java.io.IOException;
 public class ColorImageGenerator {
 
     public static String rgb(int r, int g, int b) {
-        // TODO: реализовать метод
-        return null;
+        // Ограничиваем значения от 0 до 255
+        r = clamp(r);
+        g = clamp(g);
+        b = clamp(b);
+
+        // Форматируем в строку шестнадцатеричного представления
+        return String.format("%02X%02X%02X", r, g, b);
+    }
+
+    private static int clamp(int value) {
+        if (value < 0) return 0;
+        if (value > 255) return 255;
+        return value;
     }
 
     /**
@@ -49,15 +62,5 @@ public class ColorImageGenerator {
         }
     }
 
-    public static void main(String[] args) {
-        // Пример использования
-        int r = 148, g = 0, b = 211;
 
-        String hex = rgb(r, g, b); // ← здесь должен возвращаться "9400D3"
-        if (hex != null) {
-            saveColorImage(hex, "color.jpg");
-        } else {
-            System.out.println("Метод rgb пока не реализован.");
-        }
-    }
 }
