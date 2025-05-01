@@ -3,10 +3,10 @@ package Lessons.Lesson_45.src.practice;
 public class MultithreadingIntro {
     public static void main(String[] args) {
         task1_createThreadByExtending();
-//        task2_createThreadByRunnable();
-//        task3_createTwoThreads();
-//        task4_sleepParallelOutput();
-//        task5_waitForThreadWithJoin();
+       task2_createThreadByRunnable();
+       task3_createTwoThreads();
+       task4_sleepParallelOutput();
+       task5_waitForThreadWithJoin();
     }
 
     /**
@@ -54,12 +54,12 @@ public class MultithreadingIntro {
      */
     public static void task1_createThreadByExtending() {
         Thread thread = new Thread() {
-          @Override
-          public void run() {
-              System.out.println("Многопоточность в Java");
-          }
+            @Override
+            public void run() {
+                System.out.println("Многопоточность в Java");
+            }
         };
-       thread.start();
+        thread.start();
     }
 
     /**
@@ -68,7 +68,13 @@ public class MultithreadingIntro {
      * Поток должен выводить имя текущего потока.
      */
     public static void task2_createThreadByRunnable() {
-        // Реализация должна быть добавлена студентом
+        Runnable task = () -> {
+            System.out.println("Поток второй запушила");
+        };
+
+        Thread thread = new Thread(task);
+        thread.start();
+        System.out.println("Finish");
     }
 
     /**
@@ -77,7 +83,17 @@ public class MultithreadingIntro {
      * Пусть каждый выведет уникальное сообщение.
      */
     public static void task3_createTwoThreads() {
-        // Реализация должна быть добавлена студентом
+        Thread thread1 = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("Поток Thread!");
+            }
+        };
+        Runnable runnableTask = () -> System.out.println("Поток Runnable!");
+        Thread thread2 = new Thread(runnableTask);
+
+        thread1.start();
+        thread2.start();
     }
 
     /**
@@ -92,14 +108,14 @@ public class MultithreadingIntro {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("Child thread iteration: " + i);
+                System.out.println("Поток-потомок работает thread: " + i);
             }
         });
 
         t.start();
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("Main thread iteration: " + i);
+            System.out.println("Main thread работает: " + i);
         }
     }
 
@@ -110,7 +126,22 @@ public class MultithreadingIntro {
      * Вы должны увидеть, как два потока работают параллельно.
      */
     public static void task4_sleepParallelOutput() {
-        // Реализация должна быть добавлена студентом
+        Thread t = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Поток Thread завершил свою работу: " + i);
+            }
+        });
+
+        t.start();
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Поток Main завершил свою работу: " + i);
+        }
     }
 
     /**
@@ -142,7 +173,24 @@ public class MultithreadingIntro {
      * Используйте join() в главном потоке, чтобы подождать его завершения перед продолжением.
      */
     public static void task5_waitForThreadWithJoin() {
-        // Реализация должна быть добавлена студентом
+        Thread longTaskThread = new Thread(() -> {
+            System.out.println("Длительная задача начинается...");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Длительная задача завершена.");
+        });
+
+        longTaskThread.start();
+        try {
+            longTaskThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Главный поток продолжает работу после завершения длительной задачи.");
     }
 }
 
