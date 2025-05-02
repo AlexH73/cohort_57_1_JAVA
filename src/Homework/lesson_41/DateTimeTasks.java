@@ -12,7 +12,8 @@ public class DateTimeTasks {
      * Пример: Сегодняшняя дата: 2025-04-13
      */
     public static void printTodayDate() {
-
+        LocalDate today = LocalDate.now();
+        System.out.println("Сегодняшняя дата: " + today);
     }
 
     /**
@@ -21,6 +22,8 @@ public class DateTimeTasks {
      * Пример: Я родился: 2004-06-01
      */
     public static void printBirthDate(int year, int month, int day) {
+        LocalDate birthDate = LocalDate.of(year, month, day);   // создаем дату из аргументов
+        System.out.println("Я родился: " + birthDate);
 
     }
 
@@ -30,6 +33,9 @@ public class DateTimeTasks {
      * Пример: Мне лет: 20
      */
     public static void printAge(LocalDate birthDate) {
+        LocalDate today = LocalDate.now();  // Получаем сегодняшнюю дату
+        long years = ChronoUnit.YEARS.between(birthDate, today);    // Считаем количество лет
+        System.out.println("Мне лет: " + years);
 
     }
 
@@ -39,6 +45,9 @@ public class DateTimeTasks {
      * Пример: Сейчас: 14:35:12
      */
     public static void printCurrentTime() {
+        LocalTime now = LocalTime.now();    // Получаем текущее время
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");  // Получаем текущее время
+        System.out.println("Ceйчас: " + now.format(formatter));
 
     }
 
@@ -48,7 +57,8 @@ public class DateTimeTasks {
      * Пример: Через 100 дней от 2025-04-13 будет: 2025-07-22
      */
     public static void printDatePlusDays(LocalDate startDate, int daysToAdd) {
-
+        LocalDate resultDate = startDate.plusDays(daysToAdd);   // Добавляем дни к начальной дате
+        System.out.println("Через " + daysToAdd + "дней от " + startDate + "будет: " + resultDate);
     }
 
     /**
@@ -57,7 +67,13 @@ public class DateTimeTasks {
      * Пример: Распарсенная дата: 2000-01-01
      */
     public static void parseAndPrintDate(String dateString) {
-
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate parsedDate = LocalDate.parse(dateString, formatter);
+            System.out.println("Распарсенная дата: " + parsedDate);
+        } catch (Exception e) {
+            System.out.println("Неверный формат даты. Ожидается: yyyy-MM-dd");
+        }
     }
 
     /**
@@ -66,6 +82,9 @@ public class DateTimeTasks {
      * Пример: Сегодня: 13.04.2025
      */
     public static void printFormattedDate(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        String formattedDate = date.format(formatter);
+        System.out.println("Сегодня: " + formattedDate);
 
     }
 
@@ -75,7 +94,13 @@ public class DateTimeTasks {
      * Пример: Сейчас в Asia/Tokyo: 2025-04-13T22:15:00+09:00[Asia/Tokyo]
      */
     public static void printTimeInZone(String zoneId) {
-
+        try {
+            ZoneId zone = ZoneId.of(zoneId);    // Преобразуем строку в ZoneId
+            ZonedDateTime currentTimeInZone = ZonedDateTime.now(zone);  // Получаем текущую дату и время в зоне
+            System.out.println("Сейчас в " + zoneId + ": " + currentTimeInZone);
+        } catch (Exception e) {
+            System.out.println("Неверный идентификатор часового пояса.");
+        }
     }
 
     public static void main(String[] args) {
