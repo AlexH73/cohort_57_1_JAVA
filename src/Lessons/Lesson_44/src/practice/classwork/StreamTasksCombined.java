@@ -1,7 +1,8 @@
 package Lessons.Lesson_44.src.practice.classwork;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 public class StreamTasksCombined {
     public static void main(String[] args) {
@@ -21,13 +22,10 @@ public class StreamTasksCombined {
      */
     public static List<String> filterAndMapToUpper() {
         List<String> words = List.of("Apple", "apricot", "Banana", "Avocado", "cherry");
-        List<String> result = new ArrayList<>();
-        for (String word : words) {
-            if (word.startsWith("A")) {
-                result.add(word.toUpperCase());
-            }
-        }
-        return result;
+        return words.stream()
+                .filter(word -> word.startsWith("A"))
+                .map(String::toUpperCase)
+                .collect(Collectors.toList());
     }
 
     /**
@@ -39,13 +37,10 @@ public class StreamTasksCombined {
      */
     public static List<Integer> oddPlusFive() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
-        List<Integer> result = new ArrayList<>();
-        for (Integer number : numbers) {
-            if (number % 2 != 0) {
-                result.add(number + 5);
-            }
-        }
-        return result;
+        return numbers.stream()
+                .filter(number -> number % 2 != 0)
+                .map(number -> number + 5)
+                .collect(Collectors.toList());
     }
 
     /**
@@ -57,9 +52,10 @@ public class StreamTasksCombined {
      */
     public static List<String> sortByLengthAndLimit() {
         List<String> words = List.of("cat", "elephant", "tiger", "mouse", "lion");
-        List<String> sorted = new ArrayList<>(words);
-        sorted.sort((s1, s2) -> Integer.compare(s2.length(), s1.length()));
-        return sorted.subList(0, Math.min(3, sorted.size()));
+        return words.stream()
+                .sorted((s1, s2) -> Integer.compare(s2.length(), s1.length()))
+                .limit(3)
+                .collect(Collectors.toList());
     }
 
     /**
@@ -70,13 +66,10 @@ public class StreamTasksCombined {
      */
     public static int sumOfEvenSquares() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        int sum = 0;
-        for (Integer number : numbers) {
-            if (number % 2 == 0) {
-                sum += number * number;
-            }
-        }
-        return sum;
+        return numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .map(number -> number * number)
+                .reduce(0, Integer::sum);
     }
 
     /**
@@ -88,11 +81,7 @@ public class StreamTasksCombined {
      */
     public static boolean allShorterThanTen() {
         List<String> words = List.of("dog", "elephant", "tiger", "bat");
-        for (String word : words) {
-            if (word.length() >= 10) {
-                return false;
-            }
-        }
-        return true;
+        return words.stream()
+                .allMatch(word -> word.length() < 10);
     }
 }
