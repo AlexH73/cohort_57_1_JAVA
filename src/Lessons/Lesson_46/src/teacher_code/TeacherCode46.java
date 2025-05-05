@@ -35,9 +35,9 @@ public class TeacherCode46 {
         if (thread1.isAlive()) {
             System.out.printf("Waiting %s\n", thread1.getName());
             thread1.join(3000);
-            // существует два способа остановть потока
-            thread1.stop();
-            //thread1.interrupt();
+            // существует два способа остановить потока
+            //thread1.stop();
+            thread1.interrupt();
         }
 
         System.out.println("Приложение корректно завершило свою работу");
