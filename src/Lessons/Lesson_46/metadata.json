@@ -1,0 +1,11 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/ThreadSynchronizationExercises.java",
+    "src/practice/SynchronizedExample.java",
+    "src/practice/VolatileExample.java"
+  ],
+  "video": ""
+}
