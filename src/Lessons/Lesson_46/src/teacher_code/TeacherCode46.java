@@ -30,7 +30,7 @@ public class TeacherCode46 {
 
         thread1.join(3000);
 
-        doSomething();
+        //doSomething();
 
         if (thread1.isAlive()) {
             System.out.printf("Waiting %s\n", thread1.getName());
@@ -44,7 +44,7 @@ public class TeacherCode46 {
     static void doSomething() {
         for (int i = 0; i < 3; i++) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100_000);
                 System.out.println(String.format("Thread name: %s, Thread priority: %d, Thread is daemon = %s, i = %d",
                         Thread.currentThread().getName(),
                         Thread.currentThread().getPriority(),
