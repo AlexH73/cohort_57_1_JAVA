@@ -21,7 +21,9 @@ public class TeacherCode46 {
 
         if (thread1.isAlive()) {
             System.out.printf("Waiting %s\n", thread1.getName());
-            thread1.join();
+            thread1.join(3000);
+            // thread1.stop();
+            thread1.interrupt();
         }
     }
 
