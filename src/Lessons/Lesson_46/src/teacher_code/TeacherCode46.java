@@ -44,12 +44,13 @@ public class TeacherCode46 {
     static void doSomething() {
         for (int i = 0; i < 3; i++) {
             try {
-                Thread.sleep(100_000);
                 System.out.println(String.format("Thread name: %s, Thread priority: %d, Thread is daemon = %s, i = %d",
                         Thread.currentThread().getName(),
                         Thread.currentThread().getPriority(),
                         String.valueOf(Thread.currentThread().isDaemon()),
                         i));
+                Thread.sleep(100_000);
+
             } catch (InterruptedException e) {
                 System.err.println("Поток был прерван во время сна");
             }
