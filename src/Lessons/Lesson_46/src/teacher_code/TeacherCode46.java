@@ -21,12 +21,14 @@ public class TeacherCode46 {
 
         if (thread1.isAlive()) {
             System.out.printf("Waiting %s\n", thread1.getName());
-            thread1.join();
+            thread1.join(3000);
+            // thread1.stop();
+            thread1.interrupt();
         }
     }
 
     static void doSomething() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 Thread.sleep(1000);
                 System.out.println(String.format("Thread name: %s, Thread priority: %d, Thread is daemon = %s, i = %d",
