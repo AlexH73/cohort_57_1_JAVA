@@ -3,10 +3,10 @@ package Lessons.Lesson_46.src.practice;
 public class MultithreadingControl {
     public static void main(String[] args) {
         // Раскомментируйте задачи по мере выполнения
-//        task1_setThreadName();
+        task1_setThreadName();
 //        task2_setDaemonThread();
 //        task3_interruptSleepingThread();
-        task4_checkInterruptedFlag();
+//        task4_checkInterruptedFlag();
 //        task5_useThreadGroup();
 //        task6_interruptAndCheckStatus();
 //        task7_attemptThreadStop();
