@@ -49,33 +49,6 @@ public class MultithreadingControl {
      * Прервите поток из main через 1 секунду.
      */
     public static void task4_checkInterruptedFlag() {
-        Runnable r = () -> {
-            for (int i = 0; i < 1000000; i++) {
-                try {
-                    Thread.sleep(100);
-                    System.out.println(String.format("Thread name: %s, Thread priority: %d, Thread is daemon = %s, i = %d",
-                            Thread.currentThread().getName(),
-                            Thread.currentThread().getPriority(),
-                            String.valueOf(Thread.currentThread().isDaemon()),
-                            i));
-                } catch (InterruptedException e) {
-                    System.err.println("Поток был прерван");
-                    return;
-                }
-            }
-        };
-        Thread thread3 = new Thread (r);
-        thread3.start();
-        try {
-            thread3.join(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        boolean checked = thread3.isInterrupted();
-       if (!checked ){
-           thread3.interrupt();
-       }
-
     }
 
     /**
