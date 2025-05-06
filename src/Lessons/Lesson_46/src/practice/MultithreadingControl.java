@@ -6,12 +6,13 @@ public class MultithreadingControl {
 //        task1_setThreadName();
 //        task2_setDaemonThread();
 //        task3_interruptSleepingThread();
-//        task4_checkInterruptedFlag();
+        task4_checkInterruptedFlag();
 //        task5_useThreadGroup();
 //        task6_interruptAndCheckStatus();
 //        task7_attemptThreadStop();
 //        task8_setThreadPriority();
 //        task9_compareThreadPriorities();
+
     }
 
     /**
@@ -19,8 +20,28 @@ public class MultithreadingControl {
      * Создайте поток и задайте ему имя с помощью setName().
      * Внутри потока выведите его имя с помощью Thread.currentThread().getName().
      */
-    public static void task1_setThreadName() {
-        // Реализация должна быть добавлена студентом
+    public static <Tread> void task1_setThreadName() {
+        Runnable r = () -> {
+            System.out.println(Thread.currentThread().getName());
+        };
+
+        Thread thread = new Thread(r);
+        Thread thread1 = new Thread(r);
+        thread.setName("My thread 0");
+        thread1.setName("My thread 1");
+        thread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        thread1.start();
+        try {
+            Thread.sleep(3000);
+            thread1.join(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -30,7 +51,27 @@ public class MultithreadingControl {
      * После его завершения убедитесь, что демон завершился автоматически.
      */
     public static void task2_setDaemonThread() {
-        // Реализация должна быть добавлена студентом
+        Runnable r = () -> {
+            while (true) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println("Поток " + Thread.currentThread().getName() + " работает");
+            }
+        };
+
+        Thread deamonThread = new Thread(r);
+        deamonThread.setName("демон");
+        deamonThread.setDaemon(true);
+        deamonThread.start();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     /**
@@ -39,7 +80,23 @@ public class MultithreadingControl {
      * Обработайте InterruptedException и выведите сообщение о прерывании.
      */
     public static void task3_interruptSleepingThread() {
-        // Реализация должна быть добавлена студентом
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.err.println("Поток " + '\"' + Thread.currentThread().getName() + '\"' + " был принудительно прерван!");
+            }
+        };
+
+        Thread thread3 = new Thread(r);
+        thread3.setName("поток 3");
+        thread3.start();
+        try {
+            thread3.join(1000);
+            thread3.interrupt();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -49,7 +106,34 @@ public class MultithreadingControl {
      * Прервите поток из main через 1 секунду.
      */
     public static void task4_checkInterruptedFlag() {
-        // Реализация должна быть добавлена студентом
+        Runnable r = () -> {
+            for (int i = 0; i < 1000000; i++) {
+                if (Thread.currentThread().isInterrupted()) {
+                    System.err.println("Поток завершен по прерыванию!");
+                    break;
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    System.err.println("Поток был прерван во время сна");
+                }
+                System.out.printf("Поток: %s, Приоритет: %d, Демон? - %s, i = %d \n",
+                        Thread.currentThread().getName(),
+                        Thread.currentThread().getPriority(),
+                        String.valueOf(Thread.currentThread().isDaemon() ? "Да" : "Нет"),
+                        i);
+            }
+        };
+        Thread thread4 = new Thread(r);
+        thread4.setName("поток 4");
+        thread4.setDaemon(true);
+        thread4.start();
+        try {
+            Thread.sleep(1000);
+            thread4.interrupt();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
