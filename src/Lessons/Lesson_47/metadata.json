@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/Author.java",
+    "src/practice/AuthorService.java",
+    "src/practice/Book.java",
+    "src/practice/BookService.java",
+    "src/practice/Reader.java",
+    "src/practice/ReaderService.java",
+    "src/practice/LibraryApplication.java",
+    "src/practice/Author.java"
+  ],
+  "video": ""
+}
