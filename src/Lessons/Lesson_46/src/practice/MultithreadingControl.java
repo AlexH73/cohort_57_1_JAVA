@@ -5,8 +5,8 @@ public class MultithreadingControl {
         // Раскомментируйте задачи по мере выполнения
 //        task1_setThreadName();
 //        task2_setDaemonThread();
-      task3_interruptSleepingThread();
-//        task4_checkInterruptedFlag();
+//        task3_interruptSleepingThread();
+        task4_checkInterruptedFlag();
 //        task5_useThreadGroup();
 //        task6_interruptAndCheckStatus();
 //        task7_attemptThreadStop();
@@ -39,23 +39,7 @@ public class MultithreadingControl {
      * Обработайте InterruptedException и выведите сообщение о прерывании.
      */
     public static void task3_interruptSleepingThread() {
-        Runnable r =() -> {
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                System.err.println("Поток был прерван во время сна");
-            }
-        };
-        Thread thread2 = new Thread(r);
-        thread2.start();
-
-        try {
-            thread2.join(1000);
-            thread2.interrupt();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        // Реализация должна быть добавлена студентом
     }
 
     /**
@@ -65,7 +49,6 @@ public class MultithreadingControl {
      * Прервите поток из main через 1 секунду.
      */
     public static void task4_checkInterruptedFlag() {
-        // Реализация должна быть добавлена студентом
     }
 
     /**

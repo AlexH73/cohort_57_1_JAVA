@@ -12,6 +12,7 @@ public class TeacherCode46 {
                 doSomething();
             }
         });
+
         // для идентификации потоков можно установить имя потоку, сделать это необходимо перед его запуском
         thread1.setName("My thread");
 
@@ -32,12 +33,22 @@ public class TeacherCode46 {
 
         //doSomething();
 
+        // метод isAlive - вернет true, если поток еще жив и работает
+        // и вернет false, если поток не работает
         if (thread1.isAlive()) {
             System.out.printf("Waiting %s\n", thread1.getName());
             thread1.join(3000);
-            // существует два способа остановть потока
-            thread1.stop();
-            //thread1.interrupt();
+            // существует два способа остановить поток:
+            // метод  stop() - устаревший метод, который помечен аннотацией @Depricated,
+            // он слишком топорно выключит поток, что может привести к ошибкам дальнейшего выполнения приложения
+            //thread1.stop();
+
+            // метод interrupt - корректно завершит работу.
+            System.out.println("thread1.isInterrupted() = " + thread1.isInterrupted());
+
+            thread1.interrupt();
+            System.out.println("thread1.isInterrupted() = " + thread1.isInterrupted());
+
         }
 
         System.out.println("Приложение корректно завершило свою работу");
