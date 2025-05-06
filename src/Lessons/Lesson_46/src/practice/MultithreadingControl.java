@@ -6,7 +6,7 @@ public class MultithreadingControl {
 //        task1_setThreadName();
 //        task2_setDaemonThread();
 //        task3_interruptSleepingThread();
-//        task4_checkInterruptedFlag();
+        task4_checkInterruptedFlag();
 //        task5_useThreadGroup();
 //        task6_interruptAndCheckStatus();
 //        task7_attemptThreadStop();
@@ -49,7 +49,6 @@ public class MultithreadingControl {
      * Прервите поток из main через 1 секунду.
      */
     public static void task4_checkInterruptedFlag() {
-        // Реализация должна быть добавлена студентом
     }
 
     /**
