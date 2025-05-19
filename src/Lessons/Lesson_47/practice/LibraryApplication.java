@@ -29,14 +29,6 @@ public class LibraryApplication {
                     break;
                 }
 
-                if (firstName.equalsIgnoreCase("vyxod")) {
-                    break;
-                }
-
-                if (firstName.equalsIgnoreCase("0")) {
-                    break;
-                }
-
                 System.out.print("Введите фамилию: ");
                 String lastName = scanner.nextLine().trim();
 
