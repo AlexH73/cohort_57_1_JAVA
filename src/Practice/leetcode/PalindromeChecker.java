@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
 
+/**
+* Given an integer x, return true if x is a palindrome, and false otherwise.
+ */
 public class PalindromeChecker {
 
     public static boolean isPalindrome(int x) {
