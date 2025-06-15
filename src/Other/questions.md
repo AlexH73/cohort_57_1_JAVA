@@ -4,6 +4,7 @@
 <summary style="font-size: 35px;">👩🏻‍💻 Java Basic</summary>
 
 ---
+## Список вопросов из блока "Back End Java Basic"
 
 <details>
 <summary style="font-size: 25px;">👩🏻‍💻 Вопросы заданные на уроке</span></summary>
