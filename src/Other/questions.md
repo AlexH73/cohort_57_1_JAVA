@@ -12255,6 +12255,117 @@ CSS Grid Layout — это **двумерная система размещен�
 </details>  
 </details>
 
+---
+
+<details>  
+<summary>6. 🎞️ Каким образом можно создать анимацию с использованием CSS?</summary>  
+
+### 💡 Краткий ответ
+
+В CSS можно создать анимацию двумя основными способами:
+
+1. С помощью **переходов (transitions)** — для плавного изменения свойств при взаимодействии.
+2. С помощью **анимаций (animations)** — для более сложных, управляемых во времени эффектов.
+
+---
+
+<details>  
+<summary>✳ Подробнее</summary>  
+
+### 🔄 1. **CSS Transitions (переходы)**
+
+Позволяют **плавно менять CSS-свойства** при наведении, фокусе, клике и т. д.
+
+#### 📌 Пример: переход цвета при наведении
+
+```css
+.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: red;
+}
+```
+
+📝 Здесь свойство `background-color` плавно меняется за `0.3s` при наведении.
+
+---
+
+### 🎬 2. **CSS Animations (анимации)**
+
+Позволяют **создавать анимации с ключевыми кадрами**, которые могут повторяться, останавливаться, менять направление и многое другое.
+
+#### 📌 Пример: анимация движения объекта
+
+```css
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  animation: slideRight 2s ease-in-out infinite alternate;
+}
+```
+
+🧾 Объяснение:
+
+* `@keyframes` — задаёт кадры анимации
+* `animation` — применяет анимацию:
+
+  * `2s` — длительность
+  * `ease-in-out` — плавность
+  * `infinite` — бесконечный цикл
+  * `alternate` — анимация идёт туда и обратно
+
+---
+
+### 🛠 Основные свойства анимаций:
+
+| Свойство                    | Описание                                             |
+| --------------------------- | ---------------------------------------------------- |
+| `animation-name`            | Имя `@keyframes` анимации                            |
+| `animation-duration`        | Длительность анимации                                |
+| `animation-timing-function` | Темп (linear, ease, ease-in...)                      |
+| `animation-delay`           | Задержка начала                                      |
+| `animation-iteration-count` | Количество повторений (`infinite` — бесконечно)      |
+| `animation-direction`       | Направление (`normal`, `reverse`, `alternate`)       |
+| `animation-fill-mode`       | Поведение до/после (`forwards`, `backwards`, `both`) |
+
+---
+
+### 🎨 Пример: мерцание текста
+
+```css
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+```
+
+---
+
+### ✅ Вывод
+
+* Для **простых изменений по событию** — используем `transition`.
+* Для **многокадровых, управляемых эффектов** — используем `animation` и `@keyframes`.
+* CSS-анимации **не требуют JavaScript**, легко читаются и хорошо работают на большинстве устройств.
+
+</details>  
+</details>
 
 ---
 
