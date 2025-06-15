@@ -1,5 +1,8 @@
 # Сборник устных вопросов и ответов к ним
 
+<details>
+<summary><span style="font-size: 45px;">👩🏻‍💻 Java Basic</span></summary>
+
 ---
 <details>
 <summary><span style="font-size: 35px;">👩🏻‍💻 Вопросы заданные на уроке</span></summary>
@@ -8916,9 +8919,35 @@ public class JoinExample {
 ---
 </details>
 </details>
+</details>
 
+<details>
+<summary><span style="font-size: 45px;">👩🏻‍💻 Front End Basic</span></summary>
 
+## Front End Basic
 
+<details>
+
+<summary style="font-size: 35px;">📑 HTML</summary>
+
+### HTML
+
+</details>
+<details>
+<summary style="font-size: 35px;">🌟 CSS</summary>
+
+### CSS
+
+</details>
+<details>
+
+<summary style="font-size: 35px;">👨‍🏫 JavaScript</summary>
+
+### JavaScript
+
+</details>
+</details>
+</details>
 
 
 <br />
