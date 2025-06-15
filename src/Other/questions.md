@@ -10431,6 +10431,96 @@ HTML предлагает **три типа списков**:
 </details>
 </details>
 
+---
+
+<details>  
+<summary>8. 📨 Какие теги используются для создания формы в HTML?</summary>
+
+### ✅ Краткий ответ:
+
+🔹 Для создания формы используется тег `<form>`.
+Внутри формы применяются теги:
+
+* `<input>` — поле ввода
+* `<textarea>` — многострочное текстовое поле
+* `<button>` или `<input type="submit">` — кнопка отправки
+* `<label>` — подпись к полю
+* `<select>` и `<option>` — выпадающий список
+* `<fieldset>` и `<legend>` — группировка полей
+
+---
+
+<details>
+<summary>📚 Подробнее с примерами и пояснениями</summary>
+
+## 🧱 Основные теги формы:
+
+| Тег                     | Назначение                             |
+| ----------------------- | -------------------------------------- |
+| `<form>`                | Контейнер всей формы                   |
+| `<input>`               | Однострочное поле ввода (разных типов) |
+| `<textarea>`            | Многострочное поле                     |
+| `<button>`              | Кнопка (например, отправки)            |
+| `<label>`               | Текстовая метка для поля ввода         |
+| `<select>` + `<option>` | Выпадающий список                      |
+| `<fieldset>`            | Группировка элементов формы            |
+| `<legend>`              | Заголовок группы полей                 |
+
+---
+
+## ✍️ Пример простой формы:
+
+```html
+<form action="/submit" method="post">
+  <label for="name">Имя:</label>
+  <input type="text" id="name" name="username">
+
+  <label for="age">Возраст:</label>
+  <input type="number" id="age" name="userage">
+
+  <label for="comment">Комментарий:</label>
+  <textarea id="comment" name="comment"></textarea>
+
+  <label for="gender">Пол:</label>
+  <select id="gender" name="gender">
+    <option value="male">Мужской</option>
+    <option value="female">Женский</option>
+  </select>
+
+  <button type="submit">Отправить</button>
+</form>
+```
+
+---
+
+## 🛠️ Важные атрибуты формы:
+
+| Атрибут формы | Описание                                                |
+| ------------- | ------------------------------------------------------- |
+| `action`      | URL-адрес для отправки данных                           |
+| `method`      | Метод отправки (`get`, `post`)                          |
+| `name`        | Имя поля (ключ для отправки)                            |
+| `type`        | Тип ввода: `text`, `password`, `email`, `submit` и т.д. |
+| `required`    | Обязательное поле                                       |
+| `placeholder` | Текст-подсказка в поле ввода                            |
+
+---
+
+### 🧾 Пример с `fieldset` и `legend`:
+
+```html
+<fieldset>
+  <legend>Контактная информация</legend>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+</fieldset>
+```
+
+---
+
+</details>  
+</details>
+
 
 ---
 
