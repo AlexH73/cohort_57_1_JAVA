@@ -15280,10 +15280,82 @@ event.stopPropagation();
 </details>
 </details>
 
+---
+
+<details>
+<summary>10. ❓ Как узнать, был ли вызван метод <code>event.preventDefault()</code>?</summary>
+
+### 💡 Краткий ответ
+
+Можно использовать свойство **`event.defaultPrevented`** — оно возвращает `true`, если для события **уже был вызван `event.preventDefault()`**, иначе — `false`.
 
 ---
 
-10. Как узнать об использовании метода event.preventDefault()?
+<details>
+<summary>📘 Подробнее</summary>
+
+### 🔍 Что такое `event.defaultPrevented`
+
+Это **булевое свойство** объекта события, которое показывает:
+
+* 🔹 `true` — если **вызван `event.preventDefault()`**
+* 🔸 `false` — если **не вызывался**
+
+---
+
+### ✅ Пример использования
+
+```html
+<form id="myForm">
+  <button type="submit">Отправить</button>
+</form>
+
+<script>
+  const form = document.getElementById("myForm");
+
+  form.addEventListener("submit", function (event) {
+    if (shouldCancelSubmit()) {
+      event.preventDefault();
+    }
+
+    // Проверка
+    if (event.defaultPrevented) {
+      console.log("Отправка формы была отменена");
+    } else {
+      console.log("Форма отправляется");
+    }
+  });
+
+  function shouldCancelSubmit() {
+    return true; // Меняем на false, чтобы посмотреть оба случая
+  }
+</script>
+```
+
+---
+
+### 🔧 Где это полезно?
+
+* ✅ Когда несколько обработчиков могут отменять действие
+* ✅ При отладке событий
+* ✅ В библиотеках и фреймворках для контроля поведения
+
+---
+
+### 🧠 Вывод
+
+| Свойство                 | Значение                                     |
+| ------------------------ | -------------------------------------------- |
+| `event.defaultPrevented` | `true`, если было вызвано `preventDefault()` |
+
+Это надёжный способ **узнать, отменено ли поведение по умолчанию** для события.
+
+</details>
+</details>
+
+
+---
+
 11. Почему obj.someprop.x приводит к ошибке?
 12. Что такое цель события или целевой элемент (event.target)?
 13. Что такое текущая цель события (event.currentTarget)?
