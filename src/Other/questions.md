@@ -16436,10 +16436,74 @@ event.stopPropagation();
 </details>
 </details>
 
+---
+
+<details>
+<summary>11. ❓ Почему <code>obj.someprop.x</code> может привести к ошибке?</summary>
+
+### 💡 Краткий ответ
+
+Ошибка возникает, если `obj.someprop` — это `undefined` или `null`. В таком случае попытка обратиться к свойству `x` вызывает **ошибку типа**:
+`TypeError: Cannot read properties of undefined (or null)`.
 
 ---
 
-11. Почему obj.someprop.x приводит к ошибке?
+<details>
+<summary>🔍 Подробнее</summary>
+
+### 🧠 Механизм
+
+Когда в JavaScript ты обращаешься к `obj.someprop.x`, интерпретатор:
+
+1. Сначала читает `obj.someprop`
+2. Затем пытается получить `x` от полученного значения
+
+Если `obj.someprop` **не существует** (то есть `undefined` или `null`), попытка обратиться к `.x` вызывает ошибку, потому что **нельзя обращаться к свойствам `undefined` или `null`**.
+
+---
+
+### 🧪 Пример ошибки
+
+```js
+const obj = {};
+console.log(obj.someprop.x); // ❌ TypeError: Cannot read properties of undefined
+```
+
+---
+
+### ✅ Решения
+
+#### 1. Проверка вручную
+
+```js
+if (obj.someprop && obj.someprop.x) {
+  console.log(obj.someprop.x);
+}
+```
+
+#### 2. Использование **опциональной цепочки** (optional chaining)
+
+```js
+console.log(obj.someprop?.x); // ✅ undefined (без ошибки)
+```
+
+🔧 Работает в большинстве современных браузеров и Node.js ≥ 14.
+
+---
+
+### 📌 Вывод
+
+`obj.someprop.x` вызывает ошибку, если `someprop` не определён. Чтобы избежать этого:
+
+* Проводи проверку вручную
+* Или используй `?.` — опциональную цепочку, если доступна
+
+</details>
+</details>
+
+
+---
+
 12. Что такое цель события или целевой элемент (event.target)?
 13. Что такое текущая цель события (event.currentTarget)?
 14. В чем разница между операторами "==" и "==="?
