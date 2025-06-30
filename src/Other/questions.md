@@ -16593,10 +16593,153 @@ button:not(:disabled) {
 
 </details>
 
+---
+
+<details>
+<summary>48. 🎨 Что такое <code>градиентные переходы</code> (gradient transitions) в CSS и как их создать с помощью анимаций?</summary>
+
+### 💡 Краткий ответ
+
+Градиентные переходы — это **плавные изменения градиента фона** с течением времени, чаще всего с помощью **CSS-анимации** (`@keyframes`) или **переходов** (`transition`).
+Поскольку `linear-gradient()` и `radial-gradient()` — это **функции, возвращающие изображение**, их нельзя напрямую анимировать через `transition`, но можно **анимировать связанные свойства** — такие как `background-position`, `background-size`, `opacity`, `filter` или использовать **градиенты на `pseudo-elements`**.
 
 ---
 
-48	Что такое "градиентные переходы" (gradient transitions) в CSS и как их создать с помощью анимаций?
+<details>
+<summary>🔍 Подробнее</summary>
+
+### 🧩 Почему `transition` напрямую не работает с `linear-gradient()`?
+
+CSS **не может "вычислить промежуточные шаги" между двумя `background-image`**, если это два разных градиента.
+Поэтому для **плавных эффектов** используются:
+
+* **переходы opacity** между слоями;
+* **анимация положения/цветов через переменные**;
+* **keyframes-анимация** с поэтапным заданием состояний.
+
+---
+
+### ✨ Вариант 1: Плавный переход между двумя градиентами через псевдоэлементы
+
+```html
+<div class="gradient-box"></div>
+```
+
+```css
+.gradient-box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gradient-box::before,
+.gradient-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: opacity 1s ease;
+  z-index: 0;
+}
+
+.gradient-box::before {
+  background: linear-gradient(45deg, #f06, #ff9);
+  opacity: 1;
+}
+
+.gradient-box::after {
+  background: linear-gradient(45deg, #09f, #0ff);
+  opacity: 0;
+}
+
+.gradient-box:hover::after {
+  opacity: 1;
+}
+
+.gradient-box:hover::before {
+  opacity: 0;
+}
+```
+
+✅ При наведении один градиент «выцветает», другой — появляется.
+
+---
+
+### ✨ Вариант 2: Анимация background-position
+
+```html
+<div class="animated-gradient"></div>
+```
+
+```css
+.animated-gradient {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 100%;
+  animation: moveGradient 5s linear infinite;
+}
+
+@keyframes moveGradient {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+```
+
+🌀 Получается переливающийся радужный фон, благодаря **движению фона**.
+
+---
+
+### ✨ Вариант 3: Использование CSS-переменных
+
+```css
+:root {
+  --grad-color1: #f06;
+  --grad-color2: #ff9;
+}
+
+.gradient {
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--grad-color1), var(--grad-color2));
+  transition: --grad-color1 1s, --grad-color2 1s;
+}
+
+.gradient:hover {
+  --grad-color1: #0ff;
+  --grad-color2: #09f;
+}
+```
+
+⚠ Пока не все браузеры стабильно поддерживают transition на CSS-переменные — но это **будущее**.
+
+---
+
+### 🛠 Практические советы
+
+| Способ                             | Когда использовать                                        |
+| ---------------------------------- | --------------------------------------------------------- |
+| `::before` / `::after` + opacity   | Для **плавных смен градиента** при действиях пользователя |
+| `@keyframes + background-position` | Для **анимированных градиентов** без JavaScript           |
+| CSS-переменные                     | Для **гибкой настройки** и поддержки тем                  |
+
+---
+
+### ✅ Вывод
+
+CSS не позволяет напрямую анимировать градиенты как изображения, но есть **проверенные обходные пути**:
+
+* слоистые фоны с `opacity`;
+* анимации позиции фона;
+* keyframes и переменные для контроля цвета и направлений.
+
+🔧 Это мощный способ добавить **живость и глубину** в интерфейс, не прибегая к JS.
+
+</details>
+</details>
+
+
+---
 
 49	Какие методы сглаживания шрифтов существуют в CSS и как они влияют на внешний вид текста?
 
