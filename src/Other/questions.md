@@ -19753,10 +19753,136 @@ const sum = nums.reduce((acc, n) => acc + n, 0); // 10
 </details>
 </details>
 
+---
+
+<details>
+<summary>32. 🧠 Что такое <strong>функции высшего порядка</strong> (Higher-Order Functions) в JavaScript?</summary>
+
+### 💡 Краткий ответ
+
+**Функция высшего порядка** — это функция, которая:
+
+1. **принимает другую функцию как аргумент**,
+2. **или возвращает другую функцию как результат**.
+
+В JavaScript функции — **объекты первого класса**, поэтому можно легко передавать их, возвращать и использовать как значения. Это делает возможным функциональное программирование.
 
 ---
 
-32. Что такое функции высшего порядка (Higher Order Functions)?
+<details>
+<summary>🔍 Подробнее: теория, примеры и применение</summary>
+
+### 📘 1. Что делает функцию "высшего порядка"?
+
+Функции высшего порядка работают с другими функциями — **управляют ими, оборачивают или модифицируют** их поведение.
+
+📌 Формально:
+
+```js
+function highOrderFunction(fn) {
+  // fn — функция
+  return function() {
+    // возвращаемая функция
+  };
+}
+```
+
+---
+
+### 🧪 2. Примеры функций высшего порядка
+
+#### ✅ Передача функции как аргумента:
+
+```js
+function greet(name) {
+  return "Hello, " + name;
+}
+
+function processUserInput(callback) {
+  const name = "Alex";
+  console.log(callback(name));
+}
+
+processUserInput(greet); // Hello, Alex
+```
+
+---
+
+#### ✅ Возврат функции:
+
+```js
+function multiplier(factor) {
+  return function(x) {
+    return x * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // 10
+```
+
+---
+
+#### ✅ Функции массивов: `map`, `filter`, `reduce` — это функции высшего порядка:
+
+```js
+const numbers = [1, 2, 3];
+
+const squared = numbers.map(n => n * n); // [1, 4, 9]
+const evens = numbers.filter(n => n % 2 === 0); // [2]
+const sum = numbers.reduce((acc, val) => acc + val, 0); // 6
+```
+
+---
+
+### 🏗 3. Примеры из реальной жизни
+
+#### ✅ Декоратор:
+
+```js
+function logWrapper(fn) {
+  return function(...args) {
+    console.log("Arguments:", args);
+    return fn(...args);
+  };
+}
+
+function sum(a, b) {
+  return a + b;
+}
+
+const loggedSum = logWrapper(sum);
+console.log(loggedSum(2, 3)); // Arguments: [2, 3] → 5
+```
+
+---
+
+### 📦 4. Где применяются функции высшего порядка
+
+| Область                     | Пример применения                           |
+| --------------------------- | ------------------------------------------- |
+| 📊 Обработка данных         | `map`, `filter`, `reduce`                   |
+| ⏲ Таймеры и задержки        | `setTimeout(() => ..., 1000)`               |
+| 💡 Колбэки и события        | `button.addEventListener('click', handler)` |
+| 📐 Каррирование, композиция | `compose(f, g)`                             |
+| 🔁 Рекурсивные стратегии    | `traverse(fn)`                              |
+
+---
+
+### ✅ Вывод
+
+> **Функции высшего порядка — основа функционального программирования.** Они позволяют писать гибкий, переиспользуемый и декларативный код.
+
+🔹 Позволяют абстрагировать поведение
+🔹 Повышают читаемость и выразительность
+🔹 Упрощают сложную логику за счёт композиции функций
+
+</details>
+</details>
+
+
+---
+
 33. Почему функции в JS называют объектами первого класса (First-class Objects)?
 34. Как бы Вы реализовали метод Array.prototype.map?
 35. Как бы Вы реализовали метод Array.prototype.filter?
