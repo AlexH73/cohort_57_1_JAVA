@@ -20549,10 +20549,74 @@ function example() {
 </details>
 </details>
 
+---
+
+<details>
+<summary>40. 📘 <strong>Что такое ECMAScript (ES)?</strong></summary>
+
+### 💡 Краткий ответ
+
+**ECMAScript (ES)** — это спецификация языка программирования, на основе которой создан **JavaScript**. Она определяет стандарты синтаксиса, типов данных, операторов, встроенных объектов и поведения, чтобы язык был **унифицированным и совместимым во всех браузерах**.
 
 ---
 
-40. Что такое ECMAScript?
+<details>
+<summary>📚 Подробнее: история, версии и отличие от JavaScript</summary>
+
+### 📖 Происхождение
+
+* ECMAScript разработан организацией **ECMA International**
+* Первый стандарт — **ECMAScript 1** принят в **1997 году**
+* JavaScript, JScript (от Microsoft), ActionScript (от Adobe) — реализации стандарта ECMAScript
+
+---
+
+### 📌 JavaScript ≠ ECMAScript
+
+* **ECMAScript** — это **язык и его правила**
+* **JavaScript** — это **реализация ECMAScript** с дополнениями:
+
+  * Работа с DOM
+  * Web API (например, `fetch`, `document`, `window`)
+  * Консоль браузера и т.п.
+
+---
+
+### 🧱 Примеры компонентов, определённых в ECMAScript:
+
+| Категория            | Примеры                   |   |               |
+| -------------------- | ------------------------- | - | ------------- |
+| Типы данных          | Number, String, Boolean   |   |               |
+| Операторы            | +, -, &&,                 |   | , ===, typeof |
+| Объекты              | Object, Array, Function   |   |               |
+| Структуры управления | if, for, switch           |   |               |
+| Функции              | arrow functions, closures |   |               |
+| Модули               | `import` / `export`       |   |               |
+| Асинхронность        | Promises, async/await     |   |               |
+
+---
+
+### 🚀 Важные версии ECMAScript
+
+| Версия       | Год       | Ключевые возможности                                       |
+| ------------ | --------- | ---------------------------------------------------------- |
+| ES5          | 2009      | `strict mode`, `JSON`, `Array.prototype.forEach`           |
+| ES6 (ES2015) | 2015      | `let`, `const`, стрелочные функции, модули, классы         |
+| ES7 (2016)   | 2016      | `Array.prototype.includes`, `**` оператор                  |
+| ES8–ES13     | 2017–2022 | async/await, optional chaining, nullish coalescing, и т.д. |
+
+---
+
+### 🧠 Вывод
+
+> **ECMAScript** — это основа JavaScript, которая задаёт стандарты, чтобы код работал одинаково в разных средах. Понимание ECMAScript помогает писать более современный, совместимый и чистый код.
+
+</details>
+</details>
+
+
+---
+
 41. Что нового привнес в JS стандарт ES6 или ECMAScript2015?
 42. В чем разница между ключевыми словами «var», «let» и «const»?
 43. Что такое стрелочные функции (Arrow Functions)?
