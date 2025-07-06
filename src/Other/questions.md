@@ -20074,10 +20074,102 @@ console.log(squared); // [1, 4, 9, 16]
 </details>
 </details>
 
+---
+
+<details>
+<summary>35. 🛠️ <strong>Как реализовать метод <code>Array.prototype.filter</code> вручную?</strong></summary>
+
+### 💡 Краткий ответ
+
+Метод `filter()` создаёт **новый массив**, содержащий **только те элементы**, для которых переданный колбэк возвращает `true`.
+
+📌 Чтобы написать свой `filter()`, достаточно:
+
+* пройтись циклом по элементам массива,
+* проверить условие с помощью колбэка,
+* добавлять подходящие элементы в новый массив.
 
 ---
 
-35. Как бы Вы реализовали метод Array.prototype.filter?
+<details>
+<summary>📚 Подробнее с примером кода</summary>
+
+### 🔧 1️⃣ Поведение оригинального метода `.filter()`
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4]
+```
+
+---
+
+### 🛠️ 2️⃣ Реализация собственного метода `myFilter`
+
+```javascript
+Array.prototype.myFilter = function(callback, thisArg) {
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+
+  const result = [];
+  const arr = this;
+
+  for (let i = 0; i < arr.length; i++) {
+    // Проверяем, есть ли элемент с таким индексом
+    if (i in arr) {
+      if (callback.call(thisArg, arr[i], i, arr)) {
+        result.push(arr[i]);
+      }
+    }
+  }
+
+  return result;
+};
+```
+
+---
+
+### 🧪 3️⃣ Пример использования
+
+```javascript
+const numbers = [10, 15, 20, 25, 30];
+
+const greaterThan20 = numbers.myFilter(function(value) {
+  return value > 20;
+});
+
+console.log(greaterThan20); // [25, 30]
+```
+
+---
+
+### 🧠 Особенности, соблюдённые в реализации:
+
+| Особенность                                         | Поддержано?          |
+| --------------------------------------------------- | -------------------- |
+| ✅ Колбэк получает аргументы `(value, index, array)` | Да                   |
+| ✅ Поддержка `thisArg`                               | Да (`callback.call`) |
+| ✅ Пропущенные элементы не обрабатываются            | Да (`i in arr`)      |
+| ✅ Не мутирует исходный массив                       | Да                   |
+| ✅ Возвращает новый массив с выбранными элементами   | Да                   |
+
+---
+
+### ✅ Вывод
+
+> Реализация `filter()` своими руками — отличный способ лучше понять:
+>
+> * **Работу с колбэками**
+> * **Манипуляции с массивами**
+> * **Принципы чистых функций**
+
+</details>
+</details>
+
+
+---
+
 36. Как бы Вы реализовали метод Array.prototype.reduce?
 37. Что такое объект arguments?
 38. Как создать объект, не имеющий прототипа?
