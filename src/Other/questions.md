@@ -21012,13 +21012,160 @@ const p = new Person('Alex'); // ❌ TypeError: Person is not a constructor
 Стрелочные функции — мощный инструмент для лаконичного и читаемого кода, но их особенности нужно хорошо понимать.
 
 </details>
+</details>
 
+---
+
+<details>
+<summary>44. 🏛️ Что такое классы (<code>Classes</code>) в JavaScript?</summary>
+
+### ⚡ Краткий ответ
+
+**Классы в JavaScript** — это синтаксический сахар над функциями-конструкторами. Они упрощают создание объектов и наследование. Введены в стандарте **ES6 (2015)**.
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    return `Hello, I'm ${this.name}`;
+  }
+}
+
+const john = new Person('John');
+console.log(john.greet()); // Hello, I'm John
+```
+
+---
+
+<details>
+<summary>📚 Подробнее: синтаксис, особенности, примеры</summary>
+
+### 🔹 1. Основы синтаксиса класса
+
+```js
+class ClassName {
+  constructor(param1, param2) {
+    // инициализация
+  }
+
+  method1() {
+    // метод экземпляра
+  }
+
+  static staticMethod() {
+    // статический метод
+  }
+}
+```
+
+---
+
+### 🔹 2. Пример
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+const dog = new Animal('Dog');
+dog.speak(); // Dog makes a noise.
+```
+
+---
+
+### 🔹 3. Наследование (extends)
+
+```js
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const rex = new Dog('Rex');
+rex.speak(); // Rex barks.
+```
+
+---
+
+### 🔹 4. Ключевое слово `super`
+
+Используется для вызова конструктора или метода родительского класса:
+
+```js
+class Cat extends Animal {
+  constructor(name, color) {
+    super(name); // вызывает Animal constructor
+    this.color = color;
+  }
+
+  speak() {
+    super.speak(); // вызывает метод Animal
+    console.log(`${this.name} meows.`);
+  }
+}
+```
+
+---
+
+### 🔹 5. Статические методы и свойства
+
+```js
+class MathUtil {
+  static square(x) {
+    return x * x;
+  }
+}
+
+console.log(MathUtil.square(4)); // 16
+```
+
+---
+
+### 🧠 Особенности классов
+
+| Особенность            | Описание                                                   |
+| ---------------------- | ---------------------------------------------------------- |
+| `class` — не hoisted   | Нельзя использовать до объявления.                         |
+| Методы не перечисляемы | Они находятся в `prototype`, не в объекте.                 |
+| Строгий режим          | Код внутри классов автоматически работает в `strict mode`. |
+
+---
+
+### ✅ Когда использовать классы
+
+* Когда нужно **структурировать код объектно-ориентированно**.
+* Когда требуется **наследование**.
+* Для организации **моделей данных** или **логики приложения**.
+
+---
+
+### 🚫 Когда лучше не использовать
+
+* В простых структурах данных.
+* Если нужен функциональный подход.
+
+---
+
+### 🧾 Заключение
+
+Классы — это современный способ создания объектов и наследования в JavaScript. Они делают код более читаемым и приближенным к классическим ООП-языкам.
+
+</details>
 </details>
 
 
 ---
 
-44. Что такое классы (Classes)?
 45. Что такое шаблонные литералы (Template Literals)?
 46. Что такое деструктуризация объекта (Object Destructuring)?
 47. Что такое модули (Modules)?
