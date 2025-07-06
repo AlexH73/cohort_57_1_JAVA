@@ -20167,10 +20167,123 @@ console.log(greaterThan20); // [25, 30]
 </details>
 </details>
 
+---
+
+<details>
+<summary>36. 🧮 <strong>Как реализовать метод <code>Array.prototype.reduce</code> вручную?</strong></summary>
+
+### 💡 Краткий ответ
+
+Метод `reduce()` выполняет **свёртку массива в одно значение**, вызывая переданный колбэк последовательно для каждого элемента.
+Он принимает аккумулятор и текущий элемент, возвращает новое накопленное значение.
+
+📌 При ручной реализации нужно:
+
+* пройтись по массиву,
+* аккумулировать значения через callback,
+* учесть наличие или отсутствие `initialValue`.
 
 ---
 
-36. Как бы Вы реализовали метод Array.prototype.reduce?
+<details>
+<summary>📚 Подробнее с примером кода</summary>
+
+### 🔧 1️⃣ Поведение оригинального метода `.reduce()`
+
+```js
+const arr = [1, 2, 3, 4];
+const sum = arr.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10
+```
+
+---
+
+### 🛠️ 2️⃣ Реализация собственного метода `myReduce`
+
+```javascript
+Array.prototype.myReduce = function(callback, initialValue) {
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+
+  const arr = this;
+  const hasInitialValue = arguments.length > 1;
+  let accumulator = hasInitialValue ? initialValue : undefined;
+  let startIndex = hasInitialValue ? 0 : 1;
+
+  // Если нет initialValue, ищем первый элемент как начальный аккумулятор
+  if (!hasInitialValue) {
+    // Ищем первый существующий индекс
+    for (let i = 0; i < arr.length; i++) {
+      if (i in arr) {
+        accumulator = arr[i];
+        startIndex = i + 1;
+        break;
+      }
+    }
+    if (accumulator === undefined) {
+      throw new TypeError("Reduce of empty array with no initial value");
+    }
+  }
+
+  for (let i = startIndex; i < arr.length; i++) {
+    if (i in arr) {
+      accumulator = callback(accumulator, arr[i], i, arr);
+    }
+  }
+
+  return accumulator;
+};
+```
+
+---
+
+### 🧪 3️⃣ Пример использования
+
+```javascript
+const numbers = [1, 2, 3, 4];
+
+const result = numbers.myReduce((acc, curr) => acc + curr, 0);
+console.log(result); // 10
+```
+
+Без начального значения:
+
+```js
+const result2 = numbers.myReduce((acc, curr) => acc + curr);
+console.log(result2); // 10
+```
+
+---
+
+### ✅ Особенности реализации
+
+| Особенность                                                   | Учитывается?          |
+| ------------------------------------------------------------- | --------------------- |
+| ✅ Обработка `initialValue`                                    | Да                    |
+| ✅ Обработка "дыр" (пустых ячеек)                              | Да (через `i in arr`) |
+| ✅ Передаются все 4 параметра в callback                       | Да                    |
+| ❌ Не мутирует исходный массив                                 | Да                    |
+| ✅ Генерирует исключение при пустом массиве без `initialValue` | Да                    |
+
+---
+
+### 📌 Вывод
+
+> Метод `reduce()` — мощный инструмент для:
+>
+> * агрегации значений (сумм, произведений),
+> * создания новых структур (объектов, строк, массивов),
+> * управления логикой сложных операций с накоплением состояния.
+
+Ручная реализация помогает глубже понять внутреннюю механику итерации и аккумулирования.
+
+</details>
+</details>
+
+
+---
+
 37. Что такое объект arguments?
 38. Как создать объект, не имеющий прототипа?
 39. Почему в представленном коде переменная b становится глобальной при вызове функции?
