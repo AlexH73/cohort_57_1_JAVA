@@ -19991,10 +19991,92 @@ actions[0](); // Start
 </details>
 </details>
 
+---
+
+<details>
+<summary>34. 🛠️ <strong>Как реализовать метод <code>Array.prototype.map</code> вручную?</strong></summary>
+
+### 💡 Краткий ответ
+
+Метод `map()` создаёт **новый массив**, в котором каждый элемент — это результат применения переданной функции к элементу исходного массива.
+
+📌 Чтобы реализовать `map()` вручную, можно использовать цикл `for`, вызвать колбэк для каждого элемента и сохранить результат в новом массиве.
 
 ---
 
-34. Как бы Вы реализовали метод Array.prototype.map?
+<details>
+<summary>📚 Подробнее с примером кода</summary>
+
+### 🔧 1. Поведение оригинального метода `.map()`
+
+```js
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+```
+
+---
+
+### 🔨 2. Реализация собственного метода `myMap`
+
+```js
+Array.prototype.myMap = function(callback, thisArg) {
+  if (typeof callback !== "function") {
+    throw new TypeError(callback + " is not a function");
+  }
+
+  const result = [];
+  const arr = this;
+
+  for (let i = 0; i < arr.length; i++) {
+    // Проверка на существование элемента (пропущенные индексы в разреженных массивах)
+    if (i in arr) {
+      result[i] = callback.call(thisArg, arr[i], i, arr);
+    }
+  }
+
+  return result;
+};
+```
+
+---
+
+### 🧪 3. Пример использования
+
+```js
+const numbers = [1, 2, 3, 4];
+
+const squared = numbers.myMap(function(num) {
+  return num * num;
+});
+
+console.log(squared); // [1, 4, 9, 16]
+```
+
+---
+
+### 🧠 Особенности, соблюдённые в реализации:
+
+| Особенность                              | Поддержано?          |
+| ---------------------------------------- | -------------------- |
+| ✅ Колбэк получает `value, index, array`  | Да                   |
+| ✅ Поддержка `thisArg`                    | Да (`callback.call`) |
+| ✅ Возвращает новый массив                | Да                   |
+| ✅ Пропущенные элементы не обрабатываются | Да (`i in arr`)      |
+| ✅ Не мутирует оригинальный массив        | Да                   |
+
+---
+
+### ✅ Вывод
+
+> Реализация `map()` вручную — полезное упражнение для понимания **высшего порядка функций**, **контекста выполнения** и **работы с массивами**.
+
+</details>
+</details>
+
+
+---
+
 35. Как бы Вы реализовали метод Array.prototype.filter?
 36. Как бы Вы реализовали метод Array.prototype.reduce?
 37. Что такое объект arguments?
