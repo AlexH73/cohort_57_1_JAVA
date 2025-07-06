@@ -20614,10 +20614,190 @@ function example() {
 </details>
 </details>
 
+---
+
+<details>
+<summary>41. 🚀 <strong>Что нового появилось в ECMAScript 2015 (ES6)?</strong></summary>
+
+### 💡 Краткий ответ
+
+**ECMAScript 2015 (ES6)** — одно из крупнейших обновлений языка JavaScript. Оно привнесло **новый синтаксис, классы, модули, стрелочные функции, let/const**, работу с **Promise**, а также многое другое для более **структурированной, читаемой и современной разработки**.
 
 ---
 
-41. Что нового привнес в JS стандарт ES6 или ECMAScript2015?
+<details>
+<summary>📚 Подробнее: основные нововведения ES6</summary>
+
+### 🧱 1. Переменные `let` и `const` вместо `var`
+
+```js
+let x = 10;     // Блочная область видимости
+const y = 20;   // Константа (нельзя переназначить)
+```
+
+---
+
+### 🎯 2. Стрелочные функции (Arrow Functions)
+
+```js
+const add = (a, b) => a + b;
+```
+
+* Краткий синтаксис
+* Не имеет своего `this`
+
+---
+
+### 📦 3. Классы и наследование
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+
+class Student extends Person {
+  study() {
+    console.log(`${this.name} is studying`);
+  }
+}
+```
+
+---
+
+### 🔁 4. Шаблонные строки (Template Literals)
+
+```js
+const name = 'Alex';
+console.log(`Hello, ${name}!`);
+```
+
+* Использует обратные кавычки `` ` ``
+* Позволяет вставлять переменные и переносы строк
+
+---
+
+### 🧳 5. Деструктуризация объектов и массивов
+
+```js
+const person = { name: 'Anna', age: 25 };
+const { name, age } = person;
+
+const arr = [1, 2, 3];
+const [a, b] = arr;
+```
+
+---
+
+### 📥 6. Параметры по умолчанию
+
+```js
+function greet(name = 'Guest') {
+  console.log(`Hello, ${name}`);
+}
+```
+
+---
+
+### ✨ 7. Rest и Spread операторы
+
+```js
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b);
+}
+
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3]; // [1, 2, 3]
+```
+
+---
+
+### 🌐 8. Модули (import / export)
+
+```js
+// module.js
+export const pi = 3.14;
+
+// main.js
+import { pi } from './module.js';
+```
+
+---
+
+### ⏳ 9. Promise
+
+```js
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Done'), 1000);
+  });
+};
+
+fetchData().then(result => console.log(result));
+```
+
+---
+
+### 🧮 10. Улучшенные литералы объектов
+
+```js
+const age = 30;
+const person = {
+  name: 'John',
+  age,              // Сокращённое имя свойства
+  greet() {         // Сокращённый метод
+    console.log('Hi');
+  }
+};
+```
+
+---
+
+### 🔄 11. Цикл `for...of`
+
+```js
+const arr = ['a', 'b', 'c'];
+for (let letter of arr) {
+  console.log(letter);
+}
+```
+
+---
+
+### 📏 12. Map, Set, WeakMap, WeakSet
+
+```js
+const map = new Map();
+map.set('key', 'value');
+
+const set = new Set([1, 2, 3]);
+```
+
+---
+
+### 🔐 13. Symbol — новый примитивный тип
+
+```js
+const id = Symbol('id');
+```
+
+---
+
+### 🧠 Вывод
+
+> **ES6** значительно улучшил JavaScript, сделав его более выразительным, модульным и приближенным к современным языкам. Он стал базой для последующих улучшений в ES7, ES8 и т.д.
+
+</details>
+</details>
+
+
+---
+
 42. В чем разница между ключевыми словами «var», «let» и «const»?
 43. Что такое стрелочные функции (Arrow Functions)?
 44. Что такое классы (Classes)?
