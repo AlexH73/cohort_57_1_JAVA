@@ -18415,10 +18415,152 @@ h2 + p {
 </details>
 </details>
 
+---
+
+<details>
+<summary>65. 🌄 Как создать анимацию с эффектом "параллакса" (<code>parallax scrolling</code>) с использованием CSS?</summary>
+
+### ✅ Краткий ответ
+
+**Parallax scrolling** — это визуальный эффект, при котором **фоновые изображения двигаются медленнее, чем передний контент**, создавая ощущение глубины. В CSS это можно реализовать с помощью свойств:
+
+* `background-attachment: fixed`
+* `transform: translateZ(...)` (с `perspective`)
+* `position: sticky` или `position: absolute` + `scroll-behavior`
 
 ---
 
-65	Как создать анимацию с эффектом "параллакса" (parallax scrolling) с использованием CSS?
+<details>
+<summary>📚 Подробнее: варианты реализации, примеры, плюсы и минусы</summary>
+
+---
+
+## 🧰 Способы реализации CSS-параллакса
+
+---
+
+### 1. 🧱 **Простой CSS-параллакс с `background-attachment: fixed`**
+
+```html
+<section class="parallax">
+  <h1>Добро пожаловать</h1>
+</section>
+```
+
+```css
+.parallax {
+  height: 100vh;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-attachment: fixed; /* ⚠ ключ к параллаксу */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+```
+
+#### ➕ Преимущества:
+
+* Легко реализуется
+* Не требует JavaScript
+
+#### ➖ Недостатки:
+
+* `background-attachment: fixed` **не поддерживается на iOS Safari**
+* Нет глубокой кастомизации
+
+---
+
+### 2. 🎞️ **Многоуровневый параллакс с `transform: translateZ()` и перспективой**
+
+```html
+<div class="scene">
+  <div class="layer background"></div>
+  <div class="layer foreground">Текст на переднем плане</div>
+</div>
+```
+
+```css
+.scene {
+  height: 100vh;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.background {
+  background: url('bg.jpg') center/cover no-repeat;
+  transform: translateZ(-1px) scale(2); /* Движется медленнее */
+  z-index: 1;
+}
+
+.foreground {
+  z-index: 2;
+  color: white;
+  text-align: center;
+  margin-top: 40vh;
+}
+```
+
+#### 🧠 Принцип:
+
+* Элементы с `translateZ(-1px)` кажутся дальше и двигаются медленнее
+* `perspective: 1px` усиливает эффект глубины
+
+---
+
+### 3. 📜 **CSS Scroll-linked animations (`@scroll-timeline`) — экспериментально**
+
+```css
+@keyframes fade-slide {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.myElement {
+  animation: fade-slide linear;
+  animation-timeline: scroll();
+  animation-range: entry 0% cover 50%;
+}
+```
+
+> 🔬 Этот способ работает только в **современных браузерах (Chrome Canary, Firefox Nightly)** и требует `@scroll-timeline`.
+
+---
+
+## 📝 Выводы
+
+| Метод                      | Поддержка | Гибкость | Производительность |
+| -------------------------- | --------- | -------- | ------------------ |
+| `background-attachment`    | ★★★★☆     | ★☆☆☆☆    | ★★★★★              |
+| `transform: translateZ`    | ★★★★☆     | ★★★★☆    | ★★★★☆              |
+| `@scroll-timeline` (новый) | ★★☆☆☆     | ★★★★★    | ★★★☆☆              |
+
+---
+
+## 🛠 Советы по производительности
+
+* Старайтесь использовать **`will-change: transform`** для слоёв
+* Минимизируйте количество "тяжёлых" слоёв с эффектами
+* Проверяйте на разных устройствах (особенно iOS)
+
+
+</details>
+</details>
+
+
+---
 
 66	Что такое "селекторы атрибутов" (attribute selectors) и как они используются для выбора элементов по атрибутам?
 
