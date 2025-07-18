@@ -18632,15 +18632,143 @@ form input[type="email"][required] {
 }
 ```
 
+</details>
+</details>
+
 ---
+
+<details>
+<summary>67. 🎞️ Какие методы подходят для создания анимации в CSS, помимо <code>@keyframes</code>?</summary>
+
+### ✅ Краткий ответ
+
+В дополнение к `@keyframes`, анимации в CSS можно создавать с помощью **переходов (transitions)**, **анимаций с помощью переменных**, **свойства `will-change`**, а также **анимаций на основе скролла и взаимодействия** через псевдоклассы и эффекты.
+
+---
+
+<details>
+<summary>📚 Подробнее: Обзор методов анимации без <code>@keyframes</code></summary>
+
+---
+
+## 1️⃣ **CSS Transition (переход)**
+
+Позволяет плавно изменять значение CSS-свойства.
+
+```css
+.button {
+  background-color: blue;
+  transition: background-color 0.5s ease;
+}
+
+.button:hover {
+  background-color: red;
+}
+```
+
+📌 Применимо к состояниям, зависящим от взаимодействия: `:hover`, `:focus`, `:active`.
+
+---
+
+## 2️⃣ **Анимация через `transform` и `transition`**
+
+Можно анимировать перемещения, масштаб, поворот:
+
+```css
+.box {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+```
+
+---
+
+## 3️⃣ **Анимации через `:hover`, `:focus`, `:checked` и др. псевдоклассы**
+
+Псевдоклассы могут запускать анимацию с `transition`, даже без JavaScript:
+
+```css
+.toggle:checked + .menu {
+  transform: translateX(0);
+}
+```
+
+---
+
+## 4️⃣ **CSS-анимации на основе `scroll` (например, с помощью IntersectionObserver + классов)**
+
+Хотя напрямую в CSS нет нативной привязки к скроллу, можно:
+
+* добавлять классы через JS при появлении элемента в области видимости
+* использовать `transition` или `animation` для эффектов
+
+Пример в CSS:
+
+```css
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+---
+
+## 5️⃣ **CSS Custom Properties (переменные) + `transition`**
+
+Анимации можно выстраивать на основе изменения CSS-переменных:
+
+```css
+:root {
+  --scale: 1;
+}
+
+.box {
+  transform: scale(var(--scale));
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  --scale: 1.2;
+}
+```
+
+---
+
+## 6️⃣ **Фреймворки и утилиты (например, Tailwind, Animate.css)**
+
+Некоторые библиотеки предлагают готовые классы для анимации:
+
+```html
+<div class="animate-bounce">📦</div> <!-- Tailwind CSS -->
+```
+
+---
+
+## 🧠 Когда не использовать @keyframes:
+
+| Сценарий                          | Лучше использовать |
+| --------------------------------- | ------------------ |
+| Простое взаимодействие (`:hover`) | `transition`       |
+| Анимация 1–2 свойств              | `transition`       |
+| Старт анимации по классу/скроллу  | `transition`       |
+| Комплексная последовательность    | `@keyframes`       |
+
 
 </details>
 </details>
 
 
 ---
-
-67	Какие методы подходят для создания анимации в CSS, помимо @keyframes?
 
 68	Что такое "CSS Grid Layout" и какие особенности этой системы сеток?
 
