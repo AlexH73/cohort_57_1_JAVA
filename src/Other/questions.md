@@ -24174,7 +24174,110 @@ console.log(others); // { y: 2, z: 3 }
 
 ---
 
-53. Что такое параметры по умолчанию (Default Parameters)?
+<details>
+<summary>⚡ 53. Что такое параметры по умолчанию (Default Parameters)?</summary>
+
+### ✅ Краткий ответ
+
+**Параметры по умолчанию** в JavaScript позволяют задать значение функции для аргумента, если он **не был передан** или равен `undefined`.
+
+---
+
+<details>
+<summary>📚 Подробнее с примерами</summary>
+
+### 🔹 Обычное поведение без параметров по умолчанию
+
+Если аргумент не передан — он будет `undefined`:
+
+```js
+function greet(name) {
+  console.log("Привет, " + name);
+}
+
+greet(); // "Привет, undefined"
+```
+
+---
+
+### 🔹 Использование параметров по умолчанию
+
+Мы можем указать значение, которое подставится автоматически:
+
+```js
+function greet(name = "гость") {
+  console.log("Привет, " + name);
+}
+
+greet();        // "Привет, гость"
+greet("Алекс"); // "Привет, Алекс"
+```
+
+---
+
+### 🔹 Пример с несколькими параметрами
+
+```js
+function sum(a = 0, b = 0) {
+  return a + b;
+}
+
+console.log(sum());       // 0
+console.log(sum(5));      // 5 (b = 0)
+console.log(sum(5, 10));  // 15
+```
+
+---
+
+### 🔹 Значение по умолчанию может быть выражением
+
+Можно использовать вызов функции или вычисления:
+
+```js
+function randomNumber(min = 0, max = Math.random() * 10) {
+  return Math.floor(max - min);
+}
+
+console.log(randomNumber());    // случайное число
+console.log(randomNumber(5, 15)); // число от 5 до 15
+```
+
+---
+
+### 🔑 Особенности
+
+1. Параметры по умолчанию работают **только если значение аргумента `undefined`**.
+
+   ```js
+   function test(x = 1) {
+     console.log(x);
+   }
+   test(undefined); // 1
+   test(null);      // null (а не 1!)
+   ```
+
+2. Можно комбинировать с **rest-параметрами**:
+
+   ```js
+   function multiply(mult = 1, ...numbers) {
+     return numbers.map(n => n * mult);
+   }
+   console.log(multiply(2, 1, 2, 3)); // [2, 4, 6]
+   ```
+
+---
+
+### 🧠 Итог
+
+* **Default Parameters** упрощают работу с необязательными аргументами.
+* Если значение не передано → используется заданное по умолчанию.
+* Работают только при `undefined`, но не при `null`.
+
+</details>
+</details>
+
+---
+
 54. Что такое объектная обертка (Wrapper Objects)?
 55. В чем разница между явным и неявным преобразованием или приведением к типу (Implicit and Explicit Coercion)?
 56. Что такое NaN? Как проверить, является ли значение NaN?
