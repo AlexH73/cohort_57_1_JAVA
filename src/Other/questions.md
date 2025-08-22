@@ -23962,7 +23962,133 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 
 ---
 
-51. Что такое async/await?
+<details>
+<summary>⚡ 51. Что такое async/await?</summary>
+
+### ✅ Краткий ответ
+
+**`async/await`** — это синтаксический сахар над промисами в JavaScript.
+Он позволяет писать асинхронный код так, будто он **синхронный**, делая его более читаемым и удобным.
+
+* `async` перед функцией делает её **асинхронной** и автоматически возвращает **Promise**.
+* `await` приостанавливает выполнение функции до завершения промиса и возвращает его результат.
+
+---
+
+<details>
+<summary>📚 Подробнее с примерами</summary>
+
+---
+
+### 🔧 Простейший пример
+
+```js
+async function getData() {
+  return "Hello!";
+}
+
+getData().then(result => console.log(result));
+```
+
+👉 Вывод:
+
+```
+Hello!
+```
+
+> Даже если мы вернули строку `"Hello!"`, функция `async` автоматически обернула её в **Promise**.
+
+---
+
+### ⏳ Использование `await`
+
+```js
+function fetchData() {
+  return new Promise(resolve => {
+    setTimeout(() => resolve("Данные получены!"), 2000);
+  });
+}
+
+async function showData() {
+  console.log("Запрос данных...");
+  const result = await fetchData(); // ждём выполнения промиса
+  console.log(result);
+  console.log("Готово!");
+}
+
+showData();
+```
+
+👉 Вывод:
+
+```
+Запрос данных...
+(через 2 сек)
+Данные получены!
+Готово!
+```
+
+---
+
+### ⚠️ Обработка ошибок с try...catch
+
+```js
+async function getUser() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    let user = await response.json();
+    console.log("Имя пользователя:", user.name);
+  } catch (error) {
+    console.error("Ошибка:", error);
+  }
+}
+
+getUser();
+```
+
+---
+
+### 🔗 Отличие от `.then()`
+
+**С `.then()`:**
+
+```js
+fetch(url)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+**С `async/await`:**
+
+```js
+async function load() {
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+👉 Второй вариант **читабельнее и выглядит как синхронный код**.
+
+---
+
+### 🧠 Итог
+
+* `async` → всегда возвращает Promise.
+* `await` → ждёт выполнения Promise и возвращает результат.
+* Вместе делают асинхронный код **простым и линейным**, без "callback hell" и длинных `.then()` цепочек.
+
+</details>
+</details>
+
+
+---
+
 52. В чем разница между spread-оператором и rest-оператором?
 53. Что такое параметры по умолчанию (Default Parameters)?
 54. Что такое объектная обертка (Wrapper Objects)?
