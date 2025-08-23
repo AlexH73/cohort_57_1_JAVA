@@ -19787,7 +19787,107 @@ CSS здесь выступает лишь как инструмент офор�
 
 ---
 
-77	Как можно реализовать анимацию появления (fade-in) элементов при прокрутке страницы с помощью CSS и JavaScript?
+<details>  
+<summary>✨ 77. Как реализовать анимацию появления (fade-in) при прокрутке страницы?</summary>  
+
+### ✅ Краткий ответ
+
+Анимацию **fade-in при скролле** можно сделать так:
+
+1. В **CSS** задать элементу скрытое состояние (`opacity: 0; transform: translateY(20px);`).
+2. Создать анимацию с плавным проявлением (`opacity: 1; transform: translateY(0);`).
+3. В **JavaScript** отслеживать, когда элемент попадает в область видимости (`IntersectionObserver` или событие `scroll`), и добавлять ему класс активации.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение + пример</summary>  
+
+### 🔹 1. CSS для скрытого состояния и анимации
+
+```css
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+---
+
+### 🔹 2. HTML структура
+
+```html
+<section>
+  <h2 class="fade-in">Заголовок</h2>
+  <p class="fade-in">Этот текст появится при прокрутке вниз.</p>
+</section>
+```
+
+---
+
+### 🔹 3. JavaScript с IntersectionObserver (современный способ)
+
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // Отключаем наблюдение после появления
+      }
+    });
+  }, { threshold: 0.2 }); // 20% элемента в зоне видимости
+
+  elements.forEach(el => observer.observe(el));
+});
+```
+
+---
+
+### 🔹 4. Старый способ через событие `scroll` (менее оптимальный)
+
+```js
+window.addEventListener("scroll", () => {
+  const elements = document.querySelectorAll(".fade-in");
+  const triggerBottom = window.innerHeight * 0.8;
+
+  elements.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      el.classList.add("show");
+    }
+  });
+});
+```
+
+---
+
+### 🔹 5. Результат
+
+* При загрузке все элементы **невидимы**.
+* Когда пользователь прокручивает страницу и элемент попадает в видимую область — он плавно проявляется (`fade-in`).
+
+---
+
+### 🔑 Вывод
+
+* **CSS** задаёт переходы (transition).
+* **JavaScript** отвечает за то, **когда** анимация запускается (через `IntersectionObserver` или `scroll`).
+* Оптимальнее использовать **IntersectionObserver**, так как он работает быстрее и не нагружает страницу при постоянных событиях `scroll`.
+
+</details>  
+</details>
+
+
+---
 
 78	Что такое "псевдокласс :focus" и как он используется для стилизации элементов при получении ими фокуса?
 
