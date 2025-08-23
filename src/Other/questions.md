@@ -25798,6 +25798,47 @@ str.toUpperCase(); // не изменит str
 </details>
 </details>
 
+
+
+<details>
+<summary style="font-size: 35px;">👨🏻‍🏫 Technologies (Git,
+Linux, DB) </summary>
+
+
+## Список вопросов из блока "Technologies"
+
+<details>
+
+<summary style="font-size: 25px;">🌿 Git/Github</summary>
+
+### Вопросы по теме Git/Github:
+
+---
+
+</details>
+
+<details>
+
+<summary style="font-size: 25px;">🐧 Linux</summary>
+
+### Вопросы по теме Linux:
+
+---
+
+</details>
+
+<details>
+
+<summary style="font-size: 25px;">🛢️ DB SQL</summary>
+
+### Вопросы по теме DB SQL:
+
+---
+
+</details>
+</details>
+</details>
+
 <br />
 
 <details>
