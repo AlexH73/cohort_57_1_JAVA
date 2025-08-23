@@ -19993,10 +19993,120 @@ button:focus {
 </details>  
 </details>
 
+---
+
+<details>  
+<summary>🎯 79. Как создать анимацию "пульсации" (pulse) элемента с помощью CSS?</summary>  
+
+### ✅ Краткий ответ
+
+Анимация **pulse (пульсация)** создаётся с помощью правила **`@keyframes`** и свойств **`transform: scale()`** и/или **`opacity`**. Элемент плавно увеличивается и уменьшается в размерах (или меняет прозрачность), создавая эффект "биения".
 
 ---
 
-79	Как создать анимацию "пульсации" (pulse) элемента с помощью CSS?
+<details>  
+<summary>📚 Подробное объяснение + примеры</summary>  
+
+### 🔹 Пример 1: Простая пульсация за счёт масштаба
+
+```html
+<button class="pulse">Pulse</button>
+```
+
+```css
+.pulse {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+```
+
+👉 Кнопка будет "пульсировать", слегка увеличиваясь и возвращаясь в исходное состояние.
+
+---
+
+### 🔹 Пример 2: Пульсация с изменением прозрачности
+
+```css
+.pulse-opacity {
+  animation: pulse-opacity 2s infinite;
+}
+
+@keyframes pulse-opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+👉 Элемент будет плавно тускнеть и снова становиться ярким.
+
+---
+
+### 🔹 Пример 3: Комбинированная пульсация (scale + opacity)
+
+```css
+.pulse-strong {
+  animation: pulse-strong 2s infinite;
+}
+
+@keyframes pulse-strong {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+```
+
+👉 Элемент будет одновременно **увеличиваться** и **тускнеть**, создавая более выраженный "био-эффект".
+
+---
+
+### 🔑 Вывод
+
+* Для эффекта **pulse** достаточно анимации масштаба и/или прозрачности.
+* Часто используется для:
+
+  * кнопок вызова действия (**Call To Action**),
+  * уведомлений,
+  * иконок и индикаторов.
+
+</details>  
+</details>
+
+
+---
 
 80	Что такое "переменные окружения" (environment variables) в препроцессорах CSS и как они могут быть полезны для настройки стилей?
 
