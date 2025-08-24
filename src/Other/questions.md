@@ -12,8 +12,6 @@
 
 ## Вопросы, поднятые на уроках, и ответы на них.
 
----
-
 <details>
 <summary>1. 📦 Что такое примитивные типы данных в Java?</summary>
 
@@ -20191,7 +20189,161 @@ a {
 
 ---
 
-81	Каким образом можно стилизовать формы (input, textarea, select) с использованием CSS?
+<details>  
+<summary>🎯 81. Как стилизовать формы (<code>input</code>, <code>textarea</code>, <code>select</code>) с использованием CSS?</summary>  
+
+### ✅ Краткий ответ
+
+Формы (`input`, `textarea`, `select`) можно стилизовать в CSS так же, как и другие элементы: через **цвета, шрифты, размеры, рамки и отступы**. Однако у них есть особенности — браузеры по умолчанию применяют свои стили (особенно к `select` и `checkbox`/`radio`). Для глубокой кастомизации используют:
+
+* базовые CSS-свойства (`color`, `background`, `border`, `padding`, `font`),
+* псевдоклассы (`:focus`, `:hover`, `:disabled`, `:checked`),
+* псевдоэлементы (`::placeholder`, `::-webkit-slider-thumb`),
+* иногда **reset или normalize.css**, чтобы убрать дефолтные стили.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение + примеры</summary>  
+
+### 🔹 1. Стилизация `<input>`
+
+```css
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+```
+
+👉 Здесь мы сделали закруглённые углы, плавный эффект при фокусе.
+
+---
+
+### 🔹 2. Стилизация `::placeholder`
+
+```css
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+```
+
+---
+
+### 🔹 3. Стилизация `<textarea>`
+
+```css
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  resize: vertical; /* можно запретить resize */
+}
+```
+
+---
+
+### 🔹 4. Стилизация `<select>`
+
+⚠️ `<select>` сложнее, так как браузеры добавляют собственные стрелки.
+
+```css
+select {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  appearance: none; /* убираем дефолтную стрелку */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+```
+
+👉 Чтобы добавить свою стрелку:
+
+```css
+select {
+  background: url("arrow.svg") no-repeat right 10px center / 12px auto white;
+}
+```
+
+---
+
+### 🔹 5. Checkbox и Radio
+
+```css
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #007bff; /* современный способ менять цвет */
+}
+```
+
+👉 Для старых браузеров — используют `appearance: none` и рисуют кастомные стили.
+
+---
+
+### 🔹 6. Кнопки (submit / reset / button)
+
+```css
+button, input[type="submit"] {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+```
+
+---
+
+### 🔹 7. Состояния форм (псевдоклассы)
+
+* `:hover` — при наведении.
+* `:focus` — при фокусе.
+* `:disabled` — для отключённых полей.
+* `:required` и `:valid` — для проверки заполненности.
+
+```css
+input:required:invalid {
+  border-color: red;
+}
+input:valid {
+  border-color: green;
+}
+```
+
+---
+
+### 🔑 Вывод
+
+* Все поля форм можно кастомизировать CSS.
+* Для кросс-браузерности применяют `appearance: none` + собственные стили.
+* Используют псевдоэлементы (`::placeholder`, `::-webkit-slider-thumb`) и псевдоклассы (`:focus`, `:valid`).
+* Для сложных случаев (кастомные чекбоксы, select) иногда подключают JS или UI-библиотеки.
+
+</details>  
+</details>
+
+
+---
+
 
 82	Что такое "анимации ключевых кадров" (keyframe animations) в CSS и как они работают?
 
