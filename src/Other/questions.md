@@ -20341,11 +20341,119 @@ input:valid {
 </details>  
 </details>
 
+---
+
+<details>  
+<summary>🎯 82. Что такое анимации ключевых кадров (keyframe animations) в CSS и как они работают?</summary>  
+
+### ✅ Краткий ответ
+
+Анимации ключевых кадров (**CSS keyframe animations**) позволяют создавать **плавные пошаговые изменения стилей элемента**. Они описываются с помощью правила `@keyframes`, где задаются промежуточные состояния (ключевые кадры) — от начального (`from`/`0%`) до конечного (`to`/`100%`). Затем эта анимация применяется к элементу через свойство `animation`.
 
 ---
 
+<details>  
+<summary>📚 Подробное объяснение + примеры</summary>  
 
-82	Что такое "анимации ключевых кадров" (keyframe animations) в CSS и как они работают?
+### 🔹 1. Синтаксис `@keyframes`
+
+```css
+@keyframes animationName {
+  from {
+    /* начальные стили */
+  }
+  to {
+    /* конечные стили */
+  }
+}
+```
+
+или
+
+```css
+@keyframes animationName {
+  0%   { /* начальные стили */ }
+  50%  { /* промежуточные */ }
+  100% { /* конечные стили */ }
+}
+```
+
+---
+
+### 🔹 2. Применение к элементу
+
+```css
+.element {
+  animation-name: animationName;
+  animation-duration: 2s;      /* длительность */
+  animation-timing-function: ease-in-out; /* скорость */
+  animation-delay: 0.5s;       /* задержка */
+  animation-iteration-count: infinite; /* количество повторов */
+  animation-direction: alternate; /* направление */
+}
+```
+
+---
+
+### 🔹 3. Пример: анимация движения квадрата
+
+```css
+@keyframes move {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(200px); }
+  100% { transform: translateX(0); }
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background: red;
+  animation: move 3s infinite ease-in-out;
+}
+```
+
+👉 Квадрат плавно перемещается вправо и возвращается обратно.
+
+---
+
+### 🔹 4. Пример: мигающий текст
+
+```css
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+```
+
+---
+
+### 🔹 5. Важные свойства `animation`
+
+* `animation-name` — имя анимации (`@keyframes`).
+* `animation-duration` — время выполнения (например, `2s`).
+* `animation-timing-function` — кривая скорости (`linear`, `ease`, `ease-in`).
+* `animation-delay` — задержка перед началом.
+* `animation-iteration-count` — число повторов (`1`, `infinite`).
+* `animation-direction` — направление (`normal`, `reverse`, `alternate`).
+* `animation-fill-mode` — поведение после завершения (`forwards`, `backwards`, `both`).
+
+---
+
+### 🔑 Вывод
+
+* `@keyframes` задаёт ключевые кадры (этапы анимации).
+* `animation` управляет её воспроизведением (длительность, повторение, направление).
+* С помощью keyframe-анимаций можно создавать **сложные эффекты**: движение объектов, мигание, пульсацию, появление, вращение и т.д.
+
+</details>  
+</details> 
+
+---
+
 
 83	Какие свойства CSS используются для управления внешними отступами и полями элементов?
 
