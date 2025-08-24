@@ -26263,7 +26263,97 @@ function isEven(n) {
 
 ---
 
-59. Как определить наличие свойства в объекте?
+<details>  
+<summary>🎯 59. Как определить наличие свойства в объекте в JavaScript?</summary>  
+
+### ✅ Краткий ответ
+
+В JavaScript есть несколько способов проверить, существует ли свойство у объекта:
+
+1. **Оператор `in`**
+
+   ```js
+   const obj = { a: 1 };
+   console.log("a" in obj);   // true
+   console.log("b" in obj);   // false
+   ```
+
+2. **Метод `.hasOwnProperty()`**
+
+   ```js
+   const obj = { a: 1 };
+   console.log(obj.hasOwnProperty("a")); // true
+   console.log(obj.hasOwnProperty("b")); // false
+   ```
+
+3. **Сравнение с `undefined`**
+
+   ```js
+   const obj = { a: 1, b: undefined };
+   console.log(obj.a !== undefined); // true
+   console.log(obj.c !== undefined); // false
+   ```
+
+   ⚠️ Минус: если свойство реально есть, но равно `undefined`, этот способ даст **ложный результат**.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение</summary>  
+
+### 🔹 1. Оператор `in`
+
+* Проверяет наличие **свойства в объекте или его прототипной цепочке**.
+
+```js
+const obj = { a: 1 };
+console.log("toString" in obj); // true (унаследовано от Object.prototype)
+```
+
+### 🔹 2. `.hasOwnProperty()`
+
+* Проверяет только **собственные свойства объекта** (не унаследованные).
+
+```js
+const obj = { a: 1 };
+console.log(obj.hasOwnProperty("a"));       // true
+console.log(obj.hasOwnProperty("toString")); // false
+```
+
+### 🔹 3. Проверка `!== undefined`
+
+* Работает, если не ожидается значение `undefined`.
+
+```js
+const obj = { a: undefined };
+console.log(obj.a !== undefined); // false, хотя свойство существует!
+```
+
+Поэтому лучше использовать `in` или `hasOwnProperty`.
+
+---
+
+### 📝 Сравнение подходов
+
+| Метод                       | Проверяет            | Учитывает наследование?   | Надёжность   |
+| --------------------------- | -------------------- | ------------------------- | ------------ |
+| `"key" in obj`              | Есть ли свойство     | ✅ Да                      | Высокая      |
+| `obj.hasOwnProperty("key")` | Только свои свойства | ❌ Нет                     | Самая точная |
+| `obj.key !== undefined`     | Значение свойства    | ⚠️ Ошибки при `undefined` | Низкая       |
+
+---
+
+### 🔑 Вывод
+
+* Используй **`hasOwnProperty`** — когда нужно проверить только **собственные свойства**.
+* Используй **`in`** — когда важно учитывать и **унаследованные свойства**.
+* Избегай проверки через `!== undefined`, если важно различать *отсутствие* и *`undefined`*.
+
+</details>  
+</details> 
+
+---
+
 60. Что такое AJAX?
 61. Как в JS создать объект?
 62. В чем разница между методами Object.freeze и Object.seal?
