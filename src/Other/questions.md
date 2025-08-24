@@ -26114,7 +26114,75 @@ console.log(isReallyNaN(123));   // false
 
 ---
 
-57. Как проверить, является ли значение массивом?
+<details>  
+<summary>🎯 57. Как проверить, является ли значение массивом?</summary>  
+
+### ✅ Краткий ответ
+
+Основной и самый надёжный способ проверки:
+
+```js
+Array.isArray(value)
+```
+
+Этот метод возвращает `true`, если `value` — массив, и `false` в остальных случаях.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение + альтернативы</summary>  
+
+### 🔹 1. Современный способ (рекомендуемый)
+
+```js
+Array.isArray([1, 2, 3]);  // true
+Array.isArray("Hello");    // false
+Array.isArray({});         // false
+```
+
+✅ Поддерживается во всех современных браузерах.
+
+---
+
+### 🔹 2. Проверка через `instanceof`
+
+```js
+[1, 2, 3] instanceof Array; // true
+"Hello" instanceof Array;   // false
+```
+
+⚠️ Недостаток: не работает корректно при работе с массивами из разных глобальных окружений (например, в `iframe`).
+
+---
+
+### 🔹 3. Старый способ (через `Object.prototype.toString`)
+
+```js
+Object.prototype.toString.call([1,2,3]); // "[object Array]"
+Object.prototype.toString.call("Hi");   // "[object String]"
+```
+
+Можно написать функцию:
+
+```js
+function isArray(value) {
+  return Object.prototype.toString.call(value) === "[object Array]";
+}
+```
+
+---
+
+### 🔑 Вывод
+
+* 🚀 Используй **`Array.isArray()`** — самый чистый и безопасный способ.
+* `instanceof Array` → только для простых случаев, внутри одного окна.
+* `Object.prototype.toString` → как fallback для старых окружений (ES3/ES5).
+
+</details>  
+</details>
+
+---
+
 58. Как проверить, что число является четным, без использования деления по модулю или деления с остатком (оператора "%")?
 59. Как определить наличие свойства в объекте?
 60. Что такое AJAX?
