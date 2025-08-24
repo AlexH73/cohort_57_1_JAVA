@@ -20631,10 +20631,115 @@ input:valid {
 </details>  
 </details>  
 
+---
+
+<details>  
+<summary>🎯 85. Как можно выровнять элементы по вертикали с использованием CSS?</summary>  
+
+### ✅ Краткий ответ
+
+Вертикальное выравнивание в CSS можно сделать разными способами:
+
+1. **Flexbox** → `align-items: center` или `justify-content: center`.
+2. **CSS Grid** → `align-items: center` или `place-items: center`.
+3. **Табличная модель** → `display: table-cell; vertical-align: middle;`.
+4. **Абсолютное позиционирование** → `top: 50%; transform: translateY(-50%);`.
+5. **Line-height** → если элемент в одну строку: `line-height = height`.
 
 ---
 
-85	Как можно выровнять элементы по вертикали с использованием CSS?
+<details>  
+<summary>📚 Подробное объяснение + примеры</summary>  
+
+### 🔹 1. Flexbox (современный способ)
+
+```css
+.container {
+  display: flex;
+  align-items: center;        /* выравнивание по вертикали */
+  justify-content: center;    /* по горизонтали */
+  height: 300px;
+}
+```
+
+```html
+<div class="container">
+  <div class="box">По центру</div>
+</div>
+```
+
+---
+
+### 🔹 2. CSS Grid
+
+```css
+.container {
+  display: grid;
+  place-items: center;  /* выравнивание и по вертикали, и по горизонтали */
+  height: 300px;
+}
+```
+
+---
+
+### 🔹 3. Табличная модель (устаревающий, но рабочий метод)
+
+```css
+.container {
+  display: table;
+  height: 300px;
+  width: 100%;
+}
+
+.box {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+```
+
+---
+
+### 🔹 4. Абсолютное позиционирование
+
+```css
+.container {
+  position: relative;
+  height: 300px;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+```
+
+---
+
+### 🔹 5. Line-height (только для однострочного текста)
+
+```css
+.box {
+  height: 100px;
+  line-height: 100px; /* выравнивание по высоте блока */
+  text-align: center;
+}
+```
+
+---
+
+### 🔑 Вывод
+
+* Для современных адаптивных макетов → лучше использовать **Flexbox** или **Grid**.
+* Для старых браузеров → подойдут **таблицы** или **position + transform**.
+* Для текста в одну строку → можно обойтись `line-height`.
+
+</details>  
+</details>
+
+
+---
 
 86	Что такое "гибридные сетки" (hybrid grids) в CSS и как они могут быть использованы для создания сложных макетов?
 
