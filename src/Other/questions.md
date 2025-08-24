@@ -21050,8 +21050,118 @@ npx autoprefixer --info
 
 ---
 
+<details>  
+<summary>🖼️ 89.	Как создать адаптивную галерею изображений с использованием CSS?</summary>  
 
-89	Как создать адаптивную галерею изображений с использованием CSS?
+### ✅ Краткий ответ
+
+Адаптивная галерея создаётся с помощью **CSS Grid** или **Flexbox**, чтобы изображения автоматически перестраивались под ширину экрана.
+Основные шаги:
+
+1. Использовать **относительные единицы** (`%`, `fr`, `auto-fit`).
+2. Задавать изображениям **`max-width: 100%`** и **`height: auto`**.
+3. Применять **медиа-запросы** или **grid/flex адаптацию** для разных экранов.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение</summary>  
+
+### 🔹 1. HTML-разметка
+
+```html
+<div class="gallery">
+  <img src="https://picsum.photos/300/200?random=1" alt="Фото 1">
+  <img src="https://picsum.photos/300/200?random=2" alt="Фото 2">
+  <img src="https://picsum.photos/300/200?random=3" alt="Фото 3">
+  <img src="https://picsum.photos/300/200?random=4" alt="Фото 4">
+  <img src="https://picsum.photos/300/200?random=5" alt="Фото 5">
+</div>
+```
+
+---
+
+### 🔹 2. CSS с использованием Grid
+
+```css
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+```
+
+👉 Здесь `auto-fit` и `minmax` делают галерею **адаптивной**:
+
+* при широком экране → много колонок,
+* при узком → меньше колонок, вплоть до одной.
+
+---
+
+### 🔹 3. Вариант с Flexbox
+
+```css
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.gallery img {
+  flex: 1 1 calc(33.333% - 15px);
+  max-width: calc(33.333% - 15px);
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .gallery img {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+```
+
+👉 В этом варианте количество колонок контролируется через **медиа-запросы**.
+
+---
+
+### 🔹 4. Улучшения
+
+* 🎯 Можно добавить эффект наведения (`hover`) для анимации.
+* 🖼️ Применить `object-fit: cover;` для сохранения пропорций при обрезке.
+* ⚡ Использовать `lazy-loading` для оптимизации загрузки:
+
+  ```html
+  <img src="image.jpg" loading="lazy" alt="..." />
+  ```  
+
+---
+
+### 🎯 Вывод
+
+* Для адаптивной галереи лучше использовать **CSS Grid с `auto-fit` и `minmax`** — это самый современный и гибкий способ.
+* Flexbox + медиа-запросы тоже подходят, но требуют больше кода.
+
+</details>
+</details>
+
+---
 
 90	Что такое "базовые стили" (normalize.css, reset.css) и какое их значение для веб-разработки?
 
