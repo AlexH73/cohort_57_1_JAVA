@@ -26678,7 +26678,131 @@ if ("name" in person && person.hasOwnProperty("name")) {
 
 ---
 
-64. Какие приемы работы с асинхронным кодом в JS Вы знаете?
+<details>  
+<summary>⚡ 64. Приёмы работы с асинхронным кодом в JavaScript</summary>  
+
+### ✅ Краткий ответ
+
+В JavaScript для работы с асинхронностью применяются:
+
+1. **Callbacks (функции обратного вызова)**
+2. **Promises (промисы)**
+3. **async/await**
+4. **Событийные слушатели и обработчики**
+5. **Web APIs и таймеры (setTimeout, setInterval, requestAnimationFrame)**
+6. **Параллельные методы Promise API (Promise.all, Promise.race, Promise.any, Promise.allSettled)**
+7. **Генераторы + co/babel-полифиллы (устаревший, но важный приём)**
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение с примерами</summary>  
+
+### 🔹 1. Callback (старый способ)
+
+Передача функции в другую функцию для вызова после завершения асинхронной операции.
+
+```js
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Данные загружены");
+  }, 1000);
+}
+
+fetchData((result) => console.log(result));
+```
+
+⚠️ Недостаток: приводит к **callback hell** (лес вложенных функций).
+
+---
+
+### 🔹 2. Promises
+
+Позволяют работать с асинхронными результатами более удобно.
+
+```js
+const fetchData = new Promise((resolve) => {
+  setTimeout(() => resolve("Данные загружены"), 1000);
+});
+
+fetchData.then((result) => console.log(result));
+```
+
+---
+
+### 🔹 3. async/await
+
+Синтаксический сахар над промисами, делает код более читаемым.
+
+```js
+async function loadData() {
+  const result = await fetchData;
+  console.log(result);
+}
+
+loadData();
+```
+
+---
+
+### 🔹 4. Событийные слушатели (Event Listeners)
+
+Асинхронность через события браузера.
+
+```js
+document.addEventListener("click", () => {
+  console.log("Клик обработан асинхронно");
+});
+```
+
+---
+
+### 🔹 5. Web APIs (таймеры, рендеринг)
+
+Асинхронные вызовы через встроенные функции.
+
+```js
+setTimeout(() => console.log("Сработало через 1 сек"), 1000);
+requestAnimationFrame(() => console.log("Следующий кадр анимации"));
+```
+
+---
+
+### 🔹 6. Promise API (работа с множеством промисов)
+
+* **Promise.all** → ждёт выполнения всех промисов
+* **Promise.race** → возвращает первый завершённый
+* **Promise.any** → первый успешно выполненный
+* **Promise.allSettled** → результаты всех промисов
+
+```js
+Promise.all([fetchData, fetchData]).then(values => console.log(values));
+```
+
+---
+
+### 🔹 7. Генераторы + co (устарело, но знать полезно)
+
+До появления `async/await` использовали генераторы.
+
+```js
+function* gen() {
+  const data = yield fetchData;
+  console.log(data);
+}
+```  
+
+---
+
+### 🎯 Вывод
+
+Асинхронный код в JS можно обрабатывать разными методами: от простых **колбэков** до современных **async/await** и мощных утилит **Promise API**. На практике чаще всего используют комбинацию **async/await + Promise.all** для удобства и производительности.
+
+</details>
+</details>
+
+---
+
 65. В чем разница между обычной функцией и функциональным выражением?
 66. Как в JS вызвать функцию?
 67. Что такое запоминание или мемоизация (Memoization)?
