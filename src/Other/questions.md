@@ -21694,8 +21694,159 @@ CSS-переменные делают стили **гибкими и удобн�
 
 ---
 
+<details>  
+<summary>📊 95. Как можно создать адаптивные таблицы с использованием CSS?</summary>  
 
-95	Как можно создать адаптивные таблицы с использованием CSS?
+### ✅ Краткий ответ
+
+Адаптивные таблицы создают так, чтобы они корректно отображались на экранах любого размера. Для этого используют:
+
+* 📌 **Скролл по горизонтали** (`overflow-x: auto`)
+* 📌 **Скрытие или преобразование столбцов** с помощью `display: block`
+* 📌 **Media queries** для перестройки таблицы под мобильные устройства
+* 📌 Иногда — **flex или grid** для имитации таблицы в мобильной версии
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение с примерами</summary>  
+
+### 🔹 1. Простой вариант: горизонтальный скролл
+
+Подходит, если таблица большая и её лучше не ломать.
+
+```html
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Телефон</th>
+        <th>Город</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Алексей</td>
+        <td>alex@example.com</td>
+        <td>+7 900 123-45-67</td>
+        <td>Москва</td>
+      </tr>
+      <tr>
+        <td>Мария</td>
+        <td>maria@example.com</td>
+        <td>+7 921 555-44-33</td>
+        <td>Санкт-Петербург</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+```css
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Добавляем прокрутку */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px; /* Чтобы на маленьком экране появился скролл */
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+```
+
+---
+
+### 🔹 2. Трансформация в карточки (mobile-first)
+
+Таблица превращается в **блоки-карточки** на мобильных.
+
+```css
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* Убираем заголовок */
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 5px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label); /* Подписи берем из data-label */
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+```
+
+HTML с `data-label`:
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Email</th>
+      <th>Телефон</th>
+      <th>Город</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Имя">Алексей</td>
+      <td data-label="Email">alex@example.com</td>
+      <td data-label="Телефон">+7 900 123-45-67</td>
+      <td data-label="Город">Москва</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+---
+
+### 🔹 3. Комбинированный подход
+
+* На **больших экранах** таблица отображается в классическом виде.
+* На **маленьких экранах** — как карточки или со скроллом.
+
+Это наиболее часто используемый приём.  
+
+---
+
+### 🎯 Вывод
+
+Адаптивные таблицы можно реализовать **тремя основными способами**:
+
+1. Горизонтальный скролл (просто, удобно, но не всегда красиво).
+2. Превращение строк таблицы в карточки (mobile-friendly).
+3. Гибридный подход — скролл + адаптация через `media queries`.
+
+</details>
+</details>
+
+---
 
 96	Что такое "затенение элементов" (element shadowing) в CSS и как оно может быть использовано для изменения стиля элементов в зависимости от их расположения?
 
