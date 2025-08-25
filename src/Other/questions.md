@@ -21473,8 +21473,113 @@ CSS играет ключевую роль в этом процессе, пот�
 
 ---
 
+<details>  
+<summary>🎨 93. Как создать анимацию текста, меняющего цвет, размер и стиль с помощью CSS?</summary>  
 
-93	Каким образом можно создать анимацию текста, меняющего цвет, размер и стиль с помощью CSS?
+### ✅ Краткий ответ
+
+Для анимации текста можно использовать правило `@keyframes`, в котором описываются промежуточные состояния. С помощью CSS-свойств, таких как `color`, `font-size`, `font-style`, можно задать плавное изменение цвета, размера и стиля текста.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение с примером</summary>  
+
+### 🔹 1. Основные шаги
+
+1. Определяем ключевые кадры с помощью `@keyframes`.
+2. Задаем анимацию элементу с помощью свойства `animation`.
+3. Внутри ключевых кадров указываем, какие свойства должны меняться.
+
+---
+
+### 🔹 2. Пример кода
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анимация текста</title>
+  <style>
+    .animated-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      animation: textEffect 4s infinite alternate;
+    }
+
+    @keyframes textEffect {
+      0% {
+        color: #333;
+        font-size: 24px;
+        font-style: normal;
+      }
+      50% {
+        color: #e63946;
+        font-size: 32px;
+        font-style: italic;
+      }
+      100% {
+        color: #1d3557;
+        font-size: 28px;
+        font-style: oblique;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animated-text">Привет, CSS-анимация!</h1>
+</body>
+</html>
+```
+
+---
+
+### 🔹 3. Разбор примера
+
+* `@keyframes textEffect` описывает три состояния: начало, середину и конец.
+* `color` изменяется от серого → красного → синего.
+* `font-size` увеличивается с 24px до 32px, затем немного уменьшается.
+* `font-style` меняется от нормального → курсив → наклонный.
+* `animation: textEffect 4s infinite alternate;`
+
+  * `4s` — длительность цикла,
+  * `infinite` — бесконечное повторение,
+  * `alternate` — чередование направления (обратно-назад).
+
+---
+
+### 🔹 4. Дополнительные эффекты
+
+Можно добавить:
+
+* `text-shadow` для свечения,
+* `letter-spacing` для изменения расстояния между буквами,
+* `transform: scale()` для увеличения или вращения текста.
+
+Пример:
+
+```css
+@keyframes glowingText {
+  0% { color: #ff0000; text-shadow: 0 0 5px #ff0000; }
+  50% { color: #00ff00; text-shadow: 0 0 20px #00ff00; }
+  100% { color: #0000ff; text-shadow: 0 0 5px #0000ff; }
+}
+```  
+
+---
+
+### 🎯 Вывод
+
+С помощью `@keyframes` можно плавно изменять **цвет, размер и стиль текста**. Эффект усиливается, если добавить `text-shadow`, `transform` или `letter-spacing`.
+
+</details>
+</details>
+
+---
+
 
 94	Что такое "переменные CSS" (CSS variables) и как они используются для упрощения стилизации?
 
