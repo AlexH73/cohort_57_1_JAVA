@@ -28206,7 +28206,130 @@ console.log(fastSquare(5)); // мгновенно → 25
 
 ---
 
-68. Как бы Вы реализовали вспомогательную функцию запоминания?
+<details>  
+<summary>🟢 68. Как реализовать вспомогательную функцию запоминания (<code>memoize</code>)?</summary>  
+
+### ✅ Краткий ответ
+
+Вспомогательная функция **`memoize`** принимает другую функцию и возвращает её обёртку с кэшированием.
+Таким образом, при повторных вызовах с теми же аргументами результат берётся из памяти, а не вычисляется заново.
+
+---
+
+<details>  
+<summary>📚 Подробная реализация</summary>  
+
+### 🔹 Простая версия `memoize`
+
+```js
+function memoize(fn) {
+  const cache = {}; // хранилище результатов
+  return function(...args) {
+    const key = JSON.stringify(args); // ключ из аргументов
+    if (key in cache) {
+      return cache[key]; // возвращаем сохранённый результат
+    }
+    const result = fn(...args); 
+    cache[key] = result; // сохраняем в кэш
+    return result;
+  };
+}
+
+// Пример использования
+const slowSquare = (n) => {
+  console.log("Вычисляем...");
+  return n * n;
+};
+
+const fastSquare = memoize(slowSquare);
+
+console.log(fastSquare(5)); // "Вычисляем..." → 25
+console.log(fastSquare(5)); // мгновенно → 25
+```
+
+---
+
+### 🔹 Оптимизированная версия (с `Map`)
+
+Используем `Map` вместо объекта для более удобного хранения:
+
+```js
+function memoize(fn) {
+  const cache = new Map();
+  return function(...args) {
+    const key = args.length === 1 ? args[0] : JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  };
+}
+
+// Пример
+const add = (a, b) => {
+  console.log("Считаем...");
+  return a + b;
+};
+
+const memoizedAdd = memoize(add);
+
+console.log(memoizedAdd(2, 3)); // "Считаем..." → 5
+console.log(memoizedAdd(2, 3)); // мгновенно → 5
+```
+
+---
+
+### 🔹 Версия с "временем жизни" (TTL)
+
+Можно добавить "срок хранения" результата:
+
+```js
+function memoize(fn, ttl = 0) {
+  const cache = new Map();
+
+  return function(...args) {
+    const key = JSON.stringify(args);
+    const cached = cache.get(key);
+
+    if (cached && (!ttl || (Date.now() - cached.time < ttl))) {
+      return cached.value;
+    }
+
+    const result = fn(...args);
+    cache.set(key, { value: result, time: Date.now() });
+    return result;
+  };
+}
+
+// Пример
+const expensive = (n) => {
+  console.log("Вычисляем...");
+  return n * 2;
+};
+
+const memoizedExpensive = memoize(expensive, 3000);
+
+console.log(memoizedExpensive(10)); // "Вычисляем..." → 20
+console.log(memoizedExpensive(10)); // мгновенно → 20
+setTimeout(() => console.log(memoizedExpensive(10)), 4000); // снова "Вычисляем..." → 20
+```  
+
+### 🎯 Вывод
+
+Функция **`memoize`** — это удобная утилита, которая кэширует результаты любых функций.
+Можно реализовать её в разных вариантах:
+
+* ✅ Простая (через объект).
+* ✅ Более гибкая (через `Map`).
+* ✅ С дополнительными возможностями (TTL, ограничение размера кэша).
+
+</details>
+</details>
+
+---
+
 69. Почему typeof null возвращает object? Как проверить, является ли значение null?
 70. Для чего используется ключевое слово «new»?
 
