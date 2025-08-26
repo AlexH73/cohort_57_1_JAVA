@@ -22315,7 +22315,118 @@ input[type="radio"] {
 
 ---
 
-100	Что такое "горизонтальная прокрутка" (horizontal scrolling) и как её реализовать с помощью CSS?
+<details>  
+<summary>🟢 100. Что такое "горизонтальная прокрутка" (horizontal scrolling) и как её реализовать с помощью CSS?</summary>  
+
+### ✅ Краткий ответ
+
+**Горизонтальная прокрутка** — это возможность перемещаться по содержимому страницы или блока в **горизонтальном направлении** (влево/вправо), а не только вертикально.
+В CSS её реализуют с помощью свойств `overflow-x`, `white-space`, `flexbox` или `grid`.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение</summary>  
+
+### 🔹 Основные способы реализации
+
+1. **С помощью `overflow-x`**
+
+```css
+.container {
+  width: 100%;
+  overflow-x: auto;   /* включаем горизонтальную прокрутку */
+  white-space: nowrap; /* предотвращаем перенос строк */
+}
+.item {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  margin-right: 10px;
+  background: lightcoral;
+}
+```
+
+```html
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+</div>
+```
+
+---
+
+2. **С помощью Flexbox**
+
+```css
+.container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+.item {
+  flex: 0 0 auto; /* запрещаем сжимаемость */
+  width: 200px;
+  height: 150px;
+  background: lightseagreen;
+}
+```
+
+---
+
+3. **С помощью Grid с автопрокруткой**
+
+```css
+.container {
+  display: grid;
+  grid-auto-flow: column;  /* элементы в строку */
+  grid-auto-columns: 200px; 
+  overflow-x: auto;
+  gap: 10px;
+}
+.item {
+  height: 150px;
+  background: lightblue;
+}
+```
+
+---
+
+4. **Красивый приём: скрытие полосы прокрутки**
+
+```css
+.container {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+```
+
+---
+
+### 🔹 Где используется горизонтальная прокрутка?
+
+* 📸 **Галереи изображений**
+* 🎬 **Карточки фильмов/товаров** (например, Netflix-style)
+* 📊 **Таблицы с большим количеством колонок**
+* 📱 **Мобильные меню и списки** 
+
+---
+
+### 🎯 Вывод
+
+📌 Горизонтальная прокрутка (`horizontal scrolling`) создаётся с помощью `overflow-x: auto` и управления размещением элементов (`white-space`, `flexbox`, `grid`).
+Её часто применяют для **карточек**, **галерей** и **адаптивных интерфейсов**.
+
+</details> 
+</details>
+
+---
+
 </details>
 <details>
 
