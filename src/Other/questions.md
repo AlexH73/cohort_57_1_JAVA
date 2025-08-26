@@ -30560,7 +30560,135 @@ ORDER BY age NULLS LAST;
 
 ---
 
-8. Назовите четыре основных типа соединения в SQL
+<details>  
+<summary>🟢 8. Четыре основных типа соединений (<code>JOIN</code>) в SQL</summary>  
+
+### ✅ Краткий ответ
+
+В SQL существует четыре основных типа соединений (**JOIN**), которые используются для объединения строк из двух таблиц:
+
+1. **INNER JOIN** – пересечение (только совпадающие строки).
+2. **LEFT JOIN (LEFT OUTER JOIN)** – все строки из левой таблицы + совпадения из правой.
+3. **RIGHT JOIN (RIGHT OUTER JOIN)** – все строки из правой таблицы + совпадения из левой.
+4. **FULL JOIN (FULL OUTER JOIN)** – все строки из обеих таблиц, даже если нет совпадений.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение с примерами</summary>  
+
+### 🔹 Таблицы для примера
+
+**Users**
+
+| id | name  |
+| -- | ----- |
+| 1  | Alex  |
+| 2  | Maria |
+| 3  | John  |
+
+**Orders**
+
+| id | user\_id | product |
+| -- | -------- | ------- |
+| 1  | 1        | Phone   |
+| 2  | 2        | Laptop  |
+| 3  | 4        | Tablet  |
+
+---
+
+### 1. **INNER JOIN** (пересечение)
+
+Возвращает только совпадающие записи.
+
+```sql
+SELECT u.name, o.product
+FROM Users u
+INNER JOIN Orders o ON u.id = o.user_id;
+```
+
+➡️ Результат:
+
+| name  | product |
+| ----- | ------- |
+| Alex  | Phone   |
+| Maria | Laptop  |
+
+---
+
+### 2. **LEFT JOIN** (левая внешняя связь)
+
+Возвращает все строки из **Users** + совпадения из **Orders**.
+
+```sql
+SELECT u.name, o.product
+FROM Users u
+LEFT JOIN Orders o ON u.id = o.user_id;
+```
+
+➡️ Результат:
+
+| name  | product |
+| ----- | ------- |
+| Alex  | Phone   |
+| Maria | Laptop  |
+| John  | NULL    |
+
+---
+
+### 3. **RIGHT JOIN** (правая внешняя связь)
+
+Возвращает все строки из **Orders** + совпадения из **Users**.
+
+```sql
+SELECT u.name, o.product
+FROM Users u
+RIGHT JOIN Orders o ON u.id = o.user_id;
+```
+
+➡️ Результат:
+
+| name  | product |
+| ----- | ------- |
+| Alex  | Phone   |
+| Maria | Laptop  |
+| NULL  | Tablet  |
+
+---
+
+### 4. **FULL JOIN** (полная внешняя связь)
+
+Возвращает все строки из обеих таблиц, даже без совпадений.
+
+```sql
+SELECT u.name, o.product
+FROM Users u
+FULL JOIN Orders o ON u.id = o.user_id;
+```
+
+➡️ Результат:
+
+| name  | product |
+| ----- | ------- |
+| Alex  | Phone   |
+| Maria | Laptop  |
+| John  | NULL    |
+| NULL  | Tablet  |
+
+---
+
+### 🎯 Вывод
+
+* **INNER JOIN** → только совпадения.
+* **LEFT JOIN** → все слева + совпадения справа.
+* **RIGHT JOIN** → все справа + совпадения слева.
+* **FULL JOIN** → всё из обеих таблиц, даже без совпадений.
+
+</details>  
+</details>
+
+---
+
 9. А что такое Self JOIN?
 10. Для чего нужен оператор UNION и какие есть ограничения на его использование?
 11. Как работают подстановочные знаки?
