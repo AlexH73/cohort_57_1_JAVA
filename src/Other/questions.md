@@ -30304,7 +30304,161 @@ CREATE TABLE Orders (
 
 ---
 
-6. Какие ещё ограничения вы знаете, как они работают и указываются?
+<details>  
+<summary>🟢 6. Какие бывают ограничения (constraints) в SQL и как они работают?</summary>  
+
+### ✅ Краткий ответ
+
+Ограничения (**constraints**) — это **правила целостности**, которые задаются для таблиц или столбцов, чтобы контролировать допустимые значения данных.
+Они помогают **предотвращать ошибки** и **гарантировать корректность данных**.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение</summary>  
+
+### 🔹 Основные типы ограничений
+
+1. **`PRIMARY KEY`**
+
+   * Гарантирует уникальность каждой строки.
+   * Автоматически сочетает `UNIQUE` + `NOT NULL`.
+
+   ```sql
+   CREATE TABLE Users (
+       user_id INT PRIMARY KEY,
+       username VARCHAR(50) NOT NULL
+   );
+   ```
+
+---
+
+2. **`FOREIGN KEY`**
+
+   * Обеспечивает ссылочную целостность между таблицами.
+
+   ```sql
+   CREATE TABLE Orders (
+       order_id INT PRIMARY KEY,
+       user_id INT,
+       FOREIGN KEY (user_id) REFERENCES Users(user_id)
+   );
+   ```
+
+---
+
+3. **`UNIQUE`**
+
+   * Значения в столбце должны быть уникальными (но `NULL` допускается, в отличие от `PRIMARY KEY`).
+
+   ```sql
+   CREATE TABLE Employees (
+       email VARCHAR(100) UNIQUE,
+       phone VARCHAR(20)
+   );
+   ```
+
+---
+
+4. **`NOT NULL`**
+
+   * Запрещает хранение `NULL` в столбце.
+
+   ```sql
+   CREATE TABLE Products (
+       product_id INT PRIMARY KEY,
+       name VARCHAR(100) NOT NULL
+   );
+   ```
+
+---
+
+5. **`CHECK`**
+
+   * Ограничивает допустимые значения по условию.
+
+   ```sql
+   CREATE TABLE Accounts (
+       account_id INT PRIMARY KEY,
+       balance DECIMAL(10,2) CHECK (balance >= 0)
+   );
+   ```
+
+---
+
+6. **`DEFAULT`**
+
+   * Устанавливает значение по умолчанию, если его не указали при вставке.
+
+   ```sql
+   CREATE TABLE Customers (
+       customer_id INT PRIMARY KEY,
+       country VARCHAR(50) DEFAULT 'Germany'
+   );
+   ```
+
+---
+
+7. **`AUTO_INCREMENT` / `SERIAL` (MySQL, PostgreSQL)**
+
+   * Генерация уникального идентификатора автоматически.
+
+   ```sql
+   CREATE TABLE Orders (
+       order_id SERIAL PRIMARY KEY,
+       order_date DATE NOT NULL
+   );
+   ```
+
+---
+
+8. **`INDEX`** (не совсем constraint, но важен)
+
+   * Ускоряет поиск по таблице.
+   * Можно задать отдельно или автоматически при `PRIMARY KEY`/`UNIQUE`.
+
+   ```sql
+   CREATE INDEX idx_username ON Users(username);
+   ```
+
+---
+
+### 🔹 Где указываются ограничения?
+
+1. **На уровне столбца** (в момент объявления поля):
+
+   ```sql
+   name VARCHAR(50) NOT NULL
+   ```
+
+2. **На уровне таблицы** (после перечисления полей):
+
+   ```sql
+   CREATE TABLE Orders (
+       order_id INT,
+       user_id INT,
+       PRIMARY KEY(order_id),
+       FOREIGN KEY(user_id) REFERENCES Users(user_id)
+   );
+   ```
+
+---
+
+### 🎯 Вывод
+
+Ограничения SQL помогают:
+
+* защитить данные от ошибок;
+* обеспечить уникальность и целостность;
+* задать правила для допустимых значений.
+
+📌 Основные: `PRIMARY KEY`, `FOREIGN KEY`, `UNIQUE`, `NOT NULL`, `CHECK`, `DEFAULT`.
+
+</details>  
+</details>
+
+---
+
 7. Для чего используется ключевое слово ORDER BY?
 8. Назовите четыре основных типа соединения в SQL
 9. А что такое Self JOIN?
