@@ -22170,7 +22170,150 @@ img {
 
 ---
 
-99	Как создать "слайдер" (slider) с переключением слайдов с использованием CSS?
+<details>  
+<summary>🟢 99. Как создать "слайдер" (slider) только с помощью CSS?</summary>  
+
+### ✅ Краткий ответ
+
+Слайдер можно реализовать без JavaScript, используя **радиокнопки (`input[type="radio"]`)** или **чекбоксы**, которые будут управлять показом нужного слайда через селекторы `:checked`.
+Для анимации и плавного переключения применяется `transition` или `@keyframes`.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение</summary>  
+
+### 🔹 Принцип работы CSS-слайдера
+
+1. Все слайды помещаются в один контейнер.
+2. Добавляются скрытые `radio`-кнопки, каждая из которых отвечает за конкретный слайд.
+3. С помощью **селекторов состояний** (`:checked + label` или `:checked ~ .slide`) отображается нужный слайд.
+4. Навигация реализуется через `<label>` (стрелки или точки).
+
+---
+
+### 🔹 Пример простого CSS-слайдера
+
+```html
+<div class="slider">
+  <!-- Радиокнопки -->
+  <input type="radio" name="slide" id="s1" checked>
+  <input type="radio" name="slide" id="s2">
+  <input type="radio" name="slide" id="s3">
+
+  <!-- Слайды -->
+  <div class="slides">
+    <div class="slide" id="slide1">Слайд 1</div>
+    <div class="slide" id="slide2">Слайд 2</div>
+    <div class="slide" id="slide3">Слайд 3</div>
+  </div>
+
+  <!-- Навигация -->
+  <div class="navigation">
+    <label for="s1"></label>
+    <label for="s2"></label>
+    <label for="s3"></label>
+  </div>
+</div>
+```
+
+```css
+.slider {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.8s ease;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#slide1 { background: tomato; }
+#slide2 { background: seagreen; }
+#slide3 { background: royalblue; }
+
+/* Скрываем радио */
+input[type="radio"] {
+  display: none;
+}
+
+/* Управление позицией */
+#s1:checked ~ .slides { transform: translateX(0); }
+#s2:checked ~ .slides { transform: translateX(-100%); }
+#s3:checked ~ .slides { transform: translateX(-200%); }
+
+/* Навигация-точки */
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.navigation label {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navigation label:hover {
+  background: #ccc;
+}
+```
+
+---
+
+### 🔹 Дополнительно: автоматическая прокрутка слайдов
+
+Можно добавить **CSS-анимацию с `@keyframes`**, чтобы слайды менялись сами:
+
+```css
+.slides {
+  animation: slide 12s infinite;
+}
+
+@keyframes slide {
+  0%, 25% { transform: translateX(0); }
+  35%, 60% { transform: translateX(-100%); }
+  70%, 95% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+```  
+
+---
+
+### 🎯 Вывод
+
+📌 CSS-слайдер можно сделать **без JavaScript**, используя:
+
+* `radio` + `:checked` для ручного переключения,
+* `@keyframes` для автоматической прокрутки.
+
+⚡ Но для сложных слайдеров (с поддержкой свайпов, динамическим контентом) обычно подключают JS-библиотеки (например, Swiper).
+
+</details>
+</details>
+
+---
 
 100	Что такое "горизонтальная прокрутка" (horizontal scrolling) и как её реализовать с помощью CSS?
 </details>
