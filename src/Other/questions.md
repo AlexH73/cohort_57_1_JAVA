@@ -21954,7 +21954,114 @@ ul li:last-child {
 
 ---
 
-97	Каким образом можно создать анимацию "мерцания" (flicker) элемента с использованием CSS?
+<details>  
+<summary>🟢 97. Как создать анимацию "мерцания" (flicker) элемента в CSS?</summary>  
+
+### ✅ Краткий ответ
+
+Анимацию **мерцания (flicker)** можно реализовать с помощью свойства `@keyframes` и анимирования **прозрачности (`opacity`)** или **свечения (`text-shadow`, `box-shadow`)**.
+Основная идея — периодически менять прозрачность элемента или его светящийся эффект.
+
+---
+
+<details>  
+<summary>📚 Подробное объяснение с примерами</summary>  
+
+### 🔹 Пример 1: простое мерцание текста
+
+```css
+.flicker {
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+```
+
+👉 Элемент будет исчезать и появляться раз в секунду.
+
+---
+
+### 🔹 Пример 2: случайное мерцание (как лампочка)
+
+```css
+.flicker-random {
+  animation: flicker-random 2s infinite;
+}
+
+@keyframes flicker-random {
+  0%   { opacity: 1; }
+  10%  { opacity: 0.3; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0.6; }
+  40%  { opacity: 1; }
+  50%  { opacity: 0.2; }
+  70%  { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+```
+
+👉 Здесь эффект более "неровный", имитирующий старую лампочку.
+
+---
+
+### 🔹 Пример 3: неоновое мерцание (glow)
+
+```css
+.neon-flicker {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%   { opacity: 1; text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
+  50%  { opacity: 0.5; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
+}
+```
+
+👉 Эффект светящейся неоновой вывески, которая "подмигивает".
+
+---
+
+### 🔹 Пример 4: мерцание фона (background flicker)
+
+```css
+.flicker-bg {
+  width: 200px;
+  height: 100px;
+  background: yellow;
+  animation: flicker-bg 0.5s infinite;
+}
+
+@keyframes flicker-bg {
+  0%, 100% { background: yellow; }
+  50% { background: transparent; }
+}
+```
+
+👉 Применимо, если нужно "мигающий блок" (например, для предупреждения).  
+
+---
+
+### 🎯 Вывод
+
+Для создания эффекта **мерцания** можно использовать:
+
+* 🔸 изменение прозрачности (`opacity`),
+* 🔸 изменение свечения (`text-shadow`, `box-shadow`),
+* 🔸 комбинированные эффекты (`opacity + shadow`).
+
+📌 Чаще всего используется `@keyframes` с **короткой длительностью (0.5–2s)** и **неравномерными ключевыми кадрами**, чтобы добиться эффекта случайного "фликера".
+
+
+</details>
+</details> 
+
+---
 
 98	Что такое "гибкие изображения" (fluid images) и как они могут быть реализованы с помощью CSS?
 
