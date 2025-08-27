@@ -31859,7 +31859,81 @@ WHERE Id % 2 = 1;
 
 ---
 
-19. Как найти дубли в поле email?
+<details> 
+<summary>19. 📧 Как найти дубли в поле <code>email</code>?</summary>
+
+### ⚡ Краткий ответ:
+
+Чтобы найти дублирующиеся значения в поле `email`, используют **`GROUP BY` + `HAVING COUNT(*) > 1`**:
+
+```sql
+SELECT email, COUNT(*) AS count_email
+FROM users
+GROUP BY email
+HAVING COUNT(*) > 1;
+```
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Объяснение
+
+* `GROUP BY email` — группирует строки по значению поля `email`.
+* `COUNT(*)` — считает количество строк в каждой группе.
+* `HAVING COUNT(*) > 1` — фильтрует только те группы, где количество больше 1 (то есть, дубликаты).
+
+---
+
+## 🔹 Пример
+
+### 📋 Таблица `users`
+
+| id | email                                 |
+| -- | ------------------------------------- |
+| 1  | [test@mail.com](mailto:test@mail.com) |
+| 2  | [alex@mail.com](mailto:alex@mail.com) |
+| 3  | [test@mail.com](mailto:test@mail.com) |
+| 4  | [user@mail.com](mailto:user@mail.com) |
+| 5  | [alex@mail.com](mailto:alex@mail.com) |
+
+### 📊 Результат запроса
+
+| email                                 | count\_email |
+| ------------------------------------- | ------------ |
+| [test@mail.com](mailto:test@mail.com) | 2            |
+| [alex@mail.com](mailto:alex@mail.com) | 2            |
+
+---
+
+## 🔹 Как вывести строки с этими дубликатами?
+
+Иногда нужно не только увидеть сам факт дубля, но и **список строк**, где они встречаются. Для этого используем подзапрос:
+
+```sql
+SELECT *
+FROM users
+WHERE email IN (
+    SELECT email
+    FROM users
+    GROUP BY email
+    HAVING COUNT(*) > 1
+);
+```
+
+---
+
+## 📌 Вывод
+
+* ✔️ `GROUP BY + HAVING COUNT(*) > 1` — стандартный способ поиска дублей.
+* ✔️ Можно вывести только список уникальных дублирующихся email или все строки с ними.
+
+</details>
+</details>
+
+---
+
 20. Написать простой селект с использованием LIKE
 21. При выборке из таблицы прибавьте к дате 1 день
 22. Выберите только уникальные имена
