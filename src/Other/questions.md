@@ -32312,7 +32312,77 @@ ORDER BY salary DESC;
 
 ---
 
-25. Даны таблицы workers и departments. Найдите все департаменты без единого сотрудника
+<details> 
+<summary>25. 🏢 Как найти все департаменты без единого сотрудника?</summary>
+
+### ⚡ Краткий ответ:
+
+Используем **`LEFT JOIN`** и проверяем `NULL` у поля сотрудников:
+
+```sql
+SELECT d.department_id, d.department_name
+FROM departments d
+LEFT JOIN workers w ON d.department_id = w.department_id
+WHERE w.worker_id IS NULL;
+```
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 1. Логика задачи
+
+* `departments` — список департаментов.
+* `workers` — список работников с указанием `department_id`.
+* Нужно найти те департаменты, к которым **не привязан ни один сотрудник**.
+
+---
+
+## 🔹 2. Решение через `LEFT JOIN`
+
+```sql
+SELECT d.department_id, d.department_name
+FROM departments d
+LEFT JOIN workers w ON d.department_id = w.department_id
+WHERE w.worker_id IS NULL;
+```
+
+### 🔑 Объяснение:
+
+* `LEFT JOIN` берёт все записи из `departments`.
+* Если в `workers` нет сотрудников для департамента, то все поля `w.*` будут `NULL`.
+* Условие `WHERE w.worker_id IS NULL` оставляет только такие строки.
+
+---
+
+## 🔹 3. Альтернативный вариант через `NOT EXISTS`
+
+```sql
+SELECT d.department_id, d.department_name
+FROM departments d
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM workers w 
+    WHERE w.department_id = d.department_id
+);
+```
+
+📌 Этот вариант часто более читаемый и может работать быстрее на больших данных.
+
+---
+
+## 📌 Вывод
+
+* ✅ `LEFT JOIN ... IS NULL` или `NOT EXISTS` — стандартные способы.
+* ✅ Оба решения корректные.
+* ✅ Выбор зависит от удобочитаемости и оптимизации запроса.
+
+</details>
+</details>
+
+---
+
 26. Замените в таблице зарплату работника на 1000, если она равна 900, и на 1500 в остальных случаях
 27. При выборке из таблицы пользователей создайте поле, которое будет включать в себя и имена, и зарплату
 28. Переименуйте таблицу
