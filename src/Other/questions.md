@@ -31404,7 +31404,85 @@ SELECT * FROM Products WHERE product_name LIKE '_ango%';
 
 ---
 
-13. Что делают псевдонимы Aliases? 
+<details> 
+<summary>13. 🏷️ Что делают псевдонимы (Aliases) в SQL?</summary>
+
+### ⚡ Краткий ответ:
+
+**Псевдонимы (Aliases)** в SQL — это **временные имена**, которые задаются таблицам или столбцам для удобства чтения и сокращения кода.
+Они **не изменяют структуру базы** и используются только в рамках одного запроса.
+
+* Для столбца: `SELECT column_name AS alias_name ...`
+* Для таблицы: `SELECT ... FROM table_name AS alias_name ...`
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Зачем нужны псевдонимы?
+
+1️⃣ **Сокращение длинных имён**
+
+```sql
+SELECT c.customer_name AS name, c.customer_address AS address
+FROM customers AS c;
+```
+
+2️⃣ **Улучшение читаемости результатов**
+
+```sql
+SELECT product_id AS "ID", product_name AS "Название товара"
+FROM products;
+```
+
+3️⃣ **Работа с вычисляемыми столбцами**
+
+```sql
+SELECT price * quantity AS total_cost
+FROM orders;
+```
+
+4️⃣ **Необходимы при объединении таблиц (`JOIN`)**
+
+```sql
+SELECT o.id, c.name
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.id;
+```
+
+5️⃣ **Избежание конфликтов имён**
+Если в запросе участвуют несколько таблиц с одинаковыми названиями столбцов.
+
+---
+
+## 🔹 Синтаксис (разные варианты)
+
+```sql
+-- С ключевым словом AS
+SELECT column_name AS alias_name
+FROM table_name AS alias_name;
+
+-- Без AS (короче)
+SELECT column_name alias_name
+FROM table_name t;
+```
+
+⚠️ В некоторых СУБД (например, Oracle) ключевое слово `AS` для таблиц запрещено, но для столбцов можно.
+
+---
+
+## 📌 Вывод
+
+* Псевдонимы — это **удобный инструмент для краткости и читаемости** SQL-запросов.
+* Они не влияют на саму БД, только на видимость внутри запроса.
+* Особенно полезны при **JOIN**, вычислениях и длинных названиях.
+
+</details>
+</details>
+
+---
+
 14. Для чего нужен оператор INSERT INTO SELECT?
 15. Что такое нормализация и денормализация?
 16. Объясните разницу между командами DELETE и TRUNCATE”
