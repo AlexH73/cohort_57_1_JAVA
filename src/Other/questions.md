@@ -32008,7 +32008,109 @@ WHERE name LIKE 'A___';
 
 ---
 
-21. При выборке из таблицы прибавьте к дате 1 день
+<details> 
+<summary>21. 📅 Как прибавить 1 день к дате при выборке из таблицы?</summary>
+
+### ⚡ Краткий ответ:
+
+В SQL прибавление дней к дате зависит от СУБД.
+Примеры для самых популярных:
+
+* **MySQL / MariaDB**:
+
+```sql
+SELECT id, DATE_ADD(order_date, INTERVAL 1 DAY) AS next_day
+FROM orders;
+```
+
+* **PostgreSQL**:
+
+```sql
+SELECT id, order_date + INTERVAL '1 day' AS next_day
+FROM orders;
+```
+
+* **SQL Server**:
+
+```sql
+SELECT id, DATEADD(DAY, 1, order_date) AS next_day
+FROM orders;
+```
+
+* **Oracle**:
+
+```sql
+SELECT id, order_date + 1 AS next_day
+FROM orders;
+```
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Разбор по СУБД
+
+### 1️⃣ MySQL / MariaDB
+
+Функция `DATE_ADD` позволяет прибавлять дни, месяцы, годы и даже секунды.
+
+```sql
+SELECT DATE_ADD(NOW(), INTERVAL 1 DAY);
+```
+
+---
+
+### 2️⃣ PostgreSQL
+
+Интервалы задаются как `'1 day'`, `'2 hours'`, `'3 months'`.
+
+```sql
+SELECT NOW() + INTERVAL '1 day';
+```
+
+---
+
+### 3️⃣ SQL Server
+
+Используется `DATEADD` с параметрами:
+
+```sql
+DATEADD(<единица>, <количество>, <дата>)
+```
+
+Пример:
+
+```sql
+SELECT DATEADD(DAY, 1, GETDATE());
+```
+
+---
+
+### 4️⃣ Oracle
+
+Даты — это числа, где **1 = 1 день**, поэтому можно просто сложить:
+
+```sql
+SELECT SYSDATE + 1 FROM dual;
+```
+
+---
+
+## 📌 Вывод
+
+| СУБД       | Пример прибавления 1 дня               |
+| ---------- | -------------------------------------- |
+| MySQL      | `DATE_ADD(order_date, INTERVAL 1 DAY)` |
+| PostgreSQL | `order_date + INTERVAL '1 day'`        |
+| SQL Server | `DATEADD(DAY, 1, order_date)`          |
+| Oracle     | `order_date + 1`                       |
+
+</details>
+</details>
+
+---
+
 22. Выберите только уникальные имена
 23. Найдите в таблице среднюю зарплату работников
 24. А теперь получите список сотрудников с зарплатой выше средней
