@@ -30627,7 +30627,84 @@ echo "Hello, $name!"
 
 ---
 
-12.    Как вы можете работать с файлами Microsoft в Linux OS?
+<details> 
+<summary>12. 📂 Как работать с файлами Microsoft в Linux OS?</summary>
+
+### ⚡ Краткий ответ:
+
+В Linux можно открывать и редактировать файлы Microsoft (**Word, Excel, PowerPoint**) с помощью:
+
+* 🖥 **Офисных пакетов**: LibreOffice, OnlyOffice, WPS Office.
+* 🌍 **Веб-сервисов**: Microsoft 365 Online, Google Docs.
+* 📦 **Совместимости**: через Wine/PlayOnLinux запускать MS Office.
+* 🔧 **Интеграции**: использовать утилиты `catdoc`, `xlsx2csv`, `antiword` для конвертации.
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Основные способы
+
+### 1️⃣ Использование офисных пакетов Linux
+
+* **LibreOffice** (по умолчанию во многих дистрибутивах) — открывает `.docx`, `.xlsx`, `.pptx`.
+* **OnlyOffice** — лучше сохраняет форматирование (совместим с Microsoft Office).
+* **WPS Office** — максимально близок к MS Office по интерфейсу.
+
+📌 Пример:
+
+```bash
+libreoffice document.docx
+```
+
+---
+
+### 2️⃣ Онлайн-сервисы
+
+* **Microsoft 365 (Office Online)** — работает через браузер.
+* **Google Docs / Sheets / Slides** — поддерживает импорт и экспорт в форматы MS Office.
+
+---
+
+### 3️⃣ Утилиты командной строки
+
+* `catdoc file.doc` — просмотр содержимого `.doc`.
+* `antiword file.doc` — текст из Word.
+* `xlsx2csv file.xlsx > out.csv` — конвертация Excel в CSV.
+
+---
+
+### 4️⃣ Использование Wine/PlayOnLinux
+
+* Можно поставить **оригинальный Microsoft Office** в Linux:
+
+```bash
+sudo apt install wine
+wine setup.exe
+```
+
+---
+
+### 5️⃣ Виртуализация
+
+Если нужен **полный функционал MS Office**:
+
+* Использовать **VirtualBox / VMware** с Windows внутри.
+* Или через **RDP** подключаться к Windows-серверу с установленным MS Office.
+
+---
+
+## 📌 Вывод
+
+* **Для работы в Linux** удобнее использовать LibreOffice / OnlyOffice.
+* **Для максимальной совместимости** — OnlyOffice или онлайн-версия Microsoft 365.
+* **Для редких задач** — Wine или виртуальная машина.
+
+</details>
+</details>
+
+---
 
 13.    Как подключить системы Linux к ресурсам Microsoft?
 
