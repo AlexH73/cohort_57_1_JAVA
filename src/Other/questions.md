@@ -29317,7 +29317,7 @@ Linux, DB) </summary>
 
 ---
 <details>  
-<summary>🟢 1. Что такое Git?</summary>  
+<summary>1. 🟢 Что такое Git?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -29387,7 +29387,7 @@ Linux, DB) </summary>
 ---
 
 <details>  
-<summary>🟢 2. Что такое репозиторий в Git?</summary>  
+<summary>2. 🟢 Что такое репозиторий в Git?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -29469,7 +29469,7 @@ Linux, DB) </summary>
 ---
 
 <details>  
-<summary>🟢 3. Команда для написания сообщения о фиксации в Git</summary>  
+<summary>3. 🟢 Команда для написания сообщения о фиксации в Git</summary>  
 
 ### ✅ Краткий ответ
 
@@ -29546,7 +29546,7 @@ git commit -m "Сообщение"
 ---
 
 <details>  
-<summary>🟢 4. Разница между Git и SVN</summary>  
+<summary>4. 🟢 Разница между Git и SVN</summary>  
 
 ### ✅ Краткий ответ
 
@@ -29591,7 +29591,7 @@ git commit -m "Сообщение"
 ---
 
 <details>  
-<summary>🟢 5. Преимущества использования Git</summary>  
+<summary>5. 🟢 Преимущества использования Git</summary>  
 
 ### ✅ Краткий ответ
 
@@ -29709,7 +29709,7 @@ Git выигрывает за счёт:
 46) Назовите несколько сервисов хостинга репозиториев Git.
 
 <details>  
-<summary>🟢 47. Conventional Commits — стандарт написания сообщений к коммитам</summary>  
+<summary>47. 🟢 Conventional Commits — стандарт написания сообщений к коммитам</summary>  
 
 ### ✅ Краткий ответ
 
@@ -30706,7 +30706,95 @@ wine setup.exe
 
 ---
 
-13.    Как подключить системы Linux к ресурсам Microsoft?
+<details> 
+<summary>13. 🔗 Как подключить системы Linux к ресурсам Microsoft?</summary>
+
+### ⚡ Краткий ответ:
+
+Linux можно подключить к экосистеме Microsoft для работы с **сетевыми дисками, Active Directory, Exchange и Azure**.
+Используются такие инструменты, как:
+
+* 📁 **Samba, CIFS/SMB** — доступ к файлам на Windows-серверах.
+* 👤 **Kerberos, Winbind, LDAP, realmd** — интеграция в Active Directory.
+* 📧 **Evolution, Thunderbird + плагин EWS** — доступ к MS Exchange.
+* ☁️ **Azure CLI, Azure AD Connect** — работа с облаком Microsoft Azure.
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Основные варианты подключения
+
+### 1️⃣ Доступ к файловым ресурсам Windows
+
+Linux может подключаться к общим папкам Windows:
+
+```bash
+sudo mount -t cifs //server/share /mnt/share -o username=user,password=pass
+```
+
+* Используется протокол **SMB/CIFS** через **Samba**.
+* Подходит для совместного хранения файлов.
+
+---
+
+### 2️⃣ Интеграция с Active Directory
+
+Чтобы Linux работал в корпоративной сети Microsoft:
+
+* Используются утилиты: `realmd`, `sssd`, `winbind`, `krb5`.
+* Пример: подключение к домену AD
+
+```bash
+sudo realm join --user=админ domain.local
+```
+
+* После этого можно использовать доменные учётные записи Windows в Linux.
+
+---
+
+### 3️⃣ Почта и календарь (Microsoft Exchange)
+
+* Клиенты Linux (Evolution, Thunderbird) поддерживают подключение к Exchange через **EWS (Exchange Web Services)**.
+* Альтернатива — доступ через **Outlook Web Access (OWA)** в браузере.
+
+---
+
+### 4️⃣ Подключение к Microsoft Azure
+
+* Для Linux есть **Azure CLI**:
+
+```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az login
+```
+
+* Можно управлять виртуальными машинами, базами данных, сетями и т.д.
+* Linux-серверы могут быть синхронизированы с **Azure AD** для авторизации.
+
+---
+
+### 5️⃣ Аутентификация Kerberos
+
+* Для безопасного входа в сервисы Windows из Linux используется **Kerberos**.
+* Это позволяет входить в системы без пароля, если учётная запись проверена в AD.
+
+---
+
+## 📌 Вывод
+
+Linux можно полноценно интегрировать с Microsoft:
+
+* 🖥 Работать с файловыми ресурсами (SMB/CIFS).
+* 👥 Использовать Windows-домены (AD/Kerberos).
+* 📧 Подключаться к Exchange.
+* ☁️ Управлять облачными сервисами (Azure).
+
+</details>
+</details>
+
+---
 
 14.    Как хранятся файлы конфигурации системы в ОС Linux?
 
