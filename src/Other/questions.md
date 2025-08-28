@@ -26729,7 +26729,7 @@ greet(user); // Hello, Alex. You are 30 years old.
 ---
 
 <details>
-<summary>📦 47. Что такое модули (Modules) в JavaScript?</summary>
+<summary>47. 📦 Что такое модули (Modules) в JavaScript?</summary>
 
 ### ✅ Краткий ответ
 
@@ -26843,7 +26843,7 @@ project/
 ---
 
 <details>
-<summary>🗂️ 48. Что такое объект Set в JavaScript?</summary>
+<summary>48. 🗂️ Что такое объект Set в JavaScript?</summary>
 
 ### ✅ Краткий ответ
 
@@ -26970,7 +26970,7 @@ set.forEach(v => console.log(v));
 ---
 
 <details>
-<summary>🔄 49. Что такое функция обратного вызова (Callback Function)?</summary>
+<summary>49. 🔄 Что такое функция обратного вызова (Callback Function)?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27070,7 +27070,7 @@ Callback-функции:
 ---
 
 <details>
-<summary>🔮 50. Что такое промисы (Promises)?</summary>
+<summary>50. 🔮 Что такое промисы (Promises)?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27169,7 +27169,7 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 ---
 
 <details>
-<summary>⚡ 51. Что такое async/await?</summary>
+<summary>51. ⚡ Что такое async/await?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27295,7 +27295,7 @@ async function load() {
 ---
 
 <details>
-<summary>⚡ 52. В чем разница между spread-оператором (<code>...</code>) и rest-оператором (<code>...</code>)?</summary>
+<summary>52. ⚡ В чем разница между spread-оператором (<code>...</code>) и rest-оператором (<code>...</code>)?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27381,7 +27381,7 @@ console.log(others); // { y: 2, z: 3 }
 ---
 
 <details>
-<summary>⚡ 53. Что такое параметры по умолчанию (Default Parameters)?</summary>
+<summary>53. ⚡ Что такое параметры по умолчанию (Default Parameters)?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27485,7 +27485,7 @@ console.log(randomNumber(5, 15)); // число от 5 до 15
 ---
 
 <details>
-<summary>⚡ 54. Что такое объектная обёртка (Wrapper Objects) в JavaScript?</summary>
+<summary>54. ⚡ Что такое объектная обёртка (Wrapper Objects) в JavaScript?</summary>
 
 ### ✅ Краткий ответ
 
@@ -27592,7 +27592,7 @@ console.log("Hello" == new String("Hello"));  // true (автоматическ�
 ---
 
 <details>  
-<summary>⚡ 55. Разница между явным и неявным преобразованием типов в JavaScript</summary>  
+<summary>55. ⚡ Разница между явным и неявным преобразованием типов в JavaScript</summary>  
 
 ### ✅ Краткий ответ
 
@@ -27677,7 +27677,7 @@ console.log([1,2] == "1,2"); // true
 ---
 
 <details>  
-<summary>🎯 56. Что такое <code>NaN</code> и как проверить, является ли значение <code>NaN</code>?</summary>  
+<summary>56. 🎯 Что такое <code>NaN</code> и как проверить, является ли значение <code>NaN</code>?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -27768,7 +27768,7 @@ console.log(isReallyNaN(123));   // false
 ---
 
 <details>  
-<summary>🎯 57. Как проверить, является ли значение массивом?</summary>  
+<summary>57. 🎯 Как проверить, является ли значение массивом?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -27837,7 +27837,7 @@ function isArray(value) {
 ---
 
 <details>  
-<summary>🎯 58. Как проверить, что число является чётным без оператора <code>%</code>?</summary>  
+<summary>58. 🎯 Как проверить, что число является чётным без оператора <code>%</code>?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -27917,7 +27917,7 @@ function isEven(n) {
 ---
 
 <details>  
-<summary>🎯 59. Как определить наличие свойства в объекте в JavaScript?</summary>  
+<summary>59. 🎯 Как определить наличие свойства в объекте в JavaScript?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28008,7 +28008,7 @@ console.log(obj.a !== undefined); // false, хотя свойство сущес
 ---
 
 <details>  
-<summary>🌐 60. Что такое AJAX?</summary>  
+<summary>60. 🌐 Что такое AJAX?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28081,7 +28081,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
 ---
 
 <details>  
-<summary>🛠️ 61. Как в JS создать объект?</summary>  
+<summary>61. 🛠️ Как в JS создать объект?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28189,7 +28189,7 @@ obj.greet(); // "Hello!"
 ---
 
 <details>  
-<summary>🧊 62. Разница между <code>Object.freeze</code> и <code>Object.seal</code></summary>  
+<summary>62. 🧊 Разница между <code>Object.freeze</code> и <code>Object.seal</code></summary>  
 
 ### ✅ Краткий ответ
 
@@ -28269,7 +28269,7 @@ console.log(Object.isSealed(car));  // true
 ---
 
 <details>  
-<summary>🔑 63. Разница между оператором <code>in</code> и методом <code>hasOwnProperty()</code></summary>  
+<summary>63. 🔑 Разница между оператором <code>in</code> и методом <code>hasOwnProperty()</code></summary>  
 
 ### ✅ Краткий ответ
 
@@ -28332,7 +28332,7 @@ if ("name" in person && person.hasOwnProperty("name")) {
 ---
 
 <details>  
-<summary>⚡ 64. Приёмы работы с асинхронным кодом в JavaScript</summary>  
+<summary>64. ⚡ Приёмы работы с асинхронным кодом в JavaScript</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28457,7 +28457,7 @@ function* gen() {
 ---
 
 <details>  
-<summary>⚡ 65. Разница между обычной функцией (Function Declaration) и функциональным выражением (Function Expression)</summary>  
+<summary>65. ⚡ Разница между обычной функцией (Function Declaration) и функциональным выражением (Function Expression)</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28538,7 +28538,7 @@ greet();   // ✅ "Добро пожаловать!"
 ---
 
 <details>  
-<summary>🟢 66. Как в JS вызвать функцию?</summary>  
+<summary>66. 🟢 Как в JS вызвать функцию?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28655,7 +28655,7 @@ user.sayHi(); // Привет, Мария!
 ---
 
 <details>  
-<summary>🟢 67. Что такое мемоизация (Memoization) в JS?</summary>  
+<summary>67. 🟢 Что такое мемоизация (Memoization) в JS?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28773,7 +28773,7 @@ console.log(fastSquare(5)); // мгновенно → 25
 ---
 
 <details>  
-<summary>🟢 68. Как реализовать вспомогательную функцию запоминания (<code>memoize</code>)?</summary>  
+<summary>68. 🟢 Как реализовать вспомогательную функцию запоминания (<code>memoize</code>)?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28897,7 +28897,7 @@ setTimeout(() => console.log(memoizedExpensive(10)), 4000); // снова "Вы�
 ---
 
 <details>  
-<summary>🟢 69. Почему <code>typeof</code> <code>null</code> возвращает "<code>object</code>" и как правильно проверить значение на <code>null</code>?</summary>  
+<summary>69. 🟢 Почему <code>typeof</code> <code>null</code> возвращает "<code>object</code>" и как правильно проверить значение на <code>null</code>?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -28988,7 +28988,7 @@ value === null
 ---
 
 <details>  
-<summary>🟢 70. Для чего используется ключевое слово <code>new</code> в JavaScript?</summary>  
+<summary>70. 🟢 Для чего используется ключевое слово <code>new</code> в JavaScript?</summary>  
 
 ### ✅ Краткий ответ
 
@@ -30796,7 +30796,80 @@ Linux можно полноценно интегрировать с Microsoft:
 
 ---
 
-14.    Как хранятся файлы конфигурации системы в ОС Linux?
+<details> 
+<summary>14. ⚙️ Как хранятся файлы конфигурации системы в ОС Linux?</summary>
+
+### ⚡ Краткий ответ:
+
+В Linux **конфигурация системы хранится в виде текстовых файлов**.
+Обычно они находятся в каталогах:
+
+* 📂 `/etc/` — глобальные системные настройки (например, `passwd`, `fstab`, `ssh/sshd_config`).
+* 📂 `~/` (домашний каталог пользователя, скрытые файлы с точкой `.`) — индивидуальные настройки пользователя (например, `.bashrc`, `.profile`).
+
+Формат файлов простой:
+
+* **ключ=значение**
+* **INI-подобные секции**
+* **YAML/JSON/XML** (в современных сервисах, например systemd).
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Где хранятся конфигурации
+
+### 1️⃣ Глобальные (системные)
+
+* **Каталог:** `/etc/`
+* Примеры:
+
+  * `/etc/passwd` — список пользователей.
+  * `/etc/fstab` — правила монтирования дисков.
+  * `/etc/ssh/sshd_config` — настройки SSH-сервера.
+* Эти файлы действуют для всех пользователей.
+
+---
+
+### 2️⃣ Пользовательские
+
+* **Каталог:** домашний каталог (`/home/username/`).
+* Обычно начинаются с точки:
+
+  * `~/.bashrc` — настройки командной оболочки.
+  * `~/.gitconfig` — параметры Git.
+  * `~/.config/` — папка для современных приложений (например, настройки GNOME или VSCode).
+
+---
+
+### 3️⃣ Форматы файлов
+
+* **Классика:** `ключ=значение` (например, `/etc/environment`).
+* **INI-подобные:** `[секция] параметр=значение`.
+* **YAML/JSON/XML:** используются в более новых сервисах (например, Docker, Kubernetes, systemd).
+
+---
+
+### 4️⃣ Особенности
+
+* ❌ В Linux **нет единого реестра**, как в Windows.
+* ✅ Все настройки — это **читаемые текстовые файлы**, которые можно редактировать вручную.
+* ✅ Это облегчает автоматизацию (скрипты, Ansible, Puppet).
+
+---
+
+## 📌 Вывод
+
+* Системные конфиги: `/etc/`
+* Пользовательские конфиги: `~/`
+* Форматы: `ключ=значение`, INI, YAML/JSON
+* Преимущество Linux: простота редактирования и прозрачность.
+
+</details>
+</details>
+
+---
 
 15.    Объясните, что такое виртуальные рабочие столы.
 
