@@ -33925,7 +33925,76 @@ FROM users;
 
 ---
 
-28. Переименуйте таблицу
+<details> 
+<summary>28. 📝 Как переименовать таблицу в SQL?</summary>
+
+### ⚡ Краткий ответ:
+
+Для переименования таблицы используется оператор **ALTER TABLE … RENAME TO …**
+
+```sql
+ALTER TABLE old_table_name
+RENAME TO new_table_name;
+```
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Общий синтаксис
+
+```sql
+ALTER TABLE <старое_имя>
+RENAME TO <новое_имя>;
+```
+
+---
+
+## 🔹 Примеры в разных СУБД
+
+1️⃣ **PostgreSQL / SQLite**
+
+```sql
+ALTER TABLE users
+RENAME TO customers;
+```
+
+2️⃣ **MySQL**
+В MySQL можно так же:
+
+```sql
+RENAME TABLE users TO customers;
+```
+
+3️⃣ **SQL Server**
+В SQL Server используется хранимая процедура:
+
+```sql
+EXEC sp_rename 'users', 'customers';
+```
+
+---
+
+## 📌 Важно
+
+* 🔹 При переименовании таблицы все данные и структура сохраняются.
+* 🔹 Нужно учитывать зависимости (внешние ключи, представления, триггеры).
+* 🔹 Иногда требуется обновить связанные объекты вручную.
+
+---
+
+## ✅ Вывод
+
+* Используем `ALTER TABLE ... RENAME TO` (PostgreSQL, SQLite).
+* Используем `RENAME TABLE` (MySQL).
+* Используем `sp_rename` (SQL Server).
+
+</details>
+</details>
+
+---
+
 29. селект с джойном
 30. селект с агрегатной функцией
 31. как сделать селект из 2-х таблиц без джойна
