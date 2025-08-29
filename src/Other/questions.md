@@ -33995,7 +33995,96 @@ EXEC sp_rename 'users', 'customers';
 
 ---
 
-29. селект с джойном
+<details> 
+<summary>29. 🔗 Как сделать SELECT с JOIN в SQL?</summary>
+
+### ⚡ Краткий ответ:
+
+`JOIN` используется для объединения строк из двух (или более) таблиц по связанным полям.
+Простейший пример:
+
+```sql
+SELECT w.id, w.name, d.department_name
+FROM workers w
+JOIN departments d ON w.department_id = d.id;
+```
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 Основные типы JOIN
+
+1. **INNER JOIN** – берёт только совпадающие записи.
+2. **LEFT JOIN** – берёт все строки из левой таблицы + совпадения из правой.
+3. **RIGHT JOIN** – берёт все строки из правой таблицы + совпадения из левой.
+4. **FULL JOIN** – берёт все строки из обеих таблиц.
+
+---
+
+## 🔹 Примеры
+
+### 1️⃣ INNER JOIN
+
+Покажет сотрудников и их департаменты (только если департамент существует):
+
+```sql
+SELECT w.name, d.department_name
+FROM workers w
+INNER JOIN departments d ON w.department_id = d.id;
+```
+
+---
+
+### 2️⃣ LEFT JOIN
+
+Покажет всех сотрудников, даже если у них нет департамента:
+
+```sql
+SELECT w.name, d.department_name
+FROM workers w
+LEFT JOIN departments d ON w.department_id = d.id;
+```
+
+---
+
+### 3️⃣ RIGHT JOIN
+
+Покажет все департаменты, даже если в них нет работников:
+
+```sql
+SELECT w.name, d.department_name
+FROM workers w
+RIGHT JOIN departments d ON w.department_id = d.id;
+```
+
+---
+
+### 4️⃣ FULL JOIN
+
+Покажет и всех работников, и все департаменты, даже если нет совпадений:
+
+```sql
+SELECT w.name, d.department_name
+FROM workers w
+FULL JOIN departments d ON w.department_id = d.id;
+```
+
+---
+
+## 📌 Вывод
+
+* `INNER JOIN` → только совпадения.
+* `LEFT JOIN` → все из левой таблицы.
+* `RIGHT JOIN` → все из правой таблицы.
+* `FULL JOIN` → все из обеих.
+
+</details>
+</details>
+
+---
+
 30. селект с агрегатной функцией
 31. как сделать селект из 2-х таблиц без джойна
 32. как очистить данные таблицы
@@ -34004,6 +34093,17 @@ EXEC sp_rename 'users', 'customers';
 35. что такое транзакции
 36. может ли быть составной первичный ключ
 37. View в БД и их отличия от таблиц
+
+</details>
+
+
+<details>
+
+<summary style="font-size: 25px;">🍃 MongoDB</summary>
+
+### Вопросы по теме MongoDB:
+
+---
 
 </details>
 </details>
