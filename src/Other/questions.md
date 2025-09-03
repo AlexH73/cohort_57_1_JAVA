@@ -35113,7 +35113,98 @@ CREATE TABLE IF NOT EXISTS employees (
 
 ---
 
-34. как удалить/создать бд
+<details>  
+<summary>34. 🗄️ Как удалить и создать базу данных в SQL?</summary>  
+
+### ⚡ Краткий ответ:
+
+* Удаление базы данных:
+
+```sql
+DROP DATABASE db_name;
+```
+
+* Создание базы данных:
+
+```sql
+CREATE DATABASE db_name;
+```
+
+---
+
+<details>  
+<summary>↪️ Подробнее... 🔎</summary>  
+
+### 🔹 1. Удаление базы данных (`DROP DATABASE`)
+
+Полностью удаляет базу данных вместе со **всеми таблицами, данными и схемой**.
+
+```sql
+DROP DATABASE company_db;
+```
+
+👉 Чтобы избежать ошибки, если база отсутствует:
+
+```sql
+DROP DATABASE IF EXISTS company_db;
+```
+
+⚠️ Опасно: данные восстановить нельзя без резервной копии!
+
+---
+
+### 🔹 2. Создание базы данных (`CREATE DATABASE`)
+
+Простейший синтаксис:
+
+```sql
+CREATE DATABASE company_db;
+```
+
+📌 Дополнительные параметры зависят от СУБД:
+
+* **PostgreSQL** — можно указать владельца и кодировку:
+
+```sql
+CREATE DATABASE company_db
+    WITH OWNER = alex
+    ENCODING = 'UTF8';
+```
+
+* **MySQL** — можно задать кодировку и сравнение:
+
+```sql
+CREATE DATABASE company_db
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+```
+
+---
+
+### 🔹 3. Проверка существования
+
+Чтобы не получить ошибку при повторном создании:
+
+```sql
+CREATE DATABASE IF NOT EXISTS company_db;
+```
+
+---
+
+### 📌 Вывод
+
+| Операция                 | SQL-команда                                |
+| ------------------------ | ------------------------------------------ |
+| Удалить БД               | `DROP DATABASE db_name;`                   |
+| Удалить, если существует | `DROP DATABASE IF EXISTS db_name;`         |
+| Создать БД               | `CREATE DATABASE db_name;`                 |
+| Создать с параметрами    | `CREATE DATABASE db_name ENCODING 'UTF8';` |
+
+</details>  
+</details>
+
+---
+
 35. что такое транзакции
 36. может ли быть составной первичный ключ
 37. View в БД и их отличия от таблиц
