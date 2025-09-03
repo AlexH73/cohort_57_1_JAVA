@@ -35124,7 +35124,105 @@ MongoDB делит данные на **чанки (chunks)** — диапазо�
 
 ---
 
-10. Объясните основной синтаксис операций MongoDB CRUD.
+<details> 
+<summary>10. 🔍 Объясните основной синтаксис операций MongoDB CRUD</summary>
+
+### ⚡ Краткий ответ:
+
+**CRUD** — это четыре базовые операции в MongoDB:
+
+* **C**reate → `insertOne()`, `insertMany()`
+* **R**ead → `find()`, `findOne()`
+* **U**pdate → `updateOne()`, `updateMany()`, `replaceOne()`
+* **D**elete → `deleteOne()`, `deleteMany()`
+
+---
+
+<details>
+<summary>↪️ Подробнее... ⚠️</summary>
+
+## 🔹 1. Create (Создание)
+
+Используются методы:
+
+* `insertOne(document)` — вставляет один документ.
+* `insertMany([documents])` — вставляет массив документов.
+
+```js
+db.users.insertOne({ name: "Alex", age: 30 });
+db.users.insertMany([
+  { name: "John", age: 25 },
+  { name: "Maria", age: 28 }
+]);
+```
+
+---
+
+## 🔹 2. Read (Чтение)
+
+Используются методы:
+
+* `find(query, projection)` — ищет документы по условию.
+* `findOne(query)` — возвращает первый найденный документ.
+
+```js
+db.users.find({ age: { $gt: 25 } });     // найти всех старше 25
+db.users.findOne({ name: "Alex" });      // найти одного по имени
+db.users.find({}, { name: 1, _id: 0 });  // вывести только имена
+```
+
+---
+
+## 🔹 3. Update (Обновление)
+
+Используются методы:
+
+* `updateOne(filter, update)` — обновляет один документ.
+* `updateMany(filter, update)` — обновляет все подходящие документы.
+* `replaceOne(filter, newDocument)` — заменяет документ полностью.
+
+```js
+db.users.updateOne(
+  { name: "Alex" },
+  { $set: { age: 31 } }
+);
+
+db.users.updateMany(
+  { age: { $lt: 30 } },
+  { $inc: { age: 1 } }
+);
+```
+
+---
+
+## 🔹 4. Delete (Удаление)
+
+Используются методы:
+
+* `deleteOne(filter)` — удаляет один документ.
+* `deleteMany(filter)` — удаляет все документы, подходящие под условие.
+
+```js
+db.users.deleteOne({ name: "John" });
+db.users.deleteMany({ age: { $lt: 20 } });
+```
+
+---
+
+## 📌 Вывод
+
+Операции **CRUD** в MongoDB просты и гибки:
+
+* `insert` → добавляем данные
+* `find` → читаем данные
+* `update` → изменяем данные
+* `delete` → удаляем данные
+
+</details>
+</details>
+
+---
+
 11. Как выполнить базовый запрос в MongoDB?
 12. Что такое индекс в MongoDB и как его создать?
 13. Как MongoDB Обрабатывает Согласованность Данных?
