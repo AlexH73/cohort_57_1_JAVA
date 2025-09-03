@@ -35020,7 +35020,99 @@ DROP TABLE employees;
 
 ---
 
-33. как удалить/создать таблицу
+<details>  
+<summary>33. 📂 Как удалить и создать таблицу в SQL?</summary>  
+
+### ⚡ Краткий ответ:
+
+* Удаление таблицы:
+
+```sql
+DROP TABLE table_name;
+```
+
+* Создание таблицы:
+
+```sql
+CREATE TABLE table_name (
+    column1 datatype CONSTRAINT,
+    column2 datatype CONSTRAINT,
+    ...
+);
+```
+
+---
+
+<details>  
+<summary>↪️ Подробнее... 🔎</summary>  
+
+### 🔹 1. Удаление таблицы (`DROP TABLE`)
+
+Команда **навсегда удаляет таблицу** вместе со структурой и всеми данными.
+
+```sql
+DROP TABLE employees;
+```
+
+> ⚠️ Важно: после `DROP` таблицу придётся пересоздавать!
+
+Если не уверены, можно сначала проверить, существует ли таблица:
+
+```sql
+DROP TABLE IF EXISTS employees;
+```
+
+---
+
+### 🔹 2. Создание таблицы (`CREATE TABLE`)
+
+При создании таблицы указываются:
+
+* имя таблицы,
+* список колонок,
+* типы данных,
+* возможные ограничения (`PRIMARY KEY`, `NOT NULL`, `UNIQUE`, `FOREIGN KEY` и др.).
+
+Пример:
+
+```sql
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    salary DECIMAL(10,2),
+    department_id INT
+);
+```
+
+---
+
+### 🔹 3. Условное создание
+
+Чтобы не получить ошибку, если таблица уже есть:
+
+```sql
+CREATE TABLE IF NOT EXISTS employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+```
+
+---
+
+### 📌 Вывод
+
+| Операция           | SQL-команда                                    |
+| ------------------ | ---------------------------------------------- |
+| Удалить таблицу    | `DROP TABLE table_name;`                       |
+| Создать таблицу    | `CREATE TABLE table_name (...);`               |
+| Удалить, если есть | `DROP TABLE IF EXISTS table_name;`             |
+| Создать, если нет  | `CREATE TABLE IF NOT EXISTS table_name (...);` |
+
+</details>  
+</details>  
+
+---
+
 34. как удалить/создать бд
 35. что такое транзакции
 36. может ли быть составной первичный ключ
